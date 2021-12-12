@@ -1,0 +1,94 @@
+.contactPage {
+  font-family: "PT Sans", sans-serif;
+}
+
+.contactPage .contactPageContents {
+  margin: -140px 0 60px 0;
+  text-align: center;
+}
+
+.contactPage .header {
+  background-color: #201a16;
+  height: 150px;
+}
+
+.contactPage h1 {
+  margin-bottom: 60px;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.contactPage .breakLine {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.contactPage .pageBreak {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.contactPage .buttonContainer {
+  display: flex;
+  margin: 0 auto;
+  width: 80%;
+  justify-content: space-around;
+}
+
+.contactPage .contactBtn {
+  color: #eee;
+  background-color: #000;
+  border: none;
+  height: 50px;
+  width: 240px;
+  cursor: pointer;
+  margin: 70px 0 70px 0;
+}
+
+.contactPage .contactBtn:hover {
+  opacity: .8;
+}
+
+.contactPage a {
+  color: rgba(33, 41, 176, 0.82);
+}
+
+.contactPage .storeInfo {
+  margin: 40px 0 40px 0;
+}
+
+.contactPage .storeAddress {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 438px) {
+  .contactPage .buttonContainer {
+    flex-direction: column;
+  }
+
+  .contactPage .contactBtn {
+    margin: 20px 0 20px 0;
+    width: 100%;
+    height: 75px;
+  }
+
+  .contactPage .storeAddress {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+  }
+
+  .contactPage .storeAddress .address {
+    border-right: 1px solid black;
+  }
+
+  .contactPage .phoneNumber {
+    margin-top: 40px;
+  }
+
+  .contactPage a {
+    font-size: 28px;
+  }
+}

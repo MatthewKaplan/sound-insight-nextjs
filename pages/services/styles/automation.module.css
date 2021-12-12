@@ -1,0 +1,173 @@
+.automationPage {
+  font-family: "PT Sans", sans-serif;
+}
+
+.automationPage .header {
+  background-color: #201a16;
+  height: 150px;
+}
+
+.automationInfo {
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+.automationInfo .pageHeading h1 {
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+.automationInfo .pageHeading p {
+  margin-bottom: 80px;
+}
+
+.automationImg {
+  width: 100%;
+  max-width: 100%;
+}
+
+.homeAutomation {
+  text-align: left;
+}
+
+.homeAutomation h2 {
+  margin-top: 30px;
+}
+
+
+.bottomServices {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.bottomServices .controlFour {
+  max-width: 45%;
+}
+
+.bottomServices .controlFour h2 {
+  margin-top: 60px;
+}
+
+
+.bottomServices .elan {
+  max-width: 45%;
+}
+
+.bottomServices .elan h2 {
+  margin-top: 60px;
+}
+
+
+.bottomServices img {
+  height: 215px;
+  max-width: 100%;
+  width: 100%;
+}
+
+@media screen and (max-width: 2560px) {
+  .automationPage .automationInfo .automationImg {
+    height: 900px;
+  }
+
+  .automationPage .automationInfo .bottomServices img {
+    height: 450px;
+  }
+}
+
+@media screen and (max-width: 1920px) {
+  .automationPage .automationInfo .automationImg {
+    height: 750px;
+  }
+
+  .automationPage .automationInfo .bottomServices img {
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .automationPage .automationInfo .automationImg {
+    height: 600px;
+  }
+
+  .automationPage .automationInfo .bottomServices img {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 438px) {
+  .automationPage .header {
+    display: none;
+  }
+
+  .automationPage .header {
+    display: none;
+  }
+
+  .automationPage .automationInfo {
+    max-width: 90%;
+  }
+
+  .automationPage .automationInfo .automationImg {
+    height: 300px;
+  }
+
+  .automationPage .automationInfo .pageHeading h1 {
+    margin-top: 120px;
+  }
+
+  .automationPage .automationInfo .bottomServices {
+    flex-direction: column;
+  }
+
+  .automationPage .automationInfo .bottomServices .controlFour {
+    max-width: 100%;
+  }
+
+  .automationPage .automationInfo .bottomServices .controlFour h2 {
+    margin-top: 30px;
+  }
+
+
+  .automationPage .automationInfo .bottomServices .elan {
+    max-width: 100%;
+    margin-top: 80px;
+  }
+
+  .automationPage .automationInfo .bottomServices .elan h2 {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 438px) {
+  .automationPage p {
+    font-size: 15px;
+  }
+
+  .automationPage .automationInfo .automationImg {
+    height: 250px;
+  }
+
+  .automationPage .automationInfo .pageHeading p {
+    margin-bottom: 50px;
+  }
+
+  .automationPage .automationInfo .pageHeading h1 {
+    margin: 100px 0 30px 0;
+  }
+
+  .automationPage .automationInfo .bottomServices {
+    margin-top: 50px;
+  }
+
+  .automationPage .automationInfo .bottomServices .elan {
+    margin-top: 50px;
+  }
+
+  .automationPage .automationInfo .bottomServices img {
+    height: 250px;
+  }
+
+}

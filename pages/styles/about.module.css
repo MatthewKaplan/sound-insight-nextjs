@@ -1,0 +1,106 @@
+.aboutPage {
+  font-family: "PT Sans", sans-serif;
+  font-size: 18.5px;
+}
+
+.aboutPage .aboutInfo {
+  max-width: 75%;
+  margin: -150px auto 60px auto;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.aboutPage .aboutInfo h1 {
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 2em;
+}
+
+.aboutPage .aboutImg {
+  width: 35%;
+  height: 100%;
+}
+
+.aboutPage .about1Img {
+  float: left;
+  margin-right: 30px;
+}
+
+.aboutPage .about2Img {
+  float: right;
+  margin-left: 30px;
+}
+
+.aboutPage .about3Img {
+  float: left;
+  margin-right: 30px;
+}
+
+.aboutPage .aboutSection {
+  height: 200px;
+  margin-bottom: 60px;
+}
+
+@media screen and (max-width: 2560px) {
+  .aboutPage .aboutSection {
+    margin-bottom: 200px;
+  }
+
+  .aboutPage .aboutImg {
+    height: 350px;
+  }
+
+  .aboutPage p {
+    font-size: 28px;
+    margin-top: 30px;
+  }
+
+  .aboutPage .aboutInfo {
+    margin: -99px auto 60px auto;
+  }
+}
+
+@media screen and (max-width: 1920px) {
+  .aboutPage p {
+    font-size: 24px;
+  }
+
+  .aboutPage .aboutInfo {
+    margin: -150px auto 60px auto;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .aboutPage p {
+    font-size: 20px;
+  }
+
+  .aboutPage .aboutInfo {
+    margin: -133px auto 60px auto;
+  }
+}
+
+@media screen and (max-width: 438px) {
+  .aboutPage .aboutInfo {
+    margin: -140px auto 30px auto;
+    max-width: 95%;
+  }
+
+  .aboutPage .aboutImg {
+    width: 100%;
+    height: 225px;
+  }
+
+  .aboutPage .about1Img,
+  .aboutPage .about2Img,
+  .aboutPage .about3Img {
+    float: none;
+    margin: 0 auto;
+  }
+
+  .aboutPage .aboutSection {
+    height: auto;
+    margin-bottom: 30px;
+  }
+}

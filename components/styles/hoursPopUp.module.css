@@ -1,0 +1,71 @@
+.hoursPopup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.hoursPopup .formInformation {
+  background-color: #696969;
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
+  font-family: "PT Sans", sans-serif;
+  overflow: scroll;
+  z-index: 999;
+  max-width: 100%;
+  max-height: 100%;
+  margin-top: 0px;
+}
+
+.hoursPopup .closePopup {
+  height: 40px;
+  width: 40px;
+  float: right;
+  margin: 20px 20px 0 0;
+  cursor: pointer;
+}
+
+.hoursPopup table {
+  table-layout: fixed;
+  margin: 40% auto;
+  width: 80%;
+  border-collapse: collapse;
+  vertical-align: center;
+  text-align: center;
+}
+
+.hoursPopup thead th:nth-child(1) {
+  width: 30%;
+}
+
+.hoursPopup thead th:nth-child(2) {
+  width: 20%;
+}
+
+.hoursPopup thead th:nth-child(3) {
+  width: 15%;
+}
+
+.hoursPopup thead th:nth-child(4) {
+  width: 35%;
+}
+
+.hoursPopup th,
+.hoursPopup td {
+  padding: 20px;
+}
+
+.hoursPopup .date {
+  color: #DCDCDC;
+}
+
+.hoursPopup .time {
+  color: white;
+}

@@ -1,0 +1,228 @@
+.servicesProvided {
+  height: auto;
+  margin: -280px 0 60px 0;
+  font-family: "PT Sans", sans-serif;
+}
+
+.servicesProvided p {
+  font-weight: 300;
+  font-style: normal;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  line-height: 1.6em;
+  color: #1f1f1f;
+}
+
+.servicesProvided .header {
+  width: 65%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.servicesProvided .header .title {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 42px;
+  letter-spacing: .4px;
+  text-transform: none;
+  line-height: 1.2em;
+}
+
+.servicesProvided .header .subtitle {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 32px;
+  letter-spacing: 0px;
+  text-transform: none;
+  line-height: 1.2em;
+  margin-bottom: 50px;
+}
+
+
+.pageBreak {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.audioService {
+  max-width: 82.4%;
+  margin: 80px auto 0 auto;
+  text-align: left;
+}
+
+.topServiceImg {
+  height: 600px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  box-shadow: 2px 4px 14px 0 rgba(0, 0, 0, 0.19);
+}
+
+.servicesProvided h3 {
+  margin-top: 30px;
+}
+
+.servicesInfo {
+  display: grid;
+  grid-template-columns: 45% 45%;
+  justify-items: center;
+  justify-content: center;
+}
+
+.servicesInfo .automation,
+.servicesInfo .video {
+  margin-top: 80px;
+}
+
+.servicesInfo h3 {
+  text-align: left;
+  width: 83%;
+  margin: 30px auto;
+}
+
+.servicesInfo p {
+  width: 83%;
+  margin: 0 auto;
+  text-align: left;
+  margin-bottom: 80px;
+}
+
+.servicesInfo .serviceImg {
+  height: 400px;
+  width: 83%;
+  box-shadow: 2px 4px 14px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media screen and (max-width: 2560px) {
+  .servicesProvided {
+    margin: -205px 0 60px 0;
+  }
+
+  .servicesProvided .topServiceImg {
+    height: 1100px;
+  }
+
+  .servicesProvided .servicesInfo .serviceImg {
+    height: 650px;
+  }
+
+}
+
+@media screen and (max-width: 1920px) {
+  .servicesProvided {
+    margin: -285px 0 60px 0;
+  }
+
+  .servicesProvided .topServiceImg {
+    height: 900px;
+  }
+
+  .servicesProvided .servicesInfo .serviceImg {
+    height: 500px;
+    margin: 0 auto;
+  }
+
+}
+
+@media screen and (max-width: 1440px) {
+  .servicesProvided .topServiceImg {
+    height: 600px;
+  }
+
+  .servicesProvided .servicesInfo .serviceImg {
+    height: 425px;
+  }
+}
+
+@media screen and (max-width: 438px) {
+  .servicesProvided {
+    margin: -265px 0 20px 0;
+  }
+
+  .servicesProvided .header {
+    width: 95%;
+  }
+
+  .servicesProvided .header .title {
+    font-size: 32px;
+  }
+
+  .servicesProvided .header .subtitle {
+    font-size: 22px;
+  }
+
+
+  .servicesProvided .topService {
+    margin-bottom: 80px;
+  }
+
+  .servicesProvided .topService .topServiceImg {
+    height: 350px;
+  }
+
+  .servicesProvided .topService .audio-service {
+    max-width: 90%;
+  }
+
+
+  .servicesProvided .servicesInfo {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .servicesProvided .servicesInfo h3,
+  .servicesProvided .servicesInfo p {
+    width: 100%;
+  }
+
+  .servicesProvided .servicesInfo .serviceImg {
+    height: 350px;
+    width: 100%;
+  }
+
+  .servicesProvided .servicesInfo .automation,
+  .servicesProvided .servicesInfo .video {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .servicesProvided p {
+    font-size: 15px;
+  }
+
+  .servicesProvided .servicesInfo p {
+    margin-bottom: 50px;
+  }
+
+  .servicesProvided .servicesInfo .serviceImg {
+    height: 250px;
+    width: 100%;
+  }
+
+  .servicesProvided .topService {
+    margin-bottom: 50px;
+  }
+
+  .servicesProvided .topService .topServiceImg {
+    height: 250px;
+  }
+
+
+  .servicesProvided .header .title {
+    font-size: 25px;
+  }
+
+  .servicesProvided .header .subtitle {
+    font-size: 18px;
+  }
+
+  .servicesProvided .audioService {
+    margin: 60px auto 0 auto;
+  }
+}

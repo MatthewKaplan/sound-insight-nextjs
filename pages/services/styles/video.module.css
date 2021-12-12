@@ -1,0 +1,190 @@
+.videoPage {
+  font-family: "PT Sans", sans-serif;
+}
+
+.videoPage .header {
+  background-color: #201a16;
+  height: 150px;
+}
+
+.videoPage .pageHeading h1 {
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+.videoPage .pageHeading p {
+  margin-bottom: 80px;
+}
+
+.videoPage .videoInfo {
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+.videoPage .homeTheater {
+  width: 100%;
+  max-width: 100%;
+}
+
+.videoPage .homeCinema {
+  text-align: left;
+}
+
+.videoPage .homeCinema h2 {
+  margin-top: 30px;
+}
+
+
+.videoPage .bottomServices {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.videoPage .bottomServices .televisionSystems {
+  max-width: 45%;
+}
+
+.videoPage .bottomServices .televisionSystems h2 {
+  margin-top: 60px;
+}
+
+
+.videoPage .bottomServices .projectionSystems {
+  max-width: 45%;
+}
+
+.videoPage .bottomServices .projectionSystems h2 {
+  margin-top: 60px;
+}
+
+
+.videoPage .bottomServices img {
+  height: 300px;
+  width: 100%;
+  max-width: 100%;
+}
+
+
+.videoPage .productSlides {
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.videoPage .topBreakLine {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.videoPage .topPageBreak {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.videoPage .bottomBreakLine {
+  width: 90%;
+  margin: 0 auto 60px auto;
+}
+
+.videoPage .bottomPageBreak {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+@media screen and (max-width: 2560px) {
+
+  .videoPage .homeTheater {
+    height: 1100px;
+  }
+
+  .videoPage .bottomServices img {
+    height: 550px;
+  }
+
+}
+
+@media screen and (max-width: 1920px) {
+
+  .videoPage .homeTheater {
+    height: 900px;
+  }
+
+  .videoPage .bottomServices img {
+    height: 450px;
+  }
+
+}
+
+@media screen and (max-width: 438px) {
+  .videoPage .header {
+    display: none;
+  }
+
+  .videoPage .homeTheater {
+    height: 350px;
+  }
+
+  .videoPage .videoInfo {
+    max-width: 90%;
+  }
+
+  .videoPage .pageHeading h1 {
+    margin-top: 120px;
+  }
+
+  .videoPage .bottomServices {
+    flex-direction: column;
+  }
+
+  .videoPage .bottomServices .televisionSystems {
+    max-width: 100%;
+  }
+
+  .videoPage .bottomServices .televisionSystems h2 {
+    margin-top: 30px;
+  }
+
+
+  .videoPage .bottomServices .projectionSystems {
+    max-width: 100%;
+    margin-top: 60px;
+  }
+
+  .videoPage .bottomServices .projectionSystems h2 {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .videoPage p {
+    font-size: 15px;
+  }
+
+  .videoPage .homeTheater {
+    height: 250px;
+  }
+
+  .videoPage .videoInfo .video-img {
+    height: 250px;
+  }
+
+  .videoPage .videoInfo .pageHeading p {
+    margin-bottom: 50px;
+  }
+
+  .videoPage .videoInfo .pageHeading h1 {
+    margin: 100px 0 30px 0;
+  }
+
+  .videoPage .videoInfo .bottomServices {
+    margin: 50px 0;
+  }
+
+  .videoPage .videoInfo .bottomServices img {
+    height: 250px;
+  }
+}

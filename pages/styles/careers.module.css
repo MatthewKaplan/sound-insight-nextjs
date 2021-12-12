@@ -1,0 +1,41 @@
+  .careersComponent {
+    text-align: center;
+  }
+
+  .careersComponent h1 {
+    font-size: 2em;
+    font-weight: 600;
+  }
+  
+  .careersComponent .pageHeading {
+    margin: -200px 0 60px 0;
+  }
+
+  .careersComponent .breakLine {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .careersComponent .pageBreak {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
+
+  .careersComponent .contactBtn {
+    color: #eee;
+    background-color: #000;
+    border: none;
+    height: 50px;
+    width: 240px;
+    cursor: pointer;
+    margin: 70px 0 70px 0;
+  }
+
+  .careersComponent .contactBtn:hover {
+    opacity: .8;
+  }
+
+  .careersComponent .applicationBtnContainer {
+    margin-bottom: 60px;
+  }

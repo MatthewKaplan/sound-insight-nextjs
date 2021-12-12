@@ -1,0 +1,133 @@
+.surveyRequestForm {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.surveyRequestForm .formInformation {
+  background-color: white;
+  border: 1px solid black;
+  max-width: 50%;
+  max-height: 80%;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 30px;
+  font-family: "PT Sans", sans-serif;
+  overflow: scroll;
+  z-index: 999;
+}
+
+.surveyRequestForm h1,
+.surveyRequestForm h3 {
+  text-align: left;
+}
+
+.surveyRequestForm .closeForm {
+  height: 30px;
+  width: 30px;
+  float: right;
+  cursor: pointer;
+}
+
+.surveyRequestForm #form-input {
+  border: 1px solid #ccc;
+  background: #fafafa;
+  width: 100%;
+  height: 40px;
+  border-radius: 2px;
+}
+
+.surveyRequestForm textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #fafafa;
+  border-radius: 2px;
+  resize: none;
+}
+
+.surveyRequestForm .requestedDate {
+  align-content: left;
+}
+
+.surveyRequestForm .dateRequested {
+  border: 1px solid #ccc;
+  background: #fafafa;
+  border-radius: 2px;
+  align-self: left;
+  height: 40px;
+  font-size: 18px;
+  text-align: center;
+  width: 50%;
+}
+
+.surveyRequestForm .nameForms {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.surveyRequestForm .nameForms .nameLabel {
+  float: left;
+}
+
+.surveyRequestForm .nameForms .fistNameForm {
+  width: 48%;
+}
+
+.surveyRequestForm .nameForms .lastNameForm {
+  width: 48%;
+}
+
+.surveyRequestForm .email {
+  width: 50%;
+  border: 1px solid #ccc;
+  background: #fafafa;
+  height: 40px;
+  border-radius: 2px;
+}
+
+.surveyRequestForm .phone {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.surveyRequestForm .submitBtn {
+  color: #eee;
+  background-color: #000;
+  border: none;
+  height: 60px;
+  width: 260px;
+  cursor: pointer;
+  margin: 70px 0 70px 0;
+}
+
+.surveyRequestForm .submitBtn:hover {
+  opacity: .8;
+}
+
+@media screen and (max-width: 438px) {
+  .surveyRequestForm .formInformation {
+    max-width: 100%;
+    max-height: 100%;
+    margin-top: 0px;
+  }
+
+  .surveyRequestForm .dateRequested,
+  .surveyRequestForm .timeRequested,
+  .surveyRequestForm .email,
+  .surveyRequestForm .phone {
+    width: 100%;
+  }
+
+  .surveyRequestForm .submitBtn {
+    width: 100%;
+    height: 80px;
+  }
+}

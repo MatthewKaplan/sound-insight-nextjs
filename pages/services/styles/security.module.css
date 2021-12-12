@@ -1,0 +1,165 @@
+.securityPage {
+  font-family: "PT Sans", sans-serif;
+}
+
+.securityPage .header {
+  background-color: #201a16;
+  height: 150px;
+}
+
+.securityPage .securityInfo {
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+.securityPage .securityInfo .pageHeading h1 {
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+.securityPage .securityInfo .pageHeading p {
+  margin-bottom: 80px;
+}
+
+.securityPage .securityInfo .honeywellImg {
+  width: 100%;
+}
+
+.securityPage .securityInfo .securitySystems {
+  text-align: left;
+}
+
+.securityPage .securityInfo .securitySystems h2 {
+  margin-top: 30px;
+}
+
+.securityPage .securityInfo .bottomServices {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.securityPage .securityInfo .bottomServices .smartDevices {
+  max-width: 45%;
+}
+
+.securityPage .securityInfo .bottomServices .smartDevices h2 {
+  margin-top: 60px;
+}
+
+.securityPage .securityInfo .bottomServices .cameraSystems {
+  max-width: 45%;
+}
+
+.securityPage .securityInfo .bottomServices .cameraSystems h2 {
+  margin-top: 60px;
+}
+
+
+.securityPage .securityInfo .bottomServices img {
+  width: 100%;
+  height: 325px;
+  max-width: 100%;
+}
+
+
+@media screen and (max-width: 2560px) {
+  .securityPage .securityInfo .honeywellImg {
+    height: 1050px;
+  }
+
+  .securityPage .securityInfo .bottomServices img {
+    height: 550px;
+  }
+
+}
+
+@media screen and (max-width: 1920px) {
+  .securityPage .securityInfo .honeywellImg {
+    height: 900px;
+  }
+
+  .securityPage .securityInfo .bottomServices img {
+    height: 425px;
+  }
+
+}
+
+@media screen and (max-width: 1440px) {
+  .securityPage .securityInfo .honeywellImg {
+    height: 600px;
+  }
+
+  .securityPage .securityInfo .bottomServices img {
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 438px) {
+  .securityPage .header {
+    display: none;
+  }
+
+  .securityPage .securityInfo {
+    max-width: 90%;
+  }
+
+  .securityPage .securityInfo .honeywellImg {
+    height: 350px;
+  }
+
+  .securityPage .securityInfo .pageHeading h1 {
+    margin-top: 120px;
+  }
+
+  .securityPage .securityInfo .bottomServices {
+    flex-direction: column;
+  }
+
+  .securityPage .securityInfo .bottomServices .smartDevices {
+    max-width: 100%;
+    margin-top: 80px;
+  }
+
+  .securityPage .securityInfo .bottomServices .smartDevices h2 {
+    margin-top: 30px;
+  }
+
+
+  .securityPage .securityInfo .bottomServices .cameraSystems {
+    max-width: 100%;
+  }
+
+  .securityPage .securityInfo .bottomServices .cameraSystems h2 {
+    margin-top: 30px;
+  }
+}
+
+
+@media screen and (max-width: 320px) {
+  .securityPage .securityInfo .pageHeading p {
+    margin-bottom: 50px;
+  }
+
+  .securityPage .securityInfo .honeywellImg {
+    height: 250px;
+  }
+
+  .securityPage .securityInfo .pageHeading h1 {
+    margin: 100px 0 30px 0;
+  }
+
+  .securityPage .securityInfo .bottomServices {
+    margin: 50px 0;
+  }
+
+  .securityPage .securityInfo .bottomServices .smartDevices {
+    margin-top: 50px;
+  }
+
+  .securityPage .securityInfo .bottomServices img {
+    height: 250px;
+  }
+}

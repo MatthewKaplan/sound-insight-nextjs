@@ -1,0 +1,128 @@
+.logoContainer {
+  position: relative;
+  margin: 0 auto;
+}
+
+.logoContainer .logoImg {
+  width: 200px;
+  position: absolute;
+  top: 50%;
+  height: 7em;
+  margin-top: -5em;
+}
+
+.brandsPage {
+  font-family: "PT Sans", sans-serif;
+}
+
+.brandsPage .brands {
+  margin: -235px 0 60px 0;
+}
+
+.brandsPage .brandHeading {
+  max-width: 65%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.brandsPage .brandHeading .brandSubtitle {
+  margin-top: 30px;
+}
+
+.brandsPage .brandHeading a {
+  color: rgba(33, 41, 176, 0.82);
+}
+
+.brandsPage .logoContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 75px;
+  grid-row-gap: 100px;
+  align-content: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.brandsPage .hrLine {
+  width: 80%;
+  margin: 80px auto;
+}
+
+.brandsPage .pageBreak {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+@media screen and (max-width: 2560px) {
+  .brandsPage .brands {
+    margin: -170px 0 60px 0;
+  }
+}
+
+@media screen and (max-width: 1920px) {
+  .brandsPage .brands {
+    margin: -236px 0 60px 0;
+  }
+}
+
+@media screen and (max-width: 438px) {
+  .brandsPage .brands {
+    margin: -215px 0 60px 0;
+  }
+
+  .brandsPage .brands .brandHeading {
+    max-width: 95%;
+  }
+
+  .brandsPage .brands .logoContainer {
+    max-width: 35%;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+    grid-row-gap: 75px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .brandsPage .brands {
+    margin: -215px 0 60px 0;
+  }
+
+  .brandsPage .brands .brandHeading {
+    max-width: 95%;
+  }
+
+  .brandsPage .brands .brandHeading .brandSubtitle {
+    font-size: 18px;
+  }
+
+
+  .brandsPage .brands .logoContainer {
+    max-width: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0px;
+    grid-row-gap: 75px;
+  }
+
+}
+
+@media screen and (max-width: 438px) {
+  .logoContainer .logoImg {
+    position: relative;
+    width: 145px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .logoContainer .logoImg {
+    position: relative;
+    width: 125px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .logoContainer .logoImg {
+    width: 105px;
+  }
+}

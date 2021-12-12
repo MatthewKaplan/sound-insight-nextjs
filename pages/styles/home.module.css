@@ -1,0 +1,465 @@
+.homeServices {
+  margin: -275px 0 60px 0;
+  font-family: "PT Sans", sans-serif;
+  text-align: center;
+}
+
+.homeServices a {
+  color: rgba(33, 41, 176, 0.82);
+}
+
+.homeServices h1 {
+  font-weight: 100;
+  font-style: normal;
+  font-size: 42px;
+  letter-spacing: .4px;
+  text-transform: none;
+  line-height: 1.2em;
+  margin-top: 0;
+}
+
+.serviceDesc {
+  font-weight: 300;
+  font-style: normal;
+  font-size: 17px;
+  letter-spacing: .5px;
+  line-height: 1.6em;
+  color: #1f1f1f;
+  margin: 0 45px 0 45px;
+}
+
+.contactInfo {
+  margin: 35px 0 70px 0;
+  font-size: 20px;
+}
+
+.mission {
+  font-weight: 100;
+  font-style: normal;
+  font-size: 32px;
+  letter-spacing: .2px;
+  text-transform: none;
+  line-height: 1.2em;
+  padding: 15px 95px 0px 95px;
+  margin: 0 40px 0 40px;
+}
+
+.servicesWrapper {
+  display: grid;
+  grid-template-columns: 28% 28% 28%;
+  justify-items: center;
+  justify-content: center;
+  grid-gap: 50px;
+}
+
+.serviceImg {
+  height: 320px;
+  width: 320px;
+  cursor: pointer;
+  box-shadow: 2px 4px 14px 0 rgba(0, 0, 0, 0.19);
+  display: inline;
+  margin: 0 auto;
+}
+
+.showroomInfo {
+  margin-bottom: 60px;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  line-height: 1.6em;
+  color: #1f1f1f;
+}
+
+.storeImage {
+  background-color: rgba(32, 26, 22, .6);
+  height: 450px;
+  margin-top: 80px;
+}
+
+.storeFrontImg {
+  width: 100%;
+  height: 450px;
+  position: relative;
+  bottom: 450px;
+  z-index: -999;
+  opacity: .9;
+}
+
+.storeImage .imageOverlay {
+  height: 450px;
+}
+
+.storeImage .splashDesc {
+  animation: feature-text-anim .75s ease-in-out;
+  position: relative;
+  width: 100%;
+  max-width: 956px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 32px;
+  bottom: 800px;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+}
+
+.storeImage p {
+  font-weight: 100;
+  font-style: normal;
+  font-size: 28px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  line-height: 1.3em;
+  color: #9c9999;
+  margin: 20px auto;
+  -webkit-transform: translatez(0);
+  z-index: -0;
+}
+
+.storeImage strong {
+  font-weight: 100;
+  font-style: normal;
+  font-size: 86px;
+  letter-spacing: 0px;
+  text-transform: none;
+  line-height: 1.1em;
+  color: #eee;
+  z-index: -0;
+}
+
+.storeInfo {
+  width: 80%;
+  margin: 60px auto;
+}
+
+.storeInfo h1 {
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+.storeInfo h3 {
+  margin-bottom: 80px;
+}
+
+.topImages {
+  display: flex;
+  justify-content: space-between;
+}
+
+.topImages .store1 {
+  width: 47%;
+  height: 600px;
+  box-shadow: 2px 4px 14px 0 rgba(0, 0, 0, 0.19);
+}
+
+.topImages .store2 {
+  width: 47%;
+  height: 600px;
+  box-shadow: 2px 4px 14px 0 rgba(0, 0, 0, 0.19);
+}
+
+.topImages .store3,
+.topImages .store4 {
+  margin-top: 60px;
+  width: 100%;
+  height: 80%;
+  box-shadow: 2px 4px 14px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media screen and (max-width: 2560px) {
+  .homeServices {
+    margin: -185px 0 60px 0;
+  }
+
+  .homeServices .store3,
+  .homeServices .store4 {
+    margin-top: 200px;
+    width: 100%;
+    height: 80%;
+  }
+
+  .homeServices .topImages .store1,
+  .homeServices .topImages .store2 {
+    height: 700px;
+  }
+
+  .homeServices .storeImage {
+    height: 650px;
+  }
+
+  .homeServices .storeImage .storeFrontImg {
+    height: 650px;
+  }
+
+  .homeServices .storeImage .splashDesc {
+    bottom: 900px;
+  }
+
+
+  .homeServices .servicesWrapper .serviceImg {
+    height: 400px;
+    width: 475px;
+  }
+
+  .homeServices .servicesWrapper .serviceDesc {
+    margin: 0 115px 0 115px;
+  }
+}
+
+
+@media screen and (max-width: 1920px) {
+  .homeServices {
+    margin: -280px 0 60px 0;
+  }
+
+  .homeServices .servicesWrapper .serviceImg {
+    height: 375px;
+  }
+
+  .homeServices .servicesWrapper .serviceDesc {
+    margin: 0 60px 0 60px;
+  }
+
+  .homeServices .store3,
+  .homeServices .store4 {
+    height: 60%;
+    width: 100%;
+
+  }
+
+  .homeServices .topImages .store1,
+  .homeServices .topImages .store2 {
+    height: 600px;
+  }
+}
+
+
+@media screen and (max-width: 1440px) {
+  .homeServices .servicesWrapper .serviceImg {
+    height: 320px;
+    width: 320px;
+  }
+
+  .homeServices .servicesWrapper .serviceDesc {
+    margin: 0 40px 0 40px;
+  }
+
+  .homeServices .topImages .store1,
+  .homeServices .topImages .store2 {
+    height: 500px;
+  }
+
+  .homeServices .store3,
+  .homeServices .store4 {
+    width: 100%;
+    height: 60%;
+    margin-top: 50px;
+  }
+}
+
+
+@media screen and (max-width: 1150px) {
+  .homeServices {
+    margin: -220px 0 60px 0;
+  }
+
+  .homeServices h1 {
+    font-size: 32px;
+  }
+
+  .homeServices .mission {
+    font-size: 16px;
+    margin: 0 10px 0 10px;
+    padding: 15px 45px 0px 45px;
+  }
+
+  .homeServices .contactInfo {
+    margin: 35px 7px 70px 7px;
+  }
+
+  .homeServices .servicesWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .homeServices .servicesWrapper .service {
+    margin-bottom: 40px;
+  }
+
+  .homeServices .servicesWrapper .serviceImg {
+    width: 50%;
+  }
+
+  .homeServices .servicesWrapper .serviceDesc {
+    margin: 0 25px 0 25px;
+  }
+
+  .homeServices .storeInfo {
+    width: 50%;
+  }
+
+  .homeServices .storeInfo .topImages {
+    flex-direction: column;
+  }
+
+  .homeServices .storeInfo .store2 {
+    margin-bottom: 45px;
+  }
+
+  .homeServices .storeInfo .store1,
+  .homeServices .storeInfo .store2 {
+    width: 100%;
+    height: 350px;
+  }
+
+
+  .homeServices .storeImage .splashDesc strong {
+    font-size: 50px;
+  }
+
+  .homeServices .storeImage .splashDesc p {
+    font-size: 22px;
+  }
+
+  .homeServices .store3,
+  .homeServices .store4 {
+    height: 350px;
+  }
+}
+
+@media screen and (max-width: 438px) {
+  .homeServices {
+    margin: -220px 0 60px 0;
+  }
+
+  .homeServices h1 {
+    font-size: 32px;
+  }
+
+  .homeServices .mission {
+    font-size: 16px;
+    margin: 0 10px 0 10px;
+    padding: 15px 45px 0px 45px;
+  }
+
+  .homeServices .contactInfo {
+    margin: 35px 7px 70px 7px;
+  }
+
+  .homeServices .servicesWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .homeServices .servicesWrapper .service {
+    margin-bottom: 40px;
+  }
+
+  .homeServices .servicesWrapper .serviceImg {
+    width: 90%;
+  }
+
+  .homeServices .servicesWrapper .serviceDesc {
+    margin: 0 25px 0 25px;
+  }
+
+
+  .homeServices .storeImage .splashDesc strong {
+    font-size: 50px;
+  }
+
+  .homeServices .storeImage .splashDesc p {
+    font-size: 22px;
+  }
+
+  .homeServices .storeInfo {
+    width: 90%;
+  }
+
+  .homeServices .storeInfo .topImages {
+    flex-direction: column;
+  }
+
+  .homeServices .storeInfo .store1,
+  .homeServices .storeInfo .store2 {
+    width: 100%;
+    height: 350px;
+  }
+
+  .homeServices .storeInfo .store2 {
+    margin-bottom: 45px;
+  }
+
+
+  .homeServices .store3 {
+    height: 350px;
+  }
+}
+
+
+@media screen and (max-width: 438px) {
+  .homeServices {
+    margin: -250px 0 60px 0;
+  }
+
+  .homeServices h1 {
+    font-size: 30px;
+  }
+
+  .homeServices .mission {
+    padding: 15px 10px 0px 10px;
+  }
+
+  .homeServices .servicesWrapper .serviceDesc {
+    margin: 0 18px 0 18px;
+  }
+
+  .homeServices .servicesWrapper .serviceImg {
+    width: 90%;
+    height: 275px;
+  }
+
+  .homeServices .storeImage {
+    height: 350px;
+    margin-top: 20px;
+  }
+
+  .homeServices .storeImage .storeFrontImg {
+    height: 350px;
+  }
+
+  .homeServices .storeImage .imageOverlay {
+    height: 450px;
+  }
+
+  .homeServices .storeImage .splashDesc {
+    bottom: 710px;
+  }
+
+  .homeServices .storeImage .splashDesc strong {
+    font-size: 40px;
+  }
+
+  .homeServices .storeInfo {
+    margin-top: 20px;
+  }
+
+  .homeServices .storeInfo h1 {
+    margin-top: 45px;
+  }
+
+  .homeServices .storeInfo .store1,
+  .homeServices .storeInfo .store2,
+  .homeServices .storeInfo .store3,
+  .homeServices .storeInfo .store4 {
+    height: 250px;
+  }
+
+  .homeServices .storeInfo .store3,
+  .homeServices .storeInfo .store4 {
+    margin-top: 45px;
+  }
+
+}

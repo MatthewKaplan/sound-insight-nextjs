@@ -1,0 +1,144 @@
+.splashPage {
+  overflow: hidden;
+}
+
+.splashImg {
+  width: 100%;
+  height: 720px;
+  opacity: 0.75;
+  box-shadow: inset 0px 0px 1px 3px black;
+  margin: 0 auto;
+  transform: translateY(0%);
+  position: relative;
+  z-index: 0;
+  transition: 2s opacity ease-in-out;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.splashImg:hover {
+  opacity: 0.85;
+}
+
+.colorOverlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 720px;
+  background-color: rgba(32, 26, 22, .6);
+  z-index: 99;
+}
+
+.splashDesc {
+  animation: feature-text-anim .75s ease-in-out;
+  z-index: 100;
+  position: relative;
+  width: 100%;
+  max-width: 956px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 32px;
+  bottom: 500px;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+}
+
+.splashDesc p {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 28px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  line-height: 1.3em;
+  color: #9c9999;
+  margin: 20px auto;
+  -webkit-transform: translatez(0);
+}
+
+.splashDesc strong {
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 86px;
+  letter-spacing: 0px;
+  text-transform: none;
+  line-height: 1.1em;
+  color: #eee;
+}
+
+@media screen and (max-width: 2560px) {
+  .splashPage .colorOverlay {
+    height: 1000px;
+  }
+
+  .splashPage .splashImg {
+    height: 1000px;
+  }
+
+  .splashPage .splashDesc {
+    bottom: 650px;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .splashPage .colorOverlay {
+    height: 800px;
+  }
+
+  .splashPage .splashImg {
+    height: 800px;
+  }
+
+  .splashPage .splashDesc {
+    bottom: 525px;
+  }
+}
+
+@media screen and (max-width: 438px) {
+  .splashPage .colorOverlay {
+    height: 600px;
+  }
+
+  .splashPage .splashImg {
+    height: 600px;
+  }
+
+  .splashPage .splashDesc {
+    bottom: 425px;
+  }
+
+  .splashPage .splashDesc p {
+    font-size: 18px;
+  }
+
+  .splashPage .splashDesc strong {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .splashPage .colorOverlay {
+    height: 500px;
+  }
+
+  .splashPage .splashImg {
+    height: 500px;
+  }
+
+  .splashPage .splashDesc {
+    bottom: 375px;
+  }
+
+  .splashPage .splashDesc p {
+    font-size: 16px;
+  }
+
+  .splashPage .splashDesc strong {
+    font-size: 34px;
+  }
+}
