@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import classes from './styles/splashImage.module.css'
 
 type Props = {
@@ -11,7 +12,7 @@ const SplashImageComponent = (props: Props) => {
     <div className={classes.splashPage}>
       <div className={classes.parentContainer}>
         <div className={classes.colorOverlay} />
-        <div style={{ backgroundImage: `url(${props.imageLink})` }} className={classes.splashImg} />
+        <Image src={props.imageLink} layout='fill' objectFit='cover' className={classes.splashImg} priority />
         <div className={classes.splashDesc}>
           <p>{props.subTitle}</p>
           <p>
