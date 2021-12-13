@@ -6,8 +6,8 @@ import { GetStaticProps } from 'next';
 import { Box } from "@chakra-ui/layout";
 import classes from './styles/home.module.css';
 import { getPageById } from '../helper/api-util';
-import SplashImageComponent from '../components/splashImage';
 import { HomePageData } from '../types/homePage.type';
+import SplashImageComponent from '../components/splashImage';
 
 const HomePage = (props: HomePageData) => {
   return (

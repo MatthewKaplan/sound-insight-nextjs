@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Sound Insight: Custom AV Solution & Design</title>
+        <title>Sound Insight - Custom AV Solution & Design</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="A passion for audio and video since 2002! We design thoughtful, intuitive systems." />
         <meta property="og:title" content="Sound Insight" />

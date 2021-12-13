@@ -1,4 +1,5 @@
 import React from "react";
+import Head from 'next/head';
 import { useState } from "react";
 import { GetStaticProps } from "next";
 import { getPageById } from "../helper/api-util";
@@ -23,6 +24,10 @@ const ContactPage = (props: ContactPageData) => {
 
   return (
     <div className={classes.contactPage}>
+      <Head>
+        <title>Sound Insight - Contact Us</title>
+        <meta name="description" content="Contact Sound Insight for your next AV design, install or service for your home, business, or entertainment space. FREE ESTIMATES! #1 Audio and Video on Long Island." />
+      </Head>
       <SplashImageComponent altText="Sound Insight lobby with TVs and speakers" imageLink={props.SplashImg} title={props.SplashTitle} subTitle={props.SplashSubTitle} />
       <section className={classes.contactPageContents}>
         <h1>{props.ContactTitle}</h1>

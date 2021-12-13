@@ -1,10 +1,11 @@
-import classes from './styles/products.module.css';
-import { GetStaticProps } from "next";
 import React from "react";
-import CarouselComponent from "../components/carousel";
-import SplashImageComponent from "../components/splashImage";
+import Head from 'next/head';
+import { GetStaticProps } from "next";
 import { getPageById } from "../helper/api-util";
+import classes from './styles/products.module.css';
+import CarouselComponent from "../components/carousel";
 import { ProductPageData } from "../types/productPageData";
+import SplashImageComponent from "../components/splashImage";
 
 const ProductPage = (props: ProductPageData) => {
   const videoImgs = props.videoImages.map((img) => !img.endsWith('g') ? `${img}g` : img)
@@ -12,6 +13,10 @@ const ProductPage = (props: ProductPageData) => {
 
   return (
     <div>
+      <Head>
+        <title>Sound Insight - Audio & Video Products</title>
+        <meta name="description" content="We carry the highest quality products for all your audio and video needs." />
+      </Head>
       <SplashImageComponent altText="Large Stero system" imageLink={props.SplashImg} title={props.SplashTitle} subTitle={props.SplashSubTitle} />
       <div className={classes.productsPage}>
         <section className={classes.products}>

@@ -1,15 +1,20 @@
 import clsx from 'clsx';
 import Image from 'next/image';
-import classes from './styles/about.module.css';
 import React from "react";
+import Head from 'next/head';
 import { GetStaticProps } from "next";
-import SplashImageComponent from "../components/splashImage";
+import classes from './styles/about.module.css';
 import { getPageById } from "../helper/api-util";
 import { AboutPageData } from '../types/aboutPage.type';
+import SplashImageComponent from "../components/splashImage";
 
 const AboutPage = (props: AboutPageData) => {
   return (
     <div className={classes.aboutPage}>
+      <Head>
+        <title>Sound Insight - About Us</title>
+        <meta name="description" content="Partnering with the top brands in the audiovisual industry, we provide top residential audio, video, and automation design and installation services. We provide our clients with a complete range of audio-video solutions, smart home automation, network, and IT solutions." />
+      </Head>
       <SplashImageComponent altText="Sound Insight store front location in Huntington, NY" imageLink={props.SplashImg} title={props.SplashTitle} subTitle={props.SplashSubTitle} />
       <div className={classes.aboutInfo}>
         <h1>{props.AboutTitle}</h1>

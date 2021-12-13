@@ -1,5 +1,6 @@
 import clsx from 'clsx';
-import Link from 'next/link'
+import Link from 'next/link';
+import Head from 'next/head';
 import Image from 'next/image';
 import { GetStaticProps } from "next";
 import { Box } from "@chakra-ui/layout";
@@ -12,6 +13,10 @@ import SplashImageComponent from '../../components/splashImage';
 const ServicesPage = (props: ServicePageData) => {
   return (
     <div>
+      <Head>
+        <title>Sound Insight - Audio, Video, Home Automation Services</title>
+        <meta name="description" content="We provide our clients with a complete range of audio-video solutions, smart home automation, security solutions, phone systems, and IT solutions. Sound Insight is New York's #1 in AV Solutions." />
+      </Head>
       <SplashImageComponent altText="Living room with TV on the wall" imageLink={props.SplashImg} title={props.SplashTitle} subTitle={props.SplashSubTitle} />
       <Box className={classes.servicesProvided}>
         <section className={classes.header}>

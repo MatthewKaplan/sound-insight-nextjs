@@ -38,7 +38,8 @@ const HeaderComponent = () => {
                   height="85" 
                   width="200" 
                   className={classes.logo}
-                  alt='Full size Sound-Insight company logo' />
+                  alt='Full size Sound-Insight company logo'
+                  priority />
               </a>
             </Link>
             <ul className={classes.mainNavOptions}>
@@ -89,7 +90,8 @@ const HeaderComponent = () => {
                   height={50} 
                   width={50} 
                   className={classes.headerLogo}
-                  alt='A smaller Sound-Insight company logo for mobile device' />
+                  alt='A smaller Sound-Insight company logo for mobile device'
+                  priority />
               </a>
             </Link>
           </section>

@@ -1,11 +1,12 @@
-import classes from './styles/careers.module.css';
-import { GetStaticProps } from "next";
 import React from "react";
-import SplashImageComponent from "../components/splashImage";
-import { getPageById } from "../helper/api-util";
-import { CareersPageData } from '../types/careersPage.type';
+import Head from 'next/head';
 import { useState } from "react";
+import { GetStaticProps } from "next";
+import { getPageById } from "../helper/api-util";
+import classes from './styles/careers.module.css';
+import { CareersPageData } from '../types/careersPage.type';
 import ApplicationForm from '../components/applicationForm';
+import SplashImageComponent from "../components/splashImage";
 
 const CareersPage = (props: CareersPageData) => {
   const [application, setApplication] = useState<boolean>(false);
