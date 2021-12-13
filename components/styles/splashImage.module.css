@@ -4,7 +4,7 @@
 
 .splashImg {
   width: 100%;
-  height: 720px;
+  height: 700px;
   opacity: 0.75;
   box-shadow: inset 0px 0px 1px 3px black;
   margin: 0 auto;
@@ -14,6 +14,12 @@
   transition: 2s opacity ease-in-out;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.parentContainer {
+  height: 700px;
+  width: 100%;
+  border: 3px solid red;
 }
 
 .splashImg:hover {
@@ -26,7 +32,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  height: 720px;
+  height: 700px;
   background-color: rgba(32, 26, 22, .6);
   z-index: 99;
 }
@@ -73,39 +79,43 @@
 
 @media screen and (max-width: 2560px) {
   .splashPage .colorOverlay {
-    height: 1000px;
+    height: 700px;
   }
 
   .splashPage .splashImg {
-    height: 1000px;
+    height: 700px;
   }
 
   .splashPage .splashDesc {
-    bottom: 650px;
+    bottom: 465px;
   }
 }
 
-@media screen and (max-width: 1440px) {
-  .splashPage .colorOverlay {
-    height: 800px;
+@media screen and (max-width: 900px) {
+  .splashPage .splashDesc p {
+    font-size: 24px;
   }
 
-  .splashPage .splashImg {
-    height: 800px;
+  .splashPage .splashDesc strong {
+    font-size: 58px;
   }
 
   .splashPage .splashDesc {
-    bottom: 525px;
+    bottom: 385px;
   }
 }
 
 @media screen and (max-width: 438px) {
+  .parentContainer {
+    height: 500px;
+  }
+
   .splashPage .colorOverlay {
-    height: 600px;
+    height: 500px;
   }
 
   .splashPage .splashImg {
-    height: 600px;
+    height: 500px;
   }
 
   .splashPage .splashDesc {

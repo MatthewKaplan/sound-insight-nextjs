@@ -12,6 +12,10 @@
   overflow: scroll;
 }
 
+.demoRequestForm input {
+  border: 1px solid black;
+}
+
 .demoRequestForm .formInformation {
   background-color: white;
   border: 1px solid black;
@@ -131,7 +135,7 @@
   opacity: .8;
 }
 
-@media screen and (max-width: 438px) {
+@media screen and (max-width: 1000px) {
   .demoRequestForm .formInformation {
     max-width: 100%;
     max-height: 100%;

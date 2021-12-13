@@ -40,12 +40,10 @@ const SurveyRequestForm = ({ closeForm }: Props) => {
           <h3 className={classes.nameLabel}>Name*</h3>
           <div className={classes.nameForms}>
             <section className={classes.fistNameForm}>
-              <input type="text" className={classes.firstName} name="firstName" value={contactInfo.firstName} id="form-input" onChange={inputHandler} /> <br />
-              <label className={classes.nameLabel}>First Name</label>
+              <input placeholder='First Name' type="text" className={classes.firstName} name="firstName" value={contactInfo.firstName} id="form-input" onChange={inputHandler} /> <br />
             </section>
             <section className={classes.lastNameForm}>
-              <input type="text" className={classes.lastName} name="lastName" value={contactInfo.lastName} id="form-input" onChange={inputHandler} /> <br />
-              <label className={classes.nameLabel}>Last Name</label>
+              <input placeholder='Last Name' type="text" className={classes.lastName} name="lastName" value={contactInfo.lastName} id="form-input" onChange={inputHandler} /> <br />
             </section>
           </div>
           <div className={classes.desiredDemo}>
@@ -58,7 +56,7 @@ const SurveyRequestForm = ({ closeForm }: Props) => {
               cols={60}
               rows={10}
               placeholder="In as much detail as possible, tell us about your job."
-              onChange={(e) => setContactInfo({...contactInfo, jobDetail: e.target.value })}
+              onChange={(e) => setContactInfo({ ...contactInfo, jobDetail: e.target.value })}
             />
           </div>
           <div className={classes.requestedDate}>

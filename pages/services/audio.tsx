@@ -39,7 +39,7 @@ const AudioPage = (props: AudioPageData) => {
         <div className={classes.topBreakLine}>
           <hr className={classes.topPageBreak} />
         </div>
-        <CarouselComponent icons={props.audioImages} iconNames={props.audioDetails} links={props.audioLinks}/>
+        <CarouselComponent icons={props.audioImages} iconNames={props.audioDetails} links={props.audioLinks} />
         <div className={classes.bottomBreakLine}>
           <hr className={classes.bottomPageBreak} />
         </div>

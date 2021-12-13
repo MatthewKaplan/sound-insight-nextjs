@@ -3,7 +3,7 @@ import { useState } from "react";
 import { GetStaticProps } from "next";
 import { getPageById } from "../helper/api-util";
 import classes from './styles/contact.module.css';
-import ContactForm from '../components/ContactForm';
+import ContactForm from '../components/contactForm';
 import { ContactPageData } from '../types/contactPage.type';
 import DemoRequestForm from '../components/demoRequestForm';
 import SplashImageComponent from "../components/splashImage";

@@ -16,7 +16,7 @@ const CarouselComponent = (props: Props) => {
 
   const baseChildren = props.icons.map((image, i) =>
     <div key={i} className={classes.carouselDiv}>
-      <Image src={image} width={250} height={250} />
+      <Image src={image} width={250} height={250} alt={`${props.iconNames[i]} television/speakers`} />
       <a href={props.links[i]} target="_blank">
         <p className={classes.legend}>{props.iconNames[i]}</p>
       </a>
@@ -48,10 +48,17 @@ const CarouselComponent = (props: Props) => {
   });
   return (
     <div className={classes.carouselContainer}>
-      <Carousel
-        centerMode
-        centerSlidePercentage={number('centerSlidePercentage', 40, {}, mainGroupId)}
-        {...getConfigurableProps()}>{baseChildren}</Carousel>
+      <div className={classes.browserCarousel}>
+        <Carousel
+          centerMode
+          centerSlidePercentage={number('centerSlidePercentage', 40, {}, mainGroupId)}
+          {...getConfigurableProps()}>{baseChildren}</Carousel>
+      </div>
+      <div className={classes.mobileCarousel}>
+        <Carousel
+          centerMode
+          {...getConfigurableProps()}>{baseChildren}</Carousel>
+      </div>
     </div>
   );
 };

@@ -11,6 +11,10 @@
   z-index: 999;
 }
 
+.contactForm input {
+  border: 1px solid black;
+}
+
 .contactForm .formInformation {
   background-color: white;
   border: 1px solid black;
@@ -95,7 +99,7 @@
   opacity: .8;
 }
 
-@media screen and (max-width: 438px) {
+@media screen and (max-width: 1000px) {
   .contactForm .formInformation {
     max-width: 100%;
     max-height: 100%;

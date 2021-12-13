@@ -1,5 +1,5 @@
 .homeServices {
-  margin: -275px 0 60px 0;
+  margin: 20px 0 60px 0;
   font-family: "PT Sans", sans-serif;
   text-align: center;
 }
@@ -128,7 +128,6 @@
   line-height: 1.3em;
   color: #9c9999;
   margin: 20px auto;
-  -webkit-transform: translatez(0);
   z-index: -0;
 }
 
@@ -188,10 +187,6 @@
 }
 
 @media screen and (max-width: 2560px) {
-  .homeServices {
-    margin: -185px 0 60px 0;
-  }
-
   .homeServices .store3,
   .homeServices .store4 {
     margin-top: 200px;
@@ -229,10 +224,6 @@
 
 
 @media screen and (max-width: 1920px) {
-  .homeServices {
-    margin: -280px 0 60px 0;
-  }
-
   .homeServices .servicesWrapper .serviceImg {
     height: 375px;
   }
@@ -280,10 +271,6 @@
 
 
 @media screen and (max-width: 1150px) {
-  .homeServices {
-    margin: -220px 0 60px 0;
-  }
-
   .homeServices h1 {
     font-size: 32px;
   }
@@ -348,11 +335,13 @@
   }
 }
 
-@media screen and (max-width: 438px) {
-  .homeServices {
-    margin: -220px 0 60px 0;
+@media screen and (max-width: 555px) {
+  .homeServices .storeInfo {
+    width: 75%;
   }
+}
 
+@media screen and (max-width: 438px) {
   .homeServices h1 {
     font-size: 32px;
   }
@@ -419,10 +408,6 @@
 
 
 @media screen and (max-width: 438px) {
-  .homeServices {
-    margin: -250px 0 60px 0;
-  }
-
   .homeServices h1 {
     font-size: 30px;
   }
@@ -445,6 +430,11 @@
     margin-top: 20px;
   }
 
+  .homeServices .storeImage .storeFront {
+    height: 350px;
+    max-height: 350px;
+  }
+
   .homeServices .storeImage .storeFrontImg {
     height: 350px;
   }
@@ -454,7 +444,7 @@
   }
 
   .homeServices .storeImage .splashDesc {
-    bottom: 710px;
+    bottom: 370px;
   }
 
   .homeServices .storeImage .splashDesc strong {

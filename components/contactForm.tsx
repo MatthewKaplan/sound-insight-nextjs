@@ -48,9 +48,8 @@ const ContactForm = ({ closeForm }: Props) => {
                 required
                 value={contactInfo.firstName}
                 onChange={inputHandler}
+                placeholder='First Name'
               />
-              <br />
-              <label className={classes.nameLabel}>First Name</label>
             </section>
             <section className={classes.lastNameForm}>
               <input
@@ -61,9 +60,8 @@ const ContactForm = ({ closeForm }: Props) => {
                 required
                 value={contactInfo.lastName}
                 onChange={inputHandler}
+                placeholder='Last Name'
               />
-              <br />
-              <label className={classes.nameLabel}>Last Name</label>
             </section>
           </div>
           <div>

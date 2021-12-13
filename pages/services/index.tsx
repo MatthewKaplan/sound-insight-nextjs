@@ -23,7 +23,7 @@ const ServicesPage = (props: ServicePageData) => {
           <div className={classes.audioService}>
             <Link href="/services/audio">
               <a>
-                <Image src={props.AudioImg} alt="Living room with a pair of white speakers" className={classes.topServiceImg} height={600} width={1200} />
+                <Image src={props.AudioImg} alt="Living room with a pair of white speakers" className={classes.topServiceImg} height={600} width={1400} />
                 <h3>{props.AudioTitle}</h3>
               </a>
             </Link>

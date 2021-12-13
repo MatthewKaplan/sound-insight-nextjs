@@ -47,9 +47,8 @@ const DemoRequestForm = ({ closeForm }: Props) => {
                 value={contactInfo.firstName}
                 name="firstName"
                 onChange={inputHandler}
+                placeholder='First Name'
               />
-              <br />
-              <label className={classes.nameLabel}>First Name</label>
             </section>
             <section className={classes.lastNameForm}>
               <input
@@ -59,9 +58,8 @@ const DemoRequestForm = ({ closeForm }: Props) => {
                 value={contactInfo.lastName}
                 name="lastName"
                 onChange={inputHandler}
-              />{' '}
-              <br />
-              <label className={classes.nameLabel}>Last Name</label>
+                placeholder='Last Name'
+              />
             </section>
           </div>
           <div className={classes.desiredDemo}>

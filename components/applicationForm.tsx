@@ -20,21 +20,21 @@ const ApplicationForm = ({ closeForm }: Props) => {
     let textValue = value;
     let key = name;
 
-    setApplicationInfo({ ...applicationInfo, [key]: textValue})
+    setApplicationInfo({ ...applicationInfo, [key]: textValue })
   };
 
   return (
     <div className={classes.contactForm}>
       <div className={classes.formInformation}>
         <div className={classes.float}>
-        <Image 
-          src="https://i.imgur.com/FvyNCGT.png" 
-          alt="Cross icon which is used to exit the fourm" 
-          height={25} 
-          width={25}
-          className={classes.closeForm}
-          onClick={() => closeForm(false)} />
-          </div>
+          <Image
+            src="https://i.imgur.com/FvyNCGT.png"
+            alt="Cross icon which is used to exit the fourm"
+            height={25}
+            width={25}
+            className={classes.closeForm}
+            onClick={() => closeForm(false)} />
+        </div>
         <form action={`https://formspree.io/sales@sound-insight.com`} method="POST">
           <h1>Application</h1>
           <h3 className={classes.nameLabel}>Name*</h3>
@@ -48,9 +48,8 @@ const ApplicationForm = ({ closeForm }: Props) => {
                 required
                 value={applicationInfo.firstName}
                 onChange={inputHandler}
+                placeholder='First Name'
               />
-              <br />
-              <label className={classes.nameLabel}>First Name</label>
             </section>
             <section className={classes.lastNameForm}>
               <input
@@ -61,9 +60,8 @@ const ApplicationForm = ({ closeForm }: Props) => {
                 required
                 value={applicationInfo.lastName}
                 onChange={inputHandler}
+                placeholder='Last Name'
               />
-              <br />
-              <label className={classes.nameLabel}>Last Name</label>
             </section>
           </div>
           <div>
@@ -107,7 +105,7 @@ const ApplicationForm = ({ closeForm }: Props) => {
               cols={60}
               rows={10}
               value={applicationInfo.message}
-              onChange={(e) => setApplicationInfo({...applicationInfo, message: e.target.value})}
+              onChange={(e) => setApplicationInfo({ ...applicationInfo, message: e.target.value })}
             />
           </div>
           <input type="submit" value="Submit" className={classes.submitBtn} />

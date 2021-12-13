@@ -5,7 +5,7 @@
 
 .aboutPage .aboutInfo {
   max-width: 75%;
-  margin: -150px auto 60px auto;
+  margin: 20px auto 60px auto;
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -24,11 +24,6 @@
   border-bottom-right-radius: 120px 24px;
 }
 
-.aboutPage .aboutImg {
-  width: 35%;
-  height: 100%;
-}
-
 .aboutPage .aboutSection {
   height: auto;
   margin-bottom: 60px;
@@ -45,18 +40,10 @@
     margin-bottom: 200px;
   }
 
-  .aboutPage .aboutImg {
-    height: 350px;
-  }
-
   .aboutPage p {
     font-size: 28px;
     margin-top: 10px;
-    max-width: 700px;
-  }
-
-  .aboutPage .aboutInfo {
-    margin: -99px auto 60px auto;
+    max-width: 60%;
   }
 }
 
@@ -64,9 +51,20 @@
   .aboutPage p {
     font-size: 24px;
   }
+}
 
-  .aboutPage .aboutInfo {
-    margin: -150px auto 60px auto;
+@media screen and (max-width: 1467px) {
+  .aboutPage .aboutInfo .aboutSection .flex div {
+    max-height: 0px;
+  }
+
+  .aboutPage .aboutSection {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .aboutPage p {
+    max-width: 100%;
   }
 }
 
@@ -74,28 +72,11 @@
   .aboutPage p {
     font-size: 20px;
   }
-
-  .aboutPage .aboutInfo {
-    margin: -133px auto 60px auto;
-  }
 }
 
 @media screen and (max-width: 438px) {
   .aboutPage .aboutInfo {
-    margin: -140px auto 30px auto;
     max-width: 95%;
-  }
-
-  .aboutPage .aboutImg {
-    width: 100%;
-    height: 225px;
-  }
-
-  .aboutPage .about1Img,
-  .aboutPage .about2Img,
-  .aboutPage .about3Img {
-    float: none;
-    margin: 0 auto;
   }
 
   .aboutPage .aboutSection {

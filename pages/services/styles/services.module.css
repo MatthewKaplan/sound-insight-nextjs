@@ -1,6 +1,6 @@
 .servicesProvided {
   height: auto;
-  margin: -280px 0 60px 0;
+  margin: 20px 0 60px 0;
   font-family: "PT Sans", sans-serif;
 }
 
@@ -102,10 +102,6 @@
 }
 
 @media screen and (max-width: 2560px) {
-  .servicesProvided {
-    margin: -205px 0 60px 0;
-  }
-
   .servicesProvided .topServiceImg {
     height: 1100px;
   }
@@ -118,10 +114,6 @@
 }
 
 @media screen and (max-width: 1920px) {
-  .servicesProvided {
-    margin: -285px 0 60px 0;
-  }
-
   .servicesProvided .topServiceImg {
     height: 900px;
   }
@@ -144,10 +136,6 @@
 }
 
 @media screen and (max-width: 438px) {
-  .servicesProvided {
-    margin: -265px 0 20px 0;
-  }
-
   .servicesProvided .header {
     width: 95%;
   }

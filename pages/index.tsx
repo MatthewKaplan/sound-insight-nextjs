@@ -73,7 +73,7 @@ const HomePage = (props: HomePageData) => {
         <section className={classes.storeImage}>
           <div className={classes.storeFront}>
             <div className={classes.imageOverlay} />
-            <Image src={props.StoreImg} width={1000} height={450} alt="Sound Insight store front" layout='fill' className={classes.storeFrontImg} />
+            <Image src={props.StoreImg} alt="Sound Insight store front" layout='fill' objectFit='cover' className={classes.storeFrontImg} />
             <div className={classes.splashDesc}>
               <p>
                 <strong>{props.Showroom}</strong>
@@ -88,10 +88,10 @@ const HomePage = (props: HomePageData) => {
             {props.ShowroomInfo}
           </p>
           <div className={classes.topImages}>
-            <Image src={props.StoreImg1} width={500} height={500} alt="Inside of Sound Insight" className={classes.store1} />
-            <Image src={props.StoreImg2} width={500} height={500} alt="Inside of Sound Insight" className={classes.store2} />
-            <Image src={props.StoreImg3} width={500} height={500} alt="Inside of Sound Insight" className={classes.store1} />
-            <Image src={props.StoreImg4} width={500} height={500} alt="Inside of Sound Insight" className={classes.store2} />
+            <Image src={props.StoreImg1} width={250} height={250} alt="Inside of Sound Insight" className={classes.store1} />
+            <Image src={props.StoreImg2} width={250} height={250} alt="Inside of Sound Insight" className={classes.store2} />
+            <Image src={props.StoreImg3} width={250} height={250} alt="Inside of Sound Insight" className={classes.store1} />
+            <Image src={props.StoreImg4} width={250} height={250} alt="Inside of Sound Insight" className={classes.store2} />
           </div>
         </section>
       </Box>
