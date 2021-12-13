@@ -1,6 +1,6 @@
-import classes from './styles/footer.module.css';
 import React from 'react';
 import Link from 'next/link'
+import classes from './styles/footer.module.css';
 
 const FooterComponent = () => {
   return (
@@ -11,31 +11,31 @@ const FooterComponent = () => {
             AUDIO
           </a>
         </Link>
-        <img src="https://i.imgur.com/o6AzO0S.png" alt="circle" className={classes.dot} />
+        <div className={classes.dividerDot} />
         <Link href="/services/video">
           <a className={classes.link}>
             VIDEO
           </a>
         </Link>
-        <img src="https://i.imgur.com/o6AzO0S.png" alt="circle" className={classes.dot} />
+        <div className={classes.dividerDot} />
         <Link href="/services/automation">
           <a className={classes.link}>
             AUTOMATION
           </a>
         </Link>
-        <img src="https://i.imgur.com/o6AzO0S.png" alt="circle" className={classes.dot} />
+        <div className={classes.dividerDot} />
         <Link href="/services/phone-systems">
           <a className={classes.link}>
             PHONES
           </a>
         </Link>
-        <img src="https://i.imgur.com/o6AzO0S.png" alt="circle" className={classes.dot} />
+        <div className={classes.dividerDot} />
         <Link href="/services/security">
           <a className={classes.link}>
             SECURITY
           </a>
         </Link>
-        <img src="https://i.imgur.com/o6AzO0S.png" alt="circle" className={classes.dot} />
+        <div className={classes.dividerDot} />
         <Link href="/careers">
           <a className={classes.link}>
             CAREERS

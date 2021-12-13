@@ -59,6 +59,19 @@
   box-shadow: 2px 4px 14px 0 rgba(0, 0, 0, 0.19);
   display: inline;
   margin: 0 auto;
+  max-height: 500px;
+  max-width: 500px;
+  /* border-radius: 25% 100% 10% 99% / 0% 100% 10% 93%; */
+  /* border-radius: 100% 100% 10% 99% / 0% 100% 10% 93%; */
+  /* border-radius: 100% 100% 97% 99% / 0% 100% 100% 93%; */
+  border-radius: 100% 100% 97% 0% / 58% 0% 100% 20%;
+}
+
+.storeFront {
+  max-height: 650px;
+  width: 100vw;
+  height: 650px;
+  position: relative;
 }
 
 .showroomInfo {
@@ -99,8 +112,9 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0 auto;
+  z-index: 999;
   padding: 32px;
-  bottom: 800px;
+  bottom: 215px;
   text-align: center;
   text-rendering: optimizeLegibility;
 }
@@ -146,18 +160,23 @@
 .topImages {
   display: flex;
   justify-content: space-between;
+  gap: 15px;
 }
 
 .topImages .store1 {
-  width: 47%;
-  height: 600px;
   box-shadow: 2px 4px 14px 0 rgba(0, 0, 0, 0.19);
+  border-top-left-radius: 37px 140px;
+  border-top-right-radius: 23px 130px;
+  border-bottom-left-radius: 110px 19px;
+  border-bottom-right-radius: 120px 24px;
 }
 
 .topImages .store2 {
-  width: 47%;
-  height: 600px;
   box-shadow: 2px 4px 14px 0 rgba(0, 0, 0, 0.19);
+  border-bottom-left-radius: 37px 140px;
+  border-bottom-right-radius: 23px 130px;
+  border-top-left-radius: 110px 19px;
+  border-top-right-radius: 120px 24px;
 }
 
 .topImages .store3,
@@ -194,7 +213,7 @@
   }
 
   .homeServices .storeImage .splashDesc {
-    bottom: 900px;
+    bottom: 215px;
   }
 
 

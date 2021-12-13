@@ -1,4 +1,4 @@
-.hoursPopup {
+.hoursPopUp {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -7,32 +7,24 @@
   right: 0;
   bottom: 0;
   margin: auto;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #696969;
   z-index: 999;
 }
 
-.hoursPopup .formInformation {
+.hoursPopUp .formInformation {
   background-color: #696969;
   border: 1px solid black;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   font-family: "PT Sans", sans-serif;
   overflow: scroll;
   z-index: 999;
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 100vw;
+  max-height: 100vh;
   margin-top: 0px;
 }
 
-.hoursPopup .closePopup {
-  height: 40px;
-  width: 40px;
-  float: right;
-  margin: 20px 20px 0 0;
-  cursor: pointer;
-}
-
-.hoursPopup table {
+.hoursPopUp table {
   table-layout: fixed;
   margin: 40% auto;
   width: 80%;
@@ -41,31 +33,31 @@
   text-align: center;
 }
 
-.hoursPopup thead th:nth-child(1) {
+.hoursPopUp thead th:nth-child(1) {
   width: 30%;
 }
 
-.hoursPopup thead th:nth-child(2) {
+.hoursPopUp thead th:nth-child(2) {
   width: 20%;
 }
 
-.hoursPopup thead th:nth-child(3) {
+.hoursPopUp thead th:nth-child(3) {
   width: 15%;
 }
 
-.hoursPopup thead th:nth-child(4) {
+.hoursPopUp thead th:nth-child(4) {
   width: 35%;
 }
 
-.hoursPopup th,
-.hoursPopup td {
+.hoursPopUp th,
+.hoursPopUp td {
   padding: 20px;
 }
 
-.hoursPopup .date {
+.hoursPopUp .date {
   color: #DCDCDC;
 }
 
-.hoursPopup .time {
+.hoursPopUp .time {
   color: white;
 }

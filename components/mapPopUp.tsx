@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import classes from './styles/mapPopUp.module.css'
 
 type Props = {
@@ -7,7 +8,15 @@ type Props = {
 const MapPopUpComponent = ({ closeMap }: Props) => {
   return (
     <div className={classes.mapPopup}>
-      <img src="https://i.imgur.com/6BxSjmk.png" alt="" className={classes.closePopup} onClick={closeMap} />
+      <div className={classes.float}>
+        <Image
+          src="https://i.imgur.com/6BxSjmk.png"
+          alt="Cross icon which is used to exit the map page"
+          height={80}
+          width={80}
+          onClick={closeMap} 
+          />
+      </div>
       <section className={classes.map}>
         <div className={classes.mapouter}>
           <div className={classes.gmapCanvas}>

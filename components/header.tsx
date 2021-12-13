@@ -33,7 +33,12 @@ const HeaderComponent = () => {
           <nav className={classes.mainNav}>
             <Link href="/">
               <a className={classes.imgAnchor}>
-                <Image src="https://i.imgur.com/WIgvnFB.jpg" height="85" width="200" className={classes.logo} />
+                <Image 
+                  src="https://i.imgur.com/WIgvnFB.jpg" 
+                  height="85" 
+                  width="200" 
+                  className={classes.logo}
+                  alt='Full size Sound-Insight company logo' />
               </a>
             </Link>
             <ul className={classes.mainNavOptions}>
@@ -79,7 +84,12 @@ const HeaderComponent = () => {
             </div>
             <Link href="/">
               <a className={clsx(classes.link, classes.logoLink)}>
-                <Image src="https://i.imgur.com/6E05ibb.png" height={50} width={50} className={classes.headerLogo} />
+                <Image 
+                  src="https://i.imgur.com/6E05ibb.png" 
+                  height={50} 
+                  width={50} 
+                  className={classes.headerLogo}
+                  alt='A smaller Sound-Insight company logo for mobile device' />
               </a>
             </Link>
           </section>
@@ -126,22 +136,22 @@ const HeaderComponent = () => {
           <section className={classes.contactMenuOptions}>
             <div className={classes.email}>
               <a href="mailto:sales@sound-insight.com" className={classes.menuOption}>
-                <img src="https://i.imgur.com/SUphJ4h.png" alt="Email Icon" className={classes.contactIcon} />
+                <Image src="https://i.imgur.com/SUphJ4h.png" alt="Email Icon to reach Sound-Insight via email" width={25} height={35} />
                 <span>EMAIL</span>
               </a>
             </div>
             <div className={classes.phone}>
               <a target="_blank" href="tel:6312714434" rel="noopener noreferrer" className={classes.menuOption}>
-                <img src="https://i.imgur.com/eAxtt3I.png" alt="Telephone Icon" className={classes.contactIcon} />
+                <Image src="https://i.imgur.com/eAxtt3I.png" alt="Telephone Icon to reach Sound-Insight via phone" width={25} height={35} />
                 <span>CALL</span>
               </a>
             </div>
             <div className={clsx(classes.map, classes.menuOption)} onClick={() => toggleMap()}>
-              <img src="https://i.imgur.com/oj6o3TY.png" alt="Map Icon" className={classes.contactIcon} />
+              <Image src="https://i.imgur.com/oj6o3TY.png" alt="Map Icon to see where Sound-Insight is located" width={25} height={35} />
               <span>MAP</span>
             </div>
             <div className={clsx(classes.hours, classes.menuOption)} onClick={() => toggleHours()}>
-              <img src="https://i.imgur.com/rx2GiBJ.png" alt="Clock Icon" className={classes.contactIcon} />
+              <Image src="https://i.imgur.com/rx2GiBJ.png" alt="Clock Icon to view store hours" width={20} height={40} />
               <span>HOURS</span>
             </div>
           </section>

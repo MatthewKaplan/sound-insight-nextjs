@@ -1,9 +1,10 @@
-import classes from './styles/audio.module.css';
-import { GetStaticProps } from "next";
-import { getPageById } from "../../helper/api-util";
-import { AudioPageData } from "../../types/audioPage.type";
 import React from 'react';
+import Image from 'next/image';
+import { GetStaticProps } from "next";
+import classes from './styles/audio.module.css';
+import { getPageById } from "../../helper/api-util";
 import CarouselComponent from '../../components/carousel';
+import { AudioPageData } from "../../types/audioPage.type";
 
 const AudioPage = (props: AudioPageData) => {
   return (
@@ -15,19 +16,19 @@ const AudioPage = (props: AudioPageData) => {
           <p>{props.AudioInfo1}</p>
         </section>
         <section className={classes.homeAudio}>
-          <img src={props.AudioImg1} alt="Living room" className={classes.homeAudioImg} />
+          <Image src={props.AudioImg1} alt="TV with a big stero system" width={1400} height={750} layout='responsive' />
           <h2>{props.AudioTitle2}</h2>
           <p>{props.AudioInfo2}</p>
         </section>
         <div className={classes.bottomServices}>
           <section className={classes.analog}>
-            <img src={props.AudioImg2} alt="Analog system" className={classes.analogImg} />
+            <Image src={props.AudioImg2} alt="Analog system with record player" width={250} height={250} layout='responsive' />
             <h2>{props.AudioTitle3}</h2>
             <p>{props.AudioInfo3A}</p>
             <p>{props.AudioInfo3B}</p>
           </section>
           <section className={classes.digital}>
-            <img src={props.AudioImg3} alt="digital system" />
+            <Image src={props.AudioImg3} alt="Digital sound system" width={250} height={250} layout='responsive' />
             <h2>{props.AudioTitle4}</h2>
             <p>{props.AudioInfo4}</p>
           </section>

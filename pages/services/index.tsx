@@ -1,11 +1,12 @@
-import classes from './styles/services.module.css';
-import { Box } from "@chakra-ui/layout";
-import { GetStaticProps } from "next";
-import { getPageById } from "../../helper/api-util";
+import clsx from 'clsx';
 import Link from 'next/link'
+import Image from 'next/image';
+import { GetStaticProps } from "next";
+import { Box } from "@chakra-ui/layout";
+import classes from './styles/services.module.css';
+import { getPageById } from "../../helper/api-util";
 import { ServicePageData } from "../../types/servicePage.typs";
 import SplashImageComponent from '../../components/splashImage';
-import clsx from 'clsx';
 
 
 const ServicesPage = (props: ServicePageData) => {
@@ -22,11 +23,7 @@ const ServicesPage = (props: ServicePageData) => {
           <div className={classes.audioService}>
             <Link href="/services/audio">
               <a>
-                <img
-                  src={props.AudioImg}
-                  alt="Speakers"
-                  className={classes.topServiceImg}
-                />
+                <Image src={props.AudioImg} alt="Living room with a pair of white speakers" className={classes.topServiceImg} height={600} width={1200} />
                 <h3>{props.AudioTitle}</h3>
               </a>
             </Link>
@@ -36,12 +33,10 @@ const ServicesPage = (props: ServicePageData) => {
         <section className={classes.servicesInfo}>
           <div className={clsx(classes.automation, classes.service)}>
             <Link href="/services/automation">
-              <a>
-                <img
-                  src={props.AutoImg}
-                  alt="Speakers"
-                  className={classes.serviceImg}
-                />
+              <a className={classes.anchor}>
+                <div style={{ marginLeft: '55px' }}>
+                  <Image src={props.AutoImg} alt="Home Automation solutions" className={classes.serviceImg} height={425} width={500} />
+                </div>
                 <h3>{props.AutoTitle}</h3>
               </a>
             </Link>
@@ -49,12 +44,10 @@ const ServicesPage = (props: ServicePageData) => {
           </div>
           <div className={clsx(classes.video, classes.service)}>
             <Link href="/services/video">
-              <a>
-                <img
-                  src={props.VideoImg}
-                  alt="Speakers"
-                  className={classes.serviceImg}
-                />
+              <a className={classes.anchor}>
+                <div style={{ marginLeft: '55px' }}>
+                  <Image src={props.VideoImg} alt="Custom Home Movie Theater" className={classes.serviceImg} height={425} width={500} />
+                </div>
                 <h3>{props.VideoTitle}</h3>
               </a>
             </Link>
@@ -62,12 +55,10 @@ const ServicesPage = (props: ServicePageData) => {
           </div>
           <div className={clsx(classes.phone, classes.service)}>
             <Link href="/services/phoneSystems">
-              <a>
-                <img
-                  src={props.PhoneImg}
-                  alt="Man making phonecall"
-                  className={classes.serviceImg}
-                />
+              <a className={classes.anchor}>
+                <div style={{ marginLeft: '55px' }}>
+                  <Image src={props.PhoneImg} alt="Man on an office phone" className={classes.serviceImg} height={425} width={500} />
+                </div>
                 <h3>{props.PhoneTitle}</h3>
               </a>
             </Link>
@@ -75,12 +66,10 @@ const ServicesPage = (props: ServicePageData) => {
           </div>
           <div className={clsx(classes.phone, classes.service)}>
             <Link href="/services/security">
-              <a>
-                <img
-                  src={props.SecurityImg}
-                  alt="Speakers"
-                  className={classes.serviceImg}
-                />
+              <a className={classes.anchor}>
+                <div style={{ marginLeft: '55px' }}>
+                  <Image src={props.SecurityImg} alt="Man viewing security cameras on iPad" className={classes.serviceImg} height={425} width={500} />
+                </div>
                 <h3>{props.SecurityTitle}</h3>
               </a>
             </Link>

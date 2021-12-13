@@ -1,6 +1,7 @@
-import classes from './styles/video.module.css';
-import { GetStaticProps } from 'next';
 import React from 'react';
+import Image from 'next/image';
+import { GetStaticProps } from 'next';
+import classes from './styles/video.module.css';
 import { getPageById } from '../../helper/api-util';
 import { VideoPageData } from '../../types/videoPage.type';
 import CarouselComponent from '../../components/carousel';
@@ -15,19 +16,19 @@ const VideoPage = (props: VideoPageData) => {
           <p>{props.VidInfo1}</p>
         </section>
         <section className={classes.homeCinema}>
-          <img src={props.VidImg1} alt="home theater" className={classes.homeTheater} />
+          <Image src={props.VidImg1} alt="Custom Home theater" width={1400} height={750} layout='responsive' />
           <h2>{props.VidTitle2}</h2>
           <p>{props.VidInfo2}</p>
         </section>
         <div className={classes.bottomServices}>
           <section className={classes.televisionSystems}>
-            <img src={props.VidImg2} alt="Sony television" className={classes.sonyImg} />
+            <Image src={props.VidImg2} alt="Sony OLED television" width={250} height={250} layout='responsive' />
             <h2>{props.VidTitle3}</h2>
             <p>{props.VidInfo3A}</p>
             <p>{props.VidInfo3B}</p>
           </section>
           <section className={classes.projectionSystems}>
-            <img src={props.VidImg3} alt="Sony projector" className={classes.projectorImg} />
+            <Image src={props.VidImg3} alt="Sony projector" width={250} height={250} layout='responsive' />
             <h2>{props.VidTitle4}</h2>
             <p>{props.VidInfo4A}</p>
             <p>{props.VidInfo4B}</p>

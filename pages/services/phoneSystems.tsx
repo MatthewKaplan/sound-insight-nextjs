@@ -1,6 +1,7 @@
+import React from 'react';
+import Image from 'next/image';
 import classes from './styles/phoneSystems.module.css';
 import { GetStaticProps } from 'next';
-import React from 'react';
 import { getPageById } from '../../helper/api-util';
 import { PhoneSystemPageData } from '../../types/phoneSystemPage.type';
 
@@ -14,18 +15,18 @@ const PhoneSystemsPage = (props: PhoneSystemPageData) => {
           <p>{props.PhoneInfo1}</p>
         </section>
         <section className={classes.securitySystems}>
-          <img src={props.PhoneImg1} alt="honeywell security" className={classes.honeywellImg} />
+          <Image src={props.PhoneImg1} alt="NEC Systems office phones" width={1400} height={750} layout='responsive' />
           <h2>{props.PhoneTitle2}</h2>
           <p>{props.PhoneInfo2}</p>
         </section>
         <div className={classes.bottomServices}>
           <section className={classes.desktopPhones}>
-            <img src={props.PhoneImg2} alt="camera security system" className={classes.cameraImg} />
+            <Image src={props.PhoneImg2} alt="Desktop office phones" width={250} height={250} layout='responsive' />
             <h2>{props.PhoneTitle3}</h2>
             <p>{props.PhoneInfo3}</p>
           </section>
           <section className={classes.wirelessPhones}>
-            <img src={props.PhoneImg3} alt="tablet security" className={classes.tabletImg} />
+            <Image src={props.PhoneImg3} alt="Wireless office phones" width={250} height={250} layout='responsive' />
             <h2>{props.PhoneTitle4}</h2>
             <p>{props.PhoneInfo4}</p>
           </section>

@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Image from 'next/image';
 import classes from './styles/carousel.module.css'
-import { action } from '@storybook/addon-actions';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import { withKnobs, boolean, number, text } from '@storybook/addon-knobs';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { boolean, number, text } from '@storybook/addon-knobs';
 
 
 type Props = {
@@ -16,7 +16,7 @@ const CarouselComponent = (props: Props) => {
 
   const baseChildren = props.icons.map((image, i) =>
     <div key={i} className={classes.carouselDiv}>
-      <img src={image} className={classes.carouselImg}/>
+      <Image src={image} width={250} height={250} />
       <a href={props.links[i]} target="_blank">
         <p className={classes.legend}>{props.iconNames[i]}</p>
       </a>

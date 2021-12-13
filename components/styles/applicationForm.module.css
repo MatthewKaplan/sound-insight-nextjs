@@ -24,16 +24,13 @@
   z-index: 999;
 }
 
+.float {
+  float:right
+}
+
 .contactForm h1,
 .contactForm h3 {
   text-align: left;
-}
-
-.contactForm .closeForm {
-  height: 30px;
-  width: 30px;
-  float: right;
-  cursor: pointer;
 }
 
 .contactForm .firstName,

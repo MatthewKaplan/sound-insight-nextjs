@@ -17,29 +17,27 @@
   font-size: 2em;
 }
 
+.imgRadius {
+  border-top-left-radius: 37px 140px;
+  border-top-right-radius: 23px 130px;
+  border-bottom-left-radius: 110px 19px;
+  border-bottom-right-radius: 120px 24px;
+}
+
 .aboutPage .aboutImg {
   width: 35%;
   height: 100%;
 }
 
-.aboutPage .about1Img {
-  float: left;
-  margin-right: 30px;
-}
-
-.aboutPage .about2Img {
-  float: right;
-  margin-left: 30px;
-}
-
-.aboutPage .about3Img {
-  float: left;
-  margin-right: 30px;
-}
-
 .aboutPage .aboutSection {
-  height: 200px;
+  height: auto;
   margin-bottom: 60px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: 2560px) {
@@ -53,7 +51,8 @@
 
   .aboutPage p {
     font-size: 28px;
-    margin-top: 30px;
+    margin-top: 10px;
+    max-width: 700px;
   }
 
   .aboutPage .aboutInfo {

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import classes from './styles/brands.module.css';
 import { GetStaticProps } from "next";
 import React from "react";
@@ -8,9 +9,9 @@ import { BrandPageData } from '../types/brandPage.type';
 const BrandsPage = (props: BrandPageData) => {
   const renderLogos = () => {
     return props.manufacturerLogo.map((logo, i) => 
-    <div className={classes.logoContainer} key={i}>
+    <div className={classes.brandLogo} key={i}>
       <a href={props.manufacturerLink[i]} target="_blank" rel="noopener noreferrer" className={classes.logoLink}>
-        <img src={logo} className={classes.logoImg} alt={props.manufacturerAltText[i]} />
+          <Image src={logo} alt={props.manufacturerAltText[i]} className={classes.logoImg} width={150} height={150} layout='fixed' />
       </a>
     </div>)
   }

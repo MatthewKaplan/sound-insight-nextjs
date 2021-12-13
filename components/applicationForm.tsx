@@ -1,8 +1,9 @@
-import classes from './styles/applicationForm.module.css';
-import PhoneInput from 'react-phone-number-input';
-import { ChangeEvent, useState } from "react";
-import { E164Number } from 'libphonenumber-js/types';
+import Image from 'next/image';
 import 'react-phone-number-input/style.css';
+import { ChangeEvent, useState } from "react";
+import PhoneInput from 'react-phone-number-input';
+import { E164Number } from 'libphonenumber-js/types';
+import classes from './styles/applicationForm.module.css';
 
 type ApplicationInfo = {
   phone: E164Number | undefined, firstName: string, lastName: string, email: string, message: string, resume: string
@@ -25,12 +26,15 @@ const ApplicationForm = ({ closeForm }: Props) => {
   return (
     <div className={classes.contactForm}>
       <div className={classes.formInformation}>
-        <img
-          src="https://i.imgur.com/FvyNCGT.png"
-          alt="close button"
+        <div className={classes.float}>
+        <Image 
+          src="https://i.imgur.com/FvyNCGT.png" 
+          alt="Cross icon which is used to exit the fourm" 
+          height={25} 
+          width={25}
           className={classes.closeForm}
-          onClick={() => closeForm(false)}
-        />
+          onClick={() => closeForm(false)} />
+          </div>
         <form action={`https://formspree.io/sales@sound-insight.com`} method="POST">
           <h1>Application</h1>
           <h3 className={classes.nameLabel}>Name*</h3>

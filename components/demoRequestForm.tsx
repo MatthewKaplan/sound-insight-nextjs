@@ -1,9 +1,9 @@
-
-import classes from './styles/demoRequestForm.module.css'
-import PhoneInput from 'react-phone-number-input';
-import { ChangeEvent, useState } from "react";
-import { E164Number } from 'libphonenumber-js/types';
+import Image from 'next/image';
 import 'react-phone-number-input/style.css';
+import { ChangeEvent, useState } from "react";
+import PhoneInput from 'react-phone-number-input';
+import { E164Number } from 'libphonenumber-js/types';
+import classes from './styles/demoRequestForm.module.css'
 
 type Props = {
   closeForm: (order: boolean) => void
@@ -26,12 +26,15 @@ const DemoRequestForm = ({ closeForm }: Props) => {
   return (
     <div className={classes.demoRequestForm}>
       <div className={classes.formInformation}>
-        <img
-          src="https://i.imgur.com/FvyNCGT.png"
-          alt="close button"
-          className={classes.closeForm}
-          onClick={() => closeForm(true)}
-        />
+        <div style={{ float: "right" }}>
+          <Image
+            src="https://i.imgur.com/FvyNCGT.png"
+            alt="Cross icon which is used to exit the fourm"
+            height={25}
+            width={25}
+            className={classes.closeForm}
+            onClick={() => closeForm(false)} />
+        </div>
         <form action={`https://formspree.io/sales@sound-insight.com`} method="POST">
           <h1>Request Demo</h1>
           <h3 className={classes.nameLabel}>Name*</h3>
@@ -67,7 +70,7 @@ const DemoRequestForm = ({ closeForm }: Props) => {
               name="desiredDemo"
               className={classes.desiredDemo}
               value={contactInfo.desiredDemo}
-              onChange={(e) => setContactInfo({...contactInfo, desiredDemo: e.target.value})}
+              onChange={(e) => setContactInfo({ ...contactInfo, desiredDemo: e.target.value })}
               id=""
               cols={60}
               rows={10}
@@ -82,7 +85,7 @@ const DemoRequestForm = ({ closeForm }: Props) => {
           </div>
           <div className={classes.requestedTime}>
             <h3>Time*</h3>
-            <select id="timeSelect" className={classes.timeRequested} name="timeRequested" value={contactInfo.timeRequested} onChange={(e) => setContactInfo({...contactInfo, timeRequested: e.target.value})}>
+            <select id="timeSelect" className={classes.timeRequested} name="timeRequested" value={contactInfo.timeRequested} onChange={(e) => setContactInfo({ ...contactInfo, timeRequested: e.target.value })}>
               <option value="" className={classes.placeholderText}>
                 --Please choose a Time--
               </option>
