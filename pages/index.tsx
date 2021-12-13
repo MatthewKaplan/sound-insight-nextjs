@@ -12,7 +12,7 @@ import { HomePageData } from '../types/homePage.type';
 const HomePage = (props: HomePageData) => {
   return (
     <div>
-      <SplashImageComponent imageLink={props.SplashImg} title={props.SplashTitle} subTitle={props.SplashSubTitle} />
+      <SplashImageComponent altText="Living room with TV over fireplace" imageLink={props.SplashImg} title={props.SplashTitle} subTitle={props.SplashSubTitle} />
       <Box className={classes.homeServices} height="auto">
         <h1>{props.MainTitle}</h1>
         <p className={classes.mission}>{props.Mission}</p>

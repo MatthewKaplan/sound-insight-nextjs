@@ -12,7 +12,7 @@ const ProductPage = (props: ProductPageData) => {
 
   return (
     <div>
-      <SplashImageComponent imageLink={props.SplashImg} title={props.SplashTitle} subTitle={props.SplashSubTitle} />
+      <SplashImageComponent altText="Large Stero system" imageLink={props.SplashImg} title={props.SplashTitle} subTitle={props.SplashSubTitle} />
       <div className={classes.productsPage}>
         <section className={classes.products}>
           <h2>

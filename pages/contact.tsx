@@ -23,7 +23,7 @@ const ContactPage = (props: ContactPageData) => {
 
   return (
     <div className={classes.contactPage}>
-      <SplashImageComponent imageLink={props.SplashImg} title={props.SplashTitle} subTitle={props.SplashSubTitle} />
+      <SplashImageComponent altText="Sound Insight lobby with TVs and speakers" imageLink={props.SplashImg} title={props.SplashTitle} subTitle={props.SplashSubTitle} />
       <section className={classes.contactPageContents}>
         <h1>{props.ContactTitle}</h1>
         <div className={classes.breakLine}>

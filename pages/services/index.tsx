@@ -12,7 +12,7 @@ import SplashImageComponent from '../../components/splashImage';
 const ServicesPage = (props: ServicePageData) => {
   return (
     <div>
-      <SplashImageComponent imageLink={props.SplashImg} title={props.SplashTitle} subTitle={props.SplashSubTitle} />
+      <SplashImageComponent altText="Living room with TV on the wall" imageLink={props.SplashImg} title={props.SplashTitle} subTitle={props.SplashSubTitle} />
       <Box className={classes.servicesProvided}>
         <section className={classes.header}>
           <h1 className={classes.title}>{props.ServicesTitle}</h1>

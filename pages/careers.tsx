@@ -16,7 +16,7 @@ const CareersPage = (props: CareersPageData) => {
 
   return (
     <div className={classes.careersComponent}>
-      <SplashImageComponent imageLink={props.SplashPageImg} title={props.SplashPageTitle} subTitle={props.SplashPageSubTitle} />
+      <SplashImageComponent altText="Tools and peg board" imageLink={props.SplashPageImg} title={props.SplashPageTitle} subTitle={props.SplashPageSubTitle} />
       <section className={classes.pageHeading}>
         <h1>{props.CareersTitle}</h1>
         <p dangerouslySetInnerHTML={{ __html: props.CareersInfo1 }}></p>

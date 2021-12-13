@@ -4,7 +4,8 @@ import classes from './styles/splashImage.module.css'
 type Props = {
   imageLink: string,
   subTitle: string,
-  title: string
+  title: string,
+  altText: string
 }
 
 const SplashImageComponent = (props: Props) => {
@@ -12,7 +13,7 @@ const SplashImageComponent = (props: Props) => {
     <div className={classes.splashPage}>
       <div className={classes.parentContainer}>
         <div className={classes.colorOverlay} />
-        <Image src={props.imageLink} layout='fill' objectFit='cover' className={classes.splashImg} priority />
+        <Image src={props.imageLink} alt={props.altText} layout='fill' objectFit='cover' className={classes.splashImg} priority />
         <div className={classes.splashDesc}>
           <p>{props.subTitle}</p>
           <p>

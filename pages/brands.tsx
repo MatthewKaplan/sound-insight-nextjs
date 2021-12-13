@@ -18,7 +18,7 @@ const BrandsPage = (props: BrandPageData) => {
 
   return (
     <div className={classes.brandsPage}>
-      <SplashImageComponent imageLink={props.SplashImg} title={props.SplashTitle} subTitle={props.SplashSubTitle} />
+      <SplashImageComponent altText="Sound Insight lobby with TVs and speakers" imageLink={props.SplashImg} title={props.SplashTitle} subTitle={props.SplashSubTitle} />
       <section className={classes.brands}>
         <div className={classes.brandHeading}>
           <h2>

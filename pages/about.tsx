@@ -10,7 +10,7 @@ import { AboutPageData } from '../types/aboutPage.type';
 const AboutPage = (props: AboutPageData) => {
   return (
     <div className={classes.aboutPage}>
-      <SplashImageComponent imageLink={props.SplashImg} title={props.SplashTitle} subTitle={props.SplashSubTitle} />
+      <SplashImageComponent altText="Sound Insight store front location in Huntington, NY" imageLink={props.SplashImg} title={props.SplashTitle} subTitle={props.SplashSubTitle} />
       <div className={classes.aboutInfo}>
         <h1>{props.AboutTitle}</h1>
         <section className={classes.aboutSection}>
