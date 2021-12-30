@@ -1,109 +1,139 @@
 import clsx from 'clsx';
-import Link from 'next/link'
-import Head from 'next/head';
+import { FC } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import { GetStaticProps } from 'next';
-import { Box } from "@chakra-ui/layout";
+import { Box } from '@chakra-ui/layout';
 import classes from './styles/home.module.css';
 import { getPageById } from '../helper/api-util';
 import { HomePageData } from '../types/homePage.type';
 import SplashImageComponent from '../components/splashImage';
 
-const HomePage = (props: HomePageData) => {
-  return (
-    <div>
-      <SplashImageComponent altText="Living room with TV over fireplace" imageLink={props.SplashImg} title={props.SplashTitle} subTitle={props.SplashSubTitle} />
-      <Box className={classes.homeServices} height="auto">
-        <p className={classes.mission}>{props.Mission}</p>
-        <p className={classes.mission2}>{props.SubMission}</p>
-        <div className={classes.servicesWrapper}>
-          <section className={classes.service}>
-            <Link href="/services/audio">
-              <a>
-                <Image src={props.AudioImg} width={430} height={375} alt="Speaker system" className={classes.serviceImg} />
-                <p className={classes.sectionTitle}><strong>{props.AudioTitle}</strong></p>
-              </a>
-            </Link>
-            <p className={classes.serviceDesc}>
-              {props.AudioSub}
-            </p>
-          </section>
-          <section className={classes.service}>
-            <Link href="/services/video">
-              <a>
-                <Image src={props.VideoImg} width={430} height={375} alt="Custom Home movie theater" className={classes.serviceImg} />
-                <p className={classes.sectionTitle}><strong>{props.VideoTitle}</strong></p>
-              </a>
-            </Link>
-            <p className={classes.serviceDesc}>
-              {props.VideoSub}
-            </p>
-          </section>
-          <section className={classes.service}>
-            <Link href="/services/automation">
-              <a>
-                <Image src={props.AutoImg} width={430} height={375} alt="Home Automation system" className={classes.serviceImg} />
-                <p className={classes.sectionTitle}><strong>{props.AutoTitle}</strong></p>
-              </a>
-            </Link>
-            <p className={classes.serviceDesc}>
-              {props.AutoSub}
-            </p>
-          </section>
-        </div>
-        <section className={classes.storeImage}>
-          <div className={classes.storeFront}>
-            <div className={classes.imageOverlay} />
-            <Image src={props.StoreImg} alt="Sound Insight store front" layout='fill' objectFit='cover' className={classes.storeFrontImg} />
-            <div className={classes.splashDesc}>
-              <p>
-                <strong>{props.Showroom}</strong>
-              </p>
-              <p>{props.City}</p>
+const HomePage: FC<HomePageData> = ({
+  SplashImg,
+  Showroom,
+  ShowroomInfo,
+  ShowroomTitle,
+  SplashSubTitle,
+  SplashTitle,
+  StoreImg,
+  StoreImg1,
+  StoreImg2,
+  StoreImg3,
+  StoreImg4,
+  SubMission,
+  AudioImg,
+  AudioSub,
+  AudioTitle,
+  AutoImg,
+  AutoSub,
+  AutoTitle,
+  VideoImg,
+  VideoSub,
+  VideoTitle,
+  Visit,
+  Call,
+  City,
+  Google,
+  tel,
+  PhoneNumber,
+  Mission
+}: HomePageData) => (
+  <div>
+    <SplashImageComponent altText="Living room with TV over fireplace" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
+    <Box className={classes.homeServices} height="auto">
+      <p className={classes.mission}>{Mission}</p>
+      <p className={classes.mission2}>{SubMission}</p>
+      <div className={classes.servicesWrapper}>
+        <section className={classes.service}>
+          <Link href="/services/audio" passHref>
+            <div>
+              <Image src={AudioImg} width={430} height={375} alt="Speaker system" className={classes.serviceImg} />
+              <p className={classes.sectionTitle}><strong>{AudioTitle}</strong></p>
             </div>
-          </div>
-        </section>
-        <section className={classes.storeInfo}>
-          <p className={classes.storeInfoTitle}>{props.ShowroomTitle}</p>
-          <p className={classes.showroomInfo}>
-            {props.ShowroomInfo}
+          </Link>
+          <p className={classes.serviceDesc}>
+            {AudioSub}
           </p>
-          <p className={clsx(classes.serviceDesc, classes.contactInfo)}>
-            {props.Call}{" "}
-            <strong>
-              <a target="_blank" href={props.tel} rel="noopener noreferrer">
-                {props.PhoneNumber}
-              </a>
-            </strong>{" "}
-            {props.Visit}{" "}
-            <strong>
-              <a
-                target="_blank"
-                href={props.Google}
-                rel="noopener noreferrer"
-              >
-                {props.City}
-              </a>
-            </strong>
-          </p>
-          <div className={classes.topImages}>
-            <Image src={props.StoreImg1} width={250} height={250} alt="Inside of Sound Insight" className={classes.store1} />
-            <Image src={props.StoreImg2} width={250} height={250} alt="Inside of Sound Insight" className={classes.store2} />
-            <Image src={props.StoreImg3} width={250} height={250} alt="Inside of Sound Insight" className={classes.store1} />
-            <Image src={props.StoreImg4} width={250} height={250} alt="Inside of Sound Insight" className={classes.store2} />
-          </div>
         </section>
-      </Box>
-    </div>
-  )
-}
+        <section className={classes.service}>
+          <Link href="/services/video">
+            <a>
+              <Image src={VideoImg} width={430} height={375} alt="Custom Home movie theater" className={classes.serviceImg} />
+              <p className={classes.sectionTitle}><strong>{VideoTitle}</strong></p>
+            </a>
+          </Link>
+          <p className={classes.serviceDesc}>
+            {VideoSub}
+          </p>
+        </section>
+        <section className={classes.service}>
+          <Link href="/services/automation">
+            <a>
+              <Image src={AutoImg} width={430} height={375} alt="Home Automation system" className={classes.serviceImg} />
+              <p className={classes.sectionTitle}><strong>{AutoTitle}</strong></p>
+            </a>
+          </Link>
+          <p className={classes.serviceDesc}>
+            {AutoSub}
+          </p>
+        </section>
+      </div>
+      <section className={classes.storeImage}>
+        <div className={classes.storeFront}>
+          <div className={classes.imageOverlay} />
+          <Image src={StoreImg} alt="Sound Insight store front" layout="fill" objectFit="cover" className={classes.storeFrontImg} />
+          <div className={classes.splashDesc}>
+            <p>
+              <strong>{Showroom}</strong>
+            </p>
+            <p>{City}</p>
+          </div>
+        </div>
+      </section>
+      <section className={classes.storeInfo}>
+        <p className={classes.storeInfoTitle}>{ShowroomTitle}</p>
+        <p className={classes.showroomInfo}>
+          {ShowroomInfo}
+        </p>
+        <p className={clsx(classes.serviceDesc, classes.contactInfo)}>
+          {Call}
+          {' '}
+          <strong>
+            <a target="_blank" href={tel} rel="noopener noreferrer">
+              {PhoneNumber}
+            </a>
+          </strong>
+          {' '}
+          {Visit}
+          {' '}
+          <strong>
+            <a
+              target="_blank"
+              href={Google}
+              rel="noopener noreferrer"
+            >
+              {City}
+            </a>
+          </strong>
+        </p>
+        <div className={classes.topImages}>
+          <Image src={StoreImg1} width={250} height={250} alt="Inside of Sound Insight" className={classes.store1} />
+          <Image src={StoreImg2} width={250} height={250} alt="Inside of Sound Insight" className={classes.store2} />
+          <Image src={StoreImg3} width={250} height={250} alt="Inside of Sound Insight" className={classes.store1} />
+          <Image src={StoreImg4} width={250} height={250} alt="Inside of Sound Insight" className={classes.store2} />
+        </div>
+      </section>
+    </Box>
+  </div>
+);
 
 export const getStaticProps: GetStaticProps = async (contex) => {
   const featuredPage = await getPageById('P_HOME');
 
   return {
     props: featuredPage
-  }
-}
+  };
+};
 
 export default HomePage;

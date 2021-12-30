@@ -13,4 +13,4 @@ export type ProductPageData = {
   videoDetails: string[];
   videoImages: string[];
   videoLinks: string[];
-}
+};

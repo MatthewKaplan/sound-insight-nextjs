@@ -15,4 +15,4 @@ export type SecurityPageData = {
   SecTitle4: string;
   id: string;
   label: string;
-}
+};

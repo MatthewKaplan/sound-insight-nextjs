@@ -12,4 +12,4 @@ export type BrandPageData = {
   manufacturerAltText: string[];
   manufacturerLink: string[];
   manufacturerLogo: string[];
-}
+};

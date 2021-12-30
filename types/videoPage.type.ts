@@ -19,4 +19,4 @@ export type VideoPageData = {
   videoDetails: string[];
   videoImages: string[];
   videoLinks: string[];
-}
+};

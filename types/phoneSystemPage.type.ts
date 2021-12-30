@@ -14,4 +14,4 @@ export type PhoneSystemPageData = {
   id: string;
   label: string;
   type: string;
-}
+};

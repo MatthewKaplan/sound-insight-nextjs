@@ -12,4 +12,4 @@ export type AboutPageData = {
   SplashTitle: string;
   id: string;
   label: string;
-}
+};

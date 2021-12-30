@@ -1,41 +1,49 @@
 import Image from 'next/image';
 import 'react-phone-number-input/style.css';
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FC, useState } from 'react';
 import PhoneInput from 'react-phone-number-input';
 import { E164Number } from 'libphonenumber-js/types';
-import classes from './styles/contactForm.module.css'
+import classes from './styles/contactForm.module.css';
 
 type Props = {
-  closeForm: (order: boolean) => void
-}
+  closeForm: (order: boolean) => void;
+};
 
 type ContactInfo = {
-  phone: E164Number | undefined, firstName: string, lastName: string, email: string, message: string, resume: string
-}
+  phone: E164Number | undefined;
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+  resume: string;
+};
 
-const ContactForm = ({ closeForm }: Props) => {
-  const [contactInfo, setContactInfo] = useState<ContactInfo>({ phone: undefined, firstName: '', lastName: '', email: '', message: '', resume: '' });
+const ContactForm: FC<Props> = ({ closeForm }) => {
+  const [contactInfo, setContactInfo] = useState<ContactInfo>({
+    phone: undefined, firstName: '', lastName: '', email: '', message: '', resume: ''
+  });
 
   const inputHandler = ({ target: { value, name } }: ChangeEvent<HTMLInputElement>) => {
-    let textValue = value;
-    let key = name;
+    const textValue = value;
+    const key = name;
 
-    setContactInfo({ ...contactInfo, [key]: textValue })
+    setContactInfo({ ...contactInfo, [key]: textValue });
   };
 
   return (
     <div className={classes.contactForm}>
       <div className={classes.formInformation}>
-        <div style={{ float: "right" }}>
+        <div style={{ float: 'right' }}>
           <Image
             src="https://i.imgur.com/FvyNCGT.png"
             alt="Cross icon which is used to exit the fourm"
             height={25}
             width={25}
             className={classes.closeForm}
-            onClick={() => closeForm(false)} />
+            onClick={() => closeForm(false)}
+          />
         </div>
-        <form action={`https://formspree.io/sales@sound-insight.com`} method="POST">
+        <form action="https://formspree.io/sales@sound-insight.com" method="POST">
           <h1>Contact Form</h1>
           <h3 className={classes.nameLabel}>Name*</h3>
           <div className={classes.nameForms}>
@@ -48,7 +56,7 @@ const ContactForm = ({ closeForm }: Props) => {
                 required
                 value={contactInfo.firstName}
                 onChange={inputHandler}
-                placeholder='First Name'
+                placeholder="First Name"
               />
             </section>
             <section className={classes.lastNameForm}>
@@ -60,7 +68,7 @@ const ContactForm = ({ closeForm }: Props) => {
                 required
                 value={contactInfo.lastName}
                 onChange={inputHandler}
-                placeholder='Last Name'
+                placeholder="Last Name"
               />
             </section>
           </div>
@@ -101,7 +109,7 @@ const ContactForm = ({ closeForm }: Props) => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default ContactForm;

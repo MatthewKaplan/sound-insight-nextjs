@@ -1,41 +1,50 @@
 import Image from 'next/image';
 import 'react-phone-number-input/style.css';
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FC, useState } from 'react';
 import PhoneInput from 'react-phone-number-input';
 import { E164Number } from 'libphonenumber-js/types';
-import classes from './styles/demoRequestForm.module.css'
+import classes from './styles/demoRequestForm.module.css';
 
 type Props = {
-  closeForm: (order: boolean) => void
-}
+  closeForm: (order: boolean) => void;
+};
 
 type ContactInfo = {
-  phone: E164Number | undefined, firstName: string, lastName: string, email: string, desiredDemo: string, dateRequested: string, timeRequested: string
-}
+  phone: E164Number | undefined;
+  firstName: string;
+  lastName: string;
+  email: string;
+  desiredDemo: string;
+  dateRequested: string;
+  timeRequested: string;
+};
 
-const DemoRequestForm = ({ closeForm }: Props) => {
-  const [contactInfo, setContactInfo] = useState<ContactInfo>({ phone: undefined, firstName: '', lastName: '', email: '', desiredDemo: '', dateRequested: '', timeRequested: '' });
+const DemoRequestForm: FC<Props> = ({ closeForm }) => {
+  const [contactInfo, setContactInfo] = useState<ContactInfo>({
+    phone: undefined, firstName: '', lastName: '', email: '', desiredDemo: '', dateRequested: '', timeRequested: ''
+  });
 
   const inputHandler = ({ target: { value, name } }: ChangeEvent<HTMLInputElement>) => {
-    let textValue = value;
-    let key = name;
+    const textValue = value;
+    const key = name;
 
-    setContactInfo({ ...contactInfo, [key]: textValue })
+    setContactInfo({ ...contactInfo, [key]: textValue });
   };
 
   return (
     <div className={classes.demoRequestForm}>
       <div className={classes.formInformation}>
-        <div style={{ float: "right" }}>
+        <div style={{ float: 'right' }}>
           <Image
             src="https://i.imgur.com/FvyNCGT.png"
             alt="Cross icon which is used to exit the fourm"
             height={25}
             width={25}
             className={classes.closeForm}
-            onClick={() => closeForm(false)} />
+            onClick={() => closeForm(false)}
+          />
         </div>
-        <form action={`https://formspree.io/sales@sound-insight.com`} method="POST">
+        <form action="https://formspree.io/sales@sound-insight.com" method="POST">
           <h1>Request Demo</h1>
           <h3 className={classes.nameLabel}>Name*</h3>
           <div className={classes.nameForms}>
@@ -47,7 +56,7 @@ const DemoRequestForm = ({ closeForm }: Props) => {
                 value={contactInfo.firstName}
                 name="firstName"
                 onChange={inputHandler}
-                placeholder='First Name'
+                placeholder="First Name"
               />
             </section>
             <section className={classes.lastNameForm}>
@@ -58,7 +67,7 @@ const DemoRequestForm = ({ closeForm }: Props) => {
                 value={contactInfo.lastName}
                 name="lastName"
                 onChange={inputHandler}
-                placeholder='Last Name'
+                placeholder="Last Name"
               />
             </section>
           </div>
@@ -78,7 +87,7 @@ const DemoRequestForm = ({ closeForm }: Props) => {
           <div className={classes.requestedDate}>
             <h3>Date Requested*</h3>
             <div className={classes.dateInput}>
-              <input type="date" id="start" name="dateRequested" min="2019-09-01" max="2022-12-31" className={classes.dateRequested} value={contactInfo.dateRequested} onChange={inputHandler} width='100' required />
+              <input type="date" id="start" name="dateRequested" min="2019-09-01" max="2022-12-31" className={classes.dateRequested} value={contactInfo.dateRequested} onChange={inputHandler} width="100" required />
             </div>
           </div>
           <div className={classes.requestedTime}>
@@ -118,7 +127,7 @@ const DemoRequestForm = ({ closeForm }: Props) => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default DemoRequestForm;

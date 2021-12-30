@@ -9,17 +9,32 @@ import { SecurityPageData } from './securityPage.type';
 import { ServicePageData } from './servicePage.typs';
 import { VideoPageData } from './videoPage.type';
 import { BrandPageData } from './brandPage.type';
+import { CareersPageData } from './careersPage.type';
 
 export type CompletePageData = {
-  about: AboutPageData,
-  audio: AudioPageData,
-  automation: AutomationPageData,
-  brands: BrandPageData,
-  contact: ContactPageData,
-  home: HomePageData,
-  phoneSystems: PhoneSystemPageData,
-  products: ProductPageData,
-  security: SecurityPageData,
-  services: ServicePageData,
-  video: VideoPageData
-}
+  about: AboutPageData;
+  audio: AudioPageData;
+  automation: AutomationPageData;
+  brands: BrandPageData;
+  contact: ContactPageData;
+  home: HomePageData;
+  phoneSystems: PhoneSystemPageData;
+  products: ProductPageData;
+  security: SecurityPageData;
+  services: ServicePageData;
+  video: VideoPageData;
+  careers: CareersPageData;
+};
+
+export type PageData = AboutPageData |
+AudioPageData |
+AutomationPageData |
+BrandPageData |
+ContactPageData |
+HomePageData |
+PhoneSystemPageData |
+ProductPageData |
+SecurityPageData |
+ServicePageData |
+VideoPageData |
+CareersPageData;

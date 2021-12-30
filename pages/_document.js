@@ -1,35 +1,25 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Document, {
+  Html, Main, NextScript
+} from 'next/document';
+import Analytics from '../helper/analytics';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
-    const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
   }
 
   render() {
     return (
-      <Html lang='en'>
-        <Head>
-          {/* Global Site Tag (gtag.js) - Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148182336-1"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'UA-148182336-1', { page_path: window.location.pathname });
-            `,
-          }}
-        />
-        </Head>
+      <Html lang="en">
+        <Analytics />
         <body>
           <Main />
           <NextScript />
         </body>
       </Html>
-    )
+    );
   }
 }
 
-export default MyDocument
+export default MyDocument;

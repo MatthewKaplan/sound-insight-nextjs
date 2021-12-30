@@ -6,4 +6,4 @@ export type ContactPageData = {
   SplashTitle: string;
   id: string;
   label: string;
-}
+};

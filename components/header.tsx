@@ -1,21 +1,21 @@
 import clsx from 'clsx';
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from 'next/link';
+import Image from 'next/image';
+import { FC, useEffect, useState } from 'react';
 import MapPopUpComponent from './mapPopUp';
-import { useEffect, useState } from "react";
 import HoursPopUpComponent from './hoursPopUp';
-import classes from './styles/header.module.css'
+import classes from './styles/header.module.css';
 
-const HeaderComponent = () => {
+const HeaderComponent: FC = () => {
   const [popUp, setPopUp] = useState<boolean>(false);
   const [mapPopUp, setMapPopUp] = useState<boolean>(false);
   const [currentPath, setCurrentPath] = useState<string>('');
   const [hoursPopUp, setHoursPopUp] = useState<boolean>(false);
   const [sidebarActive, setSidebarActive] = useState<boolean>(false);
-  
+
   useEffect(() => {
     setCurrentPath(window.location.pathname);
-  })
+  }, []);
 
   const toggleSidebar = () => {
     setSidebarActive(!sidebarActive);
@@ -27,7 +27,7 @@ const HeaderComponent = () => {
   };
 
   const toggleMap = () => {
-    setMapPopUp(!mapPopUp)
+    setMapPopUp(!mapPopUp);
     setPopUp(!popUp);
   };
 
@@ -38,13 +38,14 @@ const HeaderComponent = () => {
           <nav className={classes.mainNav}>
             <Link href="/">
               <a className={classes.imgAnchor}>
-                <Image 
-                  src="https://i.imgur.com/WIgvnFB.jpg" 
-                  height="85" 
-                  width="200" 
+                <Image
+                  src="https://i.imgur.com/WIgvnFB.jpg"
+                  height="85"
+                  width="200"
                   className={classes.logo}
-                  alt='Full size Sound-Insight company logo'
-                  priority />
+                  alt="Full size Sound-Insight company logo"
+                  priority
+                />
               </a>
             </Link>
             <ul className={classes.mainNavOptions}>
@@ -83,52 +84,98 @@ const HeaderComponent = () => {
         </div>
       </header>
       <div className={classes.sidebarNavigation}>
-        <div className={sidebarActive ? clsx(classes.sidebarActive, classes.sidebar) : classes.sidebar}>
+        <div
+          className={sidebarActive ? clsx(classes.sidebarActive, classes.sidebar)
+            : classes.sidebar}
+        >
           <section className={classes.navHeader}>
-            <div className={sidebarActive ? clsx(classes.iconActive, classes.icon) : classes.icon} onClick={() => toggleSidebar()}>
+            <div
+              className={sidebarActive ? clsx(classes.iconActive, classes.icon) : classes.icon}
+              onClick={() => toggleSidebar()}
+              onKeyPress={() => toggleSidebar()}
+              role="menu"
+              tabIndex={0}
+            >
               <div className={classes.hamburger} />
             </div>
             <Link href="/">
               <a className={clsx(classes.link, classes.logoLink)}>
-                <Image 
-                  src="https://i.imgur.com/6E05ibb.png" 
-                  height={50} 
-                  width={50} 
+                <Image
+                  src="https://i.imgur.com/6E05ibb.png"
+                  height={50}
+                  width={50}
                   className={classes.headerLogo}
-                  alt='A smaller Sound-Insight company logo for mobile device'
-                  priority />
+                  alt="A smaller Sound-Insight company logo for mobile device"
+                  priority
+                />
               </a>
             </Link>
           </section>
           <section className={classes.sideNav}>
             <ul className={classes.sidebarMenu}>
               <Link href="/">
-                <a className={classes.link} onClick={() => toggleSidebar()}>
+                <a
+                  className={classes.link}
+                  onClick={() => toggleSidebar()}
+                  onKeyPress={() => toggleSidebar()}
+                  role="menuitem"
+                  tabIndex={0}
+                >
                   HOME
                 </a>
               </Link>
               <Link href="/services">
-                <a className={classes.link} onClick={() => toggleSidebar()}>
+                <a
+                  className={classes.link}
+                  onClick={() => toggleSidebar()}
+                  onKeyPress={() => toggleSidebar()}
+                  role="menuitem"
+                  tabIndex={0}
+                >
                   SERVICES
                 </a>
               </Link>
               <Link href="/products">
-                <a className={classes.link} onClick={() => toggleSidebar()}>
+                <a
+                  className={classes.link}
+                  onClick={() => toggleSidebar()}
+                  onKeyPress={() => toggleSidebar()}
+                  role="menuitem"
+                  tabIndex={0}
+                >
                   PRODUCTS
                 </a>
               </Link>
               <Link href="/brands">
-                <a className={classes.link} onClick={() => toggleSidebar()}>
+                <a
+                  className={classes.link}
+                  onClick={() => toggleSidebar()}
+                  onKeyPress={() => toggleSidebar()}
+                  role="menuitem"
+                  tabIndex={0}
+                >
                   BRANDS
                 </a>
               </Link>
               <Link href="/about">
-                <a className={classes.link} onClick={() => toggleSidebar()}>
+                <a
+                  className={classes.link}
+                  onClick={() => toggleSidebar()}
+                  onKeyPress={() => toggleSidebar()}
+                  role="menuitem"
+                  tabIndex={0}
+                >
                   ABOUT
                 </a>
               </Link>
               <Link href="/contact">
-                <a className={clsx(classes.link, classes.contactLink)} onClick={() => toggleSidebar()}>
+                <a
+                  className={clsx(classes.link, classes.contactLink)}
+                  onClick={() => toggleSidebar()}
+                  onKeyPress={() => toggleSidebar()}
+                  role="menuitem"
+                  tabIndex={0}
+                >
                   CONTACT
                 </a>
               </Link>
@@ -153,11 +200,23 @@ const HeaderComponent = () => {
                 <span>CALL</span>
               </a>
             </div>
-            <div className={clsx(classes.map, classes.menuOption)} onClick={() => toggleMap()}>
+            <div
+              className={clsx(classes.map, classes.menuOption)}
+              onClick={() => toggleMap()}
+              onKeyPress={() => toggleMap()}
+              role="menuitem"
+              tabIndex={0}
+            >
               <Image src="https://i.imgur.com/oj6o3TY.png" alt="Map Icon to see where Sound-Insight is located" width={25} height={35} />
               <span>MAP</span>
             </div>
-            <div className={clsx(classes.hours, classes.menuOption)} onClick={() => toggleHours()}>
+            <div
+              className={clsx(classes.hours, classes.menuOption)}
+              onClick={() => toggleHours()}
+              onKeyPress={() => toggleHours()}
+              role="menuitem"
+              tabIndex={0}
+            >
               <Image src="https://i.imgur.com/rx2GiBJ.png" alt="Clock Icon to view store hours" width={20} height={40} />
               <span>HOURS</span>
             </div>
@@ -165,7 +224,7 @@ const HeaderComponent = () => {
         </div>
       )}
     </>
-  )
-}
+  );
+};
 
 export default HeaderComponent;

@@ -1,26 +1,25 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Image from 'next/image';
-import classes from './styles/carousel.module.css'
 import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { boolean, number, text } from '@storybook/addon-knobs';
-
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import classes from './styles/carousel.module.css';
 
 type Props = {
-  icons: string[],
-  iconNames: string[],
-  links: string[]
-}
+  icons: string[];
+  iconNames: string[];
+  links: string[];
+};
 
-const CarouselComponent = (props: Props) => {
-
-  const baseChildren = props.icons.map((image, i) =>
-    <div key={i} className={classes.carouselDiv}>
-      <Image src={image} width={250} height={250} alt={`${props.iconNames[i]} television/speakers`} />
-      <a href={props.links[i]} target="_blank">
-        <p className={classes.legend}>{props.iconNames[i]}</p>
+const CarouselComponent: FC<Props> = ({ icons, iconNames, links }) => {
+  const baseChildren = icons.map((image, i) => (
+    <div key={image} className={classes.carouselDiv}>
+      <Image src={image} width={250} height={250} alt={`${iconNames[i]} television/speakers`} />
+      <a href={links[i]} target="_blank" rel="noreferrer">
+        <p className={classes.legend}>{iconNames[i]}</p>
       </a>
-    </div>);
+    </div>
+  ));
 
   const tooglesGroupId = 'Toggles';
   const valuesGroupId = 'Values';
@@ -44,7 +43,7 @@ const CarouselComponent = (props: Props) => {
     interval: number('interval', 8000, {}, valuesGroupId),
     transitionTime: number('transitionTime', 2000, {}, valuesGroupId),
     swipeScrollTolerance: number('swipeScrollTolerance', 5, {}, valuesGroupId),
-    ariaLabel: text('ariaLabel', ''),
+    ariaLabel: text('ariaLabel', '')
   });
   return (
     <div className={classes.carouselContainer}>
@@ -52,12 +51,20 @@ const CarouselComponent = (props: Props) => {
         <Carousel
           centerMode
           centerSlidePercentage={number('centerSlidePercentage', 40, {}, mainGroupId)}
-          {...getConfigurableProps()}>{baseChildren}</Carousel>
+          {...getConfigurableProps()}
+        >
+          {baseChildren}
+
+        </Carousel>
       </div>
       <div className={classes.mobileCarousel}>
         <Carousel
           centerMode
-          {...getConfigurableProps()}>{baseChildren}</Carousel>
+          {...getConfigurableProps()}
+        >
+          {baseChildren}
+
+        </Carousel>
       </div>
     </div>
   );

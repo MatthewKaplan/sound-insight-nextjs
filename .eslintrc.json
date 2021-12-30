@@ -12,7 +12,6 @@
         "plugin:jest/recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
-        "plugin:testcafe/recommended",
         "next/core-web-vitals"
     ],
     "globals": {
@@ -32,10 +31,21 @@
         "@typescript-eslint",
         "react",
         "jest",
-        "flowtype",
-        "testcafe"
+        "flowtype"
     ],
     "rules": {
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx",
+                    ".tsx",
+                    ".ts"
+                ]
+            }
+        ],
+        "react/no-danger": 0,
         "@typescript-eslint/comma-dangle": [
             2,
             "never"
@@ -63,6 +73,7 @@
         "@typescript-eslint/no-non-null-assertion": 0,
         "@typescript-eslint/member-delimiter-style": 1,
         "react/prop-types": 0,
+        "jsx-a11y/anchor-is-valid": 0,
         "react/jsx-props-no-spreading": 0,
         "import/extensions": [
             "error",

@@ -1,26 +1,33 @@
 import Image from 'next/image';
 import 'react-phone-number-input/style.css';
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FC, useState } from 'react';
 import PhoneInput from 'react-phone-number-input';
 import { E164Number } from 'libphonenumber-js/types';
-import classes from './styles/surveyRequestForm.module.css'
+import classes from './styles/surveyRequestForm.module.css';
 
 type Props = {
-  closeForm: (order: boolean) => void
-}
+  closeForm: (order: boolean) => void;
+};
 
 type ContactInfo = {
-  phone: E164Number | undefined, firstName: string, lastName: string, email: string, jobDetail: string, dateRequested: string
-}
+  phone: E164Number | undefined;
+  firstName: string;
+  lastName: string;
+  email: string;
+  jobDetail: string;
+  dateRequested: string;
+};
 
-const SurveyRequestForm = ({ closeForm }: Props) => {
-  const [contactInfo, setContactInfo] = useState<ContactInfo>({ phone: undefined, firstName: '', lastName: '', email: '', jobDetail: '', dateRequested: '' });
+const SurveyRequestForm: FC<Props> = ({ closeForm }: Props) => {
+  const [contactInfo, setContactInfo] = useState<ContactInfo>({
+    phone: undefined, firstName: '', lastName: '', email: '', jobDetail: '', dateRequested: ''
+  });
 
   const inputHandler = ({ target: { value, name } }: ChangeEvent<HTMLInputElement>) => {
-    let textValue = value;
-    let key = name;
+    const textValue = value;
+    const key = name;
 
-    setContactInfo({ ...contactInfo, [key]: textValue })
+    setContactInfo({ ...contactInfo, [key]: textValue });
   };
 
   return (
@@ -33,17 +40,22 @@ const SurveyRequestForm = ({ closeForm }: Props) => {
             height={25}
             width={25}
             className={classes.closeForm}
-            onClick={() => closeForm(false)} />
+            onClick={() => closeForm(false)}
+          />
         </div>
-        <form action={`https://formspree.io/sales@sound-insight.com`} method="POST">
+        <form action="https://formspree.io/sales@sound-insight.com" method="POST">
           <h1>Request Free Estimate</h1>
           <h3 className={classes.nameLabel}>Name*</h3>
           <div className={classes.nameForms}>
             <section className={classes.fistNameForm}>
-              <input placeholder='First Name' type="text" className={classes.firstName} name="firstName" value={contactInfo.firstName} id="form-input" onChange={inputHandler} /> <br />
+              <input placeholder="First Name" type="text" className={classes.firstName} name="firstName" value={contactInfo.firstName} id="form-input" onChange={inputHandler} />
+              {' '}
+              <br />
             </section>
             <section className={classes.lastNameForm}>
-              <input placeholder='Last Name' type="text" className={classes.lastName} name="lastName" value={contactInfo.lastName} id="form-input" onChange={inputHandler} /> <br />
+              <input placeholder="Last Name" type="text" className={classes.lastName} name="lastName" value={contactInfo.lastName} id="form-input" onChange={inputHandler} />
+              {' '}
+              <br />
             </section>
           </div>
           <div className={classes.desiredDemo}>
@@ -83,7 +95,7 @@ const SurveyRequestForm = ({ closeForm }: Props) => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default SurveyRequestForm;

@@ -1,26 +1,33 @@
 import Image from 'next/image';
 import 'react-phone-number-input/style.css';
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FC, useState } from 'react';
 import PhoneInput from 'react-phone-number-input';
 import { E164Number } from 'libphonenumber-js/types';
 import classes from './styles/applicationForm.module.css';
 
 type ApplicationInfo = {
-  phone: E164Number | undefined, firstName: string, lastName: string, email: string, message: string, resume: string
-}
+  phone: E164Number | undefined;
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+  resume: string;
+};
 
 type Props = {
-  closeForm: (order: boolean) => void
-}
+  closeForm: (order: boolean) => void;
+};
 
-const ApplicationForm = ({ closeForm }: Props) => {
-  const [applicationInfo, setApplicationInfo] = useState<ApplicationInfo>({ phone: undefined, firstName: '', lastName: '', email: '', message: '', resume: '' });
+const ApplicationForm: FC<Props> = ({ closeForm }) => {
+  const [applicationInfo, setApplicationInfo] = useState<ApplicationInfo>({
+    phone: undefined, firstName: '', lastName: '', email: '', message: '', resume: ''
+  });
 
   const inputHandler = ({ target: { value, name } }: ChangeEvent<HTMLInputElement>) => {
-    let textValue = value;
-    let key = name;
+    const textValue = value;
+    const key = name;
 
-    setApplicationInfo({ ...applicationInfo, [key]: textValue })
+    setApplicationInfo({ ...applicationInfo, [key]: textValue });
   };
 
   return (
@@ -33,9 +40,10 @@ const ApplicationForm = ({ closeForm }: Props) => {
             height={25}
             width={25}
             className={classes.closeForm}
-            onClick={() => closeForm(false)} />
+            onClick={() => closeForm(false)}
+          />
         </div>
-        <form action={`https://formspree.io/sales@sound-insight.com`} method="POST">
+        <form action="https://formspree.io/sales@sound-insight.com" method="POST">
           <h1>Application</h1>
           <h3 className={classes.nameLabel}>Name*</h3>
           <div className={classes.nameForms}>
@@ -48,7 +56,7 @@ const ApplicationForm = ({ closeForm }: Props) => {
                 required
                 value={applicationInfo.firstName}
                 onChange={inputHandler}
-                placeholder='First Name'
+                placeholder="First Name"
               />
             </section>
             <section className={classes.lastNameForm}>
@@ -60,7 +68,7 @@ const ApplicationForm = ({ closeForm }: Props) => {
                 required
                 value={applicationInfo.lastName}
                 onChange={inputHandler}
-                placeholder='Last Name'
+                placeholder="Last Name"
               />
             </section>
           </div>
@@ -112,7 +120,7 @@ const ApplicationForm = ({ closeForm }: Props) => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default ApplicationForm;

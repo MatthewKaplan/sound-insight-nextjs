@@ -18,4 +18,4 @@ export type AudioPageData = {
   audioLinks: string[];
   id: string;
   label: string;
-}
+};

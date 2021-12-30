@@ -1,28 +1,29 @@
 import Image from 'next/image';
-import classes from './styles/splashImage.module.css'
+import { FC } from 'react';
+import classes from './styles/splashImage.module.css';
 
 type Props = {
-  imageLink: string,
-  subTitle: string,
-  title: string,
-  altText: string
-}
+  imageLink: string;
+  subTitle: string;
+  title: string;
+  altText: string;
+};
 
-const SplashImageComponent = (props: Props) => {
-  return (
-    <div className={classes.splashPage}>
-      <div className={classes.parentContainer}>
-        <div className={classes.colorOverlay} />
-        <Image src={props.imageLink} alt={props.altText} layout='fill' objectFit='cover' className={classes.splashImg} priority />
-        <div className={classes.splashDesc}>
-          <p>{props.subTitle}</p>
-          <p>
-            <strong>{props.title}</strong>
-          </p>
-        </div>
+const SplashImageComponent: FC<Props> = ({
+  imageLink, altText, subTitle, title
+}) => (
+  <div className={classes.splashPage}>
+    <div className={classes.parentContainer}>
+      <div className={classes.colorOverlay} />
+      <Image src={imageLink} alt={altText} layout="fill" objectFit="cover" className={classes.splashImg} priority />
+      <div className={classes.splashDesc}>
+        <p>{subTitle}</p>
+        <p>
+          <strong>{title}</strong>
+        </p>
       </div>
     </div>
-  )
-}
+  </div>
+);
 
 export default SplashImageComponent;
