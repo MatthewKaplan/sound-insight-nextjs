@@ -36,7 +36,7 @@
     font-size: 13px;
 }
 
-.imgAnchor div {
+.imgAnchor span {
     box-shadow: rgb(67, 156, 66, 0.4) 0px 5px, rgb(75, 174, 73, 0.3) 0px 10px, rgb(107, 192, 106, 0.2) 0px 15px;
     border-radius: 15px 30px 30px 7.5px;
 }
@@ -184,7 +184,7 @@
 }
 
 .sidebarNavigation {
-    visibility: hidden;
+    display: none;
 }
 
 .sidebarNavigation .sidebar {
@@ -351,7 +351,7 @@
         display: none;
     }
     .sidebarNavigation {
-        visibility: visible;
+        display: block;
     }
     .sidebarNavigation .icon {
         left: 86%;

@@ -15,7 +15,7 @@ const HeaderComponent: FC = () => {
 
   useEffect(() => {
     setCurrentPath(window.location.pathname);
-  }, []);
+  });
 
   const toggleSidebar = () => {
     setSidebarActive(!sidebarActive);
@@ -85,8 +85,7 @@ const HeaderComponent: FC = () => {
       </header>
       <div className={classes.sidebarNavigation}>
         <div
-          className={sidebarActive ? clsx(classes.sidebarActive, classes.sidebar)
-            : classes.sidebar}
+          className={sidebarActive ? clsx(classes.sidebarActive, classes.sidebar) : classes.sidebar}
         >
           <section className={classes.navHeader}>
             <div

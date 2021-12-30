@@ -109,8 +109,8 @@
     width: 83%;
 }
 
-.imgDiv div,
-.audioService a div {
+.imgDiv span,
+.audioService a span {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     border-radius: 45px/15px;
 }

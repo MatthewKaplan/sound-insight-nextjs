@@ -47,10 +47,10 @@ const HomePage: FC<HomePageData> = ({
       <div className={classes.servicesWrapper}>
         <section className={classes.service}>
           <Link href="/services/audio" passHref>
-            <div>
+            <a>
               <Image src={AudioImg} width={430} height={375} alt="Speaker system" className={classes.serviceImg} />
               <p className={classes.sectionTitle}><strong>{AudioTitle}</strong></p>
-            </div>
+            </a>
           </Link>
           <p className={classes.serviceDesc}>
             {AudioSub}

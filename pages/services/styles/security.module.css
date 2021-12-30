@@ -23,13 +23,13 @@
     font-weight: 600 !important;
 }
 
-.securitySystems div:nth-child(1) {
+.securitySystems span:nth-child(1) {
     max-height: 650px;
 }
 
-.securitySystems div:nth-child(1),
-.cameraSystems div:nth-child(1),
-.smartDevices div:nth-child(1) {
+.securitySystems span:nth-child(1),
+.cameraSystems span:nth-child(1),
+.smartDevices span:nth-child(1) {
     max-height: 650px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     border-radius: 45px/15px;

@@ -48,9 +48,9 @@
     text-align: left;
 }
 
-.homeAudio div:nth-child(1),
-.digital div:nth-child(1),
-.analog div:nth-child(1) {
+.homeAudio span:nth-child(1),
+.digital span:nth-child(1),
+.analog span:nth-child(1) {
     max-height: 650px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     border-radius: 45px/15px;
