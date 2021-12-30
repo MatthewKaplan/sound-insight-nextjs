@@ -1,7 +1,7 @@
 import { PageData, CompletePageData } from '../types/completePageData.type';
 
 export async function getAllPageData(): Promise<PageData[]> {
-  const response = await fetch(process.env.firebasedb_link || '');
+  const response = await fetch(process.env.firebasedb_link || 'https://sound-insight-default-rtdb.firebaseio.com/PAGE_DATA.json');
   const data = await response.json() as CompletePageData;
 
   const pageData: PageData[] = [];

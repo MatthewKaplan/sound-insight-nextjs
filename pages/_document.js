@@ -1,5 +1,5 @@
 import Document, {
-  Html, Main, NextScript
+  Html, Main, NextScript, Head
 } from 'next/document';
 import Analytics from '../helper/analytics';
 
@@ -12,7 +12,9 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Analytics />
+        <Head>
+          <Analytics />
+        </Head>
         <body>
           <Main />
           <NextScript />
