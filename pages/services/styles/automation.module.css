@@ -2,7 +2,8 @@
     font-family: "PT Sans", sans-serif;
 }
 
-.automationPage p {
+.automationPage p,
+.automationPage h2 {
     margin-top: 10px;
     line-height: 30px;
     letter-spacing: 1.5px;

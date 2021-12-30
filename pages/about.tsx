@@ -26,7 +26,7 @@ const AboutPage: FC<AboutPageData> = ({
     </Head>
     <SplashImageComponent altText="Sound Insight store front location in Huntington, NY" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
     <div className={classes.aboutInfo}>
-      <p className={classes.aboutTitle}>{AboutTitle}</p>
+      <h2 className={classes.aboutTitle}>{AboutTitle}</h2>
       <section className={classes.aboutSection}>
         <div className={classes.flex}>
           <Image src={AboutImg1} alt="Audio show room" width={400} height={350} layout="fixed" className={classes.imgRadius} />

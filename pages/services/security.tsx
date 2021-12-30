@@ -31,20 +31,20 @@ const SecurityPage: FC<SecurityPageData> = ({
       </section>
       <section className={classes.securitySystems}>
         <Image src={SecImg1} alt="Honeywell security system" width={1400} height={750} layout="responsive" />
-        <p className={classes.sectionTitle}>{SecTitle2}</p>
+        <h2 className={classes.sectionTitle}>{SecTitle2}</h2>
         <p>{SecInfo2}</p>
       </section>
       <div className={classes.bottomServices}>
         <section className={classes.cameraSystems}>
           <Image src={SecImg2} alt="Dome security camera system" width={250} height={250} layout="responsive" />
-          <p className={classes.sectionTitle}>{SecTitle3}</p>
+          <h2 className={classes.sectionTitle}>{SecTitle3}</h2>
           <p>{SecInfo3A}</p>
           <br />
           <p>{SecInfo3B}</p>
         </section>
         <section className={classes.smartDevices}>
           <Image src={SecImg3} alt="Tablet security" width={250} height={250} layout="responsive" />
-          <p className={classes.sectionTitle}>{SecTitle4}</p>
+          <h2 className={classes.sectionTitle}>{SecTitle4}</h2>
           <p>{SecInfo4A}</p>
           <br />
           <p>{SecInfo4B}</p>

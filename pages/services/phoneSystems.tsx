@@ -29,18 +29,18 @@ const PhoneSystemsPage: FC<PhoneSystemPageData> = ({
       </section>
       <section className={classes.securitySystems}>
         <Image src={PhoneImg1} alt="NEC Systems office phones" width={1400} height={750} layout="responsive" />
-        <p className={classes.sectionTitle}>{PhoneTitle2}</p>
+        <h2 className={classes.sectionTitle}>{PhoneTitle2}</h2>
         <p>{PhoneInfo2}</p>
       </section>
       <div className={classes.bottomServices}>
         <section className={classes.desktopPhones}>
           <Image src={PhoneImg2} alt="Desktop office phones" width={250} height={250} layout="responsive" />
-          <p className={classes.sectionTitle}>{PhoneTitle3}</p>
+          <h2 className={classes.sectionTitle}>{PhoneTitle3}</h2>
           <p>{PhoneInfo3}</p>
         </section>
         <section className={classes.wirelessPhones}>
           <Image src={PhoneImg3} alt="Wireless office phones" width={250} height={250} layout="responsive" />
-          <p className={classes.sectionTitle}>{PhoneTitle4}</p>
+          <h2 className={classes.sectionTitle}>{PhoneTitle4}</h2>
           <p>{PhoneInfo4}</p>
         </section>
       </div>

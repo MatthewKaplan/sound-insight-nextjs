@@ -17,10 +17,8 @@ const SplashImageComponent: FC<Props> = ({
       <div className={classes.colorOverlay} />
       <Image src={imageLink} alt={altText} layout="fill" objectFit="cover" className={classes.splashImg} priority />
       <div className={classes.splashDesc}>
+        <h1>{title}</h1>
         <p>{subTitle}</p>
-        <p>
-          <strong>{title}</strong>
-        </p>
       </div>
     </div>
   </div>

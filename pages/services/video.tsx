@@ -36,20 +36,20 @@ const VideoPage: FC<VideoPageData> = ({
       </section>
       <section className={classes.homeCinema}>
         <Image src={VidImg1} alt="Custom Home theater" width={1400} height={750} layout="responsive" />
-        <p className={classes.sectionTitle}>{VidTitle2}</p>
+        <h2 className={classes.sectionTitle}>{VidTitle2}</h2>
         <p>{VidInfo2}</p>
       </section>
       <div className={classes.bottomServices}>
         <section className={classes.televisionSystems}>
           <Image src={VidImg2} alt="Sony OLED television" width={250} height={250} layout="responsive" />
-          <p className={classes.sectionTitle}>{VidTitle3}</p>
+          <h2 className={classes.sectionTitle}>{VidTitle3}</h2>
           <p>{VidInfo3A}</p>
           <br />
           <p>{VidInfo3B}</p>
         </section>
         <section className={classes.projectionSystems}>
           <Image src={VidImg3} alt="Sony projector" width={250} height={250} layout="responsive" />
-          <p className={classes.sectionTitle}>{VidTitle4}</p>
+          <h2 className={classes.sectionTitle}>{VidTitle4}</h2>
           <p>{VidInfo4A}</p>
           <br />
           <p>{VidInfo4B}</p>

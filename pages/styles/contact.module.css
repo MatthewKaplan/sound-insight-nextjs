@@ -12,10 +12,9 @@
     height: 150px;
 }
 
-.contactPage h1 {
+.contactPage h2 {
     text-align: center;
     margin-bottom: 60px;
-    font-size: 2em;
     font-family: montserrat, sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -101,6 +100,9 @@
         margin-top: 40px;
     }
     .contactPage a {
+        font-size: 28px;
+    }
+    .contactPage h2 {
         font-size: 28px;
     }
 }

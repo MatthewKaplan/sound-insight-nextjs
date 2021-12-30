@@ -1,13 +1,10 @@
-.videoPage {
-    font-family: "PT Sans", sans-serif;
-}
-
 .videoPage .header {
     background-color: #201a16;
     height: 150px;
 }
 
-.videoPage p {
+.videoPage p,
+.videoPage h2 {
     margin-top: 10px;
     line-height: 30px;
     letter-spacing: 1.5px;
@@ -84,18 +81,13 @@
     margin: 0 auto;
 }
 
-.videoPage .topPageBreak {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-}
-
 .videoPage .bottomBreakLine {
     width: 90%;
     margin: 0 auto 60px auto;
 }
 
-.videoPage .bottomPageBreak {
+.videoPage .bottomPageBreak,
+.videoPage .topPageBreak {
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));

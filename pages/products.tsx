@@ -32,9 +32,7 @@ const ProductPage: FC<ProductPageData> = ({
       <SplashImageComponent altText="Large Stero system" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
       <div className={classes.productsPage}>
         <section className={classes.products}>
-          <p>
-            <strong>{ProductTitle1}</strong>
-          </p>
+          <h2>{ProductTitle1}</h2>
           <section className={classes.productSlides}>
             <div className={classes.topBreakLine}>
               <hr className={classes.topPageBreak} />
@@ -48,9 +46,7 @@ const ProductPage: FC<ProductPageData> = ({
               <hr className={classes.bottomPageBreak} />
             </div>
           </section>
-          <p className={classes.speakerHeader}>
-            <strong>{ProductTitle2}</strong>
-          </p>
+          <h2 className={classes.speakerHeader}>{ProductTitle2}</h2>
           <section className={classes.productSlides}>
             <div className={classes.topBreakLine}>
               <hr className={classes.topPageBreak} />

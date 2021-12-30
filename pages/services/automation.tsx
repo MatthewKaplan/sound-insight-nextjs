@@ -32,7 +32,7 @@ const AutomationPage: FC<AutomationPageData> = ({
       </section>
       <section className={classes.homeAutomation}>
         <Image src={AutoImg1} alt="Example of home automation" width={1400} height={750} layout="responsive" />
-        <p className={classes.sectionTitle}>{AutoTitle2}</p>
+        <h2 className={classes.sectionTitle}>{AutoTitle2}</h2>
         <p>{AutoInfo2A}</p>
         <br />
         <p>{AutoInfo2B}</p>
@@ -40,14 +40,14 @@ const AutomationPage: FC<AutomationPageData> = ({
       <div className={classes.bottomServices}>
         <section className={classes.controlFour}>
           <Image src={AutoImg2} alt="Control 4 automation system" width={250} height={250} layout="responsive" />
-          <p className={classes.sectionTitle}>{AutoTitle3}</p>
+          <h2 className={classes.sectionTitle}>{AutoTitle3}</h2>
           <p>{AutoInfo3A}</p>
           <br />
           <p>{AutoInfo3B}</p>
         </section>
         <section className={classes.elan}>
           <Image src={AutoImg3} alt="Elan home automation system" width={250} height={250} layout="responsive" />
-          <p className={classes.sectionTitle}>{AutoTitle4}</p>
+          <h2 className={classes.sectionTitle}>{AutoTitle4}</h2>
           <p>{AutoInfo4A}</p>
           <br />
           <p>{AutoInfo4B}</p>

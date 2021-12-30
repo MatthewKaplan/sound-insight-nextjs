@@ -36,9 +36,7 @@ const BrandsPage: FC<BrandPageData> = ({
       <SplashImageComponent altText="Sound Insight lobby with TVs and speakers" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
       <section className={classes.brands}>
         <div className={classes.brandHeading}>
-          <p>
-            <strong>{BrandsTitle}</strong>
-          </p>
+          <h2>{BrandsTitle}</h2>
           <p className={classes.brandSubtitle}>
             {BrandSub1}
             {' '}

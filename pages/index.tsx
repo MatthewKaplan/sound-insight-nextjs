@@ -38,18 +38,18 @@ const HomePage: FC<HomePageData> = ({
   tel,
   PhoneNumber,
   Mission
-}: HomePageData) => (
+}) => (
   <div>
     <SplashImageComponent altText="Living room with TV over fireplace" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
     <Box className={classes.homeServices} height="auto">
-      <p className={classes.mission}>{Mission}</p>
+      <h2 className={classes.mission}>{Mission}</h2>
       <p className={classes.mission2}>{SubMission}</p>
       <div className={classes.servicesWrapper}>
         <section className={classes.service}>
           <Link href="/services/audio" passHref>
             <a>
               <Image src={AudioImg} width={430} height={375} alt="Speaker system" className={classes.serviceImg} />
-              <p className={classes.sectionTitle}><strong>{AudioTitle}</strong></p>
+              <h3 className={classes.sectionTitle}>{AudioTitle}</h3>
             </a>
           </Link>
           <p className={classes.serviceDesc}>
@@ -60,7 +60,7 @@ const HomePage: FC<HomePageData> = ({
           <Link href="/services/video">
             <a>
               <Image src={VideoImg} width={430} height={375} alt="Custom Home movie theater" className={classes.serviceImg} />
-              <p className={classes.sectionTitle}><strong>{VideoTitle}</strong></p>
+              <h3 className={classes.sectionTitle}>{VideoTitle}</h3>
             </a>
           </Link>
           <p className={classes.serviceDesc}>
@@ -71,7 +71,7 @@ const HomePage: FC<HomePageData> = ({
           <Link href="/services/automation">
             <a>
               <Image src={AutoImg} width={430} height={375} alt="Home Automation system" className={classes.serviceImg} />
-              <p className={classes.sectionTitle}><strong>{AutoTitle}</strong></p>
+              <h3 className={classes.sectionTitle}>{AutoTitle}</h3>
             </a>
           </Link>
           <p className={classes.serviceDesc}>
@@ -92,7 +92,7 @@ const HomePage: FC<HomePageData> = ({
         </div>
       </section>
       <section className={classes.storeInfo}>
-        <p className={classes.storeInfoTitle}>{ShowroomTitle}</p>
+        <h2 className={classes.storeInfoTitle}>{ShowroomTitle}</h2>
         <p className={classes.showroomInfo}>
           {ShowroomInfo}
         </p>

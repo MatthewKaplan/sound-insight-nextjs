@@ -2,7 +2,8 @@
     font-family: "PT Sans", sans-serif;
 }
 
-.phonePage p {
+.phonePage p,
+.phonePage h2 {
     margin-top: 10px;
     line-height: 30px;
     letter-spacing: 1.5px;

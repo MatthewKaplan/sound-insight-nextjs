@@ -34,7 +34,7 @@ const ContactPage: FC<ContactPageData> = ({
       </Head>
       <SplashImageComponent altText="Sound Insight lobby with TVs and speakers" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
       <section className={classes.contactPageContents}>
-        <h1>{ContactTitle}</h1>
+        <h2>{ContactTitle}</h2>
         <div className={classes.breakLine}>
           <hr className={classes.pageBreak} />
         </div>

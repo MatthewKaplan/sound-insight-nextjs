@@ -188,14 +188,14 @@ const HeaderComponent: FC = () => {
         <div className={classes.contactMenu}>
           <section className={classes.contactMenuOptions}>
             <div className={classes.email}>
-              <a href="mailto:sales@sound-insight.com" className={classes.menuOption}>
-                <Image src="https://i.imgur.com/SUphJ4h.png" alt="Email Icon to reach Sound-Insight via email" width={25} height={35} />
+              <a href="mailto:sales@sound-insight.com" className={classes.menuOption} style={{ marginTop: '5px' }}>
+                <Image src="https://i.imgur.com/SUphJ4h.png" alt="Email Icon to reach Sound-Insight via email" width={25} height={40} />
                 <span>EMAIL</span>
               </a>
             </div>
             <div className={classes.phone}>
-              <a target="_blank" href="tel:6312714434" rel="noopener noreferrer" className={classes.menuOption}>
-                <Image src="https://i.imgur.com/eAxtt3I.png" alt="Telephone Icon to reach Sound-Insight via phone" width={25} height={35} />
+              <a target="_blank" href="tel:6312714434" rel="noopener noreferrer" className={classes.menuOption} style={{ marginTop: '5px' }}>
+                <Image src="https://i.imgur.com/eAxtt3I.png" alt="Telephone Icon to reach Sound-Insight via phone" width={25} height={40} />
                 <span>CALL</span>
               </a>
             </div>
@@ -205,8 +205,9 @@ const HeaderComponent: FC = () => {
               onKeyPress={() => toggleMap()}
               role="menuitem"
               tabIndex={0}
+              style={{ marginTop: '5px' }}
             >
-              <Image src="https://i.imgur.com/oj6o3TY.png" alt="Map Icon to see where Sound-Insight is located" width={25} height={35} />
+              <Image src="https://i.imgur.com/oj6o3TY.png" alt="Map Icon to see where Sound-Insight is located" width={25} height={40} />
               <span>MAP</span>
             </div>
             <div
@@ -215,6 +216,7 @@ const HeaderComponent: FC = () => {
               onKeyPress={() => toggleHours()}
               role="menuitem"
               tabIndex={0}
+              style={{ marginTop: '5px' }}
             >
               <Image src="https://i.imgur.com/rx2GiBJ.png" alt="Clock Icon to view store hours" width={20} height={40} />
               <span>HOURS</span>

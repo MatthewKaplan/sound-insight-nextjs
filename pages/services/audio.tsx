@@ -35,20 +35,20 @@ const AudioPage: FC<AudioPageData> = ({
       </section>
       <div className={classes.homeAudio}>
         <Image src={AudioImg1} className={classes.audioImg} alt="TV with a big stero system" width={1400} height={750} layout="responsive" />
-        <p className={classes.sectionTitle}>{AudioTitle2}</p>
+        <h2 className={classes.sectionTitle}>{AudioTitle2}</h2>
         <p>{AudioInfo2}</p>
       </div>
       <div className={classes.bottomServices}>
         <section className={classes.analog}>
           <Image src={AudioImg2} alt="Analog system with record player" width={150} height={150} layout="responsive" />
-          <p className={classes.sectionTitle}>{AudioTitle3}</p>
+          <h2 className={classes.sectionTitle}>{AudioTitle3}</h2>
           <p>{AudioInfo3A}</p>
           <br />
           <p>{AudioInfo3B}</p>
         </section>
         <section className={classes.digital}>
           <Image src={AudioImg3} alt="Digital sound system" width={150} height={150} layout="responsive" />
-          <p className={classes.sectionTitle}>{AudioTitle4}</p>
+          <h2 className={classes.sectionTitle}>{AudioTitle4}</h2>
           <p>{AudioInfo4}</p>
         </section>
       </div>

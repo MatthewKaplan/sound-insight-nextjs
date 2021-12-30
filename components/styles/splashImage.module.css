@@ -53,7 +53,8 @@
     padding: 0 50px;
 }
 
-.splashDesc p {
+.splashDesc p,
+.splashDesc h1 {
     font-family: playfair-display, serif;
     font-weight: 400;
     font-style: normal;
@@ -66,7 +67,7 @@
     margin-bottom: 50px;
 }
 
-.splashDesc strong {
+.splashDesc h1 {
     font-family: playfair-display, serif;
     font-weight: 600;
     font-style: normal;
@@ -76,6 +77,7 @@
     line-height: 1.1em;
     margin: 0 auto;
     color: #eee;
+    margin-bottom: 45px;
 }
 
 @media screen and (max-width: 2560px) {
@@ -94,7 +96,7 @@
     .splashPage .splashDesc p {
         font-size: 24px;
     }
-    .splashPage .splashDesc strong {
+    .splashPage .splashDesc h1 {
         font-size: 58px;
     }
     .splashPage .splashDesc {
@@ -113,13 +115,13 @@
         height: 500px;
     }
     .splashPage .splashDesc {
-        bottom: 425px;
+        top: 33%
     }
     .splashPage .splashDesc p {
+        letter-spacing: 2px;
         font-size: 18px;
-        margin-bottom: 20px;
     }
-    .splashPage .splashDesc strong {
+    .splashPage .splashDesc h1 {
         font-size: 36px;
     }
 }
@@ -132,12 +134,12 @@
         height: 500px;
     }
     .splashPage .splashDesc {
-        bottom: 375px;
+        top: 33%
     }
     .splashPage .splashDesc p {
         font-size: 16px;
     }
-    .splashPage .splashDesc strong {
+    .splashPage .splashDesc h1 {
         font-size: 34px;
     }
 }
