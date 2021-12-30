@@ -10,9 +10,7 @@ import MainContainer from '../containers/main';
 const MyApp: FC<AppProps> = ({ Component, pageProps }) => (
   <>
     <Head>
-      <title>Sound Insight - Custom AV Solution & Design</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta name="description" content="A passion for audio and video since 2002! We design thoughtful, intuitive systems." />
       <meta property="og:title" content="Sound Insight" />
       <meta property="og:description" content="Custom home theater systems offer high performance surround sound and video. Let Sound Insight deliver your dream system." />
       <meta property="og:type" content="website" />

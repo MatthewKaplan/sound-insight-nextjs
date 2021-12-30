@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { FC } from 'react';
 import Link from 'next/link';
+import Head from 'next/head';
 import Image from 'next/image';
 import { GetStaticProps } from 'next';
 import { Box } from '@chakra-ui/layout';
@@ -40,6 +41,10 @@ const HomePage: FC<HomePageData> = ({
   Mission
 }) => (
   <div>
+    <Head>
+      <title>Sound Insight - Custom AV Solution & Design</title>
+      <meta name="description" content="A passion for audio and video since 2002! We design thoughtful, intuitive systems." />
+    </Head>
     <SplashImageComponent altText="Living room with TV over fireplace" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
     <Box className={classes.homeServices} height="auto">
       <h2 className={classes.mission}>{Mission}</h2>

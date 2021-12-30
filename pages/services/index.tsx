@@ -37,7 +37,7 @@ const ServicesPage: FC<ServicePageData> = ({
       <title>Sound Insight - Audio, Video, Home Automation Services</title>
       <meta name="description" content="We provide our clients with a complete range of audio-video solutions, smart home automation, security solutions, phone systems, and IT solutions. Sound Insight is New York's #1 in AV Solutions." />
     </Head>
-    <SplashImageComponent altText="Living room with TV on the wall" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
+    <SplashImageComponent altText="Living room with TV on the wall and fireplace" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
     <Box className={classes.servicesProvided}>
       <section className={classes.header}>
         <h2 className={classes.title}>{ServicesTitle}</h2>
@@ -48,7 +48,7 @@ const ServicesPage: FC<ServicePageData> = ({
         <div className={classes.audioService}>
           <Link href="/services/audio">
             <a>
-              <Image src={AudioImg} alt="Living room with a pair of white speakers" className={classes.topServiceImg} height={600} width={1400} />
+              <Image src={AudioImg} alt="Living room with a set of speakers around the couch" className={classes.topServiceImg} height={600} width={1400} objectFit="fill" />
               <h3 className={classes.sectionTitle}>{AudioTitle}</h3>
             </a>
           </Link>
@@ -61,7 +61,7 @@ const ServicesPage: FC<ServicePageData> = ({
             <Link href="/services/automation">
               <a className={classes.anchor}>
                 <div style={{ display: 'flex', justifyContent: 'center' }} className={classes.imgDiv}>
-                  <Image src={AutoImg} alt="Home Automation solutions" className={classes.serviceImg} height={425} width={500} />
+                  <Image src={AutoImg} alt="Women crontrolling lights in her house on an iPad" className={classes.serviceImg} height={425} width={500} />
                 </div>
                 <h3 className={classes.sectionTitle}>{AutoTitle}</h3>
               </a>
@@ -72,7 +72,7 @@ const ServicesPage: FC<ServicePageData> = ({
             <Link href="/services/video">
               <a className={classes.anchor}>
                 <div style={{ display: 'flex', justifyContent: 'center' }} className={classes.imgDiv}>
-                  <Image src={VideoImg} alt="Custom Home Movie Theater" className={classes.serviceImg} height={425} width={500} />
+                  <Image src={VideoImg} alt="Custom Home Movie Theater with red couch" className={classes.serviceImg} height={425} width={500} />
                 </div>
                 <h3 className={classes.sectionTitle}>{VideoTitle}</h3>
               </a>
@@ -85,7 +85,7 @@ const ServicesPage: FC<ServicePageData> = ({
             <Link href="/services/phoneSystems">
               <a className={classes.anchor}>
                 <div style={{ display: 'flex', justifyContent: 'center' }} className={classes.imgDiv}>
-                  <Image src={PhoneImg} alt="Man on an office phone" className={classes.serviceImg} height={425} width={500} />
+                  <Image src={PhoneImg} alt="Office phone sitting on desk" className={classes.serviceImg} height={425} width={500} />
                 </div>
                 <h3 className={classes.sectionTitle}>{PhoneTitle}</h3>
               </a>
@@ -96,7 +96,7 @@ const ServicesPage: FC<ServicePageData> = ({
             <Link href="/services/security">
               <a className={classes.anchor}>
                 <div style={{ display: 'flex', justifyContent: 'center' }} className={classes.imgDiv}>
-                  <Image src={SecurityImg} alt="Man viewing security cameras on iPad" className={classes.serviceImg} height={425} width={500} />
+                  <Image src={SecurityImg} alt="Women viewing her security cameras on an iPad" className={classes.serviceImg} height={425} width={500} />
                 </div>
                 <h3 className={classes.sectionTitle}>{SecurityTitle}</h3>
               </a>

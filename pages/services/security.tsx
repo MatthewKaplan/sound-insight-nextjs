@@ -30,7 +30,7 @@ const SecurityPage: FC<SecurityPageData> = ({
         <p>{SecInfo1}</p>
       </section>
       <section className={classes.securitySystems}>
-        <Image src={SecImg1} alt="Honeywell security system" width={1400} height={750} layout="responsive" />
+        <Image src={SecImg1} alt="Honeywell security system" width={1400} height={750} layout="responsive" objectFit="cover" objectPosition="0px 0px" />
         <h2 className={classes.sectionTitle}>{SecTitle2}</h2>
         <p>{SecInfo2}</p>
       </section>

@@ -35,7 +35,7 @@ const VideoPage: FC<VideoPageData> = ({
         <p>{VidInfo1}</p>
       </section>
       <section className={classes.homeCinema}>
-        <Image src={VidImg1} alt="Custom Home theater" width={1400} height={750} layout="responsive" />
+        <Image src={VidImg1} alt="Custom Home theater" width={1400} height={750} layout="responsive" objectFit="cover" />
         <h2 className={classes.sectionTitle}>{VidTitle2}</h2>
         <p>{VidInfo2}</p>
       </section>
@@ -48,7 +48,7 @@ const VideoPage: FC<VideoPageData> = ({
           <p>{VidInfo3B}</p>
         </section>
         <section className={classes.projectionSystems}>
-          <Image src={VidImg3} alt="Sony projector" width={250} height={250} layout="responsive" />
+          <Image src={VidImg3} alt="Sony projector" width={700} height={700} layout="responsive" objectFit="cover" />
           <h2 className={classes.sectionTitle}>{VidTitle4}</h2>
           <p>{VidInfo4A}</p>
           <br />
