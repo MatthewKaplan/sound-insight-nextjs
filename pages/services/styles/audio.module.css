@@ -1,205 +1,188 @@
 .audioPage {
-  font-family: "PT Sans", sans-serif;
+    font-family: "PT Sans", sans-serif;
+}
+
+.audioPage p {
+    margin-top: 10px;
+    line-height: 30px;
+    letter-spacing: 1.5px;
+    word-spacing: 2px;
+    text-align: center;
+    font-family: montserrat, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.sectionTitle {
+    margin-top: 20px !important;
+    font-weight: 600 !important;
 }
 
 .audioPage .header {
-  background-color: #201a16;
-  height: 150px;
+    background-color: #201a16;
+    height: 150px;
 }
 
 .audioPage .audioInfo {
-  max-width: 75%;
-  margin: 0 auto;
+    max-width: 75%;
+    margin: 0 auto;
 }
 
 .audioPage .audioInfo .pageHeading h1 {
-  margin-top: 80px;
-  margin-bottom: 40px;
-  font-size: 2em;
-  text-align: center;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    font-size: 2em;
+    text-align: center;
 }
 
 .audioPage .audioInfo .pageHeading p {
-  margin-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 .homeAudioImg {
-  max-width: 100%;
-  width: 100%;
+    max-width: 100%;
+    width: 100%;
 }
 
 .homeAudio {
-  text-align: left;
+    text-align: left;
+}
+
+.homeAudio div:nth-child(1),
+.digital div:nth-child(1),
+.analog div:nth-child(1) {
+    max-height: 650px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 45px/15px;
 }
 
 .homeAudio h2 {
-  margin-top: 30px;
+    margin-top: 30px;
 }
 
 .bottomServices {
-  display: flex;
-  justify-content: space-between;
-  text-align: left;
-  margin-top: 80px;
-  margin-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
+.bottomServices .digital,
 .bottomServices .analog {
-  max-width: 45%;
+    max-width: 35%;
 }
-
-.bottomServices .analog h2 {
-  margin-top: 60px;
-}
-
-
-.bottomServices .digital {
-  max-width: 45%;
-}
-
-.bottomServices .digital h2 {
-  margin-top: 60px;
-}
-
 
 .bottomServices img {
-  height: 360px;
-  width: 100%;
-  max-width: 100%;
+    height: 360px;
+    width: 100%;
+    max-width: 100%;
 }
 
 .bottomServices .analogImg {
-  width: 110%;
+    width: 110%;
 }
 
 .productSlides {
-  margin: 0 auto;
-  overflow: hidden;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .topBreakLine {
-  width: 90%;
-  margin: 0 auto;
+    width: 90%;
+    margin: 0 auto;
 }
 
 .topPageBreak {
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
 .bottomBreakLine {
-  width: 90%;
-  margin: 0 auto 60px auto;
+    width: 90%;
+    margin: 0 auto 60px auto;
 }
 
 .bottomPageBreak {
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
-
 @media screen and (max-width: 2560px) {
-  .audioPage .audioInfo .bottomServices img {
-    height: 550px;
-  }
-
-  .audioPage .audioInfo .homeAudioImg {
-    height: 1100px;
-  }
+    .audioPage .audioInfo .bottomServices img {
+        height: 550px;
+    }
+    .audioPage .audioInfo .homeAudioImg {
+        height: 1100px;
+    }
 }
 
 @media screen and (max-width: 1920px) {
-  .audioPage .audioInfo .homeAudioImg {
-    height: 900px;
-  }
-
-  .audioPage .audioInfo .bottomServices img {
-    height: 450px;
-  }
+    .audioPage .audioInfo .homeAudioImg {
+        height: 900px;
+    }
+    .audioPage .audioInfo .bottomServices img {
+        height: 450px;
+    }
 }
 
 @media screen and (max-width: 1440px) {
-  .audioPage .audioInfo .homeAudioImg {
-    height: 650px;
-  }
-
-  .audioPage .audioInfo .bottomServices img {
-    height: 350px;
-  }
+    .audioPage .audioInfo .homeAudioImg {
+        height: 650px;
+    }
+    .audioPage .audioInfo .bottomServices img {
+        height: 350px;
+    }
 }
 
 @media screen and (max-width: 438px) {
-  .audioPage .header {
-    display: none;
-  }
-
-  .audioPage .audioInfo {
-    max-width: 90%;
-  }
-
-  .audioPage .audioInfo .homeAudioImg {
-    height: 350px;
-  }
-
-  .audioPage .audioInfo .pageHeading h1 {
-    margin-top: 120px;
-  }
-
-  .audioPage .audioInfo .bottomServices {
-    flex-direction: column;
-  }
-
-  .audioPage .audioInfo .bottomServices .analog {
-    max-width: 100%;
-  }
-
-  .audioPage .audioInfo .bottomServices .analog h2 {
-    margin-top: 30px;
-  }
-
-
-  .audioPage .audioInfo .bottomServices .digital {
-    max-width: 100%;
-    margin-top: 80px;
-  }
-
-  .audioPage .audioInfo .bottomServices .digital h2 {
-    margin-top: 30px;
-  }
+    .audioPage .header {
+        display: none;
+    }
+    .audioPage .audioInfo {
+        max-width: 90%;
+    }
+    .audioPage .audioInfo .homeAudioImg {
+        height: 350px;
+    }
+    .audioPage .audioInfo .pageHeading h1 {
+        margin-top: 120px;
+    }
+    .audioPage .audioInfo .bottomServices {
+        flex-direction: column;
+    }
+    .audioPage .audioInfo .bottomServices .analog {
+        max-width: 100%;
+    }
+    .audioPage .audioInfo .bottomServices .digital {
+        max-width: 100%;
+        margin-top: 80px;
+    }
 }
 
-
-
-
 @media screen and (max-width: 320px) {
-  .audioPage p {
-    font-size: 15px;
-  }
-
-  .audioPage .audioInfo .pageHeading {
-    margin: 100px 0 30px 0;
-  }
-
-  .audioPage .audioInfo .pageHeading p {
-    font-size: 15px;
-    margin-bottom: 60px;
-  }
-
-  .audioPage .audioInfo .homeAudioImg {
-    height: 250px;
-  }
-
-  .audioPage .audioInfo .bottomServices {
-    margin: 50px 0;
-  }
-
-  .audioPage .audioInfo .bottomServices .digital {
-    margin-top: 50px;
-  }
-
-  .audioPage .audioInfo .bottomServices img {
-    height: 250px;
-  }
+    .audioPage p {
+        font-size: 15px;
+    }
+    .audioPage .audioInfo .pageHeading {
+        margin: 100px 0 30px 0;
+    }
+    .audioPage .audioInfo .pageHeading p {
+        font-size: 15px;
+        margin-bottom: 60px;
+    }
+    .audioPage .audioInfo .homeAudioImg {
+        height: 250px;
+    }
+    .audioPage .audioInfo .bottomServices {
+        margin: 50px 0;
+    }
+    .audioPage .audioInfo .bottomServices .digital {
+        margin-top: 50px;
+    }
+    .audioPage .audioInfo .bottomServices img {
+        height: 250px;
+    }
 }

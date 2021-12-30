@@ -1,16 +1,21 @@
-import classes from './styles/header.module.css'
+import clsx from 'clsx';
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from "react";
-import clsx from 'clsx';
 import MapPopUpComponent from './mapPopUp';
+import { useEffect, useState } from "react";
 import HoursPopUpComponent from './hoursPopUp';
+import classes from './styles/header.module.css'
 
 const HeaderComponent = () => {
   const [popUp, setPopUp] = useState<boolean>(false);
   const [mapPopUp, setMapPopUp] = useState<boolean>(false);
+  const [currentPath, setCurrentPath] = useState<string>('');
   const [hoursPopUp, setHoursPopUp] = useState<boolean>(false);
   const [sidebarActive, setSidebarActive] = useState<boolean>(false);
+  
+  useEffect(() => {
+    setCurrentPath(window.location.pathname);
+  })
 
   const toggleSidebar = () => {
     setSidebarActive(!sidebarActive);
@@ -44,32 +49,32 @@ const HeaderComponent = () => {
             </Link>
             <ul className={classes.mainNavOptions}>
               <Link href="/">
-                <a className={classes.link}>
+                <a className={currentPath === '/' ? clsx(classes.link, classes.linkActive) : classes.link}>
                   HOME
                 </a>
               </Link>
               <Link href="/services">
-                <a className={classes.link}>
+                <a className={currentPath === '/services' ? clsx(classes.link, classes.linkActive) : classes.link}>
                   SERVICES
                 </a>
               </Link>
               <Link href="/products">
-                <a className={classes.link}>
+                <a className={currentPath === '/products' ? clsx(classes.link, classes.linkActive) : classes.link}>
                   PRODUCTS
                 </a>
               </Link>
               <Link href="/brands">
-                <a className={classes.link}>
+                <a className={currentPath === '/brands' ? clsx(classes.link, classes.linkActive) : classes.link}>
                   BRANDS
                 </a>
               </Link>
               <Link href="/about">
-                <a className={classes.link}>
+                <a className={currentPath === '/about' ? clsx(classes.link, classes.linkActive) : classes.link}>
                   ABOUT
                 </a>
               </Link>
               <Link href="/contact">
-                <a className={clsx(classes.link, classes.contactLink)}>
+                <a className={currentPath === '/contact' ? clsx(classes.link, classes.contactLinkActive, classes.contactLink) : clsx(classes.link, classes.contactLink)}>
                   CONTACT
                 </a>
               </Link>

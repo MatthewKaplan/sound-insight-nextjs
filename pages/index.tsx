@@ -14,33 +14,14 @@ const HomePage = (props: HomePageData) => {
     <div>
       <SplashImageComponent altText="Living room with TV over fireplace" imageLink={props.SplashImg} title={props.SplashTitle} subTitle={props.SplashSubTitle} />
       <Box className={classes.homeServices} height="auto">
-        <h1>{props.MainTitle}</h1>
         <p className={classes.mission}>{props.Mission}</p>
-        <p className={classes.mission}>{props.SubMission}</p>
-        <p className={clsx(classes.serviceDesc, classes.contactInfo)}>
-          {props.Call}{" "}
-          <strong>
-            <a target="_blank" href={props.tel} rel="noopener noreferrer">
-              {props.PhoneNumber}
-            </a>
-          </strong>{" "}
-          {props.Visit}{" "}
-          <strong>
-            <a
-              target="_blank"
-              href={props.Google}
-              rel="noopener noreferrer"
-            >
-              {props.City}
-            </a>
-          </strong>
-        </p>
+        <p className={classes.mission2}>{props.SubMission}</p>
         <div className={classes.servicesWrapper}>
           <section className={classes.service}>
             <Link href="/services/audio">
               <a>
                 <Image src={props.AudioImg} width={430} height={375} alt="Speaker system" className={classes.serviceImg} />
-                <h3>{props.AudioTitle}</h3>
+                <p className={classes.sectionTitle}><strong>{props.AudioTitle}</strong></p>
               </a>
             </Link>
             <p className={classes.serviceDesc}>
@@ -51,7 +32,7 @@ const HomePage = (props: HomePageData) => {
             <Link href="/services/video">
               <a>
                 <Image src={props.VideoImg} width={430} height={375} alt="Custom Home movie theater" className={classes.serviceImg} />
-                <h3>{props.VideoTitle}</h3>
+                <p className={classes.sectionTitle}><strong>{props.VideoTitle}</strong></p>
               </a>
             </Link>
             <p className={classes.serviceDesc}>
@@ -62,7 +43,7 @@ const HomePage = (props: HomePageData) => {
             <Link href="/services/automation">
               <a>
                 <Image src={props.AutoImg} width={430} height={375} alt="Home Automation system" className={classes.serviceImg} />
-                <h3>{props.AutoTitle}</h3>
+                <p className={classes.sectionTitle}><strong>{props.AutoTitle}</strong></p>
               </a>
             </Link>
             <p className={classes.serviceDesc}>
@@ -83,9 +64,27 @@ const HomePage = (props: HomePageData) => {
           </div>
         </section>
         <section className={classes.storeInfo}>
-          <h1>{props.ShowroomTitle}</h1>
+          <p className={classes.storeInfoTitle}>{props.ShowroomTitle}</p>
           <p className={classes.showroomInfo}>
             {props.ShowroomInfo}
+          </p>
+          <p className={clsx(classes.serviceDesc, classes.contactInfo)}>
+            {props.Call}{" "}
+            <strong>
+              <a target="_blank" href={props.tel} rel="noopener noreferrer">
+                {props.PhoneNumber}
+              </a>
+            </strong>{" "}
+            {props.Visit}{" "}
+            <strong>
+              <a
+                target="_blank"
+                href={props.Google}
+                rel="noopener noreferrer"
+              >
+                {props.City}
+              </a>
+            </strong>
           </p>
           <div className={classes.topImages}>
             <Image src={props.StoreImg1} width={250} height={250} alt="Inside of Sound Insight" className={classes.store1} />

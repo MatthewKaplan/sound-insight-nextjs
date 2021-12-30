@@ -1,222 +1,221 @@
 .servicesProvided {
-  height: auto;
-  margin: 20px 0 60px 0;
-  font-family: "PT Sans", sans-serif;
+    height: auto;
+    margin: 20px 0 60px 0;
+    font-family: "PT Sans", sans-serif;
 }
 
 .servicesProvided p {
-  font-weight: 300;
-  font-style: normal;
-  font-size: 17px;
-  letter-spacing: 0.5px;
-  line-height: 1.6em;
-  color: #1f1f1f;
+    margin-top: 10px;
+    line-height: 30px;
+    letter-spacing: 1.5px;
+    word-spacing: 2px;
+    text-align: center;
+    font-family: montserrat, sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-.anchor div {
-  margin-left: 90px;
+.sectionTitle {
+    margin-top: 20px !important;
+    font-weight: 600 !important;
 }
 
 .servicesProvided .header {
-  width: 65%;
-  margin: 0 auto;
-  text-align: center;
+    width: 65%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .servicesProvided .header .title {
-  font-family: "PT Sans", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 42px;
-  letter-spacing: .4px;
-  text-transform: none;
-  line-height: 1.2em;
+    font-family: montserrat, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 28px;
+    letter-spacing: .4px;
+    text-transform: none;
+    line-height: 1.2em;
+    margin-top: 50px;
 }
 
 .servicesProvided .header .subtitle {
-  font-family: "PT Sans", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-  font-size: 32px;
-  letter-spacing: 0px;
-  text-transform: none;
-  line-height: 1.2em;
-  margin-bottom: 50px;
+    font-family: montserrat, sans-serif;
+    font-style: normal;
+    font-size: 22px;
+    letter-spacing: 0px;
+    text-transform: none;
+    line-height: 1.2em;
+    margin-bottom: 50px;
+    margin-top: 30px;
 }
 
-
 .pageBreak {
-  border: 0;
-  height: 1px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
 .audioService {
-  max-width: 82.4%;
-  margin: 80px auto 0 auto;
-  text-align: left;
+    max-width: 82.4%;
+    margin: 80px auto 0 auto;
+    text-align: left;
 }
 
 .topServiceImg {
-  height: 600px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  box-shadow: 2px 4px 14px 0 rgba(0, 0, 0, 0.19);
-}
-
-.servicesProvided h3 {
-  margin-top: 30px;
+    height: 600px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    box-shadow: 2px 4px 14px 0 rgba(0, 0, 0, 0.19);
 }
 
 .servicesInfo {
-  display: grid;
-  grid-template-columns: 45% 45%;
-  justify-items: center;
-  justify-content: center;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    margin: 80px auto;
 }
 
 .servicesInfo .automation,
 .servicesInfo .video {
-  margin-top: 80px;
+    margin-top: 80px;
+    max-width: 82.4%;
+    margin: 80px auto;
+    max-height: 725px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-between;
 }
 
 .servicesInfo h3 {
-  text-align: left;
-  width: 83%;
-  margin: 30px auto;
+    text-align: left;
+    width: 83%;
+    margin: 30px auto;
 }
 
 .servicesInfo p {
-  width: 83%;
-  margin: 0 auto;
-  text-align: left;
-  margin-bottom: 80px;
+    width: 83%;
+    margin: 0 auto;
+    margin-bottom: 25px;
 }
 
 .servicesInfo .serviceImg {
-  height: 400px;
-  width: 83%;
-  box-shadow: 2px 4px 14px 0 rgba(0, 0, 0, 0.19);
-  margin-left: 90px;
+    height: 400px;
+    width: 83%;
+}
+
+.imgDiv div,
+.audioService a div {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 45px/15px;
 }
 
 @media screen and (max-width: 2560px) {
-  .servicesProvided .topServiceImg {
-    height: 1100px;
-  }
-
-  .servicesProvided .servicesInfo .serviceImg {
-    height: 650px;
-    margin-left: 90px;
-  }
-
+    .servicesProvided .topServiceImg {
+        height: 1100px;
+    }
+    .servicesProvided .servicesInfo .serviceImg {
+        height: 650px;
+        margin-left: 90px;
+    }
 }
 
 @media screen and (max-width: 1920px) {
-  .servicesProvided .topServiceImg {
-    height: 900px;
-  }
-
-  .servicesProvided .servicesInfo .serviceImg {
-    height: 500px;
-    margin: 0 auto;
-  }
-
+    .servicesProvided .topServiceImg {
+        height: 900px;
+    }
+    .servicesProvided .servicesInfo .serviceImg {
+        height: 500px;
+        margin: 0 auto;
+    }
 }
 
 @media screen and (max-width: 1440px) {
-  .servicesProvided .topServiceImg {
-    height: 600px;
-  }
+    .servicesProvided .topServiceImg {
+        height: 600px;
+    }
+    .servicesProvided .servicesInfo .serviceImg {
+        height: 425px;
+    }
+}
 
-  .servicesProvided .servicesInfo .serviceImg {
-    height: 425px;
-  }
+@media screen and (max-width: 1300px) {
+    .servicesProvided .servicesInfo {
+        flex-wrap: wrap;
+    }
+    .servicesProvided .servicesInfo .automation {
+        margin: 40px auto;
+        max-height: 3000px;
+    }
 }
 
 @media screen and (max-width: 438px) {
-  .servicesProvided .header {
-    width: 95%;
-  }
-
-  .servicesProvided .header .title {
-    font-size: 32px;
-  }
-
-  .servicesProvided .header .subtitle {
-    font-size: 22px;
-  }
-
-
-  .servicesProvided .topService {
-    margin-bottom: 80px;
-  }
-
-  .servicesProvided .topService .topServiceImg {
-    height: 350px;
-  }
-
-  .servicesProvided .topService .audio-service {
-    max-width: 90%;
-  }
-
-
-  .servicesProvided .servicesInfo {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  .servicesProvided .servicesInfo h3,
-  .servicesProvided .servicesInfo p {
-    width: 100%;
-  }
-
-  .servicesProvided .servicesInfo .serviceImg {
-    height: 350px;
-    width: 100%;
-  }
-
-  .servicesProvided .servicesInfo .automation,
-  .servicesProvided .servicesInfo .video {
-    margin-top: 0px;
-  }
+    .servicesProvided .header {
+        width: 95%;
+    }
+    .servicesProvided .header .title {
+        font-size: 32px;
+    }
+    .servicesProvided .header .subtitle {
+        font-size: 22px;
+    }
+    .servicesProvided .topService {
+        margin-bottom: 80px;
+    }
+    .servicesProvided .topService .topServiceImg {
+        height: 350px;
+    }
+    .servicesProvided .topService .audio-service {
+        max-width: 90%;
+    }
+    .servicesProvided .servicesInfo {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .servicesProvided .servicesInfo p {
+        width: 100%;
+    }
+    .servicesProvided .servicesInfo .serviceImg {
+        height: 350px;
+        width: 100%;
+    }
+    .servicesProvided .servicesInfo .automation,
+    .servicesProvided .servicesInfo .video {
+        margin-top: 0px;
+    }
 }
 
 @media screen and (max-width: 320px) {
-  .servicesProvided p {
-    font-size: 15px;
-  }
-
-  .servicesProvided .servicesInfo p {
-    margin-bottom: 50px;
-  }
-
-  .servicesProvided .servicesInfo .serviceImg {
-    height: 250px;
-    width: 100%;
-  }
-
-  .servicesProvided .topService {
-    margin-bottom: 50px;
-  }
-
-  .servicesProvided .topService .topServiceImg {
-    height: 250px;
-  }
-
-
-  .servicesProvided .header .title {
-    font-size: 25px;
-  }
-
-  .servicesProvided .header .subtitle {
-    font-size: 18px;
-  }
-
-  .servicesProvided .audioService {
-    margin: 60px auto 0 auto;
-  }
+    .servicesProvided p {
+        font-size: 15px;
+    }
+    .servicesProvided .servicesInfo p {
+        margin-bottom: 50px;
+    }
+    .servicesProvided .servicesInfo .serviceImg {
+        height: 250px;
+        width: 100%;
+    }
+    .servicesProvided .topService {
+        margin-bottom: 50px;
+    }
+    .servicesProvided .topService .topServiceImg {
+        height: 250px;
+    }
+    .servicesProvided .header .title {
+        font-size: 25px;
+    }
+    .servicesProvided .header .subtitle {
+        font-size: 18px;
+    }
+    .servicesProvided .audioService {
+        margin: 60px auto 0 auto;
+    }
 }

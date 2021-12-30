@@ -1,154 +1,143 @@
 .splashPage {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .splashImg {
-  width: 100%;
-  height: 700px;
-  opacity: 0.75;
-  box-shadow: inset 0px 0px 1px 3px black;
-  margin: 0 auto;
-  transform: translateY(0%);
-  position: relative;
-  z-index: 0;
-  transition: 2s opacity ease-in-out;
-  background-repeat: no-repeat;
-  background-size: cover;
+    width: 100%;
+    height: 700px;
+    opacity: 0.75;
+    box-shadow: inset 0px 0px 1px 3px black;
+    margin: 0 auto;
+    transform: translateY(0%);
+    position: relative;
+    z-index: 0;
+    transition: 2s opacity ease-in-out;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .parentContainer {
-  height: 700px;
-  width: 100%;
-  position: relative;
+    height: 700px;
+    width: 100%;
+    position: relative;
 }
 
 .splashImg:hover {
-  opacity: 0.85;
+    opacity: 0.85;
 }
 
 .colorOverlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 700px;
-  background-color: rgba(32, 26, 22, .6);
-  z-index: 99;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 700px;
+    background-color: rgba(32, 26, 22, .6);
+    z-index: 99;
 }
 
 .splashDesc {
-  animation: feature-text-anim .75s ease-in-out;
-  z-index: 100;
-  width: 100%;
-  position: absolute;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 0 auto;
-  top: 250px;
-  text-align: center;
-  left: 0;
-  text-rendering: optimizeLegibility;
-  padding: 0 50px;
+    animation: feature-text-anim .75s ease-in-out;
+    z-index: 100;
+    width: 100%;
+    position: absolute;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0 auto;
+    top: 250px;
+    text-align: center;
+    left: 0;
+    text-rendering: optimizeLegibility;
+    padding: 0 50px;
 }
 
 .splashDesc p {
-  font-family: 'PT Sans', sans-serif;
-  font-weight: 100;
-  font-style: normal;
-  font-size: 28px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  line-height: 1.3em;
-  color: #9c9999;
-  margin: 0px auto;
+    font-family: playfair-display, serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 28px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1.3em;
+    color: #9c9999;
+    margin: 0px auto;
+    margin-bottom: 50px;
 }
 
 .splashDesc strong {
-  font-family: 'PT Sans', sans-serif;
-  font-weight: 100;
-  font-style: normal;
-  font-size: 86px;
-  letter-spacing: 0px;
-  text-transform: none;
-  line-height: 1.1em;
-  margin: 0 auto;
-  color: #eee;
+    font-family: playfair-display, serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 86px;
+    letter-spacing: 0px;
+    text-transform: none;
+    line-height: 1.1em;
+    margin: 0 auto;
+    color: #eee;
 }
 
 @media screen and (max-width: 2560px) {
-  .splashPage .colorOverlay {
-    height: 700px;
-  }
-
-  .splashPage .splashImg {
-    height: 700px;
-  }
-
-  .splashPage .splashDesc {
-    bottom: 465px;
-  }
+    .splashPage .colorOverlay {
+        height: 700px;
+    }
+    .splashPage .splashImg {
+        height: 700px;
+    }
+    .splashPage .splashDesc {
+        bottom: 465px;
+    }
 }
 
 @media screen and (max-width: 900px) {
-  .splashPage .splashDesc p {
-    font-size: 24px;
-  }
-
-  .splashPage .splashDesc strong {
-    font-size: 58px;
-  }
-
-  .splashPage .splashDesc {
-    bottom: 385px;
-  }
+    .splashPage .splashDesc p {
+        font-size: 24px;
+    }
+    .splashPage .splashDesc strong {
+        font-size: 58px;
+    }
+    .splashPage .splashDesc {
+        bottom: 385px;
+    }
 }
 
 @media screen and (max-width: 438px) {
-  .parentContainer {
-    height: 500px;
-  }
-
-  .splashPage .colorOverlay {
-    height: 500px;
-  }
-
-  .splashPage .splashImg {
-    height: 500px;
-  }
-
-  .splashPage .splashDesc {
-    bottom: 425px;
-  }
-
-  .splashPage .splashDesc p {
-    font-size: 18px;
-  }
-
-  .splashPage .splashDesc strong {
-    font-size: 36px;
-  }
+    .parentContainer {
+        height: 500px;
+    }
+    .splashPage .colorOverlay {
+        height: 500px;
+    }
+    .splashPage .splashImg {
+        height: 500px;
+    }
+    .splashPage .splashDesc {
+        bottom: 425px;
+    }
+    .splashPage .splashDesc p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .splashPage .splashDesc strong {
+        font-size: 36px;
+    }
 }
 
 @media screen and (max-width: 320px) {
-  .splashPage .colorOverlay {
-    height: 500px;
-  }
-
-  .splashPage .splashImg {
-    height: 500px;
-  }
-
-  .splashPage .splashDesc {
-    bottom: 375px;
-  }
-
-  .splashPage .splashDesc p {
-    font-size: 16px;
-  }
-
-  .splashPage .splashDesc strong {
-    font-size: 34px;
-  }
+    .splashPage .colorOverlay {
+        height: 500px;
+    }
+    .splashPage .splashImg {
+        height: 500px;
+    }
+    .splashPage .splashDesc {
+        bottom: 375px;
+    }
+    .splashPage .splashDesc p {
+        font-size: 16px;
+    }
+    .splashPage .splashDesc strong {
+        font-size: 34px;
+    }
 }

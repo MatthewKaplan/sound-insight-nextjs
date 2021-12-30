@@ -3,13 +3,15 @@ import Image from 'next/image';
 import { GetStaticProps } from 'next';
 import classes from './styles/video.module.css';
 import { getPageById } from '../../helper/api-util';
-import { VideoPageData } from '../../types/videoPage.type';
 import CarouselComponent from '../../components/carousel';
+import BackBtnComponent from '../../components/backButton';
+import { VideoPageData } from '../../types/videoPage.type';
 
 const VideoPage = (props: VideoPageData) => {
   return (
     <div className={classes.videoPage}>
       <div className={classes.header} />
+      <BackBtnComponent />
       <section className={classes.videoInfo}>
         <section className={classes.pageHeading}>
           <h1>{props.VidTitle1}</h1>
@@ -17,20 +19,22 @@ const VideoPage = (props: VideoPageData) => {
         </section>
         <section className={classes.homeCinema}>
           <Image src={props.VidImg1} alt="Custom Home theater" width={1400} height={750} layout='responsive' />
-          <h2>{props.VidTitle2}</h2>
+          <p className={classes.sectionTitle}>{props.VidTitle2}</p>
           <p>{props.VidInfo2}</p>
         </section>
         <div className={classes.bottomServices}>
           <section className={classes.televisionSystems}>
             <Image src={props.VidImg2} alt="Sony OLED television" width={250} height={250} layout='responsive' />
-            <h2>{props.VidTitle3}</h2>
+            <p className={classes.sectionTitle}>{props.VidTitle3}</p>
             <p>{props.VidInfo3A}</p>
+            <br />
             <p>{props.VidInfo3B}</p>
           </section>
           <section className={classes.projectionSystems}>
             <Image src={props.VidImg3} alt="Sony projector" width={250} height={250} layout='responsive' />
-            <h2>{props.VidTitle4}</h2>
+            <p className={classes.sectionTitle}>{props.VidTitle4}</p>
             <p>{props.VidInfo4A}</p>
+            <br />
             <p>{props.VidInfo4B}</p>
           </section>
         </div>

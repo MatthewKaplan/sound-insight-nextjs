@@ -1,86 +1,100 @@
 .aboutPage {
-  font-family: "PT Sans", sans-serif;
-  font-size: 18.5px;
+    font-family: "PT Sans", sans-serif;
+    font-size: 18.5px;
 }
 
 .aboutPage .aboutInfo {
-  max-width: 75%;
-  margin: 20px auto 60px auto;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
+    max-width: 75%;
+    margin: 20px auto 60px auto;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
 }
 
-.aboutPage .aboutInfo h1 {
-  text-align: center;
-  margin-bottom: 60px;
-  font-size: 2em;
+.aboutPage .aboutInfo .aboutTitle {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2em;
+    font-family: montserrat, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 33px;
+    letter-spacing: .4px;
+    text-transform: none;
+    line-height: 1.2em;
+    margin-top: 50px;
+}
+
+.info {
+    font-family: montserrat, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 18px;
 }
 
 .imgRadius {
-  border-top-left-radius: 37px 140px;
-  border-top-right-radius: 23px 130px;
-  border-bottom-left-radius: 110px 19px;
-  border-bottom-right-radius: 120px 24px;
+    border-top-left-radius: 37px 140px;
+    border-top-right-radius: 23px 130px;
+    border-bottom-left-radius: 110px 19px;
+    border-bottom-right-radius: 120px 24px;
 }
 
 .aboutPage .aboutSection {
-  height: auto;
-  margin-bottom: 60px;
+    height: auto;
+    margin-bottom: 60px;
 }
 
 .flex {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 @media screen and (max-width: 2560px) {
-  .aboutPage .aboutSection {
-    margin-bottom: 200px;
-  }
-
-  .aboutPage p {
-    font-size: 28px;
-    margin-top: 10px;
-    max-width: 60%;
-  }
+    .aboutPage .aboutSection {
+        margin-bottom: 200px;
+    }
+    .aboutPage p {
+        font-size: 28px;
+        margin-top: 10px;
+        max-width: 60%;
+    }
 }
 
 @media screen and (max-width: 1920px) {
-  .aboutPage p {
-    font-size: 24px;
-  }
+    .aboutPage p {
+        font-size: 24px;
+    }
 }
 
 @media screen and (max-width: 1467px) {
-  .aboutPage .aboutInfo .aboutSection .flex div {
-    max-height: 0px;
-  }
-
-  .aboutPage .aboutSection {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
-  .aboutPage p {
-    max-width: 100%;
-  }
+    .aboutPage .aboutInfo .aboutSection .flex div {
+        max-height: 0px;
+    }
+    .aboutPage .aboutSection {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .aboutPage p {
+        max-width: 100%;
+    }
 }
 
 @media screen and (max-width: 1440px) {
-  .aboutPage p {
-    font-size: 20px;
-  }
+    .aboutPage p {
+        font-size: 20px;
+    }
 }
 
 @media screen and (max-width: 438px) {
-  .aboutPage .aboutInfo {
-    max-width: 95%;
-  }
-
-  .aboutPage .aboutSection {
-    height: auto;
-    margin-bottom: 30px;
-  }
+    .aboutPage .aboutInfo {
+        max-width: 95%;
+    }
+    .aboutPage .aboutSection {
+        height: auto;
+        margin-bottom: 30px;
+    }
+    .aboutPage .info {
+        font-size: 14px;
+    }
 }

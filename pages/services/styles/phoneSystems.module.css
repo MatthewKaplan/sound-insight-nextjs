@@ -1,168 +1,149 @@
 .phonePage {
-  font-family: "PT Sans", sans-serif;
+    font-family: "PT Sans", sans-serif;
+}
+
+.phonePage p {
+    margin-top: 10px;
+    line-height: 30px;
+    letter-spacing: 1.5px;
+    word-spacing: 2px;
+    text-align: center;
+    font-family: montserrat, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.sectionTitle {
+    margin-top: 20px !important;
+    font-weight: 600 !important;
 }
 
 .phonePage .header {
-  background-color: #201a16;
-  height: 150px;
+    background-color: #201a16;
+    height: 150px;
+}
+
+.securitySystems div:nth-child(1) {
+    max-height: 650px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 45px/15px;
 }
 
 .phonePage .securityInfo {
-  max-width: 75%;
-  margin: 0 auto;
+    max-width: 75%;
+    margin: 0 auto;
 }
 
 .phonePage .securityInfo .pageHeading h1 {
-  margin-top: 80px;
-  margin-bottom: 40px;
-  font-size: 2em;
-  text-align: center;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    font-size: 2em;
+    text-align: center;
 }
 
 .phonePage .securityInfo .pageHeading p {
-  margin-bottom: 80px;
+    margin-bottom: 80px;
 }
 
 .phonePage .securityInfo .honeywellImg {
-  width: 100%;
+    width: 100%;
 }
 
 .phonePage .securityInfo .securitySystems {
-  text-align: left;
-}
-
-.phonePage .securityInfo .securitySystems h2 {
-  margin-top: 30px;
+    text-align: left;
 }
 
 .phonePage .securityInfo .bottomServices {
-  display: flex;
-  justify-content: space-between;
-  text-align: left;
-  margin-top: 80px;
-  margin-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
+.phonePage .securityInfo .bottomServices .desktopPhones,
 .phonePage .securityInfo .bottomServices .wirelessPhones {
-  max-width: 45%;
-}
-
-.phonePage .securityInfo .bottomServices .wirelessPhones h2 {
-  margin-top: 60px;
-}
-
-
-.phonePage .securityInfo .bottomServices .desktopPhones {
-  max-width: 45%;
-}
-
-.phonePage .securityInfo .bottomServices .desktopPhones h2 {
-  margin-top: 60px;
+    max-width: 35%;
 }
 
 .phonePage .securityInfo .bottomServices img {
-  height: 325px;
-  width: 100%;
-  max-width: 100%;
+    height: 325px;
+    width: 100%;
+    max-width: 100%;
 }
 
 @media screen and (max-width: 2560px) {
-  .phonePage .securityInfo .honeywellImg {
-    height: 1000px;
-  }
-
-  .phonePage .securityInfo .bottomServices img {
-    height: 655px;
-  }
+    .phonePage .securityInfo .honeywellImg {
+        height: 1000px;
+    }
+    .phonePage .securityInfo .bottomServices img {
+        height: 655px;
+    }
 }
 
 @media screen and (max-width: 1920px) {
-  .phonePage .securityInfo .honeywellImg {
-    height: 900px;
-  }
-
-  .phonePage .securityInfo .bottomServices img {
-    height: 500px;
-  }
+    .phonePage .securityInfo .honeywellImg {
+        height: 900px;
+    }
+    .phonePage .securityInfo .bottomServices img {
+        height: 500px;
+    }
 }
 
 @media screen and (max-width: 1440px) {
-  .phonePage .securityInfo .honeywellImg {
-    height: 600px;
-  }
-
-  .phonePage .securityInfo .bottomServices img {
-    height: 350px;
-  }
+    .phonePage .securityInfo .honeywellImg {
+        height: 600px;
+    }
+    .phonePage .securityInfo .bottomServices img {
+        height: 350px;
+    }
 }
 
 @media screen and (max-width: 438px) {
-  .phonePage .header {
-    display: none;
-  }
-
-  .phonePage .securityInfo {
-    max-width: 90%;
-  }
-
-  .phonePage .securityInfo .honeywellImg {
-    height: 350px;
-  }
-
-  .phonePage .securityInfo .pageHeading h1 {
-    margin-top: 120px;
-  }
-
-  .phonePage .securityInfo .bottomServices {
-    flex-direction: column;
-  }
-
-  .phonePage .securityInfo .bottomServices .wirelessPhones {
-    max-width: 100%;
-    margin-top: 80px;
-  }
-
-  .phonePage .securityInfo .bottomServices .wirelessPhones h2 {
-    margin-top: 30px;
-  }
-
-
-  .phonePage .securityInfo .bottomServices .desktopPhones {
-    max-width: 100%;
-  }
-
-  .phonePage .securityInfo .bottomServices .desktopPhones h2 {
-    margin-top: 30px;
-  }
+    .phonePage .header {
+        display: none;
+    }
+    .phonePage .securityInfo {
+        max-width: 90%;
+    }
+    .phonePage .securityInfo .honeywellImg {
+        height: 350px;
+    }
+    .phonePage .securityInfo .pageHeading h1 {
+        margin-top: 120px;
+    }
+    .phonePage .securityInfo .bottomServices {
+        flex-direction: column;
+    }
+    .phonePage .securityInfo .bottomServices .wirelessPhones {
+        max-width: 100%;
+        margin-top: 80px;
+    }
+    .phonePage .securityInfo .bottomServices .desktopPhones {
+        max-width: 100%;
+    }
 }
 
 @media screen and (max-width: 320px) {
-  .phonePage .securityInfo p {
-    font-size: 15px;
-  }
-
-  .phonePage .securityInfo .honeywellImg {
-    height: 250px;
-  }
-
-  .phonePage .securityInfo .pageHeading p {
-    margin-bottom: 50px;
-  }
-
-  .phonePage .securityInfo .pageHeading h1 {
-    margin: 100px 0 30px 0;
-  }
-
-  .phonePage .securityInfo .bottomServices {
-    margin: 50px 0;
-  }
-
-  .phonePage .securityInfo .bottomServices img {
-    height: 250px;
-  }
-
-  .phonePage .securityInfo .bottomServices .wirelessPhones {
-    margin-top: 50px;
-  }
-
+    .phonePage .securityInfo p {
+        font-size: 15px;
+    }
+    .phonePage .securityInfo .honeywellImg {
+        height: 250px;
+    }
+    .phonePage .securityInfo .pageHeading p {
+        margin-bottom: 50px;
+    }
+    .phonePage .securityInfo .pageHeading h1 {
+        margin: 100px 0 30px 0;
+    }
+    .phonePage .securityInfo .bottomServices {
+        margin: 50px 0;
+    }
+    .phonePage .securityInfo .bottomServices img {
+        height: 250px;
+    }
+    .phonePage .securityInfo .bottomServices .wirelessPhones {
+        margin-top: 50px;
+    }
 }

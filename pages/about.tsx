@@ -17,23 +17,23 @@ const AboutPage = (props: AboutPageData) => {
       </Head>
       <SplashImageComponent altText="Sound Insight store front location in Huntington, NY" imageLink={props.SplashImg} title={props.SplashTitle} subTitle={props.SplashSubTitle} />
       <div className={classes.aboutInfo}>
-        <h1>{props.AboutTitle}</h1>
+        <p className={classes.aboutTitle}>{props.AboutTitle}</p>
         <section className={classes.aboutSection}>
           <div className={classes.flex}>
             <Image src={props.AboutImg1} alt="Audio show room" width={400} height={350} layout='fixed' className={classes.imgRadius} />
-            <p>{props.AboutInfo1}</p>
+            <p className={classes.info}>{props.AboutInfo1}</p>
           </div>
         </section>
         <section className={classes.aboutSection}>
           <div className={classes.flex}>
-            <p>{props.AboutInfo2}</p>
+            <p className={classes.info}>{props.AboutInfo2}</p>
             <Image src={props.AboutImg2} alt="Custom Home Theater" width={400} height={350} layout='fixed' className={classes.imgRadius} />
           </div>
         </section>
         <section className={classes.aboutSection}>
           <div className={classes.flex}>
             <Image src={props.AboutImg3} alt="Office desk" width={400} height={350} layout='fixed' className={classes.imgRadius} />
-            <p>{props.AboutInfo3}</p>
+            <p className={classes.info}>{props.AboutInfo3}</p>
           </div>
         </section>
       </div>

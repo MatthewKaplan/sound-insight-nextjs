@@ -12,7 +12,7 @@ const BrandsPage = (props: BrandPageData) => {
     return props.manufacturerLogo.map((logo, i) => 
     <div className={classes.brandLogo} key={i}>
       <a href={props.manufacturerLink[i]} target="_blank" rel="noopener noreferrer" className={classes.logoLink}>
-          <Image src={logo} alt={props.manufacturerAltText[i]} className={classes.logoImg} width={150} height={150} layout='fixed' />
+          <Image src={logo} alt={props.manufacturerAltText[i]} className={classes.logoImg} width={150} height={75} layout='fixed' />
       </a>
     </div>)
   }
@@ -26,13 +26,13 @@ const BrandsPage = (props: BrandPageData) => {
       <SplashImageComponent altText="Sound Insight lobby with TVs and speakers" imageLink={props.SplashImg} title={props.SplashTitle} subTitle={props.SplashSubTitle} />
       <section className={classes.brands}>
         <div className={classes.brandHeading}>
-          <h2>
+          <p>
             <strong>{props.BrandsTitle}</strong>
-          </h2>
-          <h2 className={classes.brandSubtitle}>
+          </p>
+          <p className={classes.brandSubtitle}>
             {props.BrandSub1}{' '}
             <a href="mailto:sales@sound-insight.com">{props.BrandSub2}</a> {props.BrandSub3}
-          </h2>
+          </p>
         </div>
         <div className={classes.hrLine}>
           <hr className={classes.pageBreak} />
