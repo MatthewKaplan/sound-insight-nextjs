@@ -24,6 +24,13 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => (
       <meta property="dc:title" content="Sound Insight" />
       <meta property="dc:description" content="Custom home theater systems offer high performance surround sound and video. Let Sound Insight deliver your dream system." />
       <meta name="author" content="Matthew Kaplan" />
+      <link rel="canonical" href="https://www.sound-insight.com/services" />
+      <meta name="twitter:site" content="@matthewkaplan92" />
+      <meta property="twitter:account_id" content="272097095" />
+      <meta property="twitter:title" content="Sound Insight - Custom AV Solution & Design | Huntington, NY" />
+      <meta property="twitter:description" content="Providing Long Island, NY with the very best in Audio and Video since 2002. Let our Knowledgeable Team Help You Find the Right Technology to Match Your Home or Office." />
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:image:src" content="https://i.imgur.com/TXAMHbb.png" />
     </Head>
     <ThemeProvider theme={theme}>
       <ColorModeProvider options={{

@@ -27,7 +27,7 @@ const CareersPage: FC<CareersPageData> = ({
       </Head>
       <SplashImageComponent altText="Tools and peg board" imageLink={SplashPageImg} title={SplashPageTitle} subTitle={SplashPageSubTitle} />
       <section className={classes.pageHeading}>
-        <h1>{CareersTitle}</h1>
+        <h2>{CareersTitle}</h2>
         <p dangerouslySetInnerHTML={{ __html: CareersInfo1 }} />
         <p>{CareersInfo2}</p>
       </section>
