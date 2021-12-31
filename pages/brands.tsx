@@ -30,8 +30,9 @@ const BrandsPage: FC<BrandPageData> = ({
   return (
     <div className={classes.brandsPage}>
       <Head>
-        <title>Sound Insight - Audio & Video Manufacturers</title>
+        <title>Sound Insight - Audio & Video Manufacturers Currently Carried</title>
         <meta name="description" content="We only carry top of the line Audio and Video brands guarenteed to excite the senses. Audio-Technica, JBL, Monitor Audio, Sonos, Marantz, Sony, SpeakerCraft, Paradigm, Panamax, Samsung, Heos, etc..." />
+        <meta name="keywords" content="Audio-Technica, JBL, Monitor Audio, Sonos, Marantz, Sony, SpeakerCraft, Paradigm, Panamax, Samsung, Heos" />
       </Head>
       <SplashImageComponent altText="Sound Insight lobby with TVs and speakers" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
       <section className={classes.brands}>

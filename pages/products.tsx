@@ -26,8 +26,9 @@ const ProductPage: FC<ProductPageData> = ({
   return (
     <div>
       <Head>
-        <title>Sound Insight - Audio & Video Products</title>
-        <meta name="description" content="We carry the highest quality products for all your audio and video needs." />
+        <title>Sound Insight - Audio & Video Products Available in our NY Showroom</title>
+        <meta name="description" content="We Carry the Highest Quality Products For All Your Audio and Video Needs, That Are Guarenteed to Excite the Senses. Long Island #1 AV Specialists" />
+        <meta name="keywords" content="Sony Television, JBL Speakers, Monitor Audio, Paradigm, Marantz, Sonos, Samsung, Sound Bars, Heos, Subwoofer" />
       </Head>
       <SplashImageComponent altText="Large Stero system" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
       <div className={classes.productsPage}>

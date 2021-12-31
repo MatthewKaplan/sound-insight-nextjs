@@ -1,5 +1,6 @@
-import React, { FC } from 'react';
+import Head from 'next/head';
 import Image from 'next/image';
+import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
 import classes from './styles/audio.module.css';
 import { getPageById } from '../../helper/api-util';
@@ -26,6 +27,11 @@ const AudioPage: FC<AudioPageData> = ({
   audioLinks
 }) => (
   <div className={classes.audioPage}>
+    <Head>
+      <title>Sound Insight - Home Audio | Analog | Digital</title>
+      <meta name="description" content="Whether You Wish to Spin Vinyl or Listen to Digital Music Media it Sounds Better on Sound Insight's Carefully Selected Products and Custom Designed Systems." />
+      <meta name="keywords" content="Vinyl, Vinyl Players, Analog, Digital, Record Players, Audio Systems, Sound Systems, Multi-room Audio & Video, Custom Installation, Music" />
+    </Head>
     <div className={classes.header} />
     <BackBtnComponent />
     <div className={classes.audioInfo}>

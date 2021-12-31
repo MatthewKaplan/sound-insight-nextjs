@@ -1,6 +1,6 @@
-import React, { FC } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
+import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
 import classes from './styles/about.module.css';
 import { getPageById } from '../helper/api-util';
@@ -21,8 +21,9 @@ const AboutPage: FC<AboutPageData> = ({
 }) => (
   <div className={classes.aboutPage}>
     <Head>
-      <title>Sound Insight - About Us</title>
-      <meta name="description" content="Partnering with the top brands in the audiovisual industry, we provide top residential audio, video, and automation design and installation services. We provide our clients with a complete range of audio-video solutions, smart home automation, network, and IT solutions." />
+      <title>Sound Insight - About | Passion for Audio & Video since 2002</title>
+      <meta name="description" content="Partnering With The Top Brands in The Audiovisual Industry, We Provide Top Residential and Commercial Audio, Video, and Automation Design and Installation Services. We Provide our Clients With a Complete Range of Audio-Video Solutions, Smart Home Automation, Network, and IT Solutions." />
+      <meta name="keywords" content="Audio Video Long Island, Audio Video New York, Shop Small, Audio Equipment, Video Equipment, Residential Installation, Commercial Installation, Media Center, Home Cinema Amplifiers, Home Theater" />
     </Head>
     <SplashImageComponent altText="Sound Insight store front location in Huntington, NY" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
     <div className={classes.aboutInfo}>

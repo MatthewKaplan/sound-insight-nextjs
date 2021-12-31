@@ -39,7 +39,7 @@ const HeaderComponent: FC = () => {
             <Link href="/">
               <a className={classes.imgAnchor}>
                 <Image
-                  src="https://i.imgur.com/WIgvnFB.jpg"
+                  src="https://res.cloudinary.com/sound-insight/image/upload/v1640911039/WIgvnFB_swl61h.jpg"
                   height="85"
                   width="200"
                   className={classes.logo}
@@ -100,7 +100,7 @@ const HeaderComponent: FC = () => {
             <Link href="/">
               <a className={clsx(classes.link, classes.logoLink)}>
                 <Image
-                  src="https://i.imgur.com/6E05ibb.png"
+                  src="https://res.cloudinary.com/sound-insight/image/upload/v1640911057/6E05ibb_y99vcn.png"
                   height={50}
                   width={50}
                   className={classes.headerLogo}
@@ -189,13 +189,13 @@ const HeaderComponent: FC = () => {
           <section className={classes.contactMenuOptions}>
             <div className={classes.email}>
               <a href="mailto:sales@sound-insight.com" className={classes.menuOption} style={{ marginTop: '5px' }}>
-                <Image src="https://i.imgur.com/SUphJ4h.png" alt="Email Icon to reach Sound-Insight via email" width={25} height={40} />
+                <Image src="https://res.cloudinary.com/sound-insight/image/upload/v1640911039/SUphJ4h_lh9hqk.png" alt="Email Icon to reach Sound-Insight via email" width={25} height={40} />
                 <span>EMAIL</span>
               </a>
             </div>
             <div className={classes.phone}>
               <a target="_blank" href="tel:6312714434" rel="noopener noreferrer" className={classes.menuOption} style={{ marginTop: '5px' }}>
-                <Image src="https://i.imgur.com/eAxtt3I.png" alt="Telephone Icon to reach Sound-Insight via phone" width={25} height={40} />
+                <Image src="https://res.cloudinary.com/sound-insight/image/upload/v1640911057/eAxtt3I_dec3oc.png" alt="Telephone Icon to reach Sound-Insight via phone" width={25} height={40} />
                 <span>CALL</span>
               </a>
             </div>
@@ -207,7 +207,7 @@ const HeaderComponent: FC = () => {
               tabIndex={0}
               style={{ marginTop: '5px' }}
             >
-              <Image src="https://i.imgur.com/oj6o3TY.png" alt="Map Icon to see where Sound-Insight is located" width={25} height={40} />
+              <Image src="https://res.cloudinary.com/sound-insight/image/upload/v1640911057/oj6o3TY_wzamok.png" alt="Map Icon to see where Sound-Insight is located" width={25} height={40} />
               <span>MAP</span>
             </div>
             <div
@@ -218,7 +218,7 @@ const HeaderComponent: FC = () => {
               tabIndex={0}
               style={{ marginTop: '5px' }}
             >
-              <Image src="https://i.imgur.com/rx2GiBJ.png" alt="Clock Icon to view store hours" width={20} height={40} />
+              <Image src="https://res.cloudinary.com/sound-insight/image/upload/v1640911039/rx2GiBJ_gxo9q2.png" alt="Clock Icon to view store hours" width={20} height={40} />
               <span>HOURS</span>
             </div>
           </section>

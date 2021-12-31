@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Image from 'next/image';
 import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
@@ -20,6 +21,11 @@ const PhoneSystemsPage: FC<PhoneSystemPageData> = ({
   PhoneTitle4
 }) => (
   <div className={classes.phonePage}>
+    <Head>
+      <title>Sound Insight - Phone Systems | Office Phones | VoIP Phones</title>
+      <meta name="description" content="Sound Insight offers a one-stop solution for your business and residential communication needs. From basic digital systems to modern VoIP systems." />
+      <meta name="keywords" content="Phones Systems, VoIP Phones, Cloud Phones, Nec Systems, Office Phones, Desktop Phones, Wireless Phones, Multi-room Audio & Video, Custom Installation, Internet" />
+    </Head>
     <div className={classes.header} />
     <BackBtnComponent />
     <div className={classes.securityInfo}>

@@ -11,7 +11,7 @@ const HoursPopUpComponent: FC<Props> = ({ closeHours }) => (
     <div className={classes.formInformation}>
       <div style={{ float: 'right', marginTop: '20', marginRight: '20' }}>
         <Image
-          src="https://i.imgur.com/nA0azY8.png"
+          src="https://res.cloudinary.com/sound-insight/image/upload/v1640923215/cross_c2uiro.png"
           alt="Cross icon which is used to exit the hours page"
           height={30}
           width={30}

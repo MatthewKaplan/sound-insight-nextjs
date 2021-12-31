@@ -1,5 +1,6 @@
-import React, { FC } from 'react';
+import Head from 'next/head';
 import Image from 'next/image';
+import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
 import { getPageById } from '../../helper/api-util';
 import classes from './styles/automation.module.css';
@@ -19,6 +20,11 @@ const AutomationPage: FC<AutomationPageData> = ({
   AutoImg2
 }) => (
   <div className={classes.automationPage}>
+    <Head>
+      <title>Sound Insight - Home Automation | Smart Home Solutions</title>
+      <meta name="description" content="Our Team Creates Home Automation Systems that Will Completely Transform Your Lifestyle by Making Tasks Easier and At The Same Time, Giving You Piece Of Mind." />
+      <meta name="keywords" content="Control4, Smart Home, Smart TV, Elan, Controlled Homes, Automation System, Sound Systems, Multi-room Audio & Video, Custom Installation, Music" />
+    </Head>
     <div className={classes.header} />
     <BackBtnComponent />
     <div className={classes.automationInfo}>

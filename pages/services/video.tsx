@@ -1,5 +1,6 @@
-import React, { FC } from 'react';
+import Head from 'next/head';
 import Image from 'next/image';
+import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
 import classes from './styles/video.module.css';
 import { getPageById } from '../../helper/api-util';
@@ -27,6 +28,11 @@ const VideoPage: FC<VideoPageData> = ({
   videoLinks
 }) => (
   <div className={classes.videoPage}>
+    <Head>
+      <title>Sound Insight - Video Systems | Home Theater | Televisions</title>
+      <meta name="description" content="Sound Insight Offers a Cinematic Experience to Those Seeking a New Home Cinema" />
+      <meta name="keywords" content="Home Cinema Projectors, Home Cinema Amplifiers, Home Cinema Recievers, Home Theater, Projection Screens, Audio Visual Installations, Projector Lamps, Projector Mounts, Plasma & LCD Installation" />
+    </Head>
     <div className={classes.header} />
     <BackBtnComponent />
     <section className={classes.videoInfo}>

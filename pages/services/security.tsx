@@ -1,5 +1,6 @@
-import React, { FC } from 'react';
+import Head from 'next/head';
 import Image from 'next/image';
+import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
 import classes from './styles/security.module.css';
 import { getPageById } from '../../helper/api-util';
@@ -22,6 +23,11 @@ const SecurityPage: FC<SecurityPageData> = ({
   SecTitle4
 }) => (
   <div className={classes.securityPage}>
+    <Head>
+      <title>Sound Insight - Security Systems | Alarms | Cameras</title>
+      <meta name="description" content="Sound Insight offers turnkey solutions for video surveillance and security system installation. Peace of mind 24 hours a day!" />
+      <meta name="keywords" content="Security Systems, Alarms, Cameras, video surveillance, security system installation, Residenant Security, CCTV, DVR Security, Commercial Surveillance, Safe Home" />
+    </Head>
     <div className={classes.header} />
     <BackBtnComponent />
     <div className={classes.securityInfo}>

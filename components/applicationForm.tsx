@@ -35,7 +35,7 @@ const ApplicationForm: FC<Props> = ({ closeForm }) => {
       <div className={classes.formInformation}>
         <div className={classes.float}>
           <Image
-            src="https://i.imgur.com/FvyNCGT.png"
+            src="https://res.cloudinary.com/sound-insight/image/upload/v1640923363/cross3_rsv9uh.png"
             alt="Cross icon which is used to exit the fourm"
             height={25}
             width={25}

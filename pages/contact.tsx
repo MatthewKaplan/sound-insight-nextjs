@@ -29,8 +29,9 @@ const ContactPage: FC<ContactPageData> = ({
   return (
     <div className={classes.contactPage}>
       <Head>
-        <title>Sound Insight - Contact Us</title>
-        <meta name="description" content="Contact Sound Insight for your next AV design, install or service for your home, business, or entertainment space. FREE ESTIMATES! #1 Audio and Video on Long Island." />
+        <title>Sound Insight - Contact Us | Audio & Video Demos | Free Estimates</title>
+        <meta name="description" content="Let our Experienced Team Help with your Next AV Design, Install or Service for your Home, Business, or Entertainment Space. FREE ESTIMATES! #1 AV on Long Island." />
+        <meta name="keywords" content="AV Demos, Free Estimates, Audio Visual Installations Long Island, Home Technology, Audio Hire, Video Hire, Automation, AV Installation Experts, Projectors, Multi Room Audio" />
       </Head>
       <SplashImageComponent altText="Sound Insight lobby with TVs and speakers" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
       <section className={classes.contactPageContents}>
