@@ -17,8 +17,7 @@
 }
 
 .sectionTitle {
-    margin-top: 40px !important;
-    margin-bottom: 20px !important;
+    margin: 40px 0 20px 0 !important;
     font-weight: 600 !important;
 }
 
@@ -109,6 +108,8 @@
 .audioService a span {
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     border-radius: 45px/15px;
+    display: flex;
+    justify-content: center
 }
 
 @media screen and (max-width: 2560px) {
@@ -192,15 +193,13 @@
     .servicesProvided p {
         font-size: 15px;
     }
-    .servicesProvided .servicesInfo p {
+    .servicesProvided .servicesInfo p,
+    .servicesProvided .topService {
         margin-bottom: 50px;
     }
     .servicesProvided .servicesInfo .serviceImg {
         height: 250px;
         width: 100%;
-    }
-    .servicesProvided .topService {
-        margin-bottom: 50px;
     }
     .servicesProvided .topService .topServiceImg {
         height: 250px;

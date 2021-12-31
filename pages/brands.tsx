@@ -24,6 +24,12 @@ const BrandsPage: FC<BrandPageData> = ({
     </div>
   ));
 
+  const qobuz = (
+    <div className={classes.brandLogo}>
+      <Image src="https://res.cloudinary.com/sound-insight/image/upload/v1640960455/logo-2018-qobuz_tm1dc3.png" alt="Qubuz logo which is a media service" className={classes.logoImg} width={150} height={75} layout="fixed" />
+    </div>
+  );
+
   return (
     <div className={classes.brandsPage}>
       <Head>
@@ -46,7 +52,10 @@ const BrandsPage: FC<BrandPageData> = ({
         <div className={classes.hrLine}>
           <hr className={classes.pageBreak} />
         </div>
-        <section className={classes.logoContainer}>{renderLogos()}</section>
+        <section className={classes.logoContainer}>
+          {qobuz}
+          {renderLogos()}
+        </section>
       </section>
     </div>
   );
