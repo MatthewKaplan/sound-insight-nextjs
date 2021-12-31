@@ -8,7 +8,6 @@ import { ProductPageData } from '../types/productPageData';
 import SplashImageComponent from '../components/splashImage';
 
 const ProductPage: FC<ProductPageData> = ({
-  videoLinks,
   videoImages,
   videoDetails,
   SplashImg,
@@ -17,8 +16,7 @@ const ProductPage: FC<ProductPageData> = ({
   ProductTitle1,
   ProductTitle2,
   audioDetails,
-  audioImages,
-  audioLinks
+  audioImages
 }) => {
   const videoImgs = videoImages.map((img) => (!img.endsWith('g') ? `${img}g` : img));
   const audioImgs = audioImages.map((img) => (!img.endsWith('g') ? `${img}g` : img));
@@ -35,31 +33,11 @@ const ProductPage: FC<ProductPageData> = ({
         <section className={classes.products}>
           <h2>{ProductTitle1}</h2>
           <section className={classes.productSlides}>
-            <div className={classes.topBreakLine}>
-              <hr className={classes.topPageBreak} />
-            </div>
-            <CarouselComponent
-              icons={videoImgs}
-              iconNames={videoDetails}
-              links={videoLinks}
-            />
-            <div className={classes.bottomBreakLine}>
-              <hr className={classes.bottomPageBreak} />
-            </div>
+            <CarouselComponent icons={videoImgs} iconNames={videoDetails} />
           </section>
           <h2 className={classes.speakerHeader}>{ProductTitle2}</h2>
           <section className={classes.productSlides}>
-            <div className={classes.topBreakLine}>
-              <hr className={classes.topPageBreak} />
-            </div>
-            <CarouselComponent
-              icons={audioImgs}
-              iconNames={audioDetails}
-              links={audioLinks}
-            />
-            <div className={classes.bottomBreakLine}>
-              <hr className={classes.bottomPageBreak} />
-            </div>
+            <CarouselComponent icons={audioImgs} iconNames={audioDetails} />
           </section>
         </section>
       </div>

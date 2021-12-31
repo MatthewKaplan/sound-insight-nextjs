@@ -10,6 +10,5 @@ export type BrandPageData = {
   id: string;
   label: string;
   manufacturerAltText: string[];
-  manufacturerLink: string[];
   manufacturerLogo: string[];
 };

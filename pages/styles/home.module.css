@@ -8,17 +8,6 @@
     color: rgba(33, 41, 176, 0.82);
 }
 
-.homeServices h1 {
-    font-family: playfair-display, serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 42px;
-    letter-spacing: .4px;
-    text-transform: none;
-    line-height: 1.2em;
-    margin-top: 100px;
-}
-
 .homeServices .servicesWrapper .service a div {
     background: white;
     z-index: 800;
@@ -41,7 +30,7 @@
 }
 
 .mission,
-.mission2 {
+.homeServices h2 {
     font-family: montserrat, sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -50,14 +39,11 @@
     text-transform: uppercase;
     line-height: 1.3em;
     color: #1f1f1f;
-    margin: 0 40px 0 40px;
-    margin-top: 75px;
-    margin-bottom: 15px;
+    margin: 75px 40px 15px 40px;
 }
 
-.mission2 {
-    margin-top: 10px;
-    margin-bottom: 75px;
+.mission {
+    margin: 10px 40px 75px 40px;
 }
 
 .servicesWrapper p {
@@ -102,9 +88,6 @@
     margin: 0 auto;
     max-height: 500px;
     max-width: 500px;
-    /* border-radius: 25% 100% 10% 99% / 0% 100% 10% 93%; */
-    /* border-radius: 100% 100% 10% 99% / 0% 100% 10% 93%; */
-    /* border-radius: 100% 100% 97% 99% / 0% 100% 100% 93%; */
     border-radius: 100% 100% 97% 0% / 58% 0% 100% 20%;
 }
 
@@ -116,14 +99,13 @@
 }
 
 .showroomInfo {
-    margin-bottom: 15px;
     font-weight: 300;
     font-style: normal;
     font-size: 17px;
     letter-spacing: 0.5px;
     line-height: 1.6em;
     color: #1f1f1f;
-    margin-top: 15px;
+    margin: 15px 0 15px 0;
 }
 
 .storeImage {
@@ -177,8 +159,7 @@
     text-transform: uppercase;
     line-height: 1.3em;
     color: #9c9999;
-    margin: 0px auto;
-    margin-bottom: 50px;
+    margin: 0px auto 50px auto;
 }
 
 .storeImage strong {
@@ -200,11 +181,6 @@
     font-weight: 200;
     font-style: normal;
     font-size: 18px;
-}
-
-.storeInfo h1 {
-    margin-top: 80px;
-    margin-bottom: 40px;
 }
 
 .storeInfo h3 {
@@ -309,9 +285,6 @@
 }
 
 @media screen and (max-width: 1150px) {
-    .homeServices h1 {
-        font-size: 32px;
-    }
     .homeServices .sectionTitle {
         font-size: 22px;
         letter-spacing: 2px;
@@ -327,12 +300,12 @@
         border-radius: 0 5px 50px 0;
         background-color: transparent;
     }
-    .homeServices .mission {
+    .homeServices h2 {
         font-size: 16px;
         margin: 0 10px 0 10px;
         padding: 15px 45px 0px 45px;
     }
-    .mission2 {
+    .mission {
         font-size: 16px;
     }
     .homeServices .contactInfo {
@@ -345,13 +318,11 @@
     .homeServices .servicesWrapper .service {
         margin-bottom: 40px;
     }
-    .homeServices .servicesWrapper .serviceImg {
-        width: 50%;
-    }
     .homeServices .servicesWrapper .serviceDesc {
         margin: 0 25px 0 25px;
     }
-    .homeServices .storeInfo {
+    .homeServices .storeInfo,
+    .homeServices .servicesWrapper .serviceImg {
         width: 50%;
     }
     .homeServices .storeInfo .topImages {
@@ -384,15 +355,12 @@
 }
 
 @media screen and (max-width: 438px) {
-    .homeServices h1 {
-        font-size: 32px;
-    }
-    .homeServices .mission {
+    .homeServices h2 {
         font-size: 14px;
         margin: 0 10px 0 10px;
         padding: 15px 45px 0px 45px;
     }
-    .homeServices .mission2 {
+    .homeServices .mission {
         font-size: 14px;
     }
     .homeServices .contactInfo {
@@ -405,9 +373,6 @@
     .homeServices .servicesWrapper .service {
         margin-bottom: 40px;
     }
-    .homeServices .servicesWrapper .serviceImg {
-        width: 90%;
-    }
     .homeServices .servicesWrapper .serviceDesc {
         margin: 0 25px 0 25px;
     }
@@ -417,7 +382,8 @@
     .homeServices .storeImage .splashDesc p {
         font-size: 22px;
     }
-    .homeServices .storeInfo {
+    .homeServices .storeInfo,
+    .homeServices .servicesWrapper .serviceImg {
         width: 90%;
     }
     .homeServices .storeInfo .topImages {
@@ -437,10 +403,7 @@
 }
 
 @media screen and (max-width: 438px) {
-    .homeServices h1 {
-        font-size: 30px;
-    }
-    .homeServices .mission {
+    .homeServices h2 {
         padding: 15px 10px 0px 10px;
     }
     .homeServices .servicesWrapper .serviceDesc {
@@ -472,9 +435,6 @@
     }
     .homeServices .storeInfo {
         margin-top: 20px;
-    }
-    .homeServices .storeInfo h1 {
-        margin-top: 45px;
     }
     .homeServices .storeInfo .store1,
     .homeServices .storeInfo .store2,

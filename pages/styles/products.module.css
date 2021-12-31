@@ -20,28 +20,6 @@
     overflow: hidden;
 }
 
-.productsPage .products .topBreakLine {
-    width: 90%;
-    margin: 0 auto;
-}
-
-.productsPage .products .topPageBreak {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-}
-
-.productsPage .products .bottomBreakLine {
-    width: 90%;
-    margin: 0 auto 60px auto;
-}
-
-.productsPage .products .bottomPageBreak {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-}
-
 .productsPage .brandHeading {
     max-width: 65%;
     margin: 0 auto;
@@ -53,17 +31,6 @@
 
 .productsPage .brandHeading a {
     color: rgba(33, 41, 176, 0.82);
-}
-
-.productsPage .hrLine {
-    width: 80%;
-    margin: 80px auto;
-}
-
-.productsPage .pageBreak {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
 @media screen and (max-width: 438px) {

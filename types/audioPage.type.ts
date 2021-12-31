@@ -15,7 +15,6 @@ export type AudioPageData = {
   DocumentID: string;
   audioDetails: string[];
   audioImages: string[];
-  audioLinks: string[];
   id: string;
   label: string;
 };

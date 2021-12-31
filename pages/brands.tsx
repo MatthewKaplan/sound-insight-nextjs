@@ -13,7 +13,6 @@ const BrandsPage: FC<BrandPageData> = ({
   SplashTitle,
   manufacturerAltText,
   manufacturerLogo,
-  manufacturerLink,
   BrandSub1,
   BrandSub2,
   BrandSub3,
@@ -21,9 +20,7 @@ const BrandsPage: FC<BrandPageData> = ({
 }) => {
   const renderLogos = () => manufacturerLogo.map((logo, i) => (
     <div className={classes.brandLogo} key={logo}>
-      <a href={manufacturerLink[i]} target="_blank" rel="noopener noreferrer" className={classes.logoLink}>
-        <Image src={logo} alt={manufacturerAltText[i]} className={classes.logoImg} width={150} height={75} layout="fixed" />
-      </a>
+      <Image src={logo} alt={manufacturerAltText[i]} className={classes.logoImg} width={150} height={75} layout="fixed" />
     </div>
   ));
 

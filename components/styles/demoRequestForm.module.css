@@ -1,156 +1,150 @@
 .demoRequestForm {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  overflow: scroll;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    overflow: scroll;
 }
 
 .demoRequestForm input {
-  border: 1px solid black;
+    border: 1px solid black;
 }
 
 .demoRequestForm .formInformation {
-  background-color: white;
-  border: 1px solid black;
-  max-width: 50%;
-  max-height: 80%;
-  margin: 0 auto;
-  margin-top: 50px;
-  padding: 30px;
-  font-family: "PT Sans", sans-serif;
-  overflow: scroll;
-  z-index: 999;
+    background-color: white;
+    border: 1px solid black;
+    max-width: 50%;
+    max-height: 80%;
+    margin: 50px auto 0 auto;
+    padding: 30px;
+    font-family: "PT Sans", sans-serif;
+    overflow: scroll;
+    z-index: 999;
 }
 
 .demoRequestForm h1,
 .demoRequestForm h3 {
-  text-align: left;
+    text-align: left;
 }
 
 .demoRequestForm .closeForm {
-  height: 30px;
-  width: 30px;
-  float: right;
-  cursor: pointer;
+    height: 30px;
+    width: 30px;
+    float: right;
+    cursor: pointer;
 }
 
 .demoRequestForm #form-input {
-  width: 100%;
-  border: 1px solid #ccc;
-  background: #fafafa;
-  height: 40px;
-  border-radius: 2px;
+    width: 100%;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    height: 40px;
+    border-radius: 2px;
 }
 
 .demoRequestForm textarea {
-  width: 100%;
-  border: 1px solid #ccc;
-  background: #fafafa;
-  border-radius: 2px;
-  resize: none;
+    width: 100%;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    border-radius: 2px;
+    resize: none;
 }
 
 .demoRequestForm .requestedDate {
-  align-content: left;
+    align-content: left;
 }
 
 .demoRequestForm .dateRequested {
-  border: 1px solid #ccc;
-  background: #fafafa;
-  border-radius: 2px;
-  align-self: left;
-  height: 40px;
-  font-size: 18px;
-  text-align: center;
-  width: 50%;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    border-radius: 2px;
+    align-self: left;
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+    width: 50%;
 }
 
 .demoRequestForm .timeRequested {
-  height: 40px;
-  border: 1px solid #ccc;
-  background: #fafafa;
-  border-radius: 2px;
-  width: 50%;
-  font-size: 18px;
+    height: 40px;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    border-radius: 2px;
+    width: 50%;
+    font-size: 18px;
 }
 
 .demoRequestForm select {
-  text-align: center;
-  text-align-last: center;
+    text-align: center;
+    text-align-last: center;
 }
 
 .demoRequestForm option {
-  text-align: left;
+    text-align: left;
 }
 
 .demoRequestForm .email {
-  width: 50%;
-  border: 1px solid #ccc;
-  background: #fafafa;
-  height: 40px;
-  border-radius: 2px;
+    width: 50%;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    height: 40px;
+    border-radius: 2px;
 }
 
 .demoRequestForm .phone {
-  width: 50%;
-  margin: 0 auto;
+    width: 50%;
+    margin: 0 auto;
 }
 
 .demoRequestForm .nameForms {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .demoRequestForm .nameForms .nameLabel {
-  float: left;
+    float: left;
 }
 
-.demoRequestForm .nameForms .fistNameForm {
-  width: 48%;
-}
-
+.demoRequestForm .nameForms .fistNameForm,
 .demoRequestForm .nameForms .lastNameForm {
-  width: 48%;
+    width: 48%;
 }
 
 .demoRequestForm .submitBtn {
-  color: #eee;
-  background-color: #000;
-  border: none;
-  height: 60px;
-  width: 260px;
-  cursor: pointer;
-  margin: 70px 0 70px 0;
+    color: #eee;
+    background-color: #000;
+    border: none;
+    height: 60px;
+    width: 260px;
+    cursor: pointer;
+    margin: 70px 0 70px 0;
 }
 
 .demoRequestForm .submitBtn:hover {
-  opacity: .8;
+    opacity: .8;
 }
 
 @media screen and (max-width: 1000px) {
-  .demoRequestForm .formInformation {
-    max-width: 100%;
-    max-height: 100%;
-    margin-top: 0px;
-  }
-
-  .demoRequestForm .dateRequested,
-  .demoRequestForm .timeRequested,
-  .demoRequestForm .email,
-  .demoRequestForm .phone {
-    width: 100%;
-  }
-
-  .demoRequestForm .submitBtn {
-    width: 100%;
-    height: 80px;
-  }
+    .demoRequestForm .formInformation {
+        max-width: 100%;
+        max-height: 100%;
+        margin-top: 0px;
+    }
+    .demoRequestForm .dateRequested,
+    .demoRequestForm .timeRequested,
+    .demoRequestForm .email,
+    .demoRequestForm .phone {
+        width: 100%;
+    }
+    .demoRequestForm .submitBtn {
+        width: 100%;
+        height: 80px;
+    }
 }

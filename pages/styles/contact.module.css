@@ -1,5 +1,6 @@
 .contactPage {
-    font-family: "PT Sans", sans-serif;
+    font-family: montserrat, sans-serif;
+    font-style: normal;
 }
 
 .contactPage .contactPageContents {
@@ -15,9 +16,7 @@
 .contactPage h2 {
     text-align: center;
     margin-bottom: 60px;
-    font-family: montserrat, sans-serif;
     font-weight: 600;
-    font-style: normal;
     font-size: 33px;
     letter-spacing: .4px;
     text-transform: none;
@@ -26,8 +25,6 @@
 }
 
 .contactPage p {
-    font-family: montserrat, sans-serif;
-    font-style: normal;
     font-size: 18px;
     letter-spacing: .4px;
 }
@@ -56,9 +53,7 @@
     height: 50px;
     width: 240px;
     cursor: pointer;
-    margin: 70px 0 70px 0;
-    font-family: montserrat, sans-serif;
-    font-style: normal;
+    margin: 70px 0;
     font-size: 16px;
     letter-spacing: .0px;
 }
@@ -72,7 +67,7 @@
 }
 
 .contactPage .storeInfo {
-    margin: 40px 0 40px 0;
+    margin: 40px 0;
 }
 
 .contactPage .storeAddress {

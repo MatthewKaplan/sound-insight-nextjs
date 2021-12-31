@@ -27,25 +27,21 @@ const AboutPage: FC<AboutPageData> = ({
     </Head>
     <SplashImageComponent altText="Sound Insight store front location in Huntington, NY" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
     <div className={classes.aboutInfo}>
-      <h2 className={classes.aboutTitle}>{AboutTitle}</h2>
-      <section className={classes.aboutSection}>
-        <div className={classes.flex}>
-          <Image src={AboutImg1} alt="Audio show room" width={400} height={350} layout="fixed" className={classes.imgRadius} />
-          <p className={classes.info}>{AboutInfo1}</p>
+      <h2>{AboutTitle}</h2>
+      <p>{AboutInfo1}</p>
+      <p>{AboutInfo2}</p>
+      <p>{AboutInfo3}</p>
+      <div className={classes.flex}>
+        <div>
+          <Image src={AboutImg1} alt="Audio show room" width={250} height={200} layout="fixed" className={classes.imgRadius} />
         </div>
-      </section>
-      <section className={classes.aboutSection}>
-        <div className={classes.flex}>
-          <p className={classes.info}>{AboutInfo2}</p>
-          <Image src={AboutImg2} alt="Custom Home Theater" width={400} height={350} layout="fixed" className={classes.imgRadius} />
+        <div>
+          <Image src={AboutImg2} alt="Custom Home Theater" width={250} height={200} layout="fixed" className={classes.imgRadius} />
         </div>
-      </section>
-      <section className={classes.aboutSection}>
-        <div className={classes.flex}>
-          <Image src={AboutImg3} alt="Office desk" width={400} height={350} layout="fixed" className={classes.imgRadius} />
-          <p className={classes.info}>{AboutInfo3}</p>
+        <div>
+          <Image src={AboutImg3} alt="Office desk" width={250} height={200} layout="fixed" className={classes.imgRadius} />
         </div>
-      </section>
+      </div>
     </div>
   </div>
 );

@@ -18,5 +18,4 @@ export type VideoPageData = {
   label: string;
   videoDetails: string[];
   videoImages: string[];
-  videoLinks: string[];
 };

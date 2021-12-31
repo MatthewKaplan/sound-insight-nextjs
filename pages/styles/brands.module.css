@@ -12,10 +12,6 @@
     justify-self: center;
 }
 
-.brandsPage {
-    font-family: "PT Sans", sans-serif;
-}
-
 .brandLogo {
     justify-self: center;
 }
@@ -28,7 +24,6 @@
     max-width: 65%;
     margin: 0 auto;
     text-align: center;
-    font-size: 1.5em;
     font-family: montserrat, sans-serif;
     font-weight: 400;
     font-style: normal;

@@ -9,7 +9,7 @@ import ApplicationForm from '../components/applicationForm';
 import SplashImageComponent from '../components/splashImage';
 
 const CareersPage: FC<CareersPageData> = ({
-  SplashPageImg, SplashPageSubTitle, SplashPageTitle, CareersInfo1, CareersInfo2, CareersTitle
+  SplashPageImg, SplashPageSubTitle, SplashPageTitle, CareersInfo1, CareersInfo2
 }) => {
   const [hover1, setHover1] = useState<boolean>(false);
   const [application, setApplication] = useState<boolean>(false);
@@ -27,8 +27,7 @@ const CareersPage: FC<CareersPageData> = ({
       </Head>
       <SplashImageComponent altText="Tools and peg board" imageLink={SplashPageImg} title={SplashPageTitle} subTitle={SplashPageSubTitle} />
       <section className={classes.pageHeading}>
-        <h2>{CareersTitle}</h2>
-        <p dangerouslySetInnerHTML={{ __html: CareersInfo1 }} />
+        <h2 dangerouslySetInnerHTML={{ __html: CareersInfo1 }} />
         <p>{CareersInfo2}</p>
       </section>
       <section className={classes.applicationBtnContainer}>

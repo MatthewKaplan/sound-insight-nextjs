@@ -24,8 +24,7 @@ const VideoPage: FC<VideoPageData> = ({
   VidTitle3,
   VidTitle4,
   videoDetails,
-  videoImages,
-  videoLinks
+  videoImages
 }) => (
   <div className={classes.videoPage}>
     <Head>
@@ -64,17 +63,7 @@ const VideoPage: FC<VideoPageData> = ({
     </section>
     <p>{VidSlideTitle}</p>
     <section className={classes.productSlides}>
-      <div className={classes.topBreakLine}>
-        <hr className={classes.topPageBreak} />
-      </div>
-      <CarouselComponent
-        icons={videoImages}
-        iconNames={videoDetails}
-        links={videoLinks}
-      />
-      <div className={classes.bottomBreakLine}>
-        <hr className={classes.bottomPageBreak} />
-      </div>
+      <CarouselComponent icons={videoImages} iconNames={videoDetails} />
     </section>
   </div>
 );

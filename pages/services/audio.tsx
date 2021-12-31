@@ -23,8 +23,7 @@ const AudioPage: FC<AudioPageData> = ({
   AudioInfo4,
   AudioSlideTitle,
   audioImages,
-  audioDetails,
-  audioLinks
+  audioDetails
 }) => (
   <div className={classes.audioPage}>
     <Head>
@@ -61,13 +60,7 @@ const AudioPage: FC<AudioPageData> = ({
     </div>
     <p>{AudioSlideTitle}</p>
     <section className={classes.productSlides}>
-      <div className={classes.topBreakLine}>
-        <hr className={classes.topPageBreak} />
-      </div>
-      <CarouselComponent icons={audioImages} iconNames={audioDetails} links={audioLinks} />
-      <div className={classes.bottomBreakLine}>
-        <hr className={classes.bottomPageBreak} />
-      </div>
+      <CarouselComponent icons={audioImages} iconNames={audioDetails} />
     </section>
   </div>
 );

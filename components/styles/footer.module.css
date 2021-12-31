@@ -1,130 +1,114 @@
 .footerComponent {
-  background-color: #201a16;
-  min-height: 500px;
-  font-family: "PT Sans", sans-serif;
+    background-color: #201a16;
+    min-height: 500px;
+    font-family: "PT Sans", sans-serif;
 }
 
 .footerComponent .footerNavOptions {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  padding-top: 50px;
-  font-size: 20px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    font-size: 20px;
 }
 
 .dividerDot {
-  height: 10px;
-  width: 10px;
-  background-color: #FFF;
-  border-radius: 50%;
-  margin-top: 6px;
-  margin-left: 20px;
-  margin-right: 20px;
+    height: 10px;
+    width: 10px;
+    background-color: #FFF;
+    border-radius: 50%;
+    margin: 6px 20px 0 20px;
 }
 
 .footerComponent .footerNavOptions a {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 .footerComponent .footerInfo {
-  display: flex;
-  justify-content: center;
-}
-
-.footerComponent .dot {
-  height: 10px;
-  width: 10px;
-  margin: 6px 20px 0 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .footerComponent .mapouter {
-  position: relative;
-  text-align: right;
-  height: 350px;
-  width: 550px;
-  margin: 0 auto;
-  padding: 50px 0;
+    position: relative;
+    text-align: right;
+    height: 350px;
+    width: 550px;
+    margin: 0 auto;
+    padding: 50px 0;
 }
 
 .footerComponent .gmapCanvas {
-  overflow: hidden;
-  background: none !important;
-  height: 350px;
-  width: 550px;
+    overflow: hidden;
+    background: none !important;
+    height: 350px;
+    width: 550px;
 }
 
 .footerComponent .storeInfo {
-  width: 35%;
-  padding-top: 25px;
-  color: white;
-  font-family: "PT Sans", sans-serif;
-  margin-right: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+    width: 35%;
+    padding-top: 25px;
+    color: white;
+    font-family: "PT Sans", sans-serif;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .footerComponent .storeInformation {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .footerComponent a {
-  color: white;
-  font-size: 28px;
+    color: white;
+    font-size: 28px;
 }
 
 @media screen and (max-width: 700px) {
-  .footerComponent .footerNavOptions {
-    display: none;
-  }
+    .footerComponent .footerNavOptions {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 950px) {
-  .footerComponent {
-    min-height: 350px;
-    text-align: center;
-  }
-
-  .footerComponent .mapouter {
-    display: none;
-  }
-
-  .footerComponent a {
-    font-size: 28px;
-  }
-
-  .footerComponent .storeInformation {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .footerComponent .storeInformation .storeHours {
-    margin-bottom: 80px;
-  }
-
-  .footerComponent .storeInformation .storeAddress {
-    border-right: 1px solid white;
-  }
-
-  .footerComponent .storeInfo {
-    width: 100%;
-    padding-top: 0;
-    margin: 0 auto;
-  }
-
-  .footerComponent .storeInfo .storeContactInfo {
-    width: 100%;
-    padding-top: 0;
-  }
-
-  .footerComponent .storeInfo .email {
-    margin-bottom: 40px;
-  }
+    .footerComponent {
+        min-height: 350px;
+        text-align: center;
+    }
+    .footerComponent .mapouter {
+        display: none;
+    }
+    .footerComponent a {
+        font-size: 28px;
+    }
+    .footerComponent .storeInformation {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .footerComponent .storeInformation .storeHours {
+        margin-bottom: 80px;
+    }
+    .footerComponent .storeInformation .storeAddress {
+        border-right: 1px solid white;
+    }
+    .footerComponent .storeInfo {
+        width: 100%;
+        padding-top: 0;
+        margin: 0 auto;
+    }
+    .footerComponent .storeInfo .storeContactInfo {
+        width: 100%;
+        padding-top: 0;
+    }
+    .footerComponent .storeInfo .email {
+        margin-bottom: 40px;
+    }
 }
 
 @media screen and (max-width: 320px) {
-  .footerComponent a {
-    font-size: 24px;
-  }
+    .footerComponent a {
+        font-size: 24px;
+    }
 }

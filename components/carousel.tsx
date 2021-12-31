@@ -8,16 +8,13 @@ import classes from './styles/carousel.module.css';
 type Props = {
   icons: string[];
   iconNames: string[];
-  links: string[];
 };
 
-const CarouselComponent: FC<Props> = ({ icons, iconNames, links }) => {
+const CarouselComponent: FC<Props> = ({ icons, iconNames }) => {
   const baseChildren = icons.map((image, i) => (
     <div key={image} className={classes.carouselDiv}>
       <Image src={image} width={250} height={250} alt={`${iconNames[i]} television/speakers`} />
-      <a href={links[i]} target="_blank" rel="noreferrer">
-        <p className={classes.legend}>{iconNames[i]}</p>
-      </a>
+      <p className={classes.legend}>{iconNames[i]}</p>
     </div>
   ));
 
@@ -47,6 +44,9 @@ const CarouselComponent: FC<Props> = ({ icons, iconNames, links }) => {
   });
   return (
     <div className={classes.carouselContainer}>
+      <div className={classes.topBreakLine}>
+        <hr className={classes.topPageBreak} />
+      </div>
       <div className={classes.browserCarousel}>
         <Carousel
           centerMode
@@ -63,8 +63,10 @@ const CarouselComponent: FC<Props> = ({ icons, iconNames, links }) => {
           {...getConfigurableProps()}
         >
           {baseChildren}
-
         </Carousel>
+      </div>
+      <div className={classes.bottomBreakLine}>
+        <hr className={classes.bottomPageBreak} />
       </div>
     </div>
   );

@@ -1,20 +1,17 @@
   .careersComponent {
       text-align: center;
+      font-family: montserrat, sans-serif;
+      font-style: normal;
   }
   
-  .careersComponent h1 {
-      font-family: montserrat, sans-serif;
-      font-weight: 600;
-      font-style: normal;
-      font-size: 33px;
-      margin-bottom: 50px;
-      margin-top: 50px;
+  .careersComponent h2 {
+      font-weight: 400;
+      font-size: 28px;
+      margin: 50px 0;
   }
   
   .careersComponent p {
-      font-family: montserrat, sans-serif;
       font-weight: 200;
-      font-style: normal;
       font-size: 22px;
   }
   
@@ -25,14 +22,13 @@
       width: 240px;
       cursor: pointer;
       margin: 70px 0 70px 0;
-      font-family: montserrat, sans-serif;
-      font-style: normal;
       font-size: 16px;
       letter-spacing: .0px;
   }
   
   .careersComponent .pageHeading {
-      margin: 20px 0 60px 0;
+      margin: 20px auto 60px auto;
+      max-width: 80%;
   }
   
   .careersComponent .breakLine {
@@ -50,10 +46,9 @@
       color: #eee;
       background-color: #000;
       border: none;
-      height: 50px;
+      height: 20px;
       width: 240px;
-      cursor: pointer;
-      margin: 70px 0 70px 0;
+      margin: 20px 0;
   }
   
   .careersComponent .contactBtn:hover {

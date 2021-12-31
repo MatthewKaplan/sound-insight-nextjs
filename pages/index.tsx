@@ -48,8 +48,8 @@ const HomePage: FC<HomePageData> = ({
     </Head>
     <SplashImageComponent altText="Living room with TV over fireplace" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
     <Box className={classes.homeServices} height="auto">
-      <h2 className={classes.mission}>{Mission}</h2>
-      <p className={classes.mission2}>{SubMission}</p>
+      <h2>{Mission}</h2>
+      <p className={classes.mission}>{SubMission}</p>
       <div className={classes.servicesWrapper}>
         <section className={classes.service}>
           <Link href="/services/audio" passHref>
