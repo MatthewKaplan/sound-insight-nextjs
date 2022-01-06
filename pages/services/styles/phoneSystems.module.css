@@ -1,17 +1,17 @@
 .phonePage {
-    font-family: "PT Sans", sans-serif;
+    font-family: montserrat, sans-serif;
 }
 
 .phonePage p,
 .phonePage h2 {
+    font-weight: 400;
     margin-top: 10px;
     line-height: 30px;
-    letter-spacing: 1.5px;
     word-spacing: 2px;
     text-align: center;
-    font-family: montserrat, sans-serif;
-    font-weight: 400;
     font-style: normal;
+    letter-spacing: 1.5px;
+    font-family: montserrat, sans-serif;
 }
 
 .sectionTitle {
@@ -20,16 +20,16 @@
 }
 
 .phonePage .header {
-    background-color: #201a16;
     height: 150px;
+    background-color: #201a16;
 }
 
 .securitySystems span:nth-child(1),
 .bottomServices .desktopPhones span:nth-child(1),
 .bottomServices .wirelessPhones span:nth-child(1) {
     max-height: 650px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     border-radius: 45px/15px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .phonePage .securityInfo {
@@ -38,10 +38,10 @@
 }
 
 .phonePage .securityInfo .pageHeading h1 {
-    margin-top: 80px;
-    margin-bottom: 40px;
     font-size: 2em;
+    margin-top: 80px;
     text-align: center;
+    margin-bottom: 40px;
 }
 
 .phonePage .securityInfo .pageHeading p {
@@ -58,10 +58,10 @@
 
 .phonePage .securityInfo .bottomServices {
     display: flex;
-    justify-content: space-between;
-    text-align: left;
     margin-top: 80px;
+    text-align: left;
     margin-bottom: 80px;
+    justify-content: space-between;
 }
 
 .phonePage .securityInfo .bottomServices .desktopPhones,
@@ -70,8 +70,8 @@
 }
 
 .phonePage .securityInfo .bottomServices img {
-    height: 325px;
     width: 100%;
+    height: 325px;
     max-width: 100%;
 }
 
@@ -131,9 +131,6 @@
     .phonePage .securityInfo p {
         font-size: 15px;
     }
-    .phonePage .securityInfo .honeywellImg {
-        height: 250px;
-    }
     .phonePage .securityInfo .pageHeading p {
         margin-bottom: 50px;
     }
@@ -143,6 +140,7 @@
     .phonePage .securityInfo .bottomServices {
         margin: 50px 0;
     }
+    .phonePage .securityInfo .honeywellImg,
     .phonePage .securityInfo .bottomServices img {
         height: 250px;
     }

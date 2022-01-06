@@ -1,56 +1,56 @@
 .mapPopup {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  background-color: #696969;
-  z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: #696969;
 }
 
 .mapPopup .map {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
 }
 
 .mapPopup .mapouter {
-  position: relative;
-  text-align: right;
-  height: 800px;
-  width: 350px;
+    width: 350px;
+    height: 800px;
+    text-align: right;
+    position: relative;
 }
 
 .mapPopup .gmapCanvas {
-  overflow: hidden;
-  background: none !important;
-  height: 800px;
-  width: 350px;;
+    width: 350px;
+    ;
+    height: 800px;
+    overflow: hidden;
+    background: none !important;
 }
 
 .float {
-  position: relative;
-  left: 78%;
+    left: 78%;
+    position: relative;
 }
 
-
 @media screen and (max-width: 414px) {
-  .mapPopup .closePopup {
-    margin: 20px 40px 0 0;
-  }
+    .mapPopup .closePopup {
+        margin: 20px 40px 0 0;
+    }
 }
 
 @media screen and (max-width: 375px) {
-  .mapPopup .closePopup {
-    margin: 20px 23px 0 0;
-  }
+    .mapPopup .closePopup {
+        margin: 20px 23px 0 0;
+    }
 }
 
 @media screen and (max-width: 320px) {
-  .mapPopup .closePopup {
-    margin: 27px 7px 0 0;
-  }
+    .mapPopup .closePopup {
+        margin: 27px 7px 0 0;
+    }
 }

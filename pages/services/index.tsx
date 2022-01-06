@@ -59,17 +59,6 @@ const ServicesPage: FC<ServicePageData> = ({
       <section className={classes.servicesInfo}>
         <div className={classes.flex}>
           <div className={clsx(classes.automation, classes.service)}>
-            <Link href="/services/automation">
-              <a className={classes.anchor}>
-                <div style={{ display: 'flex', justifyContent: 'center' }} className={classes.imgDiv}>
-                  <Image src={AutoImg} alt="Women crontrolling lights in her house on an iPad" className={classes.serviceImg} height={425} width={500} />
-                </div>
-                <h3 className={classes.sectionTitle}>{AutoTitle}</h3>
-              </a>
-            </Link>
-            <p>{AutoInfo}</p>
-          </div>
-          <div className={clsx(classes.automation, classes.service)}>
             <Link href="/services/video">
               <a className={classes.anchor}>
                 <div style={{ display: 'flex', justifyContent: 'center' }} className={classes.imgDiv}>
@@ -80,8 +69,6 @@ const ServicesPage: FC<ServicePageData> = ({
             </Link>
             <p>{VideoInfo}</p>
           </div>
-        </div>
-        <div className={classes.flex}>
           <div className={clsx(classes.automation, classes.service)}>
             <Link href="/services/phoneSystems">
               <a className={classes.anchor}>
@@ -92,6 +79,19 @@ const ServicesPage: FC<ServicePageData> = ({
               </a>
             </Link>
             <p>{PhoneInfo}</p>
+          </div>
+        </div>
+        <div className={classes.flex}>
+          <div className={clsx(classes.automation, classes.service)}>
+            <Link href="/services/automation">
+              <a className={classes.anchor}>
+                <div style={{ display: 'flex', justifyContent: 'center' }} className={classes.imgDiv}>
+                  <Image src={AutoImg} alt="Women crontrolling lights in her house on an iPad" className={classes.serviceImg} height={425} width={500} />
+                </div>
+                <h3 className={classes.sectionTitle}>{AutoTitle}</h3>
+              </a>
+            </Link>
+            <p>{AutoInfo}</p>
           </div>
           <div className={clsx(classes.automation, classes.service)}>
             <Link href="/services/security">

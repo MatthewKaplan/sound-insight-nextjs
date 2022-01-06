@@ -12,5 +12,5 @@ export async function getAllPageData(): Promise<PageData[]> {
 
 export async function getPageById(id: string): Promise<PageData> {
   const allPages = await getAllPageData();
-  return allPages.find((page: PageData) => page.DocumentID === id) as PageData;
+  return allPages.find((page: PageData) => page.DocumentID === id);
 }

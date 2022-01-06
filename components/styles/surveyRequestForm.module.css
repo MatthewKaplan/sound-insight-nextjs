@@ -1,14 +1,14 @@
 .surveyRequestForm {
-    position: fixed;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    width: 100%;
+    height: 100%;
     margin: auto;
-    background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .surveyRequestForm input {
@@ -20,15 +20,17 @@
 }
 
 .surveyRequestForm .formInformation {
-    background-color: white;
-    border: 1px solid black;
+    z-index: 999;
+    padding: 30px;
     max-width: 50%;
     max-height: 80%;
-    margin: 50px auto 0 auto;
-    padding: 30px;
-    font-family: "PT Sans", sans-serif;
     overflow: scroll;
-    z-index: 999;
+    font-weight: 400;
+    font-style: normal;
+    background-color: white;
+    margin: 50px auto 0 auto;
+    border: 1px solid black;
+    font-family: montserrat, sans-serif;
 }
 
 .surveyRequestForm h1,
@@ -37,26 +39,26 @@
 }
 
 .surveyRequestForm .closeForm {
-    height: 30px;
-    width: 30px;
     float: right;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
 }
 
 .surveyRequestForm #form-input {
-    border: 1px solid #ccc;
-    background: #fafafa;
     width: 100%;
     height: 40px;
     border-radius: 2px;
+    background: #fafafa;
+    border: 1px solid #ccc;
 }
 
 .surveyRequestForm textarea {
     width: 100%;
-    border: 1px solid #ccc;
-    background: #fafafa;
-    border-radius: 2px;
     resize: none;
+    border-radius: 2px;
+    background: #fafafa;
+    border: 1px solid #ccc;
 }
 
 .surveyRequestForm .requestedDate {
@@ -64,20 +66,20 @@
 }
 
 .surveyRequestForm .dateRequested {
-    border: 1px solid #ccc;
-    background: #fafafa;
-    border-radius: 2px;
-    align-self: left;
+    width: 50%;
     height: 40px;
     font-size: 18px;
+    align-self: left;
+    border-radius: 2px;
     text-align: center;
-    width: 50%;
+    background: #fafafa;
+    border: 1px solid #ccc;
 }
 
 .surveyRequestForm .nameForms {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    width: 100%;
 }
 
 .surveyRequestForm .nameForms .nameLabel {
@@ -91,10 +93,10 @@
 
 .surveyRequestForm .email {
     width: 50%;
-    border: 1px solid #ccc;
-    background: #fafafa;
     height: 40px;
     border-radius: 2px;
+    background: #fafafa;
+    border: 1px solid #ccc;
 }
 
 .surveyRequestForm .phone {
@@ -104,12 +106,12 @@
 
 .surveyRequestForm .submitBtn {
     color: #eee;
-    background-color: #000;
     border: none;
     height: 60px;
     width: 260px;
+    margin: 70px 0;
     cursor: pointer;
-    margin: 70px 0 70px 0;
+    background-color: #000;
 }
 
 .surveyRequestForm .submitBtn:hover {
@@ -119,8 +121,8 @@
 @media screen and (max-width: 1000px) {
     .surveyRequestForm .formInformation {
         max-width: 100%;
-        max-height: 100%;
         margin-top: 0px;
+        max-height: 100%;
     }
     .surveyRequestForm .dateRequested,
     .surveyRequestForm .timeRequested,

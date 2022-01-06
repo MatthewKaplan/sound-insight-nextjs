@@ -23,15 +23,15 @@
 .brandsPage .brandHeading {
     max-width: 65%;
     margin: 0 auto;
-    text-align: center;
-    font-family: montserrat, sans-serif;
+    font-size: 28px;
+    margin-top: 50px;
     font-weight: 400;
     font-style: normal;
-    font-size: 28px;
-    letter-spacing: .4px;
-    text-transform: none;
     line-height: 1.2em;
-    margin-top: 50px;
+    text-align: center;
+    text-transform: none;
+    letter-spacing: .4px;
+    font-family: montserrat, sans-serif;
 }
 
 .brandsPage .brandHeading h2 {
@@ -49,13 +49,13 @@
 }
 
 .brandsPage .logoContainer {
+    padding: 40px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 75px;
     grid-row-gap: 100px;
     align-content: center;
     justify-content: center;
-    padding: 40px;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .brandsPage .hrLine {
@@ -74,10 +74,10 @@
         max-width: 95%;
     }
     .brandsPage .brands .logoContainer {
-        max-width: 35%;
-        grid-template-columns: 1fr 1fr;
         grid-gap: 5px;
+        max-width: 35%;
         grid-row-gap: 75px;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -89,19 +89,19 @@
         font-size: 18px;
     }
     .brandsPage .brands .logoContainer {
-        max-width: 100%;
-        grid-template-columns: 1fr 1fr;
         grid-gap: 0px;
+        max-width: 100%;
         grid-row-gap: 75px;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
 @media screen and (max-width: 650px) {
     .brandsPage .brands .logoContainer {
-        max-width: 100%;
-        grid-template-columns: 1fr 1fr;
         grid-gap: 0px;
+        max-width: 100%;
         grid-row-gap: 75px;
+        grid-template-columns: 1fr 1fr;
     }
     .brandsPage .brandHeading {
         font-size: 22px;

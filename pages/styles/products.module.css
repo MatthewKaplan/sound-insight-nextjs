@@ -38,10 +38,10 @@
         max-width: 95%;
     }
     .productsPage .products .logo-container {
-        max-width: 35%;
-        grid-template-columns: 1fr 1fr;
         grid-gap: 5px;
+        max-width: 35%;
         grid-row-gap: 75px;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -55,8 +55,8 @@
 }
 
 .productsPage .products .logo-container {
-    max-width: 100%;
-    grid-template-columns: 1fr 1fr;
     grid-gap: 0px;
+    max-width: 100%;
     grid-row-gap: 75px;
+    grid-template-columns: 1fr 1fr;
 }

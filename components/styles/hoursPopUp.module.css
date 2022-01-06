@@ -5,17 +5,19 @@
     right: 0;
     bottom: 0;
     margin: auto;
-    background-color: #696969;
     z-index: 999;
-    border: 1px solid black;
     width: 100vw;
     height: 100vh;
-    font-family: "PT Sans", sans-serif;
-    overflow: scroll;
     z-index: 999;
-    max-width: 100vw;
-    max-height: 100vh;
+    overflow: scroll;
     margin-top: 0px;
+    max-width: 100vw;
+    font-weight: 400;
+    max-height: 100vh;
+    font-style: normal;
+    border: 1px solid black;
+    background-color: #696969;
+    font-family: montserrat, sans-serif;
 }
 
 .hoursPopUp div {
@@ -24,12 +26,12 @@
 }
 
 .hoursPopUp table {
-    table-layout: fixed;
-    margin: 40% auto;
     width: 80%;
-    border-collapse: collapse;
-    vertical-align: center;
+    margin: 40% auto;
+    table-layout: fixed;
     text-align: center;
+    vertical-align: center;
+    border-collapse: collapse;
 }
 
 .hoursPopUp th,

@@ -13,22 +13,22 @@
 }
 
 .legend {
-    -webkit-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out;
-    position: absolute;
-    bottom: 0px;
     left: 30%;
     width: 40%;
-    border-radius: 10px;
-    background: #000;
+    bottom: 0px;
+    opacity: 0.70;
     color: #fff;
     padding: 10px;
-    font-size: 12px;
     margin: 0 auto;
+    font-size: 12px;
+    position: absolute;
+    background: #000;
     text-align: center;
-    opacity: 0.70;
-    -webkit-transition: opacity .35s ease-in-out;
+    border-radius: 10px;
+    transition: all .5s ease-in-out;
     transition: opacity .35s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -webkit-transition: opacity .35s ease-in-out;
 }
 
 .topBreakLine {

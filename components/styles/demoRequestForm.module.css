@@ -1,15 +1,15 @@
 .demoRequestForm {
-    position: fixed;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    width: 100%;
+    height: 100%;
     margin: auto;
-    background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
+    position: fixed;
     overflow: scroll;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .demoRequestForm input {
@@ -17,15 +17,15 @@
 }
 
 .demoRequestForm .formInformation {
-    background-color: white;
-    border: 1px solid black;
+    padding: 30px;
+    z-index: 999;
     max-width: 50%;
     max-height: 80%;
-    margin: 50px auto 0 auto;
-    padding: 30px;
-    font-family: "PT Sans", sans-serif;
     overflow: scroll;
-    z-index: 999;
+    border: 1px solid black;
+    background-color: white;
+    margin: 50px auto 0 auto;
+    font-family: "PT Sans", sans-serif;
 }
 
 .demoRequestForm h1,
@@ -34,26 +34,26 @@
 }
 
 .demoRequestForm .closeForm {
-    height: 30px;
-    width: 30px;
     float: right;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
 }
 
 .demoRequestForm #form-input {
     width: 100%;
-    border: 1px solid #ccc;
-    background: #fafafa;
     height: 40px;
     border-radius: 2px;
+    background: #fafafa;
+    border: 1px solid #ccc;
 }
 
 .demoRequestForm textarea {
     width: 100%;
-    border: 1px solid #ccc;
-    background: #fafafa;
-    border-radius: 2px;
     resize: none;
+    border-radius: 2px;
+    background: #fafafa;
+    border: 1px solid #ccc;
 }
 
 .demoRequestForm .requestedDate {
@@ -61,23 +61,23 @@
 }
 
 .demoRequestForm .dateRequested {
-    border: 1px solid #ccc;
-    background: #fafafa;
-    border-radius: 2px;
-    align-self: left;
+    width: 50%;
     height: 40px;
     font-size: 18px;
+    align-self: left;
+    border-radius: 2px;
     text-align: center;
-    width: 50%;
+    background: #fafafa;
+    border: 1px solid #ccc;
 }
 
 .demoRequestForm .timeRequested {
-    height: 40px;
-    border: 1px solid #ccc;
-    background: #fafafa;
-    border-radius: 2px;
     width: 50%;
+    height: 40px;
     font-size: 18px;
+    border-radius: 2px;
+    background: #fafafa;
+    border: 1px solid #ccc;
 }
 
 .demoRequestForm select {
@@ -91,10 +91,10 @@
 
 .demoRequestForm .email {
     width: 50%;
-    border: 1px solid #ccc;
-    background: #fafafa;
     height: 40px;
     border-radius: 2px;
+    background: #fafafa;
+    border: 1px solid #ccc;
 }
 
 .demoRequestForm .phone {
@@ -103,9 +103,9 @@
 }
 
 .demoRequestForm .nameForms {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    width: 100%;
 }
 
 .demoRequestForm .nameForms .nameLabel {
@@ -119,12 +119,12 @@
 
 .demoRequestForm .submitBtn {
     color: #eee;
-    background-color: #000;
     border: none;
     height: 60px;
     width: 260px;
     cursor: pointer;
     margin: 70px 0 70px 0;
+    background-color: #000;
 }
 
 .demoRequestForm .submitBtn:hover {
@@ -134,8 +134,8 @@
 @media screen and (max-width: 1000px) {
     .demoRequestForm .formInformation {
         max-width: 100%;
-        max-height: 100%;
         margin-top: 0px;
+        max-height: 100%;
     }
     .demoRequestForm .dateRequested,
     .demoRequestForm .timeRequested,

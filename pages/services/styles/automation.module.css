@@ -1,17 +1,17 @@
 .automationPage {
-    font-family: "PT Sans", sans-serif;
+    font-family: montserrat, sans-serif;
 }
 
 .automationPage p,
 .automationPage h2 {
     margin-top: 10px;
     line-height: 30px;
-    letter-spacing: 1.5px;
     word-spacing: 2px;
-    text-align: center;
-    font-family: montserrat, sans-serif;
     font-weight: 400;
+    text-align: center;
     font-style: normal;
+    letter-spacing: 1.5px;
+    font-family: montserrat, sans-serif;
 }
 
 .sectionTitle {
@@ -20,8 +20,8 @@
 }
 
 .automationPage .header {
-    background-color: #201a16;
     height: 150px;
+    background-color: #201a16;
 }
 
 .automationInfo {
@@ -30,10 +30,10 @@
 }
 
 .automationInfo .pageHeading h1 {
-    margin-top: 80px;
-    margin-bottom: 40px;
     font-size: 2em;
+    margin-top: 80px;
     text-align: center;
+    margin-bottom: 40px;
 }
 
 .automationInfo .pageHeading p {
@@ -43,8 +43,8 @@
 .elan span:nth-child(1),
 .controlFour span:nth-child(1) {
     max-height: 550px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     border-radius: 45px/15px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .homeAutomation {
@@ -57,11 +57,11 @@
 
 .bottomServices {
     display: flex;
-    justify-content: center;
     text-align: left;
     margin-top: 80px;
-    flex-direction: column;
     margin-bottom: 80px;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .bottomServices .elan,
@@ -70,6 +70,7 @@
     margin: 0 auto;
 }
 
+.bottomServices .elan h2,
 .bottomServices .controlFour h2 {
     margin-top: 60px;
 }
@@ -78,14 +79,10 @@
     margin-top: 75px;
 }
 
-.bottomServices .elan h2 {
-    margin-top: 60px;
-}
-
 .bottomServices img {
+    width: 100%;
     height: 215px;
     max-width: 100%;
-    width: 100%;
 }
 
 @media screen and (max-width: 2560px) {
@@ -120,9 +117,7 @@
 }
 
 @media screen and (max-width: 438px) {
-    .automationPage .header {
-        display: none;
-    }
+    .automationPage .header,
     .automationPage .header {
         display: none;
     }
@@ -141,15 +136,13 @@
     .automationPage .automationInfo .bottomServices .controlFour {
         max-width: 100%;
     }
-    .automationPage .automationInfo .bottomServices .controlFour h2 {
+    .automationPage .automationInfo .bottomServices .controlFour h2,
+    .automationPage .automationInfo .bottomServices .elan h2 {
         margin-top: 30px;
     }
     .automationPage .automationInfo .bottomServices .elan {
         max-width: 100%;
         margin-top: 80px;
-    }
-    .automationPage .automationInfo .bottomServices .elan h2 {
-        margin-top: 30px;
     }
 }
 
@@ -157,21 +150,17 @@
     .automationPage p {
         font-size: 15px;
     }
-    .automationPage .automationInfo .automationImg {
-        height: 250px;
-    }
     .automationPage .automationInfo .pageHeading p {
         margin-bottom: 50px;
     }
     .automationPage .automationInfo .pageHeading h1 {
         margin: 100px 0 30px 0;
     }
-    .automationPage .automationInfo .bottomServices {
-        margin-top: 50px;
-    }
+    .automationPage .automationInfo .bottomServices,
     .automationPage .automationInfo .bottomServices .elan {
         margin-top: 50px;
     }
+    .automationPage .automationInfo .automationImg,
     .automationPage .automationInfo .bottomServices img {
         height: 250px;
     }
