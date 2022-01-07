@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import Document, {
   Html, Main, NextScript
 } from 'next/document';

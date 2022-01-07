@@ -1,11 +1,9 @@
-/* eslint-disable @next/next/next-script-for-ga */
 import Head from 'next/head';
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import {
   ColorModeProvider, CSSReset, theme, ThemeProvider
 } from '@chakra-ui/react';
-import Script from 'next/script';
 import { FC } from 'react';
 import MainContainer from '../containers/main';
 
@@ -46,19 +44,6 @@ const MyApp: FC<AppProps> = ({ Component, pageProps }) => (
         }}
       />
     </Head>
-    <Script
-      src="https://www.googletagmanager.com/gtag/js?id=UA-148182336-1"
-      strategy="afterInteractive"
-    />
-    <Script id="google-analytics" strategy="afterInteractive">
-      {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'UA-148182336-1');
-        `}
-    </Script>
     <ThemeProvider theme={theme}>
       <ColorModeProvider options={{
         useSystemColorMode: true
