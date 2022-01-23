@@ -43,7 +43,7 @@ const HomePage: FC<HomePageData> = ({
   <div>
     <Head>
       <title>Sound Insight - Custom AV Solution & Design | Huntington, NY</title>
-      <meta name="description" content="The very best in AUDIO and VIDEO since 2002. Let our Knowledgeable Team Help You Find the Right Technology to Match Your Home or Office." />
+      <meta name="description" content="The very best in AUDIO and VIDEO since 2002. Let our Knowledgeable Team Help You Find the Right Technology to Match Your Home or Office. Serving Long Island & New York" />
       <meta name="keywords" content="Audio Visual Installations Long Island, Home Cinema Installation, Home Security, Home Theatre, Home Automation, Audio & Video, Surround Sound Installation, TV Installation, Audio Installation, Gifts for Dad" />
     </Head>
     <SplashImageComponent altText="Living room with TV over fireplace" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
