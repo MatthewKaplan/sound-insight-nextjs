@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import Head from 'next/head';
 import Image from 'next/image';
 import React, { FC } from 'react';
@@ -60,7 +61,7 @@ const AudioPage: FC<AudioPageData> = ({
     </div>
     <p>{AudioSlideTitle}</p>
     <section className={classes.productSlides}>
-      <CarouselComponent icons={audioImages} iconNames={audioDetails} />
+      {/* <CarouselComponent icons={audioImages} iconNames={audioDetails} pictures={audioImages} /> */}
     </section>
   </div>
 );

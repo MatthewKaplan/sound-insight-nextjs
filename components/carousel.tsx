@@ -8,15 +8,22 @@ import classes from './styles/carousel.module.css';
 type Props = {
   icons: string[];
   iconNames: string[];
+  pictures: string[];
+  links: string[];
 };
 
-const CarouselComponent: FC<Props> = ({ icons, iconNames }) => {
-  const baseChildren = icons.map((image, i) => (
-    <div key={image} className={classes.carouselDiv}>
-      <Image src={image} width={250} height={250} alt={`${iconNames[i]} television/speakers`} />
-      <p className={classes.legend}>{iconNames[i]}</p>
-    </div>
-  ));
+const CarouselComponent: FC<Props> = ({
+  icons, iconNames, pictures, links
+}) => {
+  const imgArr: { img: string; logo: string; name: string; link: string }[] = [];
+  for (let i = 0; i < iconNames.length; i += 1) {
+    imgArr.push({
+      img: pictures[i],
+      logo: icons[i],
+      name: iconNames[i],
+      link: links[i]
+    });
+  }
 
   const tooglesGroupId = 'Toggles';
   const valuesGroupId = 'Values';
@@ -53,16 +60,23 @@ const CarouselComponent: FC<Props> = ({ icons, iconNames }) => {
           centerSlidePercentage={number('centerSlidePercentage', 40, {}, mainGroupId)}
           {...getConfigurableProps()}
         >
-          {baseChildren}
-
-        </Carousel>
-      </div>
-      <div className={classes.mobileCarousel}>
-        <Carousel
-          centerMode
-          {...getConfigurableProps()}
-        >
-          {baseChildren}
+          {
+            imgArr.map(({
+              name, img, logo, link
+            }) => (
+              <div
+                key={name}
+                style={{
+                  display: 'flex', flexDirection: 'column', maxWidth: '200px', margin: '0 auto', cursor: 'pointer'
+                }}
+              >
+                <a href={link} target="_blank" rel="noreferrer">
+                  <Image src={img} width={300} height={225} alt={`${name} television/speakers`} />
+                  <Image src={logo} width={300} height={100} alt={`${name} television/speakers`} />
+                </a>
+              </div>
+            ))
+          }
         </Carousel>
       </div>
       <div className={classes.bottomBreakLine}>

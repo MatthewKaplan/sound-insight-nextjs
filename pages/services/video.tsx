@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import Head from 'next/head';
 import Image from 'next/image';
 import React, { FC } from 'react';
@@ -63,7 +64,7 @@ const VideoPage: FC<VideoPageData> = ({
     </section>
     <p>{VidSlideTitle}</p>
     <section className={classes.productSlides}>
-      <CarouselComponent icons={videoImages} iconNames={videoDetails} />
+      {/* <CarouselComponent icons={videoImages} iconNames={videoDetails} pictures={videoImages} /> */}
     </section>
   </div>
 );
