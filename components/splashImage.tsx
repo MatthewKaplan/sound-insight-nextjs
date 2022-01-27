@@ -3,10 +3,10 @@ import { FC } from 'react';
 import classes from './styles/splashImage.module.css';
 
 type Props = {
-  imageLink: string;
-  subTitle: string;
   title: string;
   altText: string;
+  subTitle: string;
+  imageLink: string;
 };
 
 const SplashImageComponent: FC<Props> = ({

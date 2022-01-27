@@ -11,26 +11,26 @@ import { ServicePageData } from '../../types/servicePage.typs';
 import SplashImageComponent from '../../components/splashImage';
 
 const ServicesPage: FC<ServicePageData> = ({
+  AutoImg,
+  AutoInfo,
+  PhoneImg,
+  AudioImg,
+  VideoImg,
+  PhoneInfo,
   SplashImg,
-  SplashSubTitle,
+  VideoInfo,
+  AudioInfo,
+  AutoTitle,
+  VideoTitle,
+  PhoneTitle,
+  AudioTitle,
   SplashTitle,
   SecurityImg,
   SecurityInfo,
   SecurityTitle,
-  ServicesSubtitle,
   ServicesTitle,
-  PhoneTitle,
-  PhoneImg,
-  PhoneInfo,
-  AudioImg,
-  AudioInfo,
-  AudioTitle,
-  AutoImg,
-  AutoInfo,
-  AutoTitle,
-  VideoImg,
-  VideoInfo,
-  VideoTitle
+  SplashSubTitle,
+  ServicesSubtitle
 }) => (
   <div>
     <Head>

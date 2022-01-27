@@ -39,12 +39,12 @@ const HeaderComponent: FC = () => {
             <Link href="/">
               <a className={classes.imgAnchor}>
                 <Image
-                  src="https://res.cloudinary.com/sound-insight/image/upload/v1640911039/WIgvnFB_swl61h.jpg"
+                  priority
                   height="85"
                   width="200"
                   className={classes.logo}
                   alt="Full size Sound-Insight company logo"
-                  priority
+                  src="https://res.cloudinary.com/sound-insight/image/upload/v1640911039/WIgvnFB_swl61h.jpg"
                 />
               </a>
             </Link>
@@ -89,23 +89,23 @@ const HeaderComponent: FC = () => {
         >
           <section className={classes.navHeader}>
             <div
-              className={sidebarActive ? clsx(classes.iconActive, classes.icon) : classes.icon}
-              onClick={() => toggleSidebar()}
-              onKeyPress={() => toggleSidebar()}
               role="menu"
               tabIndex={0}
+              onClick={() => toggleSidebar()}
+              onKeyPress={() => toggleSidebar()}
+              className={sidebarActive ? clsx(classes.iconActive, classes.icon) : classes.icon}
             >
               <div className={classes.hamburger} />
             </div>
             <Link href="/">
               <a className={clsx(classes.link, classes.logoLink)}>
                 <Image
-                  src="https://res.cloudinary.com/sound-insight/image/upload/v1640911057/6E05ibb_y99vcn.png"
-                  height={50}
+                  priority
                   width={50}
+                  height={50}
                   className={classes.headerLogo}
                   alt="A smaller Sound-Insight company logo for mobile device"
-                  priority
+                  src="https://res.cloudinary.com/sound-insight/image/upload/v1640911057/6E05ibb_y99vcn.png"
                 />
               </a>
             </Link>
@@ -114,66 +114,66 @@ const HeaderComponent: FC = () => {
             <ul className={classes.sidebarMenu}>
               <Link href="/">
                 <a
+                  tabIndex={0}
+                  role="menuitem"
                   className={classes.link}
                   onClick={() => toggleSidebar()}
                   onKeyPress={() => toggleSidebar()}
-                  role="menuitem"
-                  tabIndex={0}
                 >
                   HOME
                 </a>
               </Link>
               <Link href="/services">
                 <a
+                  tabIndex={0}
+                  role="menuitem"
                   className={classes.link}
                   onClick={() => toggleSidebar()}
                   onKeyPress={() => toggleSidebar()}
-                  role="menuitem"
-                  tabIndex={0}
                 >
                   SERVICES
                 </a>
               </Link>
               <Link href="/products">
                 <a
+                  tabIndex={0}
+                  role="menuitem"
                   className={classes.link}
                   onClick={() => toggleSidebar()}
                   onKeyPress={() => toggleSidebar()}
-                  role="menuitem"
-                  tabIndex={0}
                 >
                   PRODUCTS
                 </a>
               </Link>
               <Link href="/brands">
                 <a
+                  tabIndex={0}
+                  role="menuitem"
                   className={classes.link}
                   onClick={() => toggleSidebar()}
                   onKeyPress={() => toggleSidebar()}
-                  role="menuitem"
-                  tabIndex={0}
                 >
                   BRANDS
                 </a>
               </Link>
               <Link href="/about">
                 <a
+                  tabIndex={0}
+                  role="menuitem"
                   className={classes.link}
                   onClick={() => toggleSidebar()}
                   onKeyPress={() => toggleSidebar()}
-                  role="menuitem"
-                  tabIndex={0}
                 >
                   ABOUT
                 </a>
               </Link>
               <Link href="/contact">
                 <a
-                  className={clsx(classes.link, classes.contactLink)}
+                  tabIndex={0}
+                  role="menuitem"
                   onClick={() => toggleSidebar()}
                   onKeyPress={() => toggleSidebar()}
-                  role="menuitem"
-                  tabIndex={0}
+                  className={clsx(classes.link, classes.contactLink)}
                 >
                   CONTACT
                 </a>
@@ -200,21 +200,21 @@ const HeaderComponent: FC = () => {
               </a>
             </div>
             <div
-              className={clsx(classes.map, classes.menuOption)}
+              tabIndex={0}
+              role="menuitem"
               onClick={() => toggleMap()}
               onKeyPress={() => toggleMap()}
-              role="menuitem"
-              tabIndex={0}
+              className={clsx(classes.map, classes.menuOption)}
             >
               <Image src="https://res.cloudinary.com/sound-insight/image/upload/v1640911057/oj6o3TY_wzamok.png" alt="Map Icon to see where Sound-Insight is located" width={25} height={40} />
               <span>MAP</span>
             </div>
             <div
-              className={clsx(classes.hours, classes.menuOption)}
+              tabIndex={0}
+              role="menuitem"
               onClick={() => toggleHours()}
               onKeyPress={() => toggleHours()}
-              role="menuitem"
-              tabIndex={0}
+              className={clsx(classes.hours, classes.menuOption)}
             >
               <Image src="https://res.cloudinary.com/sound-insight/image/upload/v1640911039/rx2GiBJ_gxo9q2.png" alt="Clock Icon to view store hours" width={20} height={40} />
               <span>HOURS</span>

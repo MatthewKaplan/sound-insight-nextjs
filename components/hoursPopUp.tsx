@@ -10,11 +10,11 @@ const HoursPopUpComponent: FC<Props> = ({ closeHours }) => (
   <div className={classes.hoursPopUp}>
     <div>
       <Image
-        src="https://res.cloudinary.com/sound-insight/image/upload/v1640923215/cross_c2uiro.png"
-        alt="Cross icon which is used to exit the hours page"
-        height={30}
         width={30}
+        height={30}
         onClick={closeHours}
+        alt="Cross icon which is used to exit the hours page"
+        src="https://res.cloudinary.com/sound-insight/image/upload/v1640923215/cross_c2uiro.png"
       />
     </div>
     <table>

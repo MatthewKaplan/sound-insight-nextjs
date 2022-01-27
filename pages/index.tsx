@@ -11,34 +11,34 @@ import { HomePageData } from '../types/homePage.type';
 import SplashImageComponent from '../components/splashImage';
 
 const HomePage: FC<HomePageData> = ({
-  SplashImg,
+  tel,
+  Call,
+  City,
+  Visit,
+  Google,
+  Mission,
+  AutoImg,
+  AutoSub,
+  VideoImg,
+  VideoSub,
   Showroom,
-  ShowroomInfo,
-  ShowroomTitle,
-  SplashSubTitle,
-  SplashTitle,
   StoreImg,
+  AudioImg,
+  AudioSub,
+  AutoTitle,
+  SplashImg,
   StoreImg1,
   StoreImg2,
   StoreImg3,
   StoreImg4,
-  SubMission,
-  AudioImg,
-  AudioSub,
-  AudioTitle,
-  AutoImg,
-  AutoSub,
-  AutoTitle,
-  VideoImg,
-  VideoSub,
   VideoTitle,
-  Visit,
-  Call,
-  City,
-  Google,
-  tel,
+  SubMission,
+  AudioTitle,
   PhoneNumber,
-  Mission
+  SplashTitle,
+  ShowroomInfo,
+  ShowroomTitle,
+  SplashSubTitle
 }) => (
   <div>
     <Head>
@@ -88,7 +88,7 @@ const HomePage: FC<HomePageData> = ({
       <section className={classes.storeImage}>
         <div className={classes.storeFront}>
           <div className={classes.imageOverlay} />
-          <Image src={StoreImg} alt="Sound Insight store front" layout="fill" objectFit="cover" className={classes.storeFrontImg} />
+          <Image priority src={StoreImg} alt="Sound Insight store front" layout="fill" objectFit="cover" className={classes.storeFrontImg} />
           <div className={classes.splashDesc}>
             <p>
               <strong>{Showroom}</strong>

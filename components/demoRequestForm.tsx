@@ -10,13 +10,13 @@ type Props = {
 };
 
 type ContactInfo = {
-  phone: E164Number | undefined;
+  email: string;
   firstName: string;
   lastName: string;
-  email: string;
   desiredDemo: string;
   dateRequested: string;
   timeRequested: string;
+  phone: E164Number | undefined;
 };
 
 const DemoRequestForm: FC<Props> = ({ closeForm }) => {
@@ -36,12 +36,12 @@ const DemoRequestForm: FC<Props> = ({ closeForm }) => {
       <div className={classes.formInformation}>
         <div style={{ float: 'right' }}>
           <Image
-            src="https://res.cloudinary.com/sound-insight/image/upload/v1640923363/cross3_rsv9uh.png"
-            alt="Cross icon which is used to exit the fourm"
-            height={25}
             width={25}
+            height={25}
             className={classes.closeForm}
             onClick={() => closeForm(false)}
+            alt="Cross icon which is used to exit the fourm"
+            src="https://res.cloudinary.com/sound-insight/image/upload/v1640923363/cross3_rsv9uh.png"
           />
         </div>
         <form action="https://formspree.io/sales@sound-insight.com" method="POST">
@@ -51,37 +51,37 @@ const DemoRequestForm: FC<Props> = ({ closeForm }) => {
             <section className={classes.fistNameForm}>
               <input
                 type="text"
-                className={classes.firstName}
                 id="form-input"
-                value={contactInfo.firstName}
                 name="firstName"
                 onChange={inputHandler}
                 placeholder="First Name"
+                className={classes.firstName}
+                value={contactInfo.firstName}
               />
             </section>
             <section className={classes.lastNameForm}>
               <input
                 type="text"
-                className={classes.lastName}
                 id="form-input"
-                value={contactInfo.lastName}
                 name="lastName"
                 onChange={inputHandler}
                 placeholder="Last Name"
+                className={classes.lastName}
+                value={contactInfo.lastName}
               />
             </section>
           </div>
           <div className={classes.desiredDemo}>
             <h3>Desired Demo*</h3>
             <textarea
-              name="desiredDemo"
-              className={classes.desiredDemo}
-              value={contactInfo.desiredDemo}
-              onChange={(e) => setContactInfo({ ...contactInfo, desiredDemo: e.target.value })}
               id=""
               cols={60}
               rows={10}
+              name="desiredDemo"
+              className={classes.desiredDemo}
+              value={contactInfo.desiredDemo}
               placeholder="Please let us know what equipment you would like to experience."
+              onChange={(e) => setContactInfo({ ...contactInfo, desiredDemo: e.target.value })}
             />
           </div>
           <div className={classes.requestedDate}>
@@ -116,11 +116,11 @@ const DemoRequestForm: FC<Props> = ({ closeForm }) => {
           <div className={classes.phoneNumber}>
             <h3>Phone*</h3>
             <PhoneInput
+              value={contactInfo.phone}
+              className={classes.phone}
               placeholder="Enter phone number"
               name={contactInfo.phone?.toString()}
-              value={contactInfo.phone}
               onChange={(phone) => setContactInfo({ ...contactInfo, phone })}
-              className={classes.phone}
             />
           </div>
           <input type="submit" value="Submit" className={classes.submitBtn} />

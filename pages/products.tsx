@@ -8,40 +8,39 @@ import { ProductPageData } from '../types/productPageData';
 import SplashImageComponent from '../components/splashImage';
 
 const ProductPage: FC<ProductPageData> = ({
-  videoImages,
-  videoDetails,
   SplashImg,
-  SplashSubTitle,
+  audioLinks,
+  audioIcons,
+  audioNames,
+  videoLinks,
+  videoImages,
   SplashTitle,
+  videoTvImgs,
+  audioImages,
+  videoDetails,
+  speakerNames,
+  speakerIcons,
+  speakerLinks,
   ProductTitle1,
   ProductTitle2,
   ProductTitle3,
   ProductTitle4,
   ProductTitle5,
   ProductTitle6,
-  ProductTitle7,
-  audioLinks,
-  audioIcons,
-  audioNames,
-  audioImages,
-  turntableNames,
-  turntableIcons,
-  turntableImages,
-  turntableLinks,
   streamerNames,
   streamerIcons,
-  streamerImages,
   streamerLinks,
-  speakerNames,
-  speakerIcons,
   speakerImages,
-  speakerLinks,
+  SplashSubTitle,
+  turntableNames,
+  turntableLinks,
+  turntableIcons,
+  streamerImages,
   furnitureNames,
   furnitureLogos,
-  furnitureImages,
   furnitureLinks,
-  videoTvImgs,
-  videoLinks
+  turntableImages,
+  furnitureImages
 }) => (
   <div>
     <Head>
@@ -55,55 +54,55 @@ const ProductPage: FC<ProductPageData> = ({
         <h2>{ProductTitle1}</h2>
         <section className={classes.productSlides}>
           <CarouselComponent
-            icons={videoImages}
-            iconNames={videoDetails}
-            pictures={videoTvImgs}
             links={videoLinks}
+            icons={videoImages}
+            pictures={videoTvImgs}
+            iconNames={videoDetails}
           />
         </section>
         <h2 className={classes.speakerHeader}>{ProductTitle2}</h2>
         <section className={classes.productSlides}>
           <CarouselComponent
             icons={audioIcons}
+            links={audioLinks}
             iconNames={audioNames}
             pictures={audioImages}
-            links={audioLinks}
           />
         </section>
         <h2 className={classes.speakerHeader}>{ProductTitle3}</h2>
         <section className={classes.productSlides}>
           <CarouselComponent
             icons={turntableIcons}
+            links={turntableLinks}
             iconNames={turntableNames}
             pictures={turntableImages}
-            links={turntableLinks}
           />
         </section>
         <h2 className={classes.speakerHeader}>{ProductTitle4}</h2>
         <section className={classes.productSlides}>
           <CarouselComponent
             icons={streamerIcons}
+            links={streamerLinks}
             iconNames={streamerNames}
             pictures={streamerImages}
-            links={streamerLinks}
           />
         </section>
         <h2 className={classes.speakerHeader}>{ProductTitle5}</h2>
         <section className={classes.productSlides}>
           <CarouselComponent
             icons={speakerIcons}
+            links={speakerLinks}
             iconNames={speakerNames}
             pictures={speakerImages}
-            links={speakerLinks}
           />
         </section>
         <h2 className={classes.speakerHeader}>{ProductTitle6}</h2>
         <section className={classes.productSlides}>
           <CarouselComponent
             icons={furnitureLogos}
+            links={furnitureLinks}
             iconNames={furnitureNames}
             pictures={furnitureImages}
-            links={furnitureLinks}
           />
         </section>
       </section>

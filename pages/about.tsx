@@ -9,15 +9,15 @@ import SplashImageComponent from '../components/splashImage';
 
 const AboutPage: FC<AboutPageData> = ({
   SplashImg,
-  SplashSubTitle,
-  SplashTitle,
   AboutImg1,
   AboutImg2,
   AboutImg3,
   AboutInfo1,
   AboutInfo2,
   AboutInfo3,
-  AboutTitle
+  AboutTitle,
+  SplashTitle,
+  SplashSubTitle
 }) => (
   <div className={classes.aboutPage}>
     <Head>

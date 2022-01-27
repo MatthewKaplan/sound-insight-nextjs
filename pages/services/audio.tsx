@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import Head from 'next/head';
 import Image from 'next/image';
 import React, { FC } from 'react';
@@ -10,21 +9,35 @@ import { AudioPageData } from '../../types/audioPage.type';
 import BackBtnComponent from '../../components/backButton';
 
 const AudioPage: FC<AudioPageData> = ({
-  AudioTitle1,
-  AudioInfo1,
   AudioImg1,
-  AudioTitle2,
-  AudioInfo2,
   AudioImg2,
+  AudioImg3,
+  AudioInfo1,
+  AudioInfo4,
+  AudioInfo2,
+  AudioIcons,
+  AudioLinks,
+  AudioNames,
+  AudioTitle1,
+  AudioTitle2,
+  AudioTitle4,
   AudioTitle3,
   AudioInfo3A,
   AudioInfo3B,
-  AudioImg3,
-  AudioTitle4,
-  AudioInfo4,
-  AudioSlideTitle,
-  audioImages,
-  audioDetails
+  AudioImages,
+  SpeakerIcons,
+  SpeakerNames,
+  SpeakerLinks,
+  SpeakerImages,
+  StreamerNames,
+  StreamerLinks,
+  StreamerIcons,
+  StreamerImages,
+  TurntableIcons,
+  TurntableLinks,
+  TurntableNames,
+  TurntableImages,
+  AudioSlideTitle
 }) => (
   <div className={classes.audioPage}>
     <Head>
@@ -61,7 +74,30 @@ const AudioPage: FC<AudioPageData> = ({
     </div>
     <p>{AudioSlideTitle}</p>
     <section className={classes.productSlides}>
-      {/* <CarouselComponent icons={audioImages} iconNames={audioDetails} pictures={audioImages} /> */}
+      <CarouselComponent
+        icons={SpeakerIcons}
+        links={SpeakerLinks}
+        iconNames={SpeakerNames}
+        pictures={SpeakerImages}
+      />
+      <CarouselComponent
+        icons={AudioIcons}
+        links={AudioLinks}
+        pictures={AudioImages}
+        iconNames={AudioNames}
+      />
+      <CarouselComponent
+        icons={StreamerIcons}
+        links={StreamerLinks}
+        iconNames={StreamerNames}
+        pictures={StreamerImages}
+      />
+      <CarouselComponent
+        icons={TurntableIcons}
+        links={TurntableLinks}
+        iconNames={TurntableNames}
+        pictures={TurntableImages}
+      />
     </section>
   </div>
 );

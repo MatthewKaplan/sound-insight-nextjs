@@ -1,8 +1,11 @@
 export type PhoneSystemPageData = {
-  DocumentID: string;
+  id: string;
+  type: string;
+  label: string;
   PhoneImg1: string;
   PhoneImg2: string;
   PhoneImg3: string;
+  DocumentID: string;
   PhoneInfo1: string;
   PhoneInfo2: string;
   PhoneInfo3: string;
@@ -11,7 +14,4 @@ export type PhoneSystemPageData = {
   PhoneTitle2: string;
   PhoneTitle3: string;
   PhoneTitle4: string;
-  id: string;
-  label: string;
-  type: string;
 };

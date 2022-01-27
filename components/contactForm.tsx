@@ -10,12 +10,12 @@ type Props = {
 };
 
 type ContactInfo = {
-  phone: E164Number | undefined;
+  email: string;
+  resume: string;
+  message: string;
   firstName: string;
   lastName: string;
-  email: string;
-  message: string;
-  resume: string;
+  phone: E164Number | undefined;
 };
 
 const ContactForm: FC<Props> = ({ closeForm }) => {
@@ -35,12 +35,12 @@ const ContactForm: FC<Props> = ({ closeForm }) => {
       <div className={classes.formInformation}>
         <div style={{ float: 'right' }}>
           <Image
-            src="https://res.cloudinary.com/sound-insight/image/upload/v1640923363/cross3_rsv9uh.png"
-            alt="Cross icon which is used to exit the fourm"
-            height={25}
             width={25}
+            height={25}
             className={classes.closeForm}
             onClick={() => closeForm(false)}
+            alt="Cross icon which is used to exit the fourm"
+            src="https://res.cloudinary.com/sound-insight/image/upload/v1640923363/cross3_rsv9uh.png"
           />
         </div>
         <form action="https://formspree.io/sales@sound-insight.com" method="POST">
@@ -49,58 +49,58 @@ const ContactForm: FC<Props> = ({ closeForm }) => {
           <div className={classes.nameForms}>
             <section className={classes.fistNameForm}>
               <input
+                required
                 type="text"
                 name="firstName"
-                className={classes.firstName}
                 id="form-input"
-                required
-                value={contactInfo.firstName}
                 onChange={inputHandler}
                 placeholder="First Name"
+                className={classes.firstName}
+                value={contactInfo.firstName}
               />
             </section>
             <section className={classes.lastNameForm}>
               <input
+                required
                 type="text"
                 name="lastName"
-                className={classes.lastName}
                 id="form-input"
-                required
-                value={contactInfo.lastName}
                 onChange={inputHandler}
                 placeholder="Last Name"
+                value={contactInfo.lastName}
+                className={classes.lastName}
               />
             </section>
           </div>
           <div>
             <h3>Email Address*</h3>
             <input
+              required
               type="text"
               name="email"
-              className={classes.email}
-              required
-              value={contactInfo.email}
               onChange={inputHandler}
+              value={contactInfo.email}
+              className={classes.email}
             />
           </div>
           <div className={classes.phoneNumber}>
             <h3>Phone*</h3>
             <PhoneInput
+              value={contactInfo.phone}
+              className={classes.phone}
               placeholder="Enter phone number"
               name={contactInfo.phone?.toString()}
-              value={contactInfo.phone}
               onChange={(phone) => setContactInfo({ ...contactInfo, phone })}
-              className={classes.phone}
             />
           </div>
           <div className={classes.desiredDemo}>
             <h3>Message*</h3>
             <textarea
-              name="message"
-              className={classes.message}
               id=""
               cols={60}
               rows={10}
+              name="message"
+              className={classes.message}
               value={contactInfo.message}
               onChange={(e) => setContactInfo({ ...contactInfo, message: e.target.value })}
             />

@@ -12,18 +12,18 @@ import { BrandPageData } from './brandPage.type';
 import { CareersPageData } from './careersPage.type';
 
 export type CompletePageData = {
+  home: HomePageData;
   about: AboutPageData;
+  video: VideoPageData;
   audio: AudioPageData;
-  automation: AutomationPageData;
   brands: BrandPageData;
   contact: ContactPageData;
-  home: HomePageData;
-  phoneSystems: PhoneSystemPageData;
-  products: ProductPageData;
-  security: SecurityPageData;
-  services: ServicePageData;
-  video: VideoPageData;
   careers: CareersPageData;
+  products: ProductPageData;
+  services: ServicePageData;
+  security: SecurityPageData;
+  automation: AutomationPageData;
+  phoneSystems: PhoneSystemPageData;
 };
 
 export type PageData = AboutPageData |

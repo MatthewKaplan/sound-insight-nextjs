@@ -1,14 +1,14 @@
 export type BrandPageData = {
+  id: string;
+  label: string;
   BrandSub1: string;
   BrandSub2: string;
   BrandSub3: string;
-  BrandsTitle: string;
-  DocumentID: string;
   SplashImg: string;
-  SplashSubTitle: string;
+  DocumentID: string;
+  BrandsTitle: string;
   SplashTitle: string;
-  id: string;
-  label: string;
-  manufacturerAltText: string[];
+  SplashSubTitle: string;
   manufacturerLogo: string[];
+  manufacturerAltText: string[];
 };

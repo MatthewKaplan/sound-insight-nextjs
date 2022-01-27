@@ -10,12 +10,12 @@ type Props = {
 };
 
 type ContactInfo = {
-  phone: E164Number | undefined;
+  email: string;
   firstName: string;
   lastName: string;
-  email: string;
   jobDetail: string;
   dateRequested: string;
+  phone: E164Number | undefined;
 };
 
 const SurveyRequestForm: FC<Props> = ({ closeForm }: Props) => {
@@ -35,12 +35,12 @@ const SurveyRequestForm: FC<Props> = ({ closeForm }: Props) => {
       <div className={classes.formInformation}>
         <div className={classes.float}>
           <Image
-            src="https://res.cloudinary.com/sound-insight/image/upload/v1640923363/cross3_rsv9uh.png"
-            alt="Cross icon which is used to exit the fourm"
-            height={25}
             width={25}
+            height={25}
             className={classes.closeForm}
             onClick={() => closeForm(false)}
+            alt="Cross icon which is used to exit the fourm"
+            src="https://res.cloudinary.com/sound-insight/image/upload/v1640923363/cross3_rsv9uh.png"
           />
         </div>
         <form action="https://formspree.io/sales@sound-insight.com" method="POST">
@@ -61,12 +61,12 @@ const SurveyRequestForm: FC<Props> = ({ closeForm }: Props) => {
           <div className={classes.desiredDemo}>
             <h3>Job Detail*</h3>
             <textarea
-              name="jobDetail"
-              value={contactInfo.jobDetail}
-              className={classes.jobDetail}
               id=""
               cols={60}
               rows={10}
+              name="jobDetail"
+              value={contactInfo.jobDetail}
+              className={classes.jobDetail}
               placeholder="In as much detail as possible, tell us about your job."
               onChange={(e) => setContactInfo({ ...contactInfo, jobDetail: e.target.value })}
             />
@@ -84,11 +84,11 @@ const SurveyRequestForm: FC<Props> = ({ closeForm }: Props) => {
           <div className={classes.phoneNumber}>
             <h3>Phone*</h3>
             <PhoneInput
+              value={contactInfo.phone}
+              className={classes.phone}
               placeholder="Enter phone number"
               name={contactInfo.phone?.toString()}
-              value={contactInfo.phone}
               onChange={(phone) => setContactInfo({ ...contactInfo, phone })}
-              className={classes.phone}
             />
           </div>
           <input type="submit" value="Submit" className={classes.submitBtn} />

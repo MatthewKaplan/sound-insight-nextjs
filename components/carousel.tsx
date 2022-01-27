@@ -7,9 +7,9 @@ import classes from './styles/carousel.module.css';
 
 type Props = {
   icons: string[];
-  iconNames: string[];
-  pictures: string[];
   links: string[];
+  pictures: string[];
+  iconNames: string[];
 };
 
 const CarouselComponent: FC<Props> = ({

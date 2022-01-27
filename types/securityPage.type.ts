@@ -1,5 +1,6 @@
 export type SecurityPageData = {
-  DocumentID: string;
+  id: string;
+  label: string;
   SecImg1: string;
   SecImg2: string;
   SecImg3: string;
@@ -13,6 +14,5 @@ export type SecurityPageData = {
   SecTitle2: string;
   SecTitle3: string;
   SecTitle4: string;
-  id: string;
-  label: string;
+  DocumentID: string;
 };

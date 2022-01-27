@@ -10,11 +10,11 @@ const MapPopUpComponent: FC<Props> = ({ closeMap }) => (
   <div className={classes.mapPopup}>
     <div className={classes.float}>
       <Image
-        src="https://res.cloudinary.com/sound-insight/image/upload/v1640923266/cross2_deofik.png"
-        alt="Cross icon which is used to exit the map page"
-        height={80}
         width={80}
+        height={80}
         onClick={closeMap}
+        alt="Cross icon which is used to exit the map page"
+        src="https://res.cloudinary.com/sound-insight/image/upload/v1640923266/cross2_deofik.png"
       />
     </div>
     <section className={classes.map}>

@@ -8,16 +8,16 @@ import BackBtnComponent from '../../components/backButton';
 import { AutomationPageData } from '../../types/automationPage.type';
 
 const AutomationPage: FC<AutomationPageData> = ({
+  AutoImg1,
+  AutoImg2,
+  AutoInfo1,
   AutoTitle1,
   AutoTitle2,
   AutoTitle3,
-  AutoInfo1,
   AutoInfo2A,
   AutoInfo2B,
   AutoInfo3A,
-  AutoInfo3B,
-  AutoImg1,
-  AutoImg2
+  AutoInfo3B
 }) => (
   <div className={classes.automationPage}>
     <Head>

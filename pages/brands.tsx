@@ -9,14 +9,14 @@ import SplashImageComponent from '../components/splashImage';
 
 const BrandsPage: FC<BrandPageData> = ({
   SplashImg,
-  SplashSubTitle,
-  SplashTitle,
-  manufacturerAltText,
-  manufacturerLogo,
   BrandSub1,
   BrandSub2,
   BrandSub3,
-  BrandsTitle
+  SplashTitle,
+  BrandsTitle,
+  SplashSubTitle,
+  manufacturerLogo,
+  manufacturerAltText
 }) => {
   const renderLogos = () => manufacturerLogo.map((logo, i) => (
     <div className={classes.brandLogo} key={logo}>

@@ -1,4 +1,6 @@
 export type AutomationPageData = {
+  id: string;
+  label: string;
   AutoImg1: string;
   AutoImg2: string;
   AutoInfo1: string;
@@ -10,6 +12,4 @@ export type AutomationPageData = {
   AutoTitle2: string;
   AutoTitle3: string;
   DocumentID: string;
-  id: string;
-  label: string;
 };
