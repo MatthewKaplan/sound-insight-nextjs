@@ -1,11 +1,44 @@
 .carouselContainer {
     width: 100vw;
-    height: 450px;
+    height: 400px;
+}
+
+.browserCarousel {
+    padding-top: 30px;
+}
+
+.carouselDiv a span:nth-child(2) {
+    margin-top: 30px !important;
+}
+
+.mobileCarousel {
+    padding-top: 30px;
+}
+
+.arrow {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    width: 30;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: color 1s ease;
+    transition: background 1s ease;
+}
+
+.arrow:hover {
+    background-color: silver;
 }
 
 .carouselDiv {
-    height: 400px;
-    margin-top: 30px;
+    height: 325px;
+    /* margin-top: 60px; */
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    margin: 0 auto;
+    cursor: pointer
 }
 
 .carouselContainer .mobileCarousel {
@@ -39,7 +72,7 @@
 .topPageBreak,
 .bottomPageBreak {
     border: 0;
-    height: 1px;
+    height: 1.2px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 

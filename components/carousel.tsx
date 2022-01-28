@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { CSSProperties, FC, useState } from 'react';
 import Image from 'next/image';
 import { Carousel } from 'react-responsive-carousel';
 import { boolean, number, text } from '@storybook/addon-knobs';
@@ -15,6 +15,8 @@ type Props = {
 const CarouselComponent: FC<Props> = ({
   icons, iconNames, pictures, links
 }) => {
+  const [prevArrowHover, setPrevArrowHover] = useState<boolean>(false);
+  const [nextArrowHover, setNextArrowHover] = useState<boolean>(false);
   const imgArr: { img: string; logo: string; name: string; link: string }[] = [];
   for (let i = 0; i < iconNames.length; i += 1) {
     imgArr.push({
@@ -31,8 +33,8 @@ const CarouselComponent: FC<Props> = ({
 
   const getConfigurableProps = () => ({
     showArrows: boolean('showArrows', true, tooglesGroupId),
-    showStatus: boolean('showStatus', true, tooglesGroupId),
-    showIndicators: boolean('showIndicators', false, tooglesGroupId),
+    showStatus: boolean('showStatus', false, tooglesGroupId),
+    showIndicators: boolean('showIndicators', true, tooglesGroupId),
     infiniteLoop: boolean('infiniteLoop', true, tooglesGroupId),
     showThumbs: boolean('showThumbs', false, tooglesGroupId),
     useKeyboardArrows: boolean('useKeyboardArrows', true, tooglesGroupId),
@@ -43,12 +45,29 @@ const CarouselComponent: FC<Props> = ({
     emulateTouch: boolean('emulateTouch', true, tooglesGroupId),
     autoFocus: boolean('autoFocus', false, tooglesGroupId),
     thumbWidth: number('thumbWidth', 100, {}, valuesGroupId),
-    selectedItem: number('selectedItem', 0, {}, valuesGroupId),
+    selectedItem: number('selectedItem', 1, {}, valuesGroupId),
     interval: number('interval', 8000, {}, valuesGroupId),
     transitionTime: number('transitionTime', 2000, {}, valuesGroupId),
     swipeScrollTolerance: number('swipeScrollTolerance', 5, {}, valuesGroupId),
     ariaLabel: text('ariaLabel', '')
   });
+
+  const carouselDiv = imgArr.map(({
+    name, img, logo, link
+  }) => (
+    <div key={name} className={classes.carouselDiv}>
+      <a href={link} target="_blank" rel="noreferrer">
+        <Image src={img} width={300} height={225} alt={`${name} television/speakers`} />
+        <Image src={logo} width={300} height={100} alt={`${name} brand logo`} />
+      </a>
+    </div>
+  ));
+
+  const indicatorStyles: CSSProperties = {
+    display: 'inline-block',
+    margin: '0 8px'
+  };
+
   return (
     <div className={classes.carouselContainer}>
       <div className={classes.topBreakLine}>
@@ -59,28 +78,76 @@ const CarouselComponent: FC<Props> = ({
           centerMode
           centerSlidePercentage={number('centerSlidePercentage', 40, {}, mainGroupId)}
           {...getConfigurableProps()}
-        >
-          {
-            imgArr.map(({
-              name, img, logo, link
-            }) => (
-              <div
-                key={name}
-                style={{
-                  display: 'flex', flexDirection: 'column', maxWidth: '200px', margin: '0 auto', cursor: 'pointer'
-                }}
-              >
-                <a href={link} target="_blank" rel="noreferrer">
-                  <Image src={img} width={300} height={225} alt={`${name} television/speakers`} />
-                  <Image src={logo} width={300} height={100} alt={`${name} television/speakers`} />
-                </a>
+          renderArrowPrev={(onClickHandler, hasPrev, label) => hasPrev && (
+            <button
+              type="button"
+              title={label}
+              onClick={onClickHandler}
+              className={classes.arrow}
+              style={{ left: 15, paddingLeft: 15 }}
+              onMouseEnter={() => setPrevArrowHover(true)}
+              onMouseLeave={() => setPrevArrowHover(false)}
+            >
+              <Image
+                onClick={onClickHandler}
+                alt="previous slide arrow"
+                width={prevArrowHover ? 50 : 25}
+                height={prevArrowHover ? 50 : 25}
+                src={prevArrowHover ? 'https://res.cloudinary.com/dgmtf6brh/image/upload/v1643334011/right-chevron_6_obvift.png' : 'https://res.cloudinary.com/dgmtf6brh/image/upload/v1643334011/right-chevron_5_deye84.png'}
+              />
+            </button>
+          )}
+          renderArrowNext={(onClickHandler, hasNext, label) => hasNext && (
+            <button
+              title={label}
+              type="button"
+              onClick={onClickHandler}
+              className={classes.arrow}
+              style={{ right: 15, paddingLeft: 15 }}
+              onMouseEnter={() => setNextArrowHover(true)}
+              onMouseLeave={() => setNextArrowHover(false)}
+            >
+              <Image
+                alt="next slide arrow"
+                onClick={onClickHandler}
+                width={nextArrowHover ? 50 : 25}
+                height={nextArrowHover ? 50 : 25}
+                src={nextArrowHover ? 'https://res.cloudinary.com/dgmtf6brh/image/upload/v1643333449/right-chevron_2_luz7sx.png' : 'https://res.cloudinary.com/dgmtf6brh/image/upload/v1643333522/right-chevron_4_qteuuh.png'}
+              />
+            </button>
+          )}
+          renderIndicator={(onClickHandler, isSelected, index, label) => {
+            if (isSelected) {
+              return (
+                <div style={indicatorStyles}>
+                  <Image
+                    width={15}
+                    height={15}
+                    alt="slide selected indicator"
+                    src="https://res.cloudinary.com/dgmtf6brh/image/upload/v1643337258/circle_2_v3f5od.png"
+                  />
+                </div>
+              );
+            }
+            return (
+              <div onClick={onClickHandler} role="button" tabIndex={0} style={indicatorStyles} onKeyDown={onClickHandler}>
+                <Image
+                  width={15}
+                  height={15}
+                  alt="slide not selected indicator"
+                  src="https://res.cloudinary.com/dgmtf6brh/image/upload/v1643337355/circle_3_b9kjrz.png"
+                />
               </div>
-            ))
-          }
+            );
+          }}
+        >
+          {carouselDiv}
         </Carousel>
       </div>
-      <div className={classes.bottomBreakLine}>
-        <hr className={classes.bottomPageBreak} />
+      <div className={classes.mobileCarousel}>
+        <Carousel centerMode {...getConfigurableProps()}>
+          {carouselDiv}
+        </Carousel>
       </div>
     </div>
   );
