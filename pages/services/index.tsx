@@ -49,7 +49,12 @@ const ServicesPage: FC<ServicePageData> = ({
         <div className={classes.audioService}>
           <Link href="/services/audio">
             <a>
-              <Image src={AudioImg} alt="Living room with a set of speakers around the couch" className={classes.topServiceImg} height={600} width={1400} objectFit="fill" />
+              <div className={classes.topServiceImg}>
+                <Image src={AudioImg} alt="Living room with a set of speakers around the couch" height={700} width={1800} objectFit="fill" />
+              </div>
+              <div className={classes.topServiceImgMobile}>
+                <Image src={AudioImg} alt="Living room with a set of speakers around the couch" height={425} width={500} objectFit="fill" />
+              </div>
               <h3 className={classes.sectionTitle}>{AudioTitle}</h3>
             </a>
           </Link>

@@ -45,7 +45,7 @@ const CarouselComponent: FC<Props> = ({
     emulateTouch: boolean('emulateTouch', true, tooglesGroupId),
     autoFocus: boolean('autoFocus', false, tooglesGroupId),
     thumbWidth: number('thumbWidth', 100, {}, valuesGroupId),
-    selectedItem: number('selectedItem', 1, {}, valuesGroupId),
+    selectedItem: number('selectedItem', 0, {}, valuesGroupId),
     interval: number('interval', 8000, {}, valuesGroupId),
     transitionTime: number('transitionTime', 2000, {}, valuesGroupId),
     swipeScrollTolerance: number('swipeScrollTolerance', 5, {}, valuesGroupId),
@@ -63,10 +63,27 @@ const CarouselComponent: FC<Props> = ({
     </div>
   ));
 
+  const imgUrl = 'https://res.cloudinary.com/dgmtf6brh/image/upload/';
+
   const indicatorStyles: CSSProperties = {
     display: 'inline-block',
     margin: '0 8px'
   };
+
+  const slideIndicator = (
+    onClickHandler: (e: React.MouseEvent<Element, MouseEvent> |
+    React.KeyboardEvent<Element>) => void,
+    isSelected
+  ) => (
+    <div onClick={onClickHandler} role="button" tabIndex={0} style={indicatorStyles} onKeyDown={onClickHandler}>
+      <Image
+        width={15}
+        height={15}
+        alt="slide selected indicator"
+        src={isSelected ? `${imgUrl}v1643337258/circle_2_v3f5od.png` : `${imgUrl}v1643337355/circle_3_b9kjrz.png`}
+      />
+    </div>
+  );
 
   return (
     <div className={classes.carouselContainer}>
@@ -93,7 +110,7 @@ const CarouselComponent: FC<Props> = ({
                 alt="previous slide arrow"
                 width={prevArrowHover ? 50 : 25}
                 height={prevArrowHover ? 50 : 25}
-                src={prevArrowHover ? 'https://res.cloudinary.com/dgmtf6brh/image/upload/v1643334011/right-chevron_6_obvift.png' : 'https://res.cloudinary.com/dgmtf6brh/image/upload/v1643334011/right-chevron_5_deye84.png'}
+                src={prevArrowHover ? `${imgUrl}v1643334011/right-chevron_6_obvift.png` : `${imgUrl}v1643334011/right-chevron_5_deye84.png`}
               />
             </button>
           )}
@@ -112,40 +129,17 @@ const CarouselComponent: FC<Props> = ({
                 onClick={onClickHandler}
                 width={nextArrowHover ? 50 : 25}
                 height={nextArrowHover ? 50 : 25}
-                src={nextArrowHover ? 'https://res.cloudinary.com/dgmtf6brh/image/upload/v1643333449/right-chevron_2_luz7sx.png' : 'https://res.cloudinary.com/dgmtf6brh/image/upload/v1643333522/right-chevron_4_qteuuh.png'}
+                src={nextArrowHover ? `${imgUrl}v1643333449/right-chevron_2_luz7sx.png` : `${imgUrl}v1643333522/right-chevron_4_qteuuh.png`}
               />
             </button>
           )}
-          renderIndicator={(onClickHandler, isSelected, index, label) => {
-            if (isSelected) {
-              return (
-                <div style={indicatorStyles}>
-                  <Image
-                    width={15}
-                    height={15}
-                    alt="slide selected indicator"
-                    src="https://res.cloudinary.com/dgmtf6brh/image/upload/v1643337258/circle_2_v3f5od.png"
-                  />
-                </div>
-              );
-            }
-            return (
-              <div onClick={onClickHandler} role="button" tabIndex={0} style={indicatorStyles} onKeyDown={onClickHandler}>
-                <Image
-                  width={15}
-                  height={15}
-                  alt="slide not selected indicator"
-                  src="https://res.cloudinary.com/dgmtf6brh/image/upload/v1643337355/circle_3_b9kjrz.png"
-                />
-              </div>
-            );
-          }}
+          renderIndicator={slideIndicator}
         >
           {carouselDiv}
         </Carousel>
       </div>
       <div className={classes.mobileCarousel}>
-        <Carousel centerMode {...getConfigurableProps()}>
+        <Carousel centerMode {...getConfigurableProps()} renderIndicator={slideIndicator}>
           {carouselDiv}
         </Carousel>
       </div>

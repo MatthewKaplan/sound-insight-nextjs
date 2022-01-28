@@ -1,0 +1,169 @@
+.galleryPage {
+    margin-bottom: 50px;
+}
+
+.galleryPage .gallery {
+    padding: 0 12px;
+    column-count: 3;
+    column-width: 33%;
+    -moz-column-count: 3;
+    -moz-column-width: 33%;
+    -webkit-column-count: 3;
+    -webkit-column-width: 33%;
+}
+
+.galleryPage .galleryInfo .modal img {
+    width: auto;
+    height: auto;
+    display: block;
+    line-height: 0;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 20px 0 20px;
+    box-sizing: border-box;
+}
+
+.galleryPage .gallery .galleryPictures {
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 12px;
+    transition: all 350ms ease;
+    -webkit-transition: all 350ms ease;
+}
+
+.galleryPage .gallery .galleryPictures .imgDescription {
+    top: 44%;
+    bottom: 50%;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-family: playfair-display, serif;
+}
+
+.galleryPage .gallery .galleryPictures .imgLocation {
+    top: 35%;
+    bottom: 80%;
+    font-size: 16px;
+    font-weight: 100;
+    text-transform: uppercase;
+    font-family: montserrat, sans-serif;
+}
+
+.galleryPage .gallery .galleryPictures .highlight {
+    background: url(https://res.cloudinary.com/dgmtf6brh/image/upload/c_scale,e_cut_out,w_2500/v1643354340/brush-stroke-banner-6_ay1ymy.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    top: 25%;
+    bottom: 0;
+    height: 275px;
+    padding: 8px 0;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-family: playfair-display, serif;
+}
+
+.galleryPage .gallery .galleryPictures .highlight,
+.galleryPage .gallery .galleryPictures .imgLocation,
+.galleryPage .gallery .galleryPictures .imgDescription {
+    left: 0;
+    right: 0;
+    opacity: 0;
+    color: #FFF;
+    font-style: normal;
+    visibility: hidden;
+    position: absolute;
+    transition: opacity .2s, visibility .2s;
+}
+
+.galleryPage .gallery .galleryPictures:hover .imgDescription,
+.galleryPage .gallery .galleryPictures:hover .highlight,
+.galleryPage .gallery .galleryPictures:hover .imgLocation {
+    visibility: visible;
+    opacity: 1;
+}
+
+.galleryPage .gallery .galleryPictures img {
+    width: 100%;
+}
+
+.galleryPage .gallery .galleryPictures:hover {
+    filter: opacity(.9);
+}
+
+.galleryPage p {
+    margin-top: 10px;
+    font-weight: 400;
+    line-height: 30px;
+    word-spacing: 2px;
+    text-align: center;
+    font-style: normal;
+    letter-spacing: 1.5px;
+    font-family: montserrat, sans-serif;
+}
+
+.galleryPage .header {
+    height: 150px;
+    background-color: #201a16;
+}
+
+.galleryPage .galleryInfo {
+    margin: 0 auto;
+    max-width: 95%;
+}
+
+.galleryPage .galleryInfo .pageHeading h1 {
+    font-size: 2em;
+    text-align: center;
+    margin: 80px 0 40px 0;
+}
+
+.galleryPage .galleryInfo .pageHeading p {
+    margin-bottom: 50px;
+}
+
+@media (max-width: 991px) {
+    .galleryPage .gallery {
+        column-count: 2;
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .galleryPage .gallery {
+        column-count: 1;
+        column-width: 100%;
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        -moz-column-width: 100%;
+        -webkit-column-width: 100%;
+    }
+}
+
+@media screen and (max-width: 438px) {
+    .galleryPage .header {
+        display: none;
+    }
+    .galleryPage .galleryInfo {
+        max-width: 90%;
+    }
+    .galleryPage .galleryInfo .pageHeading h1 {
+        margin-top: 120px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .galleryPage p {
+        font-size: 15px;
+    }
+    .galleryPage .galleryInfo .pageHeading {
+        margin: 100px 0 30px 0;
+    }
+    .galleryPage .galleryInfo .pageHeading p {
+        font-size: 15px;
+        margin-bottom: 60px;
+    }
+}

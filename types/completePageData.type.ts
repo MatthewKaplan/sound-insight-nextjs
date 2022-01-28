@@ -10,6 +10,7 @@ import { ServicePageData } from './servicePage.typs';
 import { VideoPageData } from './videoPage.type';
 import { BrandPageData } from './brandPage.type';
 import { CareersPageData } from './careersPage.type';
+import { GalleryPageData } from './galleryPage.type';
 
 export type CompletePageData = {
   home: HomePageData;
@@ -19,6 +20,7 @@ export type CompletePageData = {
   brands: BrandPageData;
   contact: ContactPageData;
   careers: CareersPageData;
+  gallery: GalleryPageData;
   products: ProductPageData;
   services: ServicePageData;
   security: SecurityPageData;
@@ -37,4 +39,5 @@ ProductPageData |
 SecurityPageData |
 ServicePageData |
 VideoPageData |
-CareersPageData;
+CareersPageData |
+GalleryPageData;

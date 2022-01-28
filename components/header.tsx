@@ -64,9 +64,9 @@ const HeaderComponent: FC = () => {
                   PRODUCTS
                 </a>
               </Link>
-              <Link href="/brands">
-                <a className={currentPath === '/brands' ? clsx(classes.link, classes.linkActive) : classes.link}>
-                  BRANDS
+              <Link href="/gallery">
+                <a className={currentPath === '/gallery' ? clsx(classes.link, classes.linkActive) : classes.link}>
+                  GALLERY
                 </a>
               </Link>
               <Link href="/about">
@@ -145,7 +145,7 @@ const HeaderComponent: FC = () => {
                   PRODUCTS
                 </a>
               </Link>
-              <Link href="/brands">
+              <Link href="/gallery">
                 <a
                   tabIndex={0}
                   role="menuitem"
@@ -153,7 +153,7 @@ const HeaderComponent: FC = () => {
                   onClick={() => toggleSidebar()}
                   onKeyPress={() => toggleSidebar()}
                 >
-                  BRANDS
+                  GALLERY
                 </a>
               </Link>
               <Link href="/about">
