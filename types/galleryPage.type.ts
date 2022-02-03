@@ -5,5 +5,5 @@ export type GalleryPageData = {
   DocumentID: string;
   GalleryTitle: string;
   GallerySubTitle: string;
-  Data: { ImgDesc: string; ImgLocation: string; ImgSrc: string }[];
+  Data: { ImgDesc: string; ImgLocation?: string; ImgSrc: string }[];
 };

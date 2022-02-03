@@ -26,7 +26,7 @@ const GalleryPage: FC<GalleryPageData> = ({
           <div className={classes.galleryPictures} key={img.ImgSrc}>
             <img src={img.ImgSrc} alt={`${img.ImgDesc} in ${img.ImgLocation}`} />
             <span className={classes.highlight}>
-              <p className={classes.imgLocation}>{img.ImgLocation}</p>
+              <p className={classes.imgLocation}>{img.ImgLocation ? img.ImgLocation : ''}</p>
               <p className={classes.imgDescription}>{img.ImgDesc}</p>
             </span>
           </div>
