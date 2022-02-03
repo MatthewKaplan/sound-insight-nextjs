@@ -26,7 +26,6 @@
 .galleryPage .gallery .galleryPictures {
     width: auto;
     height: auto;
-    cursor: pointer;
     position: relative;
     margin-bottom: 12px;
     transition: all 350ms ease;
@@ -87,6 +86,7 @@
 
 .galleryPage .gallery .galleryPictures img {
     width: 100%;
+    border-radius: 8px;
 }
 
 .galleryPage .gallery .galleryPictures:hover {
@@ -140,6 +140,17 @@
         -webkit-column-count: 1;
         -moz-column-width: 100%;
         -webkit-column-width: 100%;
+    }
+    .galleryPage .gallery .galleryPictures .imgDescription,
+    .galleryPage .gallery .galleryPictures .highlight,
+    .galleryPage .gallery .galleryPictures .imgLocation {
+        visibility: visible;
+        opacity: 1;
+    }
+    .galleryPage .gallery .galleryPictures .highlight p {
+        font-size: 14px;
+        letter-spacing: .5px;
+        font-weight: 600;
     }
 }
 

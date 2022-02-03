@@ -1,57 +1,64 @@
-import Image from 'next/image';
 import { FC } from 'react';
-import classes from './styles/hoursPopUp.module.css';
+import Image from 'next/image';
+import 'react-responsive-modal/styles.css';
+import { Modal } from 'react-responsive-modal';
+import {
+  Table, Thead, Tbody, Tr, Th, Td
+} from '@chakra-ui/react';
 
 type Props = {
-  closeHours: () => void;
+  hoursPopUp: boolean;
+  setHoursPopUp: (arg: boolean) => void;
 };
 
-const HoursPopUpComponent: FC<Props> = ({ closeHours }) => (
-  <div className={classes.hoursPopUp}>
-    <div>
-      <Image
-        width={30}
-        height={30}
-        onClick={closeHours}
-        alt="Cross icon which is used to exit the hours page"
-        src="https://res.cloudinary.com/sound-insight/image/upload/v1640923215/cross_c2uiro.png"
-      />
-    </div>
-    <table>
-      <tr>
-        <th>Company</th>
-        <th>Hours</th>
-      </tr>
-      <tr>
-        <td>MON</td>
-        <td>10am - 6pm</td>
-      </tr>
-      <tr>
-        <td>TUE</td>
-        <td>10am - 6pm</td>
-      </tr>
-      <tr>
-        <td>WED</td>
-        <td>10am - 6pm</td>
-      </tr>
-      <tr>
-        <td>THU</td>
-        <td>10am - 6pm</td>
-      </tr>
-      <tr>
-        <td>FRI</td>
-        <td>10am - 6pm</td>
-      </tr>
-      <tr>
-        <td>SAT</td>
-        <td>10am - 6pm</td>
-      </tr>
-      <tr>
-        <td>SUN</td>
-        <td>By Appt. Only</td>
-      </tr>
-    </table>
-  </div>
-);
+const HoursPopUpComponent: FC<Props> = ({ hoursPopUp, setHoursPopUp }) => {
+  const closeIcon = (
+    <Image src="https://res.cloudinary.com/dgmtf6brh/image/upload/v1643348168/cancel_d6u1cy.png" alt="Close Icon" width={50} height={50} />
+  );
+  return (
+    <Modal open={hoursPopUp} onClose={() => setHoursPopUp(false)} center closeIcon={closeIcon}>
+      <div style={{ height: '450px', width: '300px' }}>
+        <Table variant="simple" colorScheme="messenger" style={{ marginTop: '20px' }}>
+          <Thead>
+            <Tr>
+              <Th>Day</Th>
+              <Th>Hours</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <Tr>
+              <Td>MON</Td>
+              <Td>10am - 6pm</Td>
+            </Tr>
+            <Tr>
+              <Td>TUE</Td>
+              <Td>10am - 6pm</Td>
+            </Tr>
+            <Tr>
+              <Td>WED</Td>
+              <Td>10am - 6pm</Td>
+            </Tr>
+            <Tr>
+              <Td>THUR</Td>
+              <Td>10am - 6pm</Td>
+            </Tr>
+            <Tr>
+              <Td>FRI</Td>
+              <Td>10am - 6pm</Td>
+            </Tr>
+            <Tr>
+              <Td>SAT</Td>
+              <Td>10am - 6pm</Td>
+            </Tr>
+            <Tr>
+              <Td>SUN</Td>
+              <Td>By Appt. Only</Td>
+            </Tr>
+          </Tbody>
+        </Table>
+      </div>
+    </Modal>
+  );
+};
 
 export default HoursPopUpComponent;

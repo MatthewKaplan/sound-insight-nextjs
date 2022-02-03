@@ -1,0 +1,28 @@
+{
+	"editor.tabSize": 2,
+	"eslint.format.enable": true,
+	"eslint.alwaysShowStatus": true,
+	"eslint.codeAction.showDocumentation": {
+		"eslint.autoFixOnSave": true,
+		"eslint.validate": [
+			{
+				"language": "typescript",
+				"autoFix": true
+			}
+		],
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	},
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"azureFunctions.deploySubpath": ".",
+	"azureFunctions.postDeployTask": "npm install (functions)",
+	"azureFunctions.projectLanguage": "TypeScript",
+	"azureFunctions.projectRuntime": "~3",
+	"debug.internalConsoleOptions": "neverOpen",
+	"azureFunctions.preDeployTask": "npm prune (functions)",
+	"cSpell.language": "en"
+}

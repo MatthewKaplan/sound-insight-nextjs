@@ -55,7 +55,6 @@ const FooterComponent: FC = () => (
             marginHeight={0}
             marginWidth={0}
           />
-          <a href="https://www.utilitysavingexpert.com">Utility Saving Expert</a>
         </div>
       </div>
       <section className={classes.storeInfo}>

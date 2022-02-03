@@ -17,19 +17,11 @@ const HeaderComponent: FC = () => {
     setCurrentPath(window.location.pathname);
   });
 
-  const toggleSidebar = () => {
-    setSidebarActive(!sidebarActive);
-  };
-
-  const toggleHours = () => {
-    setHoursPopUp(!hoursPopUp);
-    setPopUp(!popUp);
-  };
-
-  const toggleMap = () => {
-    setMapPopUp(!mapPopUp);
-    setPopUp(!popUp);
-  };
+  useEffect(() => {
+    if ((!mapPopUp || !hoursPopUp) && popUp) {
+      setPopUp(false);
+    }
+  });
 
   return (
     <>
@@ -91,8 +83,8 @@ const HeaderComponent: FC = () => {
             <div
               role="menu"
               tabIndex={0}
-              onClick={() => toggleSidebar()}
-              onKeyPress={() => toggleSidebar()}
+              onClick={() => setSidebarActive(!sidebarActive)}
+              onKeyPress={() => setSidebarActive(!sidebarActive)}
               className={sidebarActive ? clsx(classes.iconActive, classes.icon) : classes.icon}
             >
               <div className={classes.hamburger} />
@@ -117,8 +109,8 @@ const HeaderComponent: FC = () => {
                   tabIndex={0}
                   role="menuitem"
                   className={classes.link}
-                  onClick={() => toggleSidebar()}
-                  onKeyPress={() => toggleSidebar()}
+                  onClick={() => setSidebarActive(!sidebarActive)}
+                  onKeyPress={() => setSidebarActive(!sidebarActive)}
                 >
                   HOME
                 </a>
@@ -128,8 +120,8 @@ const HeaderComponent: FC = () => {
                   tabIndex={0}
                   role="menuitem"
                   className={classes.link}
-                  onClick={() => toggleSidebar()}
-                  onKeyPress={() => toggleSidebar()}
+                  onClick={() => setSidebarActive(!sidebarActive)}
+                  onKeyPress={() => setSidebarActive(!sidebarActive)}
                 >
                   SERVICES
                 </a>
@@ -139,8 +131,8 @@ const HeaderComponent: FC = () => {
                   tabIndex={0}
                   role="menuitem"
                   className={classes.link}
-                  onClick={() => toggleSidebar()}
-                  onKeyPress={() => toggleSidebar()}
+                  onClick={() => setSidebarActive(!sidebarActive)}
+                  onKeyPress={() => setSidebarActive(!sidebarActive)}
                 >
                   PRODUCTS
                 </a>
@@ -150,8 +142,8 @@ const HeaderComponent: FC = () => {
                   tabIndex={0}
                   role="menuitem"
                   className={classes.link}
-                  onClick={() => toggleSidebar()}
-                  onKeyPress={() => toggleSidebar()}
+                  onClick={() => setSidebarActive(!sidebarActive)}
+                  onKeyPress={() => setSidebarActive(!sidebarActive)}
                 >
                   GALLERY
                 </a>
@@ -161,8 +153,8 @@ const HeaderComponent: FC = () => {
                   tabIndex={0}
                   role="menuitem"
                   className={classes.link}
-                  onClick={() => toggleSidebar()}
-                  onKeyPress={() => toggleSidebar()}
+                  onClick={() => setSidebarActive(!sidebarActive)}
+                  onKeyPress={() => setSidebarActive(!sidebarActive)}
                 >
                   ABOUT
                 </a>
@@ -171,8 +163,8 @@ const HeaderComponent: FC = () => {
                 <a
                   tabIndex={0}
                   role="menuitem"
-                  onClick={() => toggleSidebar()}
-                  onKeyPress={() => toggleSidebar()}
+                  onClick={() => setSidebarActive(!sidebarActive)}
+                  onKeyPress={() => setSidebarActive(!sidebarActive)}
                   className={clsx(classes.link, classes.contactLink)}
                 >
                   CONTACT
@@ -182,8 +174,8 @@ const HeaderComponent: FC = () => {
           </section>
         </div>
       </div>
-      {hoursPopUp && <HoursPopUpComponent closeHours={toggleHours} />}
-      {mapPopUp && <MapPopUpComponent closeMap={toggleMap} />}
+      <HoursPopUpComponent hoursPopUp={hoursPopUp} setHoursPopUp={setHoursPopUp} />
+      <MapPopUpComponent setMapPopUp={setMapPopUp} mapPopUp={mapPopUp} />
       {popUp === false && (
         <div className={classes.contactMenu}>
           <section className={classes.contactMenuOptions}>
@@ -202,8 +194,8 @@ const HeaderComponent: FC = () => {
             <div
               tabIndex={0}
               role="menuitem"
-              onClick={() => toggleMap()}
-              onKeyPress={() => toggleMap()}
+              onClick={() => setMapPopUp(true)}
+              onKeyPress={() => setMapPopUp(true)}
               className={clsx(classes.map, classes.menuOption)}
             >
               <Image src="https://res.cloudinary.com/sound-insight/image/upload/v1640911057/oj6o3TY_wzamok.png" alt="Map Icon to see where Sound-Insight is located" width={25} height={40} />
@@ -212,8 +204,8 @@ const HeaderComponent: FC = () => {
             <div
               tabIndex={0}
               role="menuitem"
-              onClick={() => toggleHours()}
-              onKeyPress={() => toggleHours()}
+              onClick={() => setHoursPopUp(true)}
+              onKeyPress={() => setHoursPopUp(true)}
               className={clsx(classes.hours, classes.menuOption)}
             >
               <Image src="https://res.cloudinary.com/sound-insight/image/upload/v1640911039/rx2GiBJ_gxo9q2.png" alt="Clock Icon to view store hours" width={20} height={40} />
