@@ -22,7 +22,11 @@ const AutomationPage: FC<AutomationPageData> = ({
   <div className={classes.automationPage}>
     <Head>
       <title>Sound Insight - Home Automation | Smart Home Solutions</title>
+      <meta name="twitter:title" content="Sound Insight - Home Automation | Smart Home Solutions" />
+      <meta name="twitter:description" content="Our Team Creates Home Automation Systems that Will Completely Transform Your Lifestyle by Making Tasks Easier and At The Same Time, Giving You Piece Of Mind." />
+      <meta name="og:title" content="Sound Insight - Home Automation | Smart Home Solutions" />
       <meta name="description" content="Our Team Creates Home Automation Systems that Will Completely Transform Your Lifestyle by Making Tasks Easier and At The Same Time, Giving You Piece Of Mind." />
+      <meta name="og:description" content="Our Team Creates Home Automation Systems that Will Completely Transform Your Lifestyle by Making Tasks Easier and At The Same Time, Giving You Piece Of Mind." />
       <meta name="keywords" content="Control4, Smart Home, Smart TV, Elan, Controlled Homes, Automation System, Sound Systems, Multi-room Audio & Video, Custom Installation, Music" />
     </Head>
     <div className={classes.header} />

@@ -45,10 +45,32 @@ const ProductPage: FC<ProductPageData> = ({
   <div>
     <Head>
       <title>Sound Insight - Audio & Video Products Available in our NY Showroom</title>
-      <meta name="description" content="We Carry the Highest Quality Products For All Your Audio and Video Needs, That Are Guarenteed to Excite the Senses. Long Island #1 AV Specialists" />
+      <meta name="twitter:title" content="Sound Insight - Audio & Video Products Available in our NY Showroom" />
+      <meta name="twitter:description" content="We Carry the Highest Quality Products For All Your Audio and Video Needs, That Are Guaranteed to Excite the Senses. Long Island #1 AV Specialists" />
+      <meta name="og:title" content="Sound Insight - Audio & Video Products Available in our NY Showroom" />
+      <meta name="og:description" content="We Carry the Highest Quality Products For All Your Audio and Video Needs, That Are Guaranteed to Excite the Senses. Long Island #1 AV Specialists" />
+      <meta name="description" content="We Carry the Highest Quality Products For All Your Audio and Video Needs, That Are Guaranteed to Excite the Senses. Long Island #1 AV Specialists" />
       <meta name="keywords" content="Sony Television, Gifts, Monitor Audio, Paradigm, Marantz, Sonos, Samsung, Sound Bars, Heos, Gifts for Dad" />
+      {furnitureImages.map((url) => (
+        <meta key={url} property="og:image" content={url} />
+      ))}
+      {turntableImages.map((url) => (
+        <meta key={url} property="og:image" content={url} />
+      ))}
+      {streamerImages.map((url) => (
+        <meta key={url} property="og:image" content={url} />
+      ))}
+      {speakerImages.map((url) => (
+        <meta key={url} property="og:image" content={url} />
+      ))}
+      {audioImages.map((url) => (
+        <meta key={url} property="og:image" content={url} />
+      ))}
+      {videoImages.map((url) => (
+        <meta key={url} property="og:image" content={url} />
+      ))}
     </Head>
-    <SplashImageComponent altText="Large Stero system" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
+    <SplashImageComponent altText="Large Stereo system" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
     <div className={classes.productsPage}>
       <section className={classes.products}>
         <h2>{ProductTitle1}</h2>

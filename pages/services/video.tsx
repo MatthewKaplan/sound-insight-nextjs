@@ -32,8 +32,15 @@ const VideoPage: FC<VideoPageData> = ({
   <div className={classes.videoPage}>
     <Head>
       <title>Sound Insight - Video Systems | Home Theater | Televisions</title>
+      <meta name="twitter:title" content="Sound Insight - Video Systems | Home Theater | Televisions" />
+      <meta name="twitter:description" content="Sound Insight Offers a Cinematic Experience to Those Seeking a New Home Cinema" />
+      <meta name="og:title" content="Sound Insight - Video Systems | Home Theater | Televisions" />
       <meta name="description" content="Sound Insight Offers a Cinematic Experience to Those Seeking a New Home Cinema" />
-      <meta name="keywords" content="Home Cinema Projectors, Home Cinema Amplifiers, Home Cinema Recievers, Home Theater, Projection Screens, Audio Visual Installations, Projector Lamps, Projector Mounts, Plasma & LCD Installation" />
+      <meta name="og:description" content="Sound Insight Offers a Cinematic Experience to Those Seeking a New Home Cinema" />
+      <meta name="keywords" content="Home Cinema Projectors, Home Cinema Amplifiers, Home Cinema Receivers, Home Theater, Projection Screens, Audio Visual Installations, Projector Lamps, Projector Mounts, Plasma & LCD Installation" />
+      {VideoImages.map((url) => (
+        <meta key={url} property="og:image" content={url} />
+      ))}
     </Head>
     <div className={classes.header} />
     <BackBtnComponent />

@@ -42,8 +42,24 @@ const AudioPage: FC<AudioPageData> = ({
   <div className={classes.audioPage}>
     <Head>
       <title>Sound Insight - Home Audio | Analog | Digital</title>
+      <meta name="twitter:title" content="Sound Insight - Home Audio | Analog | Digital" />
+      <meta name="twitter:description" content="Whether You Wish to Spin Vinyl or Listen to Digital Music Media it Sounds Better on Sound Insight's Carefully Selected Products and Custom Designed Systems." />
+      <meta name="og:title" content="Sound Insight - Home Audio | Analog | Digital" />
       <meta name="description" content="Whether You Wish to Spin Vinyl or Listen to Digital Music Media it Sounds Better on Sound Insight's Carefully Selected Products and Custom Designed Systems." />
+      <meta name="og:description" content="Whether You Wish to Spin Vinyl or Listen to Digital Music Media it Sounds Better on Sound Insight's Carefully Selected Products and Custom Designed Systems." />
       <meta name="keywords" content="Vinyl, Vinyl Players, Analog, Digital, Record Players, Audio Systems, Sound Systems, Multi-room Audio & Video, Custom Installation, Music" />
+      {AudioImages.map((url) => (
+        <meta key={url} property="og:image" content={url} />
+      ))}
+      {SpeakerImages.map((url) => (
+        <meta key={url} property="og:image" content={url} />
+      ))}
+      {StreamerImages.map((url) => (
+        <meta key={url} property="og:image" content={url} />
+      ))}
+      {TurntableImages.map((url) => (
+        <meta key={url} property="og:image" content={url} />
+      ))}
     </Head>
     <div className={classes.header} />
     <BackBtnComponent />

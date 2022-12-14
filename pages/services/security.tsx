@@ -25,8 +25,12 @@ const SecurityPage: FC<SecurityPageData> = ({
   <div className={classes.securityPage}>
     <Head>
       <title>Sound Insight - Security Systems | Alarms | Cameras</title>
+      <meta name="twitter:title" content="Sound Insight - Security Systems | Alarms | Cameras" />
+      <meta name="twitter:description" content="Sound Insight offers turnkey solutions for video surveillance and security system installation. Peace of mind 24 hours a day!" />
+      <meta name="og:title" content="Sound Insight - Security Systems | Alarms | Cameras" />
       <meta name="description" content="Sound Insight offers turnkey solutions for video surveillance and security system installation. Peace of mind 24 hours a day!" />
-      <meta name="keywords" content="Security Systems, Alarms, Cameras, video surveillance, security system installation, Residenant Security, CCTV, DVR Security, Commercial Surveillance, Safe Home" />
+      <meta name="og:description" content="Sound Insight offers turnkey solutions for video surveillance and security system installation. Peace of mind 24 hours a day!" />
+      <meta name="keywords" content="Security Systems, Alarms, Cameras, video surveillance, security system installation, Resident Security, CCTV, DVR Security, Commercial Surveillance, Safe Home" />
     </Head>
     <div className={classes.header} />
     <BackBtnComponent />

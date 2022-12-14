@@ -22,7 +22,11 @@ const CareersPage: FC<CareersPageData> = ({
     <div className={classes.careersComponent}>
       <Head>
         <title>Sound Insight - Careers | We&aposre Hiring in Huntington, NY</title>
+        <meta name="twitter:title" content="Sound Insight - Careers | We're Hiring in Huntington, NY" />
+        <meta name="twitter:description" content="We are Currently Hiring Both Sales and Installation Help in Huntington, NY! Come Work For Long Islands #1 Shop For All Audio and Video Needs." />
+        <meta name="og:title" content="Sound Insight - Careers | We're Hiring in Huntington, NY" />
         <meta name="description" content="We are Currently Hiring Both Sales and Installation Help in Huntington, NY! Come Work For Long Islands #1 Shop For All Audio and Video Needs." />
+        <meta name="og:description" content="We are Currently Hiring Both Sales and Installation Help in Huntington, NY! Come Work For Long Islands #1 Shop For All Audio and Video Needs." />
         <meta name="keywords" content="Audio Installation, Projector Installation, TV Installation, Home Cinema Installation, AV Installers, Audio Visual Installation, Audio Visual Installations Long Island, AV Installation Experts, Smart Home Installation, Media Room Installation" />
       </Head>
       <SplashImageComponent altText="Tools and peg board" imageLink={SplashPageImg} title={SplashPageTitle} subTitle={SplashPageSubTitle} />

@@ -35,7 +35,11 @@ const ServicesPage: FC<ServicePageData> = ({
   <div>
     <Head>
       <title>Sound Insight - Services | Audio | Video | Home Automation | Security</title>
+      <meta name="twitter:title" content="Sound Insight - Services | Audio | Video | Home Automation | Security" />
+      <meta name="twitter:description" content="We provide our clients with a complete range of audio-video solutions, smart home automation, security solutions, phone systems, and IT solutions. Sound Insight is New York's #1 in AV Solutions." />
+      <meta name="og:title" content="Sound Insight - Services | Audio | Video | Home Automation | Security" />
       <meta name="description" content="We provide our clients with a complete range of audio-video solutions, smart home automation, security solutions, phone systems, and IT solutions. Sound Insight is New York's #1 in AV Solutions." />
+      <meta name="og:description" content="We provide our clients with a complete range of audio-video solutions, smart home automation, security solutions, phone systems, and IT solutions. Sound Insight is New York's #1 in AV Solutions." />
       <meta name="keywords" content="Control Systems, Home Audio, Home Video, Security, Home Automation, Phone Systems, Sound Systems, Multi-room Audio & Video, Custom Installation, Maintenance And Service" />
     </Head>
     <SplashImageComponent altText="Living room with TV on the wall and fireplace" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />

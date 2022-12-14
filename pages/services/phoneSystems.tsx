@@ -23,7 +23,11 @@ const PhoneSystemsPage: FC<PhoneSystemPageData> = ({
   <div className={classes.phonePage}>
     <Head>
       <title>Sound Insight - Phone Systems | Office Phones | VoIP Phones</title>
+      <meta name="twitter:title" content="Sound Insight - Phone Systems | Office Phones | VoIP Phones" />
+      <meta name="twitter:description" content="Sound Insight offers a one-stop solution for your business and residential communication needs. From basic digital systems to modern VoIP systems." />
+      <meta name="og:title" content="Sound Insight - Phone Systems | Office Phones | VoIP Phones" />
       <meta name="description" content="Sound Insight offers a one-stop solution for your business and residential communication needs. From basic digital systems to modern VoIP systems." />
+      <meta name="og:description" content="Sound Insight offers a one-stop solution for your business and residential communication needs. From basic digital systems to modern VoIP systems." />
       <meta name="keywords" content="Phones Systems, VoIP Phones, Cloud Phones, Nec Systems, Office Phones, Desktop Phones, Wireless Phones, Multi-room Audio & Video, Custom Installation, Internet" />
     </Head>
     <div className={classes.header} />

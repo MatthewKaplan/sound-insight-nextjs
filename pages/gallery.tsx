@@ -11,7 +11,11 @@ const GalleryPage: FC<GalleryPageData> = ({
 }) => (
   <div className={classes.galleryPage}>
     <Head>
-      <title>Sound Insight - Project Gallery | Home | Audio </title>
+      <title>Sound Insight - Project Gallery | Home | Audio</title>
+      <meta name="twitter:title" content="Sound Insight - Project Gallery | Home | Audio" />
+      <meta name="twitter:description" content="Whether You Wish to Spin Vinyl or Listen to Digital Music Media it Sounds Better on Sound Insight's Carefully Selected Products and Custom Designed Systems." />
+      <meta name="og:title" content="Sound Insight - Project Gallery | Home | Audio" />
+      <meta name="og:description" content="Whether You Wish to Spin Vinyl or Listen to Digital Music Media it Sounds Better on Sound Insight's Carefully Selected Products and Custom Designed Systems." />
       <meta name="description" content="Whether You Wish to Spin Vinyl or Listen to Digital Music Media it Sounds Better on Sound Insight's Carefully Selected Products and Custom Designed Systems." />
       <meta name="keywords" content="Audio Video Gallery, Audio Video Racks, Gifts, Gifts for Fathers Day, Record Players, Audio Systems, Sound Systems, Multi-room Audio & Video, Custom Installation, Music" />
     </Head>
