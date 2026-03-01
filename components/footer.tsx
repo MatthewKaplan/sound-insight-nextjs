@@ -1,5 +1,5 @@
-import React, { FC } from 'react';
 import Link from 'next/link';
+import React, { FC } from 'react';
 import classes from './styles/footer.module.css';
 
 const FooterComponent: FC = () => (
@@ -28,12 +28,12 @@ const FooterComponent: FC = () => (
           PHONES
         </a>
       </Link>
-      <div className={classes.dividerDot} />
-      <Link href="/services/security">
+      {/* <div className={classes.dividerDot} /> */}
+      {/* <Link href="/services/security">
         <a className={classes.link}>
           SECURITY
         </a>
-      </Link>
+      </Link> */}
       <div className={classes.dividerDot} />
       <Link href="/careers">
         <a className={classes.link}>

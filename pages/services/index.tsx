@@ -1,14 +1,16 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable max-len */
+import { Box } from '@chakra-ui/layout';
 import clsx from 'clsx';
-import { FC } from 'react';
-import Link from 'next/link';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import { GetStaticProps } from 'next';
-import { Box } from '@chakra-ui/layout';
-import classes from './styles/services.module.css';
+import Link from 'next/link';
+import { FC } from 'react';
+import SplashImageComponent from '../../components/splashImage';
 import { getPageById } from '../../helper/api-util';
 import { ServicePageData } from '../../types/servicePage.typs';
-import SplashImageComponent from '../../components/splashImage';
+import classes from './styles/services.module.css';
 
 const ServicesPage: FC<ServicePageData> = ({
   AutoImg,
@@ -102,7 +104,7 @@ const ServicesPage: FC<ServicePageData> = ({
             </Link>
             <p>{AutoInfo}</p>
           </div>
-          <div className={clsx(classes.automation, classes.service)}>
+          {/* <div className={clsx(classes.automation, classes.service)}>
             <Link href="/services/security">
               <a className={classes.anchor}>
                 <div style={{ display: 'flex', justifyContent: 'center' }} className={classes.imgDiv}>
@@ -112,7 +114,7 @@ const ServicesPage: FC<ServicePageData> = ({
               </a>
             </Link>
             <p>{SecurityInfo}</p>
-          </div>
+          </div> */}
         </div>
       </section>
     </Box>

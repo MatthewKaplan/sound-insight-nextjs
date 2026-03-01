@@ -16,7 +16,7 @@
 	},
 	"editor.formatOnSave": true,
 	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": true
+		"source.fixAll.eslint": "explicit"
 	},
 	"azureFunctions.deploySubpath": ".",
 	"azureFunctions.postDeployTask": "npm install (functions)",
