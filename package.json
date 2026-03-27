@@ -14,7 +14,7 @@
         "@emotion/react": "^11.4.1",
         "@emotion/styled": "^11.3.0",
         "@storybook/addon-actions": "^6.4.9",
-        "@storybook/addon-knobs": "^6.4.0",
+        "@storybook/addon-knobs": "^7.0.0",
         "@storybook/client-api": "^6.4.9",
         "@typescript-eslint/eslint-plugin": "^4.33.0",
         "clsx": "^1.1.1",
