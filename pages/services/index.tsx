@@ -1,133 +1,140 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable max-len */
-import { Box } from '@chakra-ui/layout';
-import clsx from 'clsx';
 import { GetStaticProps } from 'next';
-import Image from 'next/image';
-import Link from 'next/link';
 import { FC } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import clsx from 'clsx';
 import Seo from '../../components/seo';
-import SplashImageComponent from '../../components/splashImage';
-import { getPageById } from '../../helper/api-util';
-import { buildBreadcrumbSchema } from '../../helper/structured-data';
+import Hero from '../../components/hero';
+import ConversionBand from '../../components/conversionBand';
+import { getPageById, REVALIDATE_SECONDS } from '../../helper/api-util';
+import { buildBreadcrumbSchema, buildLocalBusinessSchema } from '../../helper/structured-data';
 import { ServicePageData } from '../../types/servicePage.typs';
+import layoutClasses from '../../components/styles/servicePageLayout.module.css';
 import classes from './styles/services.module.css';
 
+const PROCESS_STEPS = [
+  { title: 'Listen', copy: 'We start with your rooms, your habits, and your wish list — in the showroom or in your home.' },
+  { title: 'Design', copy: 'A system designed around your space and budget, coordinated with your builder or designer when needed.' },
+  { title: 'Install', copy: 'Clean, careful installation by our own crew — no subcontractors, no surprises.' },
+  { title: 'Support', copy: 'One number to call for tuning, service, and upgrades, for as long as you own the system.' }
+];
+
 const ServicesPage: FC<ServicePageData> = ({
-  AutoImg,
-  AutoInfo,
-  PhoneImg,
-  AudioImg,
-  VideoImg,
-  PhoneInfo,
-  SplashImg,
-  VideoInfo,
-  AudioInfo,
-  AutoTitle,
-  VideoTitle,
-  PhoneTitle,
-  AudioTitle,
-  SplashTitle,
-  SecurityImg,
-  SecurityInfo,
-  SecurityTitle,
-  ServicesTitle,
-  SplashSubTitle,
-  ServicesSubtitle
-}) => (
-  <div>
-    <Seo
-      title="Sound Insight - Services | Audio | Video | Home Automation | Security"
-      description="We provide our clients with a complete range of audio-video solutions, smart home automation, security solutions, phone systems, and IT solutions. Sound Insight is New York's #1 in AV Solutions."
-      path="/services"
-      keywords="Control Systems, Home Audio, Home Video, Security, Home Automation, Phone Systems, Sound Systems, Multi-room Audio & Video, Custom Installation, Maintenance And Service"
-      structuredData={buildBreadcrumbSchema([
-        { name: 'Home', path: '/' },
-        { name: 'Services', path: '/services' }
-      ])}
-    />
-    <SplashImageComponent altText="Living room with TV on the wall and fireplace" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
-    <Box className={classes.servicesProvided}>
-      <section className={classes.header}>
-        <h2 className={classes.title}>{ServicesTitle}</h2>
-        <p className={classes.subtitle}>{ServicesSubtitle}</p>
-      </section>
-      <hr className={classes.pageBreak} />
-      <section className={classes.topService}>
-        <div className={classes.audioService}>
-          <Link href="/services/audio">
-            <a>
-              <div className={classes.topServiceImg}>
-                <Image src={AudioImg} alt="Living room with a set of speakers around the couch" height={700} width={1800} objectFit="fill" />
-              </div>
-              <div className={classes.topServiceImgMobile}>
-                <Image src={AudioImg} alt="Living room with a set of speakers around the couch" height={425} width={500} objectFit="fill" />
-              </div>
-              <h3 className={classes.sectionTitle}>{AudioTitle}</h3>
-            </a>
-          </Link>
-          <p>{AudioInfo}</p>
+  SplashImg, SplashTitle, SplashSubTitle, ServicesTitle, ServicesSubtitle,
+  AudioImg, AudioInfo, AudioTitle,
+  VideoImg, VideoInfo, VideoTitle,
+  AutoImg, AutoInfo, AutoTitle,
+  PhoneImg, PhoneInfo, PhoneTitle,
+  SecurityImg, SecurityInfo, SecurityTitle
+}) => {
+  const services = [
+    {
+      href: '/services/audio', title: AudioTitle, copy: AudioInfo, img: AudioImg, alt: 'Listening room with floor-standing speakers'
+    },
+    {
+      href: '/services/video', title: VideoTitle, copy: VideoInfo, img: VideoImg, alt: 'Dedicated home cinema room'
+    },
+    {
+      href: '/services/automation', title: AutoTitle, copy: AutoInfo, img: AutoImg, alt: 'Person controlling lights in her house on an iPad'
+    },
+    {
+      href: '/services/phone-systems', title: PhoneTitle, copy: PhoneInfo, img: PhoneImg, alt: 'Business phone system handset'
+    },
+    {
+      href: '/services/security', title: SecurityTitle, copy: SecurityInfo, img: SecurityImg, alt: 'Outdoor security camera'
+    }
+  ];
+
+  return (
+    <>
+      <Seo
+        title="Sound Insight - Services | Audio | Video | Home Automation | Security"
+        description="We provide our clients with a complete range of audio-video solutions, smart home automation, security solutions, phone systems, and IT solutions. Sound Insight is New York's #1 in AV Solutions."
+        path="/services"
+        structuredData={[
+          buildLocalBusinessSchema('/services'),
+          buildBreadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Services', path: '/services' }
+          ])
+        ]}
+      />
+      <Hero
+        compact
+        title="What we design, install, and stand behind"
+        eyebrow="Services"
+        subtitle={SplashSubTitle}
+        imageSrc={SplashImg}
+        imageAlt=""
+      >
+        <Link href="/contact" className="btn btnPrimary">Book a showroom visit</Link>
+      </Hero>
+
+      <div className={`container ${classes.framing}`}>
+        <h2 className={classes.framingTitle}>{ServicesTitle}</h2>
+        <p className="muted">{ServicesSubtitle}</p>
+      </div>
+
+      <div className={`container ${layoutClasses.sections}`}>
+        {services.map(({
+          href, title, copy, img, alt
+        }, index) => (
+          <section
+            key={href}
+            className={clsx(layoutClasses.row, index % 2 === 1 && layoutClasses.rowFlipped)}
+          >
+            <div className={layoutClasses.rowImgWrap}>
+              <Image
+                src={img}
+                alt={alt}
+                fill
+                sizes="(min-width: 768px) 45vw, 100vw"
+                className={layoutClasses.rowImg}
+              />
+            </div>
+            <div>
+              <h3 className={layoutClasses.rowTitle}>{title}</h3>
+              <p className={layoutClasses.rowCopy}>{copy}</p>
+              <Link href={href} className={`btnLink ${classes.rowLink}`}>
+                {`Explore ${title.toLowerCase()}`}
+              </Link>
+            </div>
+          </section>
+        ))}
+      </div>
+
+      <section className={`sectionDark ${classes.process}`} aria-labelledby="process-heading">
+        <div className="container">
+          <span className="eyebrow">How it works</span>
+          <h2 id="process-heading" className={classes.processTitle}>
+            From first listen to long-term support
+          </h2>
+          <ol className={classes.processList}>
+            {PROCESS_STEPS.map(({ title, copy }, index) => (
+              <li key={title} className={classes.processStep}>
+                <span className={classes.processNumber} aria-hidden="true">{index + 1}</span>
+                <h3 className={classes.processStepTitle}>{title}</h3>
+                <p className={classes.processStepCopy}>{copy}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
-      <section className={classes.servicesInfo}>
-        <div className={classes.flex}>
-          <div className={clsx(classes.automation, classes.service)}>
-            <Link href="/services/video">
-              <a className={classes.anchor}>
-                <div style={{ display: 'flex', justifyContent: 'center' }} className={classes.imgDiv}>
-                  <Image src={VideoImg} alt="Custom Home Movie Theater with red couch" className={classes.serviceImg} height={425} width={500} />
-                </div>
-                <h3 className={classes.sectionTitle}>{VideoTitle}</h3>
-              </a>
-            </Link>
-            <p>{VideoInfo}</p>
-          </div>
-          <div className={clsx(classes.automation, classes.service)}>
-            <Link href="/services/phone-systems">
-              <a className={classes.anchor}>
-                <div style={{ display: 'flex', justifyContent: 'center' }} className={classes.imgDiv}>
-                  <Image src={PhoneImg} alt="Office phone sitting on desk" className={classes.serviceImg} height={425} width={500} />
-                </div>
-                <h3 className={classes.sectionTitle}>{PhoneTitle}</h3>
-              </a>
-            </Link>
-            <p>{PhoneInfo}</p>
-          </div>
-        </div>
-        <div className={classes.flex}>
-          <div className={clsx(classes.automation, classes.service)}>
-            <Link href="/services/automation">
-              <a className={classes.anchor}>
-                <div style={{ display: 'flex', justifyContent: 'center' }} className={classes.imgDiv}>
-                  <Image src={AutoImg} alt="Women crontrolling lights in her house on an iPad" className={classes.serviceImg} height={425} width={500} />
-                </div>
-                <h3 className={classes.sectionTitle}>{AutoTitle}</h3>
-              </a>
-            </Link>
-            <p>{AutoInfo}</p>
-          </div>
-          <div className={clsx(classes.automation, classes.service)}>
-            <Link href="/services/security">
-              <a className={classes.anchor}>
-                <div style={{ display: 'flex', justifyContent: 'center' }} className={classes.imgDiv}>
-                  <Image src={SecurityImg} alt="Women viewing her security cameras on an iPad" className={classes.serviceImg} height={425} width={500} />
-                </div>
-                <h3 className={classes.sectionTitle}>{SecurityTitle}</h3>
-              </a>
-            </Link>
-            <p>{SecurityInfo}</p>
-          </div>
-        </div>
-      </section>
-    </Box>
-  </div>
-);
+
+      <ConversionBand
+        title="Not sure where to start? Walk the showroom."
+        subtitle="Bring your questions — and your music. Dedicated stereo and cinema rooms in Huntington village, Mon–Sat 10–6."
+      />
+    </>
+  );
+};
 
 export const getStaticProps: GetStaticProps = async () => {
   const featuredPage = await getPageById('P_SERVICES');
 
   return {
-    props: featuredPage as ServicePageData
+    props: featuredPage,
+    revalidate: REVALIDATE_SECONDS
   };
 };
 

@@ -1,112 +1,97 @@
+import { FC } from 'react';
 import Link from 'next/link';
-import React, { FC } from 'react';
+import classes from './styles/footer.module.css';
 import {
   BUSINESS_CITY,
   BUSINESS_EMAIL,
+  BUSINESS_PHONE,
   BUSINESS_PHONE_DISPLAY,
   BUSINESS_POSTAL_CODE,
   BUSINESS_REGION,
   BUSINESS_STREET_ADDRESS
 } from '../helper/structured-data';
-import classes from './styles/footer.module.css';
+
+const SERVICE_LINKS = [
+  { href: '/services/audio', label: 'Home Audio' },
+  { href: '/services/video', label: 'Home Cinema & Video' },
+  { href: '/services/automation', label: 'Home Automation' },
+  { href: '/services/security', label: 'Security' },
+  { href: '/services/phone-systems', label: 'Business Phone Systems' }
+];
+
+const COMPANY_LINKS = [
+  { href: '/products', label: 'Products' },
+  { href: '/products#brands', label: 'Brands we carry' },
+  { href: '/gallery', label: 'Project gallery' },
+  { href: '/about', label: 'About us' },
+  { href: '/about#careers', label: 'Careers' },
+  { href: '/contact', label: 'Contact' }
+];
 
 const FooterComponent: FC = () => (
-  <div className={classes.footerComponent}>
-    <div className={classes.footerNavOptions}>
-      <Link href="/services/audio">
-        <a className={classes.link}>
-          AUDIO
-        </a>
-      </Link>
-      <div className={classes.dividerDot} />
-      <Link href="/services/video">
-        <a className={classes.link}>
-          VIDEO
-        </a>
-      </Link>
-      <div className={classes.dividerDot} />
-      <Link href="/services/automation">
-        <a className={classes.link}>
-          AUTOMATION
-        </a>
-      </Link>
-      <div className={classes.dividerDot} />
-      <Link href="/services/phone-systems">
-        <a className={classes.link}>
-          PHONES
-        </a>
-      </Link>
-      <div className={classes.dividerDot} />
-      <Link href="/services/security">
-        <a className={classes.link}>
-          SECURITY
-        </a>
-      </Link>
-      <div className={classes.dividerDot} />
-      <Link href="/brands">
-        <a className={classes.link}>
-          BRANDS
-        </a>
-      </Link>
-      <div className={classes.dividerDot} />
-      <Link href="/careers">
-        <a className={classes.link}>
-          CAREERS
-        </a>
-      </Link>
-    </div>
-    <div className={classes.footerInfo}>
-      <div className={classes.mapouter}>
-        <div className={classes.gmapCanvas}>
-          <iframe
-            title="Google map"
-            width="550"
-            height="350"
-            id="gmap_canvas"
-            src="https://maps.google.com/maps?q=382%20New%20York%20Ave%20Huntington%2C%20NY%2011743&t=&z=15&ie=UTF8&iwloc=&output=embed"
-            frameBorder="0"
-            scrolling="no"
-            marginHeight={0}
-            marginWidth={0}
-          />
-        </div>
+  <footer className={classes.footer}>
+    <div className={`container ${classes.grid}`}>
+      <div className={classes.brandCol}>
+        <p className={classes.brandName}>Sound Insight</p>
+        <p className={classes.tagline}>
+          Custom audio, video, and automation — designed, installed, and
+          supported on Long Island since 2002.
+        </p>
+        <address className={classes.address}>
+          {BUSINESS_STREET_ADDRESS}
+          <br />
+          {`${BUSINESS_CITY}, ${BUSINESS_REGION} ${BUSINESS_POSTAL_CODE}`}
+          <br />
+          <a href={`tel:${BUSINESS_PHONE}`}>{BUSINESS_PHONE_DISPLAY}</a>
+          <br />
+          <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a>
+        </address>
       </div>
-      <section className={classes.storeInfo}>
-        <div className={classes.storeContactInfo}>
-          <h3>
-            <a target="_blank" href="tel:+16312714434" rel="noopener noreferrer">
-              {BUSINESS_PHONE_DISPLAY}
-            </a>
-          </h3>
-          <h3 className={classes.email}>
-            <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a>
-          </h3>
-        </div>
-        <section className={classes.storeInformation}>
-          <section className={classes.storeAddress}>
-            <h3><strong>ADDRESS:</strong></h3>
-            <h3>{BUSINESS_STREET_ADDRESS}</h3>
-            <h3>{`${BUSINESS_CITY}, ${BUSINESS_REGION} ${BUSINESS_POSTAL_CODE}`}</h3>
-          </section>
-          <section className={classes.storeHours}>
-            <h3>
-              <strong>Showroom Hours:</strong>
-            </h3>
-            <h3>
-              <strong>MON - SAT:</strong>
-              {' '}
-              10:00 AM - 6:00 PM
-            </h3>
-            <h3>
-              <strong>SUN:</strong>
-              {' '}
-              By Appointment Only
-            </h3>
-          </section>
-        </section>
-      </section>
+
+      <nav className={classes.linkCol} aria-label="Services">
+        <p className={classes.colTitle}>Services</p>
+        <ul>
+          {SERVICE_LINKS.map(({ href, label }) => (
+            <li key={href}>
+              <Link href={href}>{label}</Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <nav className={classes.linkCol} aria-label="Company">
+        <p className={classes.colTitle}>Company</p>
+        <ul>
+          {COMPANY_LINKS.map(({ href, label }) => (
+            <li key={href}>
+              <Link href={href}>{label}</Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <div className={classes.hoursCol}>
+        <p className={classes.colTitle}>Showroom hours</p>
+        <dl className={classes.hours}>
+          <div>
+            <dt>Mon – Sat</dt>
+            <dd>10:00 AM – 6:00 PM</dd>
+          </div>
+          <div>
+            <dt>Sunday</dt>
+            <dd>By appointment</dd>
+          </div>
+        </dl>
+      </div>
     </div>
-  </div>
+
+    <div className={`container ${classes.legal}`}>
+      <p>
+        &copy;
+        {` ${new Date().getFullYear()} Sound Insight. All rights reserved.`}
+      </p>
+    </div>
+  </footer>
 );
 
 export default FooterComponent;

@@ -9,7 +9,7 @@ export type BreadcrumbItem = {
 
 export const SITE_NAME = 'Sound Insight';
 export const SITE_URL = 'https://sound-insight.com';
-export const DEFAULT_SOCIAL_IMAGE = 'https://i.imgur.com/TXAMHbb.png';
+export const DEFAULT_SOCIAL_IMAGE = 'https://res.cloudinary.com/sound-insight/image/upload/v1640911039/WIgvnFB_swl61h.jpg';
 export const BUSINESS_PHONE = '+1-631-271-4434';
 export const BUSINESS_PHONE_DISPLAY = '631.271.4434';
 export const BUSINESS_EMAIL = 'sales@sound-insight.com';
@@ -77,6 +77,15 @@ export const buildLocalBusinessSchema = (path = '/'): JsonLd => ({
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
       opens: '10:00',
       closes: '18:00'
+    },
+    {
+      // Sunday is by appointment — modeled as open with a note, since
+      // schema.org has no "by appointment" primitive.
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Sunday',
+      opens: '00:00',
+      closes: '00:00',
+      description: 'By appointment only'
     }
   ],
   contactPoint: [buildContactPoint()],

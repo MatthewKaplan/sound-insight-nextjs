@@ -1,57 +1,26 @@
 import { GetStaticProps } from 'next';
-import Image from 'next/image';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import Seo from '../../components/seo';
-import classes from './styles/audio.module.css';
-import { getPageById } from '../../helper/api-util';
+import ServicePageLayout from '../../components/servicePageLayout';
+import { zipLogos } from '../../components/logoGrid';
+import { getPageById, REVALIDATE_SECONDS } from '../../helper/api-util';
 import { buildBreadcrumbSchema, buildServiceSchema } from '../../helper/structured-data';
-import CarouselComponent from '../../components/carousel';
 import { AudioPageData } from '../../types/audioPage.type';
-import BackBtnComponent from '../../components/backButton';
 
 const AudioPage: FC<AudioPageData> = ({
-  AudioImg1,
-  AudioImg2,
-  AudioImg3,
-  AudioInfo1,
-  AudioInfo4,
-  AudioInfo2,
-  AudioIcons,
-  AudioLinks,
-  AudioNames,
-  AudioTitle1,
-  AudioTitle2,
-  AudioTitle4,
-  AudioTitle3,
-  AudioInfo3A,
-  AudioInfo3B,
-  AudioImages,
-  SpeakerIcons,
-  SpeakerNames,
-  SpeakerLinks,
-  SpeakerImages,
-  StreamerNames,
-  StreamerLinks,
-  StreamerIcons,
-  StreamerImages,
-  TurntableIcons,
-  TurntableLinks,
-  TurntableNames,
-  TurntableImages,
-  AudioSlideTitle
+  AudioImg1, AudioImg2, AudioImg3,
+  AudioInfo1, AudioInfo2, AudioInfo3A, AudioInfo3B, AudioInfo4,
+  AudioTitle1, AudioTitle2, AudioTitle3, AudioTitle4,
+  AudioIcons, AudioNames,
+  SpeakerIcons, SpeakerNames,
+  StreamerIcons, StreamerNames,
+  TurntableIcons, TurntableNames
 }) => (
-  <div className={classes.audioPage}>
+  <>
     <Seo
       title="Sound Insight - Home Audio | Analog | Digital"
       description="Whether You Wish to Spin Vinyl or Listen to Digital Music Media it Sounds Better on Sound Insight's Carefully Selected Products and Custom Designed Systems."
       path="/services/audio"
-      keywords="Vinyl, Vinyl Players, Analog, Digital, Record Players, Audio Systems, Sound Systems, Multi-room Audio & Video, Custom Installation, Music"
-      images={[
-        ...AudioImages,
-        ...SpeakerImages,
-        ...StreamerImages,
-        ...TurntableImages
-      ]}
       structuredData={[
         buildBreadcrumbSchema([
           { name: 'Home', path: '/' },
@@ -66,68 +35,48 @@ const AudioPage: FC<AudioPageData> = ({
         })
       ]}
     />
-    <div className={classes.header} />
-    <BackBtnComponent />
-    <div className={classes.audioInfo}>
-      <section className={classes.pageHeading}>
-        <h1>{AudioTitle1}</h1>
-        <p>{AudioInfo1}</p>
-      </section>
-      <div className={classes.homeAudio}>
-        <Image src={AudioImg1} className={classes.audioImg} alt="TV with a big stero system" width={1400} height={750} layout="responsive" />
-        <h2 className={classes.sectionTitle}>{AudioTitle2}</h2>
-        <p>{AudioInfo2}</p>
-      </div>
-      <div className={classes.bottomServices}>
-        <section className={classes.analog}>
-          <Image src={AudioImg2} alt="Analog system with record player" width={150} height={150} layout="responsive" />
-          <h2 className={classes.sectionTitle}>{AudioTitle3}</h2>
-          <p>{AudioInfo3A}</p>
-          <br />
-          <p>{AudioInfo3B}</p>
-        </section>
-        <section className={classes.digital}>
-          <Image src={AudioImg3} alt="Digital sound system" width={150} height={150} layout="responsive" />
-          <h2 className={classes.sectionTitle}>{AudioTitle4}</h2>
-          <p>{AudioInfo4}</p>
-        </section>
-      </div>
-    </div>
-    <p>{AudioSlideTitle}</p>
-    <section className={classes.productSlides}>
-      <CarouselComponent
-        icons={SpeakerIcons}
-        links={SpeakerLinks}
-        iconNames={SpeakerNames}
-        pictures={SpeakerImages}
-      />
-      <CarouselComponent
-        icons={AudioIcons}
-        links={AudioLinks}
-        pictures={AudioImages}
-        iconNames={AudioNames}
-      />
-      <CarouselComponent
-        icons={StreamerIcons}
-        links={StreamerLinks}
-        iconNames={StreamerNames}
-        pictures={StreamerImages}
-      />
-      <CarouselComponent
-        icons={TurntableIcons}
-        links={TurntableLinks}
-        iconNames={TurntableNames}
-        pictures={TurntableImages}
-      />
-    </section>
-  </div>
+    <ServicePageLayout
+      name="Home Audio"
+      title={AudioTitle1}
+      intro={AudioInfo1}
+      ctaLabel="Book a listening session"
+      bandTitle="Bring a record. Leave convinced."
+      sections={[
+        {
+          title: AudioTitle2,
+          paragraphs: [AudioInfo2],
+          imageSrc: AudioImg1,
+          imageAlt: 'TV with a large stereo system'
+        },
+        {
+          title: AudioTitle3,
+          paragraphs: [AudioInfo3A, AudioInfo3B],
+          imageSrc: AudioImg2,
+          imageAlt: 'Analog system with a record player'
+        },
+        {
+          title: AudioTitle4,
+          paragraphs: [AudioInfo4],
+          imageSrc: AudioImg3,
+          imageAlt: 'Digital streaming sound system'
+        }
+      ]}
+      brandGroups={[
+        { label: 'Speakers', items: zipLogos(SpeakerIcons, SpeakerNames) },
+        { label: 'Amplifiers & processors', items: zipLogos(AudioIcons, AudioNames) },
+        { label: 'Music streamers', items: zipLogos(StreamerIcons, StreamerNames) },
+        { label: 'Turntables', items: zipLogos(TurntableIcons, TurntableNames) }
+      ]}
+    />
+  </>
 );
 
 export const getStaticProps: GetStaticProps = async () => {
   const featuredPage = await getPageById('P_AUDIO');
 
   return {
-    props: featuredPage as AudioPageData
+    props: featuredPage as AudioPageData,
+    revalidate: REVALIDATE_SECONDS
   };
 };
 

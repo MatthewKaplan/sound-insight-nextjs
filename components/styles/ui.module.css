@@ -1,0 +1,299 @@
+/* ---------------------------------- Hero ---------------------------------- */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: min(72vh, 40rem);
+  background: var(--cinema);
+  color: var(--on-cinema);
+  overflow: hidden;
+}
+
+.heroCompact {
+  min-height: min(45vh, 24rem);
+}
+
+.heroImg {
+  object-fit: cover;
+  opacity: 0.55;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-block: var(--space-7);
+}
+
+.heroEyebrow {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: var(--space-3);
+}
+
+.heroTitle {
+  font-size: var(--text-4xl);
+  max-width: 22ch;
+}
+
+.heroSub {
+  margin-top: var(--space-4);
+  max-width: 52ch;
+  font-size: var(--text-lg);
+  color: var(--on-cinema-soft);
+}
+
+.heroCtas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+/* ----------------------------- Conversion band ---------------------------- */
+.band {
+  background: var(--cinema);
+  color: var(--on-cinema);
+  padding-block: var(--section-pad);
+}
+
+.bandInner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  align-items: flex-start;
+}
+
+.bandTitle {
+  font-size: var(--text-3xl);
+  max-width: 24ch;
+}
+
+.bandSub {
+  color: var(--on-cinema-soft);
+  max-width: 52ch;
+}
+
+.bandCtas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+/* ------------------------------- Proof strip ------------------------------ */
+.proof {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-5);
+  padding-block: var(--space-6);
+  border-block: 1px solid var(--line);
+}
+
+.proofItem {
+  text-align: center;
+}
+
+.proofValue {
+  display: block;
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+
+.proofLabel {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+}
+
+@media (min-width: 768px) {
+  .proof {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* -------------------------------- Logo grid ------------------------------- */
+.logoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  gap: var(--space-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.logoCell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  min-height: 6.5rem;
+  text-align: center;
+}
+
+.logoCell img {
+  max-height: 3rem;
+  width: auto;
+  object-fit: contain;
+}
+
+.logoName {
+  font-size: var(--text-xs);
+  color: var(--ink-soft);
+}
+
+/* ------------------------------- Service card ----------------------------- */
+.cardGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+@media (min-width: 640px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cardGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .cardGridThree {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.cardImgWrap {
+  position: relative;
+  aspect-ratio: 3 / 2;
+}
+
+.cardImg {
+  object-fit: cover;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  flex: 1;
+}
+
+.cardTitle {
+  font-size: var(--text-xl);
+}
+
+.cardTitle a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Whole card is clickable through the stretched title link. */
+.cardTitle a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.card {
+  position: relative;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.card:hover,
+.card:focus-within {
+  border-color: var(--amber);
+  box-shadow: var(--shadow);
+}
+
+.cardCopy {
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+  flex: 1;
+}
+
+.cardLink {
+  color: var(--amber-deep);
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+
+/* -------------------------------- Breadcrumb ------------------------------ */
+.breadcrumb {
+  padding-block: var(--space-4);
+}
+
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: var(--text-sm);
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.breadcrumb li + li::before {
+  content: '/';
+  color: var(--ink-soft);
+}
+
+.breadcrumb a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--amber-deep);
+  text-decoration: underline;
+}
+
+.breadcrumb [aria-current='page'] {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ------------------------------ Section header ---------------------------- */
+.sectionHead {
+  margin-bottom: var(--space-6);
+}
+
+.sectionTitle {
+  font-size: var(--text-3xl);
+  max-width: 26ch;
+}
+
+.sectionSub {
+  margin-top: var(--space-3);
+  color: var(--ink-soft);
+  max-width: 60ch;
+}

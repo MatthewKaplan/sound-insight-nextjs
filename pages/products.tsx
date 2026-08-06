@@ -1,135 +1,145 @@
 import { GetStaticProps } from 'next';
-import React, { FC } from 'react';
+import { FC } from 'react';
+import Link from 'next/link';
 import Seo from '../components/seo';
-import { getPageById } from '../helper/api-util';
-import { buildBreadcrumbSchema } from '../helper/structured-data';
+import Hero from '../components/hero';
+import ConversionBand from '../components/conversionBand';
+import LogoGrid, { LogoItem, zipLogos } from '../components/logoGrid';
+import { getPagesById, REVALIDATE_SECONDS } from '../helper/api-util';
+import { buildBreadcrumbSchema, buildLocalBusinessSchema } from '../helper/structured-data';
 import classes from './styles/products.module.css';
-import CarouselComponent from '../components/carousel';
+import uiClasses from '../components/styles/ui.module.css';
 import { ProductPageData } from '../types/productPageData';
-import SplashImageComponent from '../components/splashImage';
+import { BrandPageData } from '../types/brandPage.type';
 
-const ProductPage: FC<ProductPageData> = ({
-  SplashImg,
-  audioLinks,
-  audioIcons,
-  audioNames,
-  videoLinks,
-  videoImages,
-  SplashTitle,
-  videoTvImgs,
-  audioImages,
-  videoDetails,
-  speakerNames,
-  speakerIcons,
-  speakerLinks,
-  ProductTitle1,
-  ProductTitle2,
-  ProductTitle3,
-  ProductTitle4,
-  ProductTitle5,
-  ProductTitle6,
-  streamerNames,
-  streamerIcons,
-  streamerLinks,
-  speakerImages,
-  SplashSubTitle,
-  turntableNames,
-  turntableLinks,
-  turntableIcons,
-  streamerImages,
-  furnitureNames,
-  furnitureLogos,
-  furnitureLinks,
-  turntableImages,
-  furnitureImages
+type CategoryData = {
+  title: string;
+  items: LogoItem[];
+};
+
+type Props = {
+  SplashImg: string;
+  SplashSubTitle: string;
+  categories: CategoryData[];
+  brandWall: LogoItem[];
+};
+
+const ProductsPage: FC<Props> = ({
+  SplashImg, SplashSubTitle, categories, brandWall
 }) => (
-  <div>
+  <>
     <Seo
-      title="Sound Insight - Audio & Video Products Available in our NY Showroom"
-      description="We Carry the Highest Quality Products For All Your Audio and Video Needs, That Are Guaranteed to Excite the Senses. Long Island #1 AV Specialists"
+      title="Sound Insight - TVs | Speakers | Amplifiers | Turntables | Streamers"
+      description="Curated audio and video products you can hear before you buy — TVs, speakers, amplifiers, turntables, streamers, and AV furniture at our Huntington, NY showroom."
       path="/products"
-      keywords="Sony Television, Gifts, Monitor Audio, Paradigm, Marantz, Sonos, Samsung, Sound Bars, Heos, Gifts for Dad"
-      images={[
-        ...furnitureImages,
-        ...turntableImages,
-        ...streamerImages,
-        ...speakerImages,
-        ...audioImages,
-        ...videoImages
+      structuredData={[
+        buildLocalBusinessSchema('/products'),
+        buildBreadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'Products', path: '/products' }
+        ])
       ]}
-      structuredData={buildBreadcrumbSchema([
-        { name: 'Home', path: '/' },
-        { name: 'Products', path: '/products' }
-      ])}
     />
-    <SplashImageComponent altText="Large Stereo system" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
-    <div className={classes.productsPage}>
-      <section className={classes.products}>
-        <h2>{ProductTitle1}</h2>
-        <section className={classes.productSlides}>
-          <CarouselComponent
-            links={videoLinks}
-            icons={videoImages}
-            pictures={videoTvImgs}
-            iconNames={videoDetails}
-          />
+
+    <Hero
+      compact
+      title="What's on our floor"
+      eyebrow="Products"
+      subtitle={SplashSubTitle}
+      imageSrc={SplashImg}
+      imageAlt=""
+    >
+      <Link href="/contact" className="btn btnPrimary">Book a demo</Link>
+    </Hero>
+
+    <div className="container section">
+      <p className={`prose ${classes.positioning}`}>
+        Anything below can be bought online. What you can&apos;t buy online is
+        hearing it first — set up properly, in a real room, next to its
+        competition — and having the same people design, install, and calibrate
+        it in your home. That&apos;s what the showroom is for.
+      </p>
+
+      <nav className={classes.jumpNav} aria-label="Product categories">
+        {categories.map(({ title }) => (
+          <a key={title} href={`#${title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} className={classes.jumpLink}>
+            {title}
+          </a>
+        ))}
+        <a href="#brands" className={classes.jumpLink}>All brands</a>
+      </nav>
+
+      {categories.map(({ title, items }) => (
+        <section
+          key={title}
+          id={title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}
+          className={classes.category}
+          aria-label={title}
+        >
+          <div className={classes.categoryHead}>
+            <h2 className={classes.categoryTitle}>{title}</h2>
+            <span className={classes.categoryCount}>{`${items.length} brands`}</span>
+          </div>
+          <LogoGrid items={items} ariaLabel={`${title} brands`} />
         </section>
-        <h2 className={classes.speakerHeader}>{ProductTitle2}</h2>
-        <section className={classes.productSlides}>
-          <CarouselComponent
-            icons={audioIcons}
-            links={audioLinks}
-            iconNames={audioNames}
-            pictures={audioImages}
-          />
-        </section>
-        <h2 className={classes.speakerHeader}>{ProductTitle3}</h2>
-        <section className={classes.productSlides}>
-          <CarouselComponent
-            icons={turntableIcons}
-            links={turntableLinks}
-            iconNames={turntableNames}
-            pictures={turntableImages}
-          />
-        </section>
-        <h2 className={classes.speakerHeader}>{ProductTitle4}</h2>
-        <section className={classes.productSlides}>
-          <CarouselComponent
-            icons={streamerIcons}
-            links={streamerLinks}
-            iconNames={streamerNames}
-            pictures={streamerImages}
-          />
-        </section>
-        <h2 className={classes.speakerHeader}>{ProductTitle5}</h2>
-        <section className={classes.productSlides}>
-          <CarouselComponent
-            icons={speakerIcons}
-            links={speakerLinks}
-            iconNames={speakerNames}
-            pictures={speakerImages}
-          />
-        </section>
-        <h2 className={classes.speakerHeader}>{ProductTitle6}</h2>
-        <section className={classes.productSlides}>
-          <CarouselComponent
-            icons={furnitureLogos}
-            links={furnitureLinks}
-            iconNames={furnitureNames}
-            pictures={furnitureImages}
-          />
-        </section>
+      ))}
+
+      <section id="brands" className={classes.category} aria-labelledby="brands-heading">
+        <div className={uiClasses.sectionHead}>
+          <span className="eyebrow">The full list</span>
+          <h2 id="brands-heading" className={uiClasses.sectionTitle}>Brands we carry</h2>
+          <p className={uiClasses.sectionSub}>
+            If you don&apos;t see the line you&apos;re looking for,
+            {' '}
+            <Link href="/contact">ask us</Link>
+            {' '}
+            — we can usually get it, and we&apos;ll tell you honestly when
+            something else is better value.
+          </p>
+        </div>
+        <LogoGrid items={brandWall} ariaLabel="All brands carried" />
       </section>
     </div>
-  </div>
+
+    <ConversionBand
+      title="Hear them before you buy them."
+      subtitle="Dedicated stereo and cinema demo rooms in Huntington village. Bring your music, your room dimensions, or just your curiosity."
+      primaryLabel="Book a demo"
+    />
+  </>
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const featuredPage = await getPageById('P_PRODUCTS');
+  const [productsRaw, brandsRaw] = await getPagesById(['P_PRODUCTS', 'P_BRANDS']);
+  const products = productsRaw as ProductPageData;
+  const brands = brandsRaw as BrandPageData;
+
+  const categories: CategoryData[] = [
+    { title: products.ProductTitle1 ?? 'Televisions', items: zipLogos(products.videoImages, products.videoDetails) },
+    { title: products.ProductTitle2 ?? 'Receivers & Amplifiers', items: zipLogos(products.audioIcons, products.audioNames) },
+    { title: products.ProductTitle5 ?? 'Speakers', items: zipLogos(products.speakerIcons, products.speakerNames) },
+    { title: products.ProductTitle3 ?? 'Turntables', items: zipLogos(products.turntableIcons, products.turntableNames) },
+    { title: products.ProductTitle4 ?? 'Internet Music Streamers', items: zipLogos(products.streamerIcons, products.streamerNames) },
+    { title: products.ProductTitle6 ?? 'Furniture', items: zipLogos(products.furnitureLogos, products.furnitureNames) }
+  ].filter(({ items }) => items.length > 0);
+
+  const logos = (brands.manufacturerLogo ?? []) as string[];
+  const alts = (brands.manufacturerAltText ?? []) as string[];
+  const brandWall: LogoItem[] = logos.map((src, i) => ({
+    src,
+    name: (alts[i] ?? '').replace(/\s*logo\s*$/i, ''),
+    alt: alts[i] ?? ''
+  }));
 
   return {
-    props: featuredPage
+    props: {
+      SplashImg: products.SplashImg,
+      SplashSubTitle: products.SplashSubTitle,
+      categories,
+      brandWall
+    },
+    revalidate: REVALIDATE_SECONDS
   };
 };
 
-export default ProductPage;
+export default ProductsPage;

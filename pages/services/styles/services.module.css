@@ -1,218 +1,67 @@
-.servicesProvided {
-    height: auto;
-    margin: 20px 0 60px 0;
-    font-family: montserrat, sans-serif;
+.framing {
+  padding-block: var(--space-7);
 }
 
-.servicesProvided p,
-.servicesProvided h3 {
-    margin-top: 10px;
-    font-weight: 400;
-    line-height: 30px;
-    word-spacing: 2px;
-    text-align: center;
-    font-style: normal;
-    letter-spacing: 1.5px;
-    font-family: montserrat, sans-serif;
+.framingTitle {
+  font-size: var(--text-2xl);
+  max-width: 32ch;
+  margin-bottom: var(--space-3);
 }
 
-.sectionTitle {
-    font-weight: 600 !important;
-    margin: 40px 0 20px 0 !important;
+.rowLink {
+  margin-top: var(--space-4);
 }
 
-.servicesProvided .header {
-    width: 65%;
-    margin: 0 auto;
-    text-align: center;
+/* ------------------------------ Process strip ----------------------------- */
+.process {
+  padding-block: var(--section-pad);
 }
 
-.servicesProvided .header .title {
-    font-size: 28px;
-    font-weight: 400;
-    margin-top: 50px;
-    font-style: normal;
-    line-height: 1.2em;
-    text-transform: none;
-    letter-spacing: .4px;
-    font-family: montserrat, sans-serif;
+.processTitle {
+  font-size: var(--text-3xl);
+  margin-bottom: var(--space-6);
 }
 
-.servicesProvided .topService .audioService a .topServiceImgMobile {
-    display: none;
+.processList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: step;
 }
 
-.servicesProvided .header .subtitle {
-    font-size: 22px;
-    margin-top: 30px;
-    font-style: normal;
-    line-height: 1.2em;
-    letter-spacing: 0px;
-    margin-bottom: 50px;
-    text-transform: none;
-    font-family: montserrat, sans-serif;
+@media (min-width: 768px) {
+  .processList {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
-.pageBreak {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+.processStep {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
 }
 
-.audioService {
-    max-width: 82.4%;
-    text-align: left;
-    margin: 80px auto 0 auto;
+.processNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  background: var(--amber);
+  color: var(--cinema);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
 }
 
-.servicesInfo {
-    display: flex;
-    text-align: left;
-    margin: 80px auto;
-    justify-content: space-between;
+.processStepTitle {
+  font-size: var(--text-lg);
 }
 
-.servicesInfo .automation,
-.servicesInfo .video {
-    margin-top: 80px;
-    max-width: 82.4%;
-    margin: 80px auto;
-    max-height: 725px;
-}
-
-.flex {
-    display: flex;
-    height: auto;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.servicesInfo p {
-    width: 83%;
-    margin: 0 auto;
-    margin-bottom: 25px;
-}
-
-.servicesInfo .serviceImg {
-    width: 83%;
-    height: 400px;
-}
-
-.imgDiv span,
-.audioService a span {
-    display: flex;
-    justify-content: center;
-    border-radius: 45px/15px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-}
-
-@media screen and (max-width: 2560px) {
-    .servicesProvided .topServiceImg {
-        height: auto;
-    }
-    .servicesProvided .servicesInfo .serviceImg {
-        height: 650px;
-        margin-left: 90px;
-    }
-}
-
-@media screen and (max-width: 1920px) {
-    .servicesProvided .topServiceImg {
-        height: auto;
-    }
-    .servicesProvided .servicesInfo .serviceImg {
-        height: 500px;
-        margin: 0 auto;
-    }
-}
-
-@media screen and (max-width: 1440px) {
-    .servicesProvided .topServiceImg {
-        height: auto;
-    }
-    .servicesProvided .servicesInfo .serviceImg {
-        height: 425px;
-    }
-}
-
-@media screen and (max-width: 1300px) {
-    .servicesProvided .servicesInfo {
-        flex-wrap: wrap;
-    }
-    .servicesProvided .servicesInfo .automation {
-        margin: 40px auto;
-        max-height: 3000px;
-    }
-    .servicesProvided .topService .audioService a .topServiceImg {
-        display: none;
-    }
-    .servicesProvided .topService .audioService a .topServiceImgMobile {
-        display: flex;
-        margin: 0 auto;
-        justify-content: center;
-    }
-}
-
-@media screen and (max-width: 438px) {
-    .servicesProvided .header {
-        width: 95%;
-    }
-    .servicesProvided .header .title {
-        font-size: 22px;
-    }
-    .servicesProvided .header .subtitle {
-        font-size: 18px;
-    }
-    .servicesProvided .topService {
-        margin-bottom: 80px;
-    }
-    .servicesProvided .topService .topServiceImg {
-        height: auto;
-    }
-    .servicesProvided .topService .audio-service {
-        max-width: 90%;
-    }
-    .servicesProvided .servicesInfo {
-        width: 90%;
-        display: flex;
-        margin: 0 auto;
-        flex-direction: column;
-    }
-    .servicesProvided .servicesInfo p {
-        width: 100%;
-    }
-    .servicesProvided .servicesInfo .serviceImg {
-        height: 350px;
-        width: 100%;
-    }
-    .servicesProvided .servicesInfo .automation,
-    .servicesProvided .servicesInfo .video {
-        margin-top: 0px;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .servicesProvided p {
-        font-size: 15px;
-    }
-    .servicesProvided .servicesInfo p,
-    .servicesProvided .topService {
-        margin-bottom: 50px;
-    }
-    .servicesProvided .servicesInfo .serviceImg {
-        width: 100%;
-        height: 250px;
-    }
-    .servicesProvided .topService .topServiceImg {
-        height: auto;
-    }
-    .servicesProvided .header .title {
-        font-size: 25px;
-    }
-    .servicesProvided .header .subtitle {
-        font-size: 18px;
-    }
-    .servicesProvided .audioService {
-        margin: 60px auto 0 auto;
-    }
+.processStepCopy {
+  color: var(--on-cinema-soft);
+  font-size: var(--text-sm);
 }

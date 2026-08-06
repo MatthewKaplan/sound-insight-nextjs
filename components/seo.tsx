@@ -17,7 +17,7 @@ type SeoProps = {
 
 const SITE_NAME = 'Sound Insight';
 const SITE_URL = 'https://sound-insight.com';
-const DEFAULT_IMAGE = 'https://i.imgur.com/TXAMHbb.png';
+const DEFAULT_IMAGE = 'https://res.cloudinary.com/sound-insight/image/upload/v1640911039/WIgvnFB_swl61h.jpg';
 const DEFAULT_IMAGE_ALT = 'Sound Insight Logo';
 const TWITTER_SITE = '@matthewkaplan92';
 
@@ -53,15 +53,16 @@ const Seo: FC<SeoProps> = ({
   path,
   keywords,
   images,
-  imageAlt,
-  ogType,
+  imageAlt = DEFAULT_IMAGE_ALT,
+  ogType = 'website',
   twitterTitle,
   twitterDescription,
   structuredData
 }) => {
   const canonicalUrl = getAbsoluteUrl(path);
-  const pageImages = images && images.length > 0 ? images : [DEFAULT_IMAGE];
-  const primaryImage = pageImages[0];
+  // Cap social images at one — crawlers only use the first, and the products
+  // page used to emit dozens.
+  const primaryImage = images && images.length > 0 ? images[0] : DEFAULT_IMAGE;
   const schemas = getStructuredDataItems(structuredData);
 
   return (
@@ -82,9 +83,7 @@ const Seo: FC<SeoProps> = ({
       <meta property="dc:title" content={title} />
       <meta property="dc:description" content={description} />
       <link rel="canonical" href={canonicalUrl} />
-      {pageImages.map((image) => (
-        <meta key={`og:image:${image}`} property="og:image" content={image} />
-      ))}
+      <meta property="og:image" content={primaryImage} />
       <meta property="og:image:secure_url" content={primaryImage} />
       <meta property="og:image:alt" content={imageAlt} />
       {schemas.map((schema) => (
@@ -98,16 +97,6 @@ const Seo: FC<SeoProps> = ({
       ))}
     </Head>
   );
-};
-
-Seo.defaultProps = {
-  keywords: undefined,
-  images: undefined,
-  imageAlt: DEFAULT_IMAGE_ALT,
-  ogType: 'website',
-  twitterTitle: undefined,
-  twitterDescription: undefined,
-  structuredData: undefined
 };
 
 export default Seo;

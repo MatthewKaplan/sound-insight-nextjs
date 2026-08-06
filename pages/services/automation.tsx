@@ -1,31 +1,21 @@
 import { GetStaticProps } from 'next';
-import Image from 'next/image';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import Seo from '../../components/seo';
-import { getPageById } from '../../helper/api-util';
+import ServicePageLayout from '../../components/servicePageLayout';
+import { getPageById, REVALIDATE_SECONDS } from '../../helper/api-util';
 import { buildBreadcrumbSchema, buildServiceSchema } from '../../helper/structured-data';
-import classes from './styles/automation.module.css';
-import BackBtnComponent from '../../components/backButton';
 import { AutomationPageData } from '../../types/automationPage.type';
 
 const AutomationPage: FC<AutomationPageData> = ({
-  AutoImg1,
-  AutoImg2,
-  AutoInfo1,
-  AutoTitle1,
-  AutoTitle2,
-  AutoTitle3,
-  AutoInfo2A,
-  AutoInfo2B,
-  AutoInfo3A,
-  AutoInfo3B
+  AutoImg1, AutoImg2,
+  AutoInfo1, AutoInfo2A, AutoInfo2B, AutoInfo3A, AutoInfo3B,
+  AutoTitle1, AutoTitle2, AutoTitle3
 }) => (
-  <div className={classes.automationPage}>
+  <>
     <Seo
       title="Sound Insight - Home Automation | Smart Home Solutions"
       description="Our Team Creates Home Automation Systems that Will Completely Transform Your Lifestyle by Making Tasks Easier and At The Same Time, Giving You Piece Of Mind."
       path="/services/automation"
-      keywords="Control4, Smart Home, Smart TV, Elan, Controlled Homes, Automation System, Sound Systems, Multi-room Audio & Video, Custom Installation, Music"
       structuredData={[
         buildBreadcrumbSchema([
           { name: 'Home', path: '/' },
@@ -33,45 +23,43 @@ const AutomationPage: FC<AutomationPageData> = ({
           { name: 'Automation', path: '/services/automation' }
         ]),
         buildServiceSchema({
-          name: 'Smart Home Automation',
-          description: 'Smart home automation system design and installation for lighting, control, comfort, and connected living.',
+          name: 'Home Automation',
+          description: 'Smart home automation design and installation — lighting, climate, audio, and security on one intuitive interface.',
           path: '/services/automation',
           serviceType: 'Home automation design and installation'
         })
       ]}
     />
-    <div className={classes.header} />
-    <BackBtnComponent />
-    <div className={classes.automationInfo}>
-      <section className={classes.pageHeading}>
-        <h1>{AutoTitle1}</h1>
-        <p>{AutoInfo1}</p>
-      </section>
-      <div className={classes.bottomServices}>
-        <section className={classes.elan}>
-          <Image src={AutoImg1} alt="Example of home automation" width={1400} height={750} layout="responsive" />
-          <h2 className={classes.sectionTitle}>{AutoTitle2}</h2>
-          <p>{AutoInfo2A}</p>
-          <br />
-          <p>{AutoInfo2B}</p>
-        </section>
-        <section className={classes.controlFour}>
-          <Image src={AutoImg2} alt="Control 4 automation system" width={1400} height={750} layout="responsive" />
-          <h2 className={classes.sectionTitle}>{AutoTitle3}</h2>
-          <p>{AutoInfo3A}</p>
-          <br />
-          <p>{AutoInfo3B}</p>
-        </section>
-      </div>
-    </div>
-  </div>
+    <ServicePageLayout
+      name="Home Automation"
+      title={AutoTitle1}
+      intro={AutoInfo1}
+      ctaLabel="Book an automation consult"
+      bandTitle="One interface for the whole house."
+      sections={[
+        {
+          title: AutoTitle2,
+          paragraphs: [AutoInfo2A, AutoInfo2B],
+          imageSrc: AutoImg1,
+          imageAlt: 'Smart home control panel on a wall'
+        },
+        {
+          title: AutoTitle3,
+          paragraphs: [AutoInfo3A, AutoInfo3B],
+          imageSrc: AutoImg2,
+          imageAlt: 'Tablet controlling home lighting scenes'
+        }
+      ]}
+    />
+  </>
 );
 
 export const getStaticProps: GetStaticProps = async () => {
   const featuredPage = await getPageById('P_AUTOMATION');
 
   return {
-    props: featuredPage as AutomationPageData
+    props: featuredPage as AutomationPageData,
+    revalidate: REVALIDATE_SECONDS
   };
 };
 

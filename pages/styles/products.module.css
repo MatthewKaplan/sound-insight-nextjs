@@ -1,62 +1,52 @@
-.productsPage {
-    font-family: "PT Sans", sans-serif;
+.positioning {
+  font-size: var(--text-lg);
+  color: var(--ink-soft);
+  margin-bottom: var(--space-6);
 }
 
-.productsPage .products {
-    margin: 20px 0 60px 0;
+.jumpNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-7);
 }
 
-.productsPage .products h2 {
-    text-align: left;
-    margin-left: 40px;
+.jumpLink {
+  padding: 0.55rem 1.1rem;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1.5px solid var(--field-border);
+  color: var(--ink);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-decoration: none;
+  transition: border-color 150ms ease;
 }
 
-.productsPage .products .speakerHeader {
-    margin-top: 60px;
+.jumpLink:hover {
+  border-color: var(--amber);
+  color: var(--amber-deep);
 }
 
-.productsPage .products .productSlides {
-    margin: 0 auto;
-    overflow: hidden;
+.category + .category {
+  margin-top: var(--space-8);
 }
 
-.productsPage .brandHeading {
-    max-width: 65%;
-    margin: 0 auto;
+.categoryHead {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
 }
 
-.productsPage .brandHeading .brandSubtitle {
-    margin-top: 30px;
+.categoryTitle {
+  font-size: var(--text-2xl);
 }
 
-.productsPage .brandHeading a {
-    color: rgba(33, 41, 176, 0.82);
-}
-
-@media screen and (max-width: 438px) {
-    .productsPage .products .brandHeading {
-        max-width: 95%;
-    }
-    .productsPage .products .logo-container {
-        grid-gap: 5px;
-        max-width: 35%;
-        grid-row-gap: 75px;
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .productsPage .products .brandHeading {
-        max-width: 95%;
-    }
-    .productsPage .products .brandHeading .brandSubtitle {
-        font-size: 18px;
-    }
-}
-
-.productsPage .products .logo-container {
-    grid-gap: 0px;
-    max-width: 100%;
-    grid-row-gap: 75px;
-    grid-template-columns: 1fr 1fr;
+.categoryCount {
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
 }

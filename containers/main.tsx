@@ -1,18 +1,18 @@
-import React, { FC } from 'react';
-import classes from './styles/main.module.css';
+import { FC, ReactNode } from 'react';
 import HeaderComponent from '../components/header';
 import FooterComponent from '../components/footer';
 
 type Props = {
-  children: any;
+  children: ReactNode;
 };
 
 const MainContainer: FC<Props> = ({ children }) => (
-  <div className={classes.mainContainer}>
+  <>
+    <a href="#main" className="skipLink">Skip to main content</a>
     <HeaderComponent />
-    {children}
+    <main id="main">{children}</main>
     <FooterComponent />
-  </div>
+  </>
 );
 
 export default MainContainer;
