@@ -4,6 +4,7 @@ import React, { FC } from 'react';
 import Seo from '../components/seo';
 import classes from './styles/about.module.css';
 import { getPageById } from '../helper/api-util';
+import { buildBreadcrumbSchema } from '../helper/structured-data';
 import { AboutPageData } from '../types/aboutPage.type';
 import SplashImageComponent from '../components/splashImage';
 
@@ -25,6 +26,10 @@ const AboutPage: FC<AboutPageData> = ({
       description="Partnering With The Top Brands in The Audiovisual Industry, We Provide Top Residential and Commercial Audio, Video, and Automation Design and Installation Services. We Provide our Clients With a Complete Range of Audio-Video Solutions, Smart Home Automation, Network, and IT Solutions."
       path="/about"
       keywords="Audio Video Long Island, Audio Video New York, Shop Small, Audio Equipment, Video Equipment, Residential Installation, Commercial Installation, Media Center, Home Cinema Amplifiers, Home Theater"
+      structuredData={buildBreadcrumbSchema([
+        { name: 'Home', path: '/' },
+        { name: 'About', path: '/about' }
+      ])}
     />
     <SplashImageComponent altText="Sound Insight store front location in Huntington, NY" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
     <div className={classes.aboutInfo}>

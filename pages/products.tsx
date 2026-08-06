@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 import React, { FC } from 'react';
 import Seo from '../components/seo';
 import { getPageById } from '../helper/api-util';
+import { buildBreadcrumbSchema } from '../helper/structured-data';
 import classes from './styles/products.module.css';
 import CarouselComponent from '../components/carousel';
 import { ProductPageData } from '../types/productPageData';
@@ -56,6 +57,10 @@ const ProductPage: FC<ProductPageData> = ({
         ...audioImages,
         ...videoImages
       ]}
+      structuredData={buildBreadcrumbSchema([
+        { name: 'Home', path: '/' },
+        { name: 'Products', path: '/products' }
+      ])}
     />
     <SplashImageComponent altText="Large Stereo system" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
     <div className={classes.productsPage}>

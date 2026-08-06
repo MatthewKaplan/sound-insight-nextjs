@@ -814,3 +814,40 @@ This repository already has a crawlable static-page foundation, but several high
 - error: `Type error: '?' expected.`
 
 This means the source-level Phase 1 work is implemented, but full production build/export validation is still blocked until the repository's existing TypeScript dependency issue is resolved.
+
+---
+
+## Phase 2 Execution Status — 2026-08-06
+
+### Completed in repository
+- [x] Added reusable structured-data helpers in `helper/structured-data.ts`
+- [x] Extended `components/seo.tsx` to emit JSON-LD scripts
+- [x] Added `Organization` schema to homepage
+- [x] Added `LocalBusiness` schema to homepage
+- [x] Added `LocalBusiness` schema to contact page
+- [x] Added `ContactPage` schema to contact page
+- [x] Added `BreadcrumbList` schema to interior customer-facing pages
+- [x] Added `Service` schema to all canonical service detail pages:
+  - `/services/audio`
+  - `/services/video`
+  - `/services/automation`
+  - `/services/phone-systems`
+  - `/services/security`
+- [x] Reused shared business contact constants to keep NAP consistent in schema and contact/footer presentation
+
+### Validation status
+- [x] `npm run lint` passes with warnings only
+- [ ] External schema validation completed in Google Rich Results Test / Schema.org Validator
+- [ ] Fresh rendered production HTML validation completed
+- [ ] `npm run build` passes
+
+### Current blocker
+`npm run build` still fails with the same existing repository dependency/type-compatibility issue:
+
+- `node_modules/@types/babel__traverse/index.d.ts:1467`
+- error: `Type error: '?' expected.`
+
+### Follow-up notes
+- Source-level review indicates the requested Phase 2 coverage is implemented.
+- External validator evidence has not yet been collected in this environment.
+- The legacy compatibility route `/services/phoneSystems` still exists and reuses canonical metadata that points to `/services/phone-systems`; this is acceptable for compatibility, but a real redirect would be stronger if hosting supports it.

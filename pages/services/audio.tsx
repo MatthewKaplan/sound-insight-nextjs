@@ -4,6 +4,7 @@ import React, { FC } from 'react';
 import Seo from '../../components/seo';
 import classes from './styles/audio.module.css';
 import { getPageById } from '../../helper/api-util';
+import { buildBreadcrumbSchema, buildServiceSchema } from '../../helper/structured-data';
 import CarouselComponent from '../../components/carousel';
 import { AudioPageData } from '../../types/audioPage.type';
 import BackBtnComponent from '../../components/backButton';
@@ -50,6 +51,19 @@ const AudioPage: FC<AudioPageData> = ({
         ...SpeakerImages,
         ...StreamerImages,
         ...TurntableImages
+      ]}
+      structuredData={[
+        buildBreadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'Services', path: '/services' },
+          { name: 'Audio', path: '/services/audio' }
+        ]),
+        buildServiceSchema({
+          name: 'Home Audio Systems',
+          description: 'Custom home audio design, installation, and product solutions for analog, digital, and whole-home listening.',
+          path: '/services/audio',
+          serviceType: 'Home audio design and installation'
+        })
       ]}
     />
     <div className={classes.header} />

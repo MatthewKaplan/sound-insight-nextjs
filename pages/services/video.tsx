@@ -5,6 +5,7 @@ import React, { FC } from 'react';
 import Seo from '../../components/seo';
 import classes from './styles/video.module.css';
 import { getPageById } from '../../helper/api-util';
+import { buildBreadcrumbSchema, buildServiceSchema } from '../../helper/structured-data';
 import CarouselComponent from '../../components/carousel';
 import BackBtnComponent from '../../components/backButton';
 import { VideoPageData } from '../../types/videoPage.type';
@@ -36,6 +37,19 @@ const VideoPage: FC<VideoPageData> = ({
       path="/services/video"
       keywords="Home Cinema Projectors, Home Cinema Amplifiers, Home Cinema Receivers, Home Theater, Projection Screens, Audio Visual Installations, Projector Lamps, Projector Mounts, Plasma & LCD Installation"
       images={VideoImages}
+      structuredData={[
+        buildBreadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'Services', path: '/services' },
+          { name: 'Video', path: '/services/video' }
+        ]),
+        buildServiceSchema({
+          name: 'Home Video Systems',
+          description: 'Home theater, television, and projection system design and installation from Sound Insight.',
+          path: '/services/video',
+          serviceType: 'Home video and theater installation'
+        })
+      ]}
     />
     <div className={classes.header} />
     <BackBtnComponent />

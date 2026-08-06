@@ -4,6 +4,7 @@ import React, { FC } from 'react';
 import Seo from '../../components/seo';
 import classes from './styles/security.module.css';
 import { getPageById } from '../../helper/api-util';
+import { buildBreadcrumbSchema, buildServiceSchema } from '../../helper/structured-data';
 import BackBtnComponent from '../../components/backButton';
 import { SecurityPageData } from '../../types/securityPage.type';
 
@@ -28,6 +29,19 @@ const SecurityPage: FC<SecurityPageData> = ({
       description="Sound Insight offers turnkey solutions for video surveillance and security system installation. Peace of mind 24 hours a day!"
       path="/services/security"
       keywords="Security Systems, Alarms, Cameras, video surveillance, security system installation, Resident Security, CCTV, DVR Security, Commercial Surveillance, Safe Home"
+      structuredData={[
+        buildBreadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'Services', path: '/services' },
+          { name: 'Security', path: '/services/security' }
+        ]),
+        buildServiceSchema({
+          name: 'Security Systems',
+          description: 'Security camera, alarm, and surveillance system installation for homes and businesses.',
+          path: '/services/security',
+          serviceType: 'Security system installation'
+        })
+      ]}
     />
     <div className={classes.header} />
     <BackBtnComponent />

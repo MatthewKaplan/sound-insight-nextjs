@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { FC } from 'react';
+import type { JsonLd } from '../helper/structured-data';
 
 type SeoProps = {
   title: string;
@@ -11,6 +12,7 @@ type SeoProps = {
   ogType?: string;
   twitterTitle?: string;
   twitterDescription?: string;
+  structuredData?: JsonLd | JsonLd[];
 };
 
 const SITE_NAME = 'Sound Insight';
@@ -23,6 +25,28 @@ const normalizePath = (path: string) => (path.startsWith('/') ? path : `/${path}
 
 const getAbsoluteUrl = (path: string) => new URL(normalizePath(path), SITE_URL).toString();
 
+const serializeJsonLd = (schema: JsonLd) => JSON.stringify(schema).replace(/</g, '\\u003c');
+
+const getStructuredDataItems = (structuredData?: JsonLd | JsonLd[]) => {
+  if (!structuredData) {
+    return [];
+  }
+
+  return Array.isArray(structuredData) ? structuredData : [structuredData];
+};
+
+const getStructuredDataKey = (schema: JsonLd, path: string) => {
+  const schemaId = schema['@id'];
+
+  if (typeof schemaId === 'string') {
+    return schemaId;
+  }
+
+  const schemaType = schema['@type'];
+
+  return typeof schemaType === 'string' ? `${path}-${schemaType}` : path;
+};
+
 const Seo: FC<SeoProps> = ({
   title,
   description,
@@ -32,11 +56,13 @@ const Seo: FC<SeoProps> = ({
   imageAlt,
   ogType,
   twitterTitle,
-  twitterDescription
+  twitterDescription,
+  structuredData
 }) => {
   const canonicalUrl = getAbsoluteUrl(path);
   const pageImages = images && images.length > 0 ? images : [DEFAULT_IMAGE];
   const primaryImage = pageImages[0];
+  const schemas = getStructuredDataItems(structuredData);
 
   return (
     <Head>
@@ -61,6 +87,15 @@ const Seo: FC<SeoProps> = ({
       ))}
       <meta property="og:image:secure_url" content={primaryImage} />
       <meta property="og:image:alt" content={imageAlt} />
+      {schemas.map((schema) => (
+        <script
+          key={getStructuredDataKey(schema, path)}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: serializeJsonLd(schema)
+          }}
+        />
+      ))}
     </Head>
   );
 };
@@ -71,7 +106,8 @@ Seo.defaultProps = {
   imageAlt: DEFAULT_IMAGE_ALT,
   ogType: 'website',
   twitterTitle: undefined,
-  twitterDescription: undefined
+  twitterDescription: undefined,
+  structuredData: undefined
 };
 
 export default Seo;

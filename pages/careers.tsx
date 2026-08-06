@@ -3,6 +3,7 @@ import { GetStaticProps } from 'next';
 import React, { FC, useState } from 'react';
 import Seo from '../components/seo';
 import { getPageById } from '../helper/api-util';
+import { buildBreadcrumbSchema } from '../helper/structured-data';
 import classes from './styles/careers.module.css';
 import { CareersPageData } from '../types/careersPage.type';
 import ApplicationForm from '../components/applicationForm';
@@ -25,6 +26,10 @@ const CareersPage: FC<CareersPageData> = ({
         description="We are Currently Hiring Both Sales and Installation Help in Huntington, NY! Come Work For Long Islands #1 Shop For All Audio and Video Needs."
         path="/careers"
         keywords="Audio Installation, Projector Installation, TV Installation, Home Cinema Installation, AV Installers, Audio Visual Installation, Audio Visual Installations Long Island, AV Installation Experts, Smart Home Installation, Media Room Installation"
+        structuredData={buildBreadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'Careers', path: '/careers' }
+        ])}
       />
       <SplashImageComponent altText="Tools and peg board" imageLink={SplashPageImg} title={SplashPageTitle} subTitle={SplashPageSubTitle} />
       <section className={classes.pageHeading}>

@@ -7,6 +7,7 @@ import { FC } from 'react';
 import Seo from '../components/seo';
 import classes from './styles/home.module.css';
 import { getPageById } from '../helper/api-util';
+import { buildLocalBusinessSchema, buildOrganizationSchema } from '../helper/structured-data';
 import { HomePageData } from '../types/homePage.type';
 import SplashImageComponent from '../components/splashImage';
 
@@ -46,6 +47,10 @@ const HomePage: FC<HomePageData> = ({
       description="The very best in AUDIO and VIDEO since 2002. Let our Knowledgeable Team Help You Find the Right Technology to Match Your Home or Office. Serving Long Island & New York"
       path="/"
       keywords="Audio Visual Installations Long Island, Home Cinema Installation, Home Security, Home Theatre, Home Automation, Audio & Video, Surround Sound Installation, TV Installation, Audio Installation, Gifts for Dad"
+      structuredData={[
+        buildOrganizationSchema(),
+        buildLocalBusinessSchema('/')
+      ]}
     />
     <SplashImageComponent altText="Living room with TV over fireplace" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
     <Box className={classes.homeServices} height="auto">

@@ -1,5 +1,13 @@
 import Link from 'next/link';
 import React, { FC } from 'react';
+import {
+  BUSINESS_CITY,
+  BUSINESS_EMAIL,
+  BUSINESS_PHONE_DISPLAY,
+  BUSINESS_POSTAL_CODE,
+  BUSINESS_REGION,
+  BUSINESS_STREET_ADDRESS
+} from '../helper/structured-data';
 import classes from './styles/footer.module.css';
 
 const FooterComponent: FC = () => (
@@ -66,19 +74,19 @@ const FooterComponent: FC = () => (
       <section className={classes.storeInfo}>
         <div className={classes.storeContactInfo}>
           <h3>
-            <a target="_blank" href="tel:6312714434" rel="noopener noreferrer">
-              631.271.4434
+            <a target="_blank" href="tel:+16312714434" rel="noopener noreferrer">
+              {BUSINESS_PHONE_DISPLAY}
             </a>
           </h3>
           <h3 className={classes.email}>
-            <a href="mailto:sales@sound-insight.com">sales@sound-insight.com</a>
+            <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a>
           </h3>
         </div>
         <section className={classes.storeInformation}>
           <section className={classes.storeAddress}>
             <h3><strong>ADDRESS:</strong></h3>
-            <h3>382 New York Ave</h3>
-            <h3>Huntington, NY 11743</h3>
+            <h3>{BUSINESS_STREET_ADDRESS}</h3>
+            <h3>{`${BUSINESS_CITY}, ${BUSINESS_REGION} ${BUSINESS_POSTAL_CODE}`}</h3>
           </section>
           <section className={classes.storeHours}>
             <h3>

@@ -9,6 +9,7 @@ import { FC } from 'react';
 import Seo from '../../components/seo';
 import SplashImageComponent from '../../components/splashImage';
 import { getPageById } from '../../helper/api-util';
+import { buildBreadcrumbSchema } from '../../helper/structured-data';
 import { ServicePageData } from '../../types/servicePage.typs';
 import classes from './styles/services.module.css';
 
@@ -40,6 +41,10 @@ const ServicesPage: FC<ServicePageData> = ({
       description="We provide our clients with a complete range of audio-video solutions, smart home automation, security solutions, phone systems, and IT solutions. Sound Insight is New York's #1 in AV Solutions."
       path="/services"
       keywords="Control Systems, Home Audio, Home Video, Security, Home Automation, Phone Systems, Sound Systems, Multi-room Audio & Video, Custom Installation, Maintenance And Service"
+      structuredData={buildBreadcrumbSchema([
+        { name: 'Home', path: '/' },
+        { name: 'Services', path: '/services' }
+      ])}
     />
     <SplashImageComponent altText="Living room with TV on the wall and fireplace" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
     <Box className={classes.servicesProvided}>

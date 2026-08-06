@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React, { FC } from 'react';
 import Seo from '../../components/seo';
 import { getPageById } from '../../helper/api-util';
+import { buildBreadcrumbSchema, buildServiceSchema } from '../../helper/structured-data';
 import classes from './styles/phoneSystems.module.css';
 import BackBtnComponent from '../../components/backButton';
 import { PhoneSystemPageData } from '../../types/phoneSystemPage.type';
@@ -26,6 +27,19 @@ const PhoneSystemsPage: FC<PhoneSystemPageData> = ({
       description="Sound Insight offers a one-stop solution for your business and residential communication needs. From basic digital systems to modern VoIP systems."
       path="/services/phone-systems"
       keywords="Phones Systems, VoIP Phones, Cloud Phones, Nec Systems, Office Phones, Desktop Phones, Wireless Phones, Multi-room Audio & Video, Custom Installation, Internet"
+      structuredData={[
+        buildBreadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'Services', path: '/services' },
+          { name: 'Phone Systems', path: '/services/phone-systems' }
+        ]),
+        buildServiceSchema({
+          name: 'Business Phone Systems',
+          description: 'Office phone and VoIP system solutions for residential and business communication needs.',
+          path: '/services/phone-systems',
+          serviceType: 'Phone system design and installation'
+        })
+      ]}
     />
     <div className={classes.header} />
     <BackBtnComponent />

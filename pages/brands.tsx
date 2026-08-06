@@ -4,6 +4,7 @@ import React, { FC } from 'react';
 import Seo from '../components/seo';
 import classes from './styles/brands.module.css';
 import { getPageById } from '../helper/api-util';
+import { buildBreadcrumbSchema } from '../helper/structured-data';
 import { BrandPageData } from '../types/brandPage.type';
 import SplashImageComponent from '../components/splashImage';
 
@@ -37,6 +38,10 @@ const BrandsPage: FC<BrandPageData> = ({
         description="We only carry top of the line Audio and Video brands guaranteed to excite the senses. Audio-Technica, JBL, Monitor Audio, Sonos, Marantz, Sony, SpeakerCraft, Paradigm, Panamax, Samsung, Heos, etc..."
         path="/brands"
         keywords="Audio-Technica, JBL, Monitor Audio, Sonos, Marantz, Sony, SpeakerCraft, Paradigm, Panamax, Samsung, Heos"
+        structuredData={buildBreadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'Brands', path: '/brands' }
+        ])}
       />
       <SplashImageComponent altText="Sound Insight lobby with TVs and speakers" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
       <section className={classes.brands}>

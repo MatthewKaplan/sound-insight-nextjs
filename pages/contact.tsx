@@ -3,6 +3,17 @@ import { GetStaticProps } from 'next';
 import React, { FC, useState } from 'react';
 import Seo from '../components/seo';
 import { getPageById } from '../helper/api-util';
+import {
+  BUSINESS_CITY,
+  BUSINESS_EMAIL,
+  BUSINESS_PHONE_DISPLAY,
+  BUSINESS_POSTAL_CODE,
+  BUSINESS_REGION,
+  BUSINESS_STREET_ADDRESS,
+  buildBreadcrumbSchema,
+  buildContactPageSchema,
+  buildLocalBusinessSchema
+} from '../helper/structured-data';
 import classes from './styles/contact.module.css';
 import ContactForm from '../components/contactForm';
 import { ContactPageData } from '../types/contactPage.type';
@@ -33,6 +44,14 @@ const ContactPage: FC<ContactPageData> = ({
         description="Let our Experienced Team Help with your Next AV Design, Install or Service for your Home, Business, or Entertainment Space. FREE ESTIMATES! #1 AV on Long Island."
         path="/contact"
         keywords="AV Demos, Free Estimates, Audio Visual Installations Long Island, Home Technology, Audio Hire, Video Hire, Automation, AV Installation Experts, Projectors, Multi Room Audio"
+        structuredData={[
+          buildLocalBusinessSchema('/contact'),
+          buildContactPageSchema(),
+          buildBreadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Contact', path: '/contact' }
+          ])
+        ]}
       />
       <SplashImageComponent altText="Sound Insight lobby with TVs and speakers" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
       <section className={classes.contactPageContents}>
@@ -57,8 +76,8 @@ const ContactPage: FC<ContactPageData> = ({
               <p>
                 <strong>ADDRESS:</strong>
               </p>
-              <p>382 New York Ave</p>
-              <p>Huntington, NY 11743</p>
+              <p>{BUSINESS_STREET_ADDRESS}</p>
+              <p>{`${BUSINESS_CITY}, ${BUSINESS_REGION} ${BUSINESS_POSTAL_CODE}`}</p>
             </section>
             <section className={classes.hours}>
               <p>
@@ -77,12 +96,12 @@ const ContactPage: FC<ContactPageData> = ({
             </section>
           </section>
           <p className={classes.phoneNumber}>
-            <a target="_blank" href="tel:6312714434" rel="noopener noreferrer">
-              631.271.4434
+            <a target="_blank" href="tel:+16312714434" rel="noopener noreferrer">
+              {BUSINESS_PHONE_DISPLAY}
             </a>
           </p>
           <p className={classes.email}>
-            <a href="mailto:sales@sound-insight.com">sales@sound-insight.com</a>
+            <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a>
           </p>
         </div>
         {demoRequest === true && <DemoRequestForm closeForm={closeFourms} />}
