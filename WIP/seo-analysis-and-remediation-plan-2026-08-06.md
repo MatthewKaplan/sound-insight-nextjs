@@ -803,17 +803,21 @@ This repository already has a crawlable static-page foundation, but several high
 
 ### Validation status
 - [x] `npm run lint` passes with warnings only
-- [ ] `npm run build` passes
-- [ ] Fresh production/exported HTML validation completed
+- [x] `npm run build` passes
+- [x] Fresh production/exported HTML validation completed for homepage, contact, and canonical service detail pages
 - [ ] Browser validation completed
 
-### Current blocker
-`npm run build` still fails because of an existing TypeScript/dependency compatibility issue unrelated to the Phase 1 SEO edits:
+### Build/export resolution
+The original build blocker was resolved in two minimal steps:
 
-- `node_modules/@types/babel__traverse/index.d.ts:1467`
-- error: `Type error: '?' expected.`
+- pinned `@types/babel__traverse` to `7.14.2` in `package.json` to restore compatibility with the repo's pinned `typescript@4.4.3`
+- set `images.unoptimized = true` in `next.config.js` so `next export` works with the site's existing `next/image` usage
 
-This means the source-level Phase 1 work is implemented, but full production build/export validation is still blocked until the repository's existing TypeScript dependency issue is resolved.
+### Notes
+- Export now completes successfully and writes static output to `out/`.
+- Exported HTML was spot-validated for correct canonical tags and `og:url` values.
+- Browser validation is still pending because no browser tool was available in this session.
+- `next export` still warns that custom `headers()` are not applied in static export and that API routes are disabled in exported output.
 
 ---
 
@@ -837,17 +841,20 @@ This means the source-level Phase 1 work is implemented, but full production bui
 
 ### Validation status
 - [x] `npm run lint` passes with warnings only
+- [x] `npm run build` passes
+- [x] Fresh rendered production HTML validation completed for homepage, contact, and canonical service detail pages
 - [ ] External schema validation completed in Google Rich Results Test / Schema.org Validator
-- [ ] Fresh rendered production HTML validation completed
-- [ ] `npm run build` passes
 
-### Current blocker
-`npm run build` still fails with the same existing repository dependency/type-compatibility issue:
-
-- `node_modules/@types/babel__traverse/index.d.ts:1467`
-- error: `Type error: '?' expected.`
+### Validation notes
+- Exported HTML under `out/` was validated for homepage, contact, and all five canonical service detail pages.
+- Confirmed per-page canonical tags and `og:url` values are correct in exported output.
+- Confirmed expected JSON-LD emission in exported output:
+  - homepage: `Organization`, `LocalBusiness`
+  - contact: `LocalBusiness`, `ContactPage`, `BreadcrumbList`
+  - service detail pages: `BreadcrumbList`, `Service`
+- Confirmed `out/sitemap.xml` includes the validated canonical routes.
 
 ### Follow-up notes
-- Source-level review indicates the requested Phase 2 coverage is implemented.
 - External validator evidence has not yet been collected in this environment.
 - The legacy compatibility route `/services/phoneSystems` still exists and reuses canonical metadata that points to `/services/phone-systems`; this is acceptable for compatibility, but a real redirect would be stronger if hosting supports it.
+- Static export still warns that configured `headers()` are not applied and API routes are not active in exported output.

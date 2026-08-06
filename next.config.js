@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 module.exports = {
   images: {
+    unoptimized: true,
     domains: ['i.imgur.com', 'res.cloudinary.com']
   },
   env: {
