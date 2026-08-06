@@ -1,7 +1,7 @@
-import Head from 'next/head';
+import { Button } from '@chakra-ui/react';
 import { GetStaticProps } from 'next';
 import React, { FC, useState } from 'react';
-import { Button } from '@chakra-ui/react';
+import Seo from '../components/seo';
 import { getPageById } from '../helper/api-util';
 import classes from './styles/careers.module.css';
 import { CareersPageData } from '../types/careersPage.type';
@@ -20,15 +20,12 @@ const CareersPage: FC<CareersPageData> = ({
 
   return (
     <div className={classes.careersComponent}>
-      <Head>
-        <title>Sound Insight - Careers | We&aposre Hiring in Huntington, NY</title>
-        <meta name="twitter:title" content="Sound Insight - Careers | We're Hiring in Huntington, NY" />
-        <meta name="twitter:description" content="We are Currently Hiring Both Sales and Installation Help in Huntington, NY! Come Work For Long Islands #1 Shop For All Audio and Video Needs." />
-        <meta name="og:title" content="Sound Insight - Careers | We're Hiring in Huntington, NY" />
-        <meta name="description" content="We are Currently Hiring Both Sales and Installation Help in Huntington, NY! Come Work For Long Islands #1 Shop For All Audio and Video Needs." />
-        <meta name="og:description" content="We are Currently Hiring Both Sales and Installation Help in Huntington, NY! Come Work For Long Islands #1 Shop For All Audio and Video Needs." />
-        <meta name="keywords" content="Audio Installation, Projector Installation, TV Installation, Home Cinema Installation, AV Installers, Audio Visual Installation, Audio Visual Installations Long Island, AV Installation Experts, Smart Home Installation, Media Room Installation" />
-      </Head>
+      <Seo
+        title="Sound Insight - Careers | We're Hiring in Huntington, NY"
+        description="We are Currently Hiring Both Sales and Installation Help in Huntington, NY! Come Work For Long Islands #1 Shop For All Audio and Video Needs."
+        path="/careers"
+        keywords="Audio Installation, Projector Installation, TV Installation, Home Cinema Installation, AV Installers, Audio Visual Installation, Audio Visual Installations Long Island, AV Installation Experts, Smart Home Installation, Media Room Installation"
+      />
       <SplashImageComponent altText="Tools and peg board" imageLink={SplashPageImg} title={SplashPageTitle} subTitle={SplashPageSubTitle} />
       <section className={classes.pageHeading}>
         <h2 dangerouslySetInnerHTML={{ __html: CareersInfo1 }} />

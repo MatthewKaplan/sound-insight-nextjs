@@ -1,7 +1,7 @@
-import Head from 'next/head';
+import { GetStaticProps } from 'next';
 import Image from 'next/image';
 import React, { FC } from 'react';
-import { GetStaticProps } from 'next';
+import Seo from '../components/seo';
 import classes from './styles/about.module.css';
 import { getPageById } from '../helper/api-util';
 import { AboutPageData } from '../types/aboutPage.type';
@@ -20,15 +20,12 @@ const AboutPage: FC<AboutPageData> = ({
   SplashSubTitle
 }) => (
   <div className={classes.aboutPage}>
-    <Head>
-      <title>Sound Insight - About | Passion for Audio & Video since 2002</title>
-      <meta name="twitter:title" content="Sound Insight - About | Passion for Audio & Video since 2002" />
-      <meta name="twitter:description" content="Partnering With The Top Brands in The Audiovisual Industry, We Provide Top Residential and Commercial Audio, Video, and Automation Design and Installation Services. We Provide our Clients With a Complete Range of Audio-Video Solutions, Smart Home Automation, Network, and IT Solutions." />
-      <meta name="og:title" content="Sound Insight - About | Passion for Audio & Video since 2002" />
-      <meta name="description" content="Partnering With The Top Brands in The Audiovisual Industry, We Provide Top Residential and Commercial Audio, Video, and Automation Design and Installation Services. We Provide our Clients With a Complete Range of Audio-Video Solutions, Smart Home Automation, Network, and IT Solutions." />
-      <meta name="og:description" content="Partnering With The Top Brands in The Audiovisual Industry, We Provide Top Residential and Commercial Audio, Video, and Automation Design and Installation Services. We Provide our Clients With a Complete Range of Audio-Video Solutions, Smart Home Automation, Network, and IT Solutions." />
-      <meta name="keywords" content="Audio Video Long Island, Audio Video New York, Shop Small, Audio Equipment, Video Equipment, Residential Installation, Commercial Installation, Media Center, Home Cinema Amplifiers, Home Theater" />
-    </Head>
+    <Seo
+      title="Sound Insight - About | Passion for Audio & Video since 2002"
+      description="Partnering With The Top Brands in The Audiovisual Industry, We Provide Top Residential and Commercial Audio, Video, and Automation Design and Installation Services. We Provide our Clients With a Complete Range of Audio-Video Solutions, Smart Home Automation, Network, and IT Solutions."
+      path="/about"
+      keywords="Audio Video Long Island, Audio Video New York, Shop Small, Audio Equipment, Video Equipment, Residential Installation, Commercial Installation, Media Center, Home Cinema Amplifiers, Home Theater"
+    />
     <SplashImageComponent altText="Sound Insight store front location in Huntington, NY" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
     <div className={classes.aboutInfo}>
       <h2>{AboutTitle}</h2>

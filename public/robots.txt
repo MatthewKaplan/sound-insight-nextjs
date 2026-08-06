@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sound-insight.com/sitemap.xml

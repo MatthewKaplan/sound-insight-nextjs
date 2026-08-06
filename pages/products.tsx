@@ -1,6 +1,6 @@
-import Head from 'next/head';
-import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
+import React, { FC } from 'react';
+import Seo from '../components/seo';
 import { getPageById } from '../helper/api-util';
 import classes from './styles/products.module.css';
 import CarouselComponent from '../components/carousel';
@@ -43,33 +43,20 @@ const ProductPage: FC<ProductPageData> = ({
   furnitureImages
 }) => (
   <div>
-    <Head>
-      <title>Sound Insight - Audio & Video Products Available in our NY Showroom</title>
-      <meta name="twitter:title" content="Sound Insight - Audio & Video Products Available in our NY Showroom" />
-      <meta name="twitter:description" content="We Carry the Highest Quality Products For All Your Audio and Video Needs, That Are Guaranteed to Excite the Senses. Long Island #1 AV Specialists" />
-      <meta name="og:title" content="Sound Insight - Audio & Video Products Available in our NY Showroom" />
-      <meta name="og:description" content="We Carry the Highest Quality Products For All Your Audio and Video Needs, That Are Guaranteed to Excite the Senses. Long Island #1 AV Specialists" />
-      <meta name="description" content="We Carry the Highest Quality Products For All Your Audio and Video Needs, That Are Guaranteed to Excite the Senses. Long Island #1 AV Specialists" />
-      <meta name="keywords" content="Sony Television, Gifts, Monitor Audio, Paradigm, Marantz, Sonos, Samsung, Sound Bars, Heos, Gifts for Dad" />
-      {furnitureImages.map((url) => (
-        <meta key={url} property="og:image" content={url} />
-      ))}
-      {turntableImages.map((url) => (
-        <meta key={url} property="og:image" content={url} />
-      ))}
-      {streamerImages.map((url) => (
-        <meta key={url} property="og:image" content={url} />
-      ))}
-      {speakerImages.map((url) => (
-        <meta key={url} property="og:image" content={url} />
-      ))}
-      {audioImages.map((url) => (
-        <meta key={url} property="og:image" content={url} />
-      ))}
-      {videoImages.map((url) => (
-        <meta key={url} property="og:image" content={url} />
-      ))}
-    </Head>
+    <Seo
+      title="Sound Insight - Audio & Video Products Available in our NY Showroom"
+      description="We Carry the Highest Quality Products For All Your Audio and Video Needs, That Are Guaranteed to Excite the Senses. Long Island #1 AV Specialists"
+      path="/products"
+      keywords="Sony Television, Gifts, Monitor Audio, Paradigm, Marantz, Sonos, Samsung, Sound Bars, Heos, Gifts for Dad"
+      images={[
+        ...furnitureImages,
+        ...turntableImages,
+        ...streamerImages,
+        ...speakerImages,
+        ...audioImages,
+        ...videoImages
+      ]}
+    />
     <SplashImageComponent altText="Large Stereo system" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
     <div className={classes.productsPage}>
       <section className={classes.products}>

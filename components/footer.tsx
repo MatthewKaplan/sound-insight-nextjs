@@ -28,12 +28,18 @@ const FooterComponent: FC = () => (
           PHONES
         </a>
       </Link>
-      {/* <div className={classes.dividerDot} /> */}
-      {/* <Link href="/services/security">
+      <div className={classes.dividerDot} />
+      <Link href="/services/security">
         <a className={classes.link}>
           SECURITY
         </a>
-      </Link> */}
+      </Link>
+      <div className={classes.dividerDot} />
+      <Link href="/brands">
+        <a className={classes.link}>
+          BRANDS
+        </a>
+      </Link>
       <div className={classes.dividerDot} />
       <Link href="/careers">
         <a className={classes.link}>

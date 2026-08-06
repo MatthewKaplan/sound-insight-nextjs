@@ -1,6 +1,6 @@
-import Head from 'next/head';
-import React, { FC } from 'react';
 import { GetStaticProps } from 'next';
+import React, { FC } from 'react';
+import Seo from '../components/seo';
 import 'react-responsive-modal/styles.css';
 import { getPageById } from '../helper/api-util';
 import classes from './styles/gallery.module.css';
@@ -10,15 +10,12 @@ const GalleryPage: FC<GalleryPageData> = ({
   GalleryTitle, GallerySubTitle, Data
 }) => (
   <div className={classes.galleryPage}>
-    <Head>
-      <title>Sound Insight - Project Gallery | Home | Audio</title>
-      <meta name="twitter:title" content="Sound Insight - Project Gallery | Home | Audio" />
-      <meta name="twitter:description" content="Whether You Wish to Spin Vinyl or Listen to Digital Music Media it Sounds Better on Sound Insight's Carefully Selected Products and Custom Designed Systems." />
-      <meta name="og:title" content="Sound Insight - Project Gallery | Home | Audio" />
-      <meta name="og:description" content="Whether You Wish to Spin Vinyl or Listen to Digital Music Media it Sounds Better on Sound Insight's Carefully Selected Products and Custom Designed Systems." />
-      <meta name="description" content="Whether You Wish to Spin Vinyl or Listen to Digital Music Media it Sounds Better on Sound Insight's Carefully Selected Products and Custom Designed Systems." />
-      <meta name="keywords" content="Audio Video Gallery, Audio Video Racks, Gifts, Gifts for Fathers Day, Record Players, Audio Systems, Sound Systems, Multi-room Audio & Video, Custom Installation, Music" />
-    </Head>
+    <Seo
+      title="Sound Insight - Project Gallery | Home | Audio"
+      description="Whether You Wish to Spin Vinyl or Listen to Digital Music Media it Sounds Better on Sound Insight's Carefully Selected Products and Custom Designed Systems."
+      path="/gallery"
+      keywords="Audio Video Gallery, Audio Video Racks, Gifts, Gifts for Fathers Day, Record Players, Audio Systems, Sound Systems, Multi-room Audio & Video, Custom Installation, Music"
+    />
     <div className={classes.header} />
     <div className={classes.galleryInfo}>
       <section className={classes.pageHeading}>

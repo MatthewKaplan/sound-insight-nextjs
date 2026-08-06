@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
-import Head from 'next/head';
+import { GetStaticProps } from 'next';
 import Image from 'next/image';
 import React, { FC } from 'react';
-import { GetStaticProps } from 'next';
+import Seo from '../../components/seo';
 import classes from './styles/video.module.css';
 import { getPageById } from '../../helper/api-util';
 import CarouselComponent from '../../components/carousel';
@@ -30,18 +30,13 @@ const VideoPage: FC<VideoPageData> = ({
   VidSlideTitle
 }) => (
   <div className={classes.videoPage}>
-    <Head>
-      <title>Sound Insight - Video Systems | Home Theater | Televisions</title>
-      <meta name="twitter:title" content="Sound Insight - Video Systems | Home Theater | Televisions" />
-      <meta name="twitter:description" content="Sound Insight Offers a Cinematic Experience to Those Seeking a New Home Cinema" />
-      <meta name="og:title" content="Sound Insight - Video Systems | Home Theater | Televisions" />
-      <meta name="description" content="Sound Insight Offers a Cinematic Experience to Those Seeking a New Home Cinema" />
-      <meta name="og:description" content="Sound Insight Offers a Cinematic Experience to Those Seeking a New Home Cinema" />
-      <meta name="keywords" content="Home Cinema Projectors, Home Cinema Amplifiers, Home Cinema Receivers, Home Theater, Projection Screens, Audio Visual Installations, Projector Lamps, Projector Mounts, Plasma & LCD Installation" />
-      {VideoImages.map((url) => (
-        <meta key={url} property="og:image" content={url} />
-      ))}
-    </Head>
+    <Seo
+      title="Sound Insight - Video Systems | Home Theater | Televisions"
+      description="Sound Insight Offers a Cinematic Experience to Those Seeking a New Home Cinema"
+      path="/services/video"
+      keywords="Home Cinema Projectors, Home Cinema Amplifiers, Home Cinema Receivers, Home Theater, Projection Screens, Audio Visual Installations, Projector Lamps, Projector Mounts, Plasma & LCD Installation"
+      images={VideoImages}
+    />
     <div className={classes.header} />
     <BackBtnComponent />
     <section className={classes.videoInfo}>

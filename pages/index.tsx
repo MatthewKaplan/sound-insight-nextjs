@@ -1,10 +1,10 @@
-import clsx from 'clsx';
-import { FC } from 'react';
-import Link from 'next/link';
-import Head from 'next/head';
-import Image from 'next/image';
-import { GetStaticProps } from 'next';
 import { Box } from '@chakra-ui/layout';
+import clsx from 'clsx';
+import { GetStaticProps } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
+import { FC } from 'react';
+import Seo from '../components/seo';
 import classes from './styles/home.module.css';
 import { getPageById } from '../helper/api-util';
 import { HomePageData } from '../types/homePage.type';
@@ -41,15 +41,12 @@ const HomePage: FC<HomePageData> = ({
   SplashSubTitle
 }) => (
   <div>
-    <Head>
-      <title>Sound Insight - Custom AV Solution & Design | Huntington, NY</title>
-      <meta name="twitter:title" content="Sound Insight - Custom AV Solution & Design | Huntington, NY" />
-      <meta name="twitter:description" content="The very best in AUDIO and VIDEO since 2002. Let our Knowledgeable Team Help You Find the Right Technology to Match Your Home or Office. Serving Long Island & New York" />
-      <meta name="og:title" content="Sound Insight - Custom AV Solution & Design | Huntington, NY" />
-      <meta name="og:description" content="The very best in AUDIO and VIDEO since 2002. Let our Knowledgeable Team Help You Find the Right Technology to Match Your Home or Office. Serving Long Island & New York" />
-      <meta name="description" content="The very best in AUDIO and VIDEO since 2002. Let our Knowledgeable Team Help You Find the Right Technology to Match Your Home or Office. Serving Long Island & New York" />
-      <meta name="keywords" content="Audio Visual Installations Long Island, Home Cinema Installation, Home Security, Home Theatre, Home Automation, Audio & Video, Surround Sound Installation, TV Installation, Audio Installation, Gifts for Dad" />
-    </Head>
+    <Seo
+      title="Sound Insight - Custom AV Solution & Design | Huntington, NY"
+      description="The very best in AUDIO and VIDEO since 2002. Let our Knowledgeable Team Help You Find the Right Technology to Match Your Home or Office. Serving Long Island & New York"
+      path="/"
+      keywords="Audio Visual Installations Long Island, Home Cinema Installation, Home Security, Home Theatre, Home Automation, Audio & Video, Surround Sound Installation, TV Installation, Audio Installation, Gifts for Dad"
+    />
     <SplashImageComponent altText="Living room with TV over fireplace" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
     <Box className={classes.homeServices} height="auto">
       <h2>{Mission}</h2>

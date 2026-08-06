@@ -3,10 +3,10 @@
 import { Box } from '@chakra-ui/layout';
 import clsx from 'clsx';
 import { GetStaticProps } from 'next';
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
+import Seo from '../../components/seo';
 import SplashImageComponent from '../../components/splashImage';
 import { getPageById } from '../../helper/api-util';
 import { ServicePageData } from '../../types/servicePage.typs';
@@ -35,15 +35,12 @@ const ServicesPage: FC<ServicePageData> = ({
   ServicesSubtitle
 }) => (
   <div>
-    <Head>
-      <title>Sound Insight - Services | Audio | Video | Home Automation | Security</title>
-      <meta name="twitter:title" content="Sound Insight - Services | Audio | Video | Home Automation | Security" />
-      <meta name="twitter:description" content="We provide our clients with a complete range of audio-video solutions, smart home automation, security solutions, phone systems, and IT solutions. Sound Insight is New York's #1 in AV Solutions." />
-      <meta name="og:title" content="Sound Insight - Services | Audio | Video | Home Automation | Security" />
-      <meta name="description" content="We provide our clients with a complete range of audio-video solutions, smart home automation, security solutions, phone systems, and IT solutions. Sound Insight is New York's #1 in AV Solutions." />
-      <meta name="og:description" content="We provide our clients with a complete range of audio-video solutions, smart home automation, security solutions, phone systems, and IT solutions. Sound Insight is New York's #1 in AV Solutions." />
-      <meta name="keywords" content="Control Systems, Home Audio, Home Video, Security, Home Automation, Phone Systems, Sound Systems, Multi-room Audio & Video, Custom Installation, Maintenance And Service" />
-    </Head>
+    <Seo
+      title="Sound Insight - Services | Audio | Video | Home Automation | Security"
+      description="We provide our clients with a complete range of audio-video solutions, smart home automation, security solutions, phone systems, and IT solutions. Sound Insight is New York's #1 in AV Solutions."
+      path="/services"
+      keywords="Control Systems, Home Audio, Home Video, Security, Home Automation, Phone Systems, Sound Systems, Multi-room Audio & Video, Custom Installation, Maintenance And Service"
+    />
     <SplashImageComponent altText="Living room with TV on the wall and fireplace" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
     <Box className={classes.servicesProvided}>
       <section className={classes.header}>
@@ -81,7 +78,7 @@ const ServicesPage: FC<ServicePageData> = ({
             <p>{VideoInfo}</p>
           </div>
           <div className={clsx(classes.automation, classes.service)}>
-            <Link href="/services/phoneSystems">
+            <Link href="/services/phone-systems">
               <a className={classes.anchor}>
                 <div style={{ display: 'flex', justifyContent: 'center' }} className={classes.imgDiv}>
                   <Image src={PhoneImg} alt="Office phone sitting on desk" className={classes.serviceImg} height={425} width={500} />
@@ -104,7 +101,7 @@ const ServicesPage: FC<ServicePageData> = ({
             </Link>
             <p>{AutoInfo}</p>
           </div>
-          {/* <div className={clsx(classes.automation, classes.service)}>
+          <div className={clsx(classes.automation, classes.service)}>
             <Link href="/services/security">
               <a className={classes.anchor}>
                 <div style={{ display: 'flex', justifyContent: 'center' }} className={classes.imgDiv}>
@@ -114,7 +111,7 @@ const ServicesPage: FC<ServicePageData> = ({
               </a>
             </Link>
             <p>{SecurityInfo}</p>
-          </div> */}
+          </div>
         </div>
       </section>
     </Box>

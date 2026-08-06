@@ -1,7 +1,7 @@
-import React, { FC, useState } from 'react';
-import Head from 'next/head';
-import { GetStaticProps } from 'next';
 import { Button } from '@chakra-ui/react';
+import { GetStaticProps } from 'next';
+import React, { FC, useState } from 'react';
+import Seo from '../components/seo';
 import { getPageById } from '../helper/api-util';
 import classes from './styles/contact.module.css';
 import ContactForm from '../components/contactForm';
@@ -28,15 +28,12 @@ const ContactPage: FC<ContactPageData> = ({
 
   return (
     <div className={classes.contactPage}>
-      <Head>
-        <title>Sound Insight - Contact Us | Audio & Video Demos | Free Estimates</title>
-        <meta name="twitter:title" content="Sound Insight - Contact Us | Audio & Video Demos | Free Estimates" />
-        <meta name="twitter:description" content="Let our Experienced Team Help with your Next AV Design, Install or Service for your Home, Business, or Entertainment Space. FREE ESTIMATES! #1 AV on Long Island." />
-        <meta name="og:title" content="Sound Insight - Contact Us | Audio & Video Demos | Free Estimates" />
-        <meta name="description" content="Let our Experienced Team Help with your Next AV Design, Install or Service for your Home, Business, or Entertainment Space. FREE ESTIMATES! #1 AV on Long Island." />
-        <meta name="og:description" content="Let our Experienced Team Help with your Next AV Design, Install or Service for your Home, Business, or Entertainment Space. FREE ESTIMATES! #1 AV on Long Island." />
-        <meta name="keywords" content="AV Demos, Free Estimates, Audio Visual Installations Long Island, Home Technology, Audio Hire, Video Hire, Automation, AV Installation Experts, Projectors, Multi Room Audio" />
-      </Head>
+      <Seo
+        title="Sound Insight - Contact Us | Audio & Video Demos | Free Estimates"
+        description="Let our Experienced Team Help with your Next AV Design, Install or Service for your Home, Business, or Entertainment Space. FREE ESTIMATES! #1 AV on Long Island."
+        path="/contact"
+        keywords="AV Demos, Free Estimates, Audio Visual Installations Long Island, Home Technology, Audio Hire, Video Hire, Automation, AV Installation Experts, Projectors, Multi Room Audio"
+      />
       <SplashImageComponent altText="Sound Insight lobby with TVs and speakers" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
       <section className={classes.contactPageContents}>
         <h2>{ContactTitle}</h2>
