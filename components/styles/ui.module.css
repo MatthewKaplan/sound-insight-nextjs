@@ -89,8 +89,10 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-5);
-  padding-block: var(--space-6);
+  margin: 0;
+  padding: var(--space-6) 0;
   border-block: 1px solid var(--line);
+  list-style: none;
 }
 
 .proofItem {

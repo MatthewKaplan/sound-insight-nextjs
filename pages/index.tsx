@@ -1,23 +1,23 @@
 import { GetStaticProps } from 'next';
-import { FC } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
-import Seo from '../components/seo';
+import Link from 'next/link';
+import { FC } from 'react';
+import ConversionBand from '../components/conversionBand';
 import Hero from '../components/hero';
 import ProofStrip from '../components/proofStrip';
+import Seo from '../components/seo';
 import ServiceCard from '../components/serviceCard';
-import ConversionBand from '../components/conversionBand';
+import uiClasses from '../components/styles/ui.module.css';
 import { getPagesById, REVALIDATE_SECONDS } from '../helper/api-util';
 import {
   buildBreadcrumbSchema,
   buildLocalBusinessSchema,
   buildOrganizationSchema
 } from '../helper/structured-data';
-import uiClasses from '../components/styles/ui.module.css';
-import classes from './styles/home.module.css';
+import { GalleryPageData } from '../types/galleryPage.type';
 import { HomePageData } from '../types/homePage.type';
 import { ServicePageData } from '../types/servicePage.typs';
-import { GalleryPageData } from '../types/galleryPage.type';
+import classes from './styles/home.module.css';
 
 type GalleryItem = {
   ImgSrc: string;
@@ -131,7 +131,7 @@ const HomePage: FC<Props> = ({
           <span className="eyebrow">Our showroom</span>
           <h2 className={classes.showroomTitle}>{ShowroomTitle}</h2>
           <p className={`muted ${classes.showroomInfo}`}>{ShowroomInfo}</p>
-          <Link href="/contact" className="btn btnPrimary">Plan your visit</Link>
+          <Link href="/contact" className="btn btnPrimary" style={{color: '#FFF'}}>Plan your visit</Link>
         </div>
         <ul className={classes.showroomPhotos}>
           {StoreImgs.map((src, i) => (

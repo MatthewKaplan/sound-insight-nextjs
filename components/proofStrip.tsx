@@ -12,7 +12,7 @@ const ITEMS = [
 
 const ProofStrip: FC = () => (
   <div className="container">
-    <ul className={classes.proof} style={{ listStyle: 'none' }}>
+    <ul className={classes.proof}>
       {ITEMS.map(({ value, label }) => (
         <li key={label} className={classes.proofItem}>
           <span className={classes.proofValue}>{value}</span>
