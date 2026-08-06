@@ -1,27 +1,17 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FC, useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import { FC, useState } from 'react';
 import MapPopUpComponent from './mapPopUp';
 import HoursPopUpComponent from './hoursPopUp';
 import classes from './styles/header.module.css';
 
 const HeaderComponent: FC = () => {
-  const [popUp, setPopUp] = useState<boolean>(false);
+  const { pathname: currentPath } = useRouter();
   const [mapPopUp, setMapPopUp] = useState<boolean>(false);
-  const [currentPath, setCurrentPath] = useState<string>('');
   const [hoursPopUp, setHoursPopUp] = useState<boolean>(false);
   const [sidebarActive, setSidebarActive] = useState<boolean>(false);
-
-  useEffect(() => {
-    setCurrentPath(window.location.pathname);
-  });
-
-  useEffect(() => {
-    if ((!mapPopUp || !hoursPopUp) && popUp) {
-      setPopUp(false);
-    }
-  });
 
   return (
     <>
@@ -176,44 +166,42 @@ const HeaderComponent: FC = () => {
       </div>
       <HoursPopUpComponent hoursPopUp={hoursPopUp} setHoursPopUp={setHoursPopUp} />
       <MapPopUpComponent setMapPopUp={setMapPopUp} mapPopUp={mapPopUp} />
-      {popUp === false && (
-        <div className={classes.contactMenu}>
-          <section className={classes.contactMenuOptions}>
-            <div className={classes.email}>
-              <a href="mailto:sales@sound-insight.com" className={classes.menuOption}>
-                <Image src="https://res.cloudinary.com/sound-insight/image/upload/v1640911039/SUphJ4h_lh9hqk.png" alt="Email Icon to reach Sound-Insight via email" width={25} height={40} />
-                <span>EMAIL</span>
-              </a>
-            </div>
-            <div className={classes.phone}>
-              <a target="_blank" href="tel:6312714434" rel="noopener noreferrer" className={classes.menuOption}>
-                <Image src="https://res.cloudinary.com/sound-insight/image/upload/v1640911057/eAxtt3I_dec3oc.png" alt="Telephone Icon to reach Sound-Insight via phone" width={25} height={40} />
-                <span>CALL</span>
-              </a>
-            </div>
-            <div
-              tabIndex={0}
-              role="menuitem"
-              onClick={() => setMapPopUp(true)}
-              onKeyPress={() => setMapPopUp(true)}
-              className={clsx(classes.map, classes.menuOption)}
-            >
-              <Image src="https://res.cloudinary.com/sound-insight/image/upload/v1640911057/oj6o3TY_wzamok.png" alt="Map Icon to see where Sound-Insight is located" width={25} height={40} />
-              <span>MAP</span>
-            </div>
-            <div
-              tabIndex={0}
-              role="menuitem"
-              onClick={() => setHoursPopUp(true)}
-              onKeyPress={() => setHoursPopUp(true)}
-              className={clsx(classes.hours, classes.menuOption)}
-            >
-              <Image src="https://res.cloudinary.com/sound-insight/image/upload/v1640911039/rx2GiBJ_gxo9q2.png" alt="Clock Icon to view store hours" width={20} height={40} />
-              <span>HOURS</span>
-            </div>
-          </section>
-        </div>
-      )}
+      <div className={classes.contactMenu}>
+        <section className={classes.contactMenuOptions}>
+          <div className={classes.email}>
+            <a href="mailto:sales@sound-insight.com" className={classes.menuOption}>
+              <Image src="https://res.cloudinary.com/sound-insight/image/upload/v1640911039/SUphJ4h_lh9hqk.png" alt="Email Icon to reach Sound-Insight via email" width={25} height={40} />
+              <span>EMAIL</span>
+            </a>
+          </div>
+          <div className={classes.phone}>
+            <a target="_blank" href="tel:6312714434" rel="noopener noreferrer" className={classes.menuOption}>
+              <Image src="https://res.cloudinary.com/sound-insight/image/upload/v1640911057/eAxtt3I_dec3oc.png" alt="Telephone Icon to reach Sound-Insight via phone" width={25} height={40} />
+              <span>CALL</span>
+            </a>
+          </div>
+          <div
+            tabIndex={0}
+            role="menuitem"
+            onClick={() => setMapPopUp(true)}
+            onKeyPress={() => setMapPopUp(true)}
+            className={clsx(classes.map, classes.menuOption)}
+          >
+            <Image src="https://res.cloudinary.com/sound-insight/image/upload/v1640911057/oj6o3TY_wzamok.png" alt="Map Icon to see where Sound-Insight is located" width={25} height={40} />
+            <span>MAP</span>
+          </div>
+          <div
+            tabIndex={0}
+            role="menuitem"
+            onClick={() => setHoursPopUp(true)}
+            onKeyPress={() => setHoursPopUp(true)}
+            className={clsx(classes.hours, classes.menuOption)}
+          >
+            <Image src="https://res.cloudinary.com/sound-insight/image/upload/v1640911039/rx2GiBJ_gxo9q2.png" alt="Clock Icon to view store hours" width={20} height={40} />
+            <span>HOURS</span>
+          </div>
+        </section>
+      </div>
     </>
   );
 };

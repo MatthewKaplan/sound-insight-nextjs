@@ -52,7 +52,7 @@ const AboutPage: FC<AboutPageData> = ({
   </div>
 );
 
-export const getStaticProps: GetStaticProps = async (contex) => {
+export const getStaticProps: GetStaticProps = async () => {
   const featuredPage = await getPageById('P_ABOUT');
 
   return {

@@ -856,5 +856,31 @@ The original build blocker was resolved in two minimal steps:
 
 ### Follow-up notes
 - External validator evidence has not yet been collected in this environment.
-- The legacy compatibility route `/services/phoneSystems` still exists and reuses canonical metadata that points to `/services/phone-systems`; this is acceptable for compatibility, but a real redirect would be stronger if hosting supports it.
-- Static export still warns that configured `headers()` are not applied and API routes are not active in exported output.
+- Static export still warns that configured `headers()` are not applied in exported output.
+
+---
+
+## Post-Recovery Cleanup Pass — 2026-08-06
+
+### Completed in repository
+- [x] Replaced the inline Google Analytics snippets in `pages/_app.tsx` with `next/script`
+- [x] Removed the duplicate GA injection from `_document` and converted `pages/_document.js` to typed `pages/_document.tsx`
+- [x] Removed the unused sample API route at `pages/api/hello.ts` so static export no longer warns about disabled API routes
+- [x] Replaced the legacy `/services/phoneSystems` compatibility alias with a static-export-safe shim page that:
+  - emits `noindex,follow`
+  - canonicalizes to `/services/phone-systems`
+  - performs a meta refresh to the canonical slug
+  - leaves a visible fallback link for users
+- [x] Removed unused `getStaticProps` parameters on the SSG pages touched during the SEO pass
+- [x] Simplified `components/header.tsx` to remove the warning-producing `useEffect` patterns while preserving current rendered behavior
+
+### Validation status
+- [x] `npm run lint` passes with no warnings
+- [x] `npm run build` passes
+- [x] Confirmed exported legacy page output in `out/services/phoneSystems.html` contains `noindex,follow`, a canonical tag to `/services/phone-systems`, and a meta refresh
+- [ ] Browser/network validation completed
+
+### Remaining caveats
+- The legacy `/services/phoneSystems` page is now a static shim, not a true HTTP redirect, because the site still ships via `next export`.
+- `next export` still warns that configured `headers()` in `next.config.js` are not applied by the static export output.
+- External schema/browser validation evidence has still not been collected in this environment.

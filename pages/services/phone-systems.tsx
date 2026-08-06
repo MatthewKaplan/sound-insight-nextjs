@@ -69,7 +69,7 @@ const PhoneSystemsPage: FC<PhoneSystemPageData> = ({
   </div>
 );
 
-export const getStaticProps: GetStaticProps = async (contex) => {
+export const getStaticProps: GetStaticProps = async () => {
   const featuredPage = await getPageById('P_PHONE');
 
   return {

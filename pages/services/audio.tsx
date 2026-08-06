@@ -123,7 +123,7 @@ const AudioPage: FC<AudioPageData> = ({
   </div>
 );
 
-export const getStaticProps: GetStaticProps = async (contex) => {
+export const getStaticProps: GetStaticProps = async () => {
   const featuredPage = await getPageById('P_AUDIO');
 
   return {
