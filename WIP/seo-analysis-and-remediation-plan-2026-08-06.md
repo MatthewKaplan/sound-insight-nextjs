@@ -3,6 +3,8 @@
 Date: 2026-08-06  
 Repository: `sound-insight-nextjs`
 
+> Current deployment note: the repo now targets the standard Next.js/Vercel deployment model. Earlier static-export-specific notes in this document are historical and are superseded by the latest deployment correction section at the end.
+
 ## Purpose
 
 This document captures the current SEO findings for the repository and a concrete phased execution plan so the team can reference and implement improvements later.
@@ -884,3 +886,31 @@ The original build blocker was resolved in two minimal steps:
 - The legacy `/services/phoneSystems` page is now a static shim, not a true HTTP redirect, because the site still ships via `next export`.
 - `next export` still warns that configured `headers()` in `next.config.js` are not applied by the static export output.
 - External schema/browser validation evidence has still not been collected in this environment.
+
+---
+
+## Vercel Deployment Correction Pass — 2026-08-06
+
+### Completed in repository
+- [x] Switched the build pipeline from `next build && next export` to `next build`
+- [x] Restored Next.js `headers()` in `next.config.js` for the intended sitewide security headers
+- [x] Added a Next.js `redirects()` rule from `/services/phoneSystems` to `/services/phone-systems`
+- [x] Removed the Apache/static-export-only `public/.htaccess` artifact
+- [x] Removed the legacy shim page `pages/services/phoneSystems.tsx` because the redirect now handles the old path
+- [x] Re-enabled Next image optimization by removing `images.unoptimized = true`
+- [x] Updated `README.md` to describe the standard Next/Vercel deployment model and production validation flow
+
+### Validation status
+- [x] `npm run lint` passes
+- [x] `npm run build` passes
+- [x] Verified the built redirect/header configuration in `.next/routes-manifest.json`
+- [x] Verified the redirect response and expected security headers locally via `npm run start` + `curl`
+
+### Current validation model
+- Primary pre-deploy checks are `npm run lint` and `npm run build`.
+- Runtime behavior should be validated against the built Next app rather than exported static files.
+- Header/redirect verification now comes from the Next server response path, which matches Vercel deployment behavior.
+
+### Remaining caveats
+- External browser-based smoke testing on a deployed preview has not yet been collected in this environment.
+- The older static-export notes above remain as historical execution context only and should not be treated as the current deployment strategy.

@@ -1,8 +1,39 @@
 /* eslint-disable require-await */
 /* eslint-disable @typescript-eslint/require-await */
+
+const securityHeaders = [
+  {
+    key: 'X-DNS-Prefetch-Control',
+    value: 'on'
+  },
+  {
+    key: 'Strict-Transport-Security',
+    value: 'max-age=63072000; includeSubDomains; preload'
+  },
+  {
+    key: 'X-Content-Type-Options',
+    value: 'nosniff'
+  },
+  {
+    key: 'X-Frame-Options',
+    value: 'SAMEORIGIN'
+  },
+  {
+    key: 'X-XSS-Protection',
+    value: '1; mode=block'
+  },
+  {
+    key: 'Referrer-Policy',
+    value: 'same-origin'
+  },
+  {
+    key: 'Permissions-Policy',
+    value: 'geolocation=*'
+  }
+];
+
 module.exports = {
   images: {
-    unoptimized: true,
     domains: ['i.imgur.com', 'res.cloudinary.com']
   },
   env: {
@@ -11,40 +42,15 @@ module.exports = {
   },
   async headers() {
     return [{
-      source: '/(.*)',
-      headers: [{
-        key: 'X-DNS-Prefetch-Control',
-        value: 'on'
-      },
-      {
-        key: 'Strict-Transport-Security',
-        value: 'max-age=63072000; includeSubDomains; preload'
-      },
-      {
-        key: 'Server',
-        value: 'Apache'
-      },
-      {
-        key: 'X-Content-Type-Options',
-        value: 'nosniff'
-      },
-      {
-        key: 'X-Frame-Options',
-        value: 'sameorigin'
-      },
-      {
-        key: 'X-XSS-Protection',
-        value: '1; mode=block'
-      },
-      {
-        key: 'Referrer-Policy',
-        value: 'same-origin'
-      },
-      {
-        key: 'Permissions-Policy',
-        value: 'geolocation=*'
-      }
-      ]
+      source: '/:path*',
+      headers: securityHeaders
+    }];
+  },
+  async redirects() {
+    return [{
+      source: '/services/phoneSystems',
+      destination: '/services/phone-systems',
+      permanent: true
     }];
   }
 };
