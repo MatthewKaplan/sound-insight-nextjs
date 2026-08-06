@@ -1,180 +1,137 @@
-.galleryPage {
-    margin-bottom: 50px;
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
 }
 
-.galleryPage .gallery {
-    padding: 0 12px;
-    column-count: 3;
-    column-width: 33%;
-    -moz-column-count: 3;
-    -moz-column-width: 33%;
-    -webkit-column-count: 3;
-    -webkit-column-width: 33%;
+.filterChip {
+  padding: 0.55rem 1.1rem;
+  min-height: 44px;
+  border-radius: 999px;
+  border: 1.5px solid var(--field-border);
+  background: transparent;
+  color: var(--ink);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease;
 }
 
-.galleryPage .galleryInfo .modal img {
-    width: auto;
-    height: auto;
-    display: block;
-    line-height: 0;
-    margin: 0 auto;
-    max-width: 100%;
-    padding: 20px 0 20px;
-    box-sizing: border-box;
+.filterChip:hover {
+  border-color: var(--amber);
 }
 
-.galleryPage .gallery .galleryPictures {
-    width: auto;
-    height: auto;
-    position: relative;
-    margin-bottom: 12px;
-    transition: all 350ms ease;
-    -webkit-transition: all 350ms ease;
+.filterChipActive {
+  background: var(--cinema);
+  border-color: var(--cinema);
+  color: var(--on-cinema);
 }
 
-.galleryPage .gallery .galleryPictures .imgDescription {
-    top: 44%;
-    bottom: 50%;
-    font-size: 28px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    font-family: playfair-display, serif;
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6) var(--space-5);
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.galleryPage .gallery .galleryPictures .imgLocation {
-    top: 35%;
-    bottom: 80%;
-    font-size: 16px;
-    font-weight: 100;
-    text-transform: uppercase;
-    font-family: montserrat, sans-serif;
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.galleryPage .gallery .galleryPictures .highlight {
-    background: url(https://res.cloudinary.com/dgmtf6brh/image/upload/c_scale,e_cut_out,w_2500/v1643354340/brush-stroke-banner-6_ay1ymy.svg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    top: 25%;
-    bottom: 0;
-    height: 275px;
-    padding: 8px 0;
-    font-size: 20px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    font-family: playfair-display, serif;
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-.galleryPage .gallery .galleryPictures .highlight,
-.galleryPage .gallery .galleryPictures .imgLocation,
-.galleryPage .gallery .galleryPictures .imgDescription {
-    left: 0;
-    right: 0;
-    opacity: 0;
-    color: #FFF;
-    font-style: normal;
-    visibility: hidden;
-    position: absolute;
-    transition: opacity .2s, visibility .2s;
+.itemButton {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: zoom-in;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
 }
 
-.galleryPage .gallery .galleryPictures:hover .imgDescription,
-.galleryPage .gallery .galleryPictures:hover .highlight,
-.galleryPage .gallery .galleryPictures:hover .imgLocation {
-    visibility: visible;
-    opacity: 1;
+.itemImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  transition: transform 200ms ease;
 }
 
-.galleryPage .gallery .galleryPictures img {
-    width: 100%;
-    border-radius: 8px;
+.itemButton:hover .itemImg,
+.itemButton:focus-visible .itemImg {
+  transform: scale(1.02);
 }
 
-.galleryPage .gallery .galleryPictures:hover {
-    filter: opacity(.9);
+.caption {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
 }
 
-.galleryPage p {
-    margin-top: 10px;
-    font-weight: 400;
-    line-height: 30px;
-    word-spacing: 2px;
-    text-align: center;
-    font-style: normal;
-    letter-spacing: 1.5px;
-    font-family: montserrat, sans-serif;
+.captionLocation {
+  display: block;
+  color: var(--ink-soft);
 }
 
-.galleryPage .header {
-    height: 150px;
-    background-color: #201a16;
+/* --------------------------------- Lightbox ------------------------------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
 }
 
-.galleryPage .galleryInfo {
-    margin: 0 auto;
-    max-width: 95%;
+.lightboxBackdrop {
+  position: absolute;
+  inset: 0;
+  background: rgb(16 17 20 / 0.92);
+  border: none;
+  cursor: pointer;
 }
 
-.galleryPage .galleryInfo .pageHeading h1 {
-    font-size: 2em;
-    text-align: center;
-    margin: 80px 0 40px 0;
+.lightboxContent {
+  position: relative;
+  z-index: 1;
+  width: min(64rem, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  color: var(--on-cinema);
 }
 
-.galleryPage .galleryInfo .pageHeading p {
-    margin-bottom: 50px;
+.lightboxImgWrap {
+  position: relative;
+  width: 100%;
+  height: min(70vh, 40rem);
 }
 
-@media (max-width: 991px) {
-    .galleryPage .gallery {
-        column-count: 2;
-        -moz-column-count: 2;
-        -webkit-column-count: 2;
-    }
+.lightboxImg {
+  object-fit: contain;
 }
 
-@media (max-width: 480px) {
-    .galleryPage .gallery {
-        column-count: 1;
-        column-width: 100%;
-        -moz-column-count: 1;
-        -webkit-column-count: 1;
-        -moz-column-width: 100%;
-        -webkit-column-width: 100%;
-    }
-    .galleryPage .gallery .galleryPictures .imgDescription,
-    .galleryPage .gallery .galleryPictures .highlight,
-    .galleryPage .gallery .galleryPictures .imgLocation {
-        visibility: visible;
-        opacity: 1;
-    }
-    .galleryPage .gallery .galleryPictures .highlight p {
-        font-size: 14px;
-        letter-spacing: .5px;
-        font-weight: 600;
-    }
+.lightboxCaption {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--on-cinema-soft);
 }
 
-@media screen and (max-width: 438px) {
-    .galleryPage .header {
-        display: none;
-    }
-    .galleryPage .galleryInfo {
-        max-width: 90%;
-    }
-    .galleryPage .galleryInfo .pageHeading h1 {
-        margin-top: 120px;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .galleryPage p {
-        font-size: 15px;
-    }
-    .galleryPage .galleryInfo .pageHeading {
-        margin: 100px 0 30px 0;
-    }
-    .galleryPage .galleryInfo .pageHeading p {
-        font-size: 15px;
-        margin-bottom: 60px;
-    }
+.lightboxControls {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-3);
 }

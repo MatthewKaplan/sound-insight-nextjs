@@ -1,11 +1,14 @@
-import { Button } from '@chakra-ui/react';
 import { GetStaticProps } from 'next';
-import React, { FC, useState } from 'react';
+import { FC } from 'react';
+import Link from 'next/link';
 import Seo from '../components/seo';
-import { getPageById } from '../helper/api-util';
+import Hero from '../components/hero';
+import InquiryForm from '../components/inquiryForm';
+import { getPageById, REVALIDATE_SECONDS } from '../helper/api-util';
 import {
   BUSINESS_CITY,
   BUSINESS_EMAIL,
+  BUSINESS_PHONE,
   BUSINESS_PHONE_DISPLAY,
   BUSINESS_POSTAL_CODE,
   BUSINESS_REGION,
@@ -15,108 +18,100 @@ import {
   buildLocalBusinessSchema
 } from '../helper/structured-data';
 import classes from './styles/contact.module.css';
-import ContactForm from '../components/contactForm';
 import { ContactPageData } from '../types/contactPage.type';
-import DemoRequestForm from '../components/demoRequestForm';
-import SplashImageComponent from '../components/splashImage';
-import SurveyRequestForm from '../components/surveyRequestForm';
 
-const ContactPage: FC<ContactPageData> = ({
-  SplashImg, SplashSubTitle, SplashTitle, ContactTitle
-}) => {
-  const [hover1, setHover1] = useState<boolean>(false);
-  const [hover2, setHover2] = useState<boolean>(false);
-  const [hover3, setHover3] = useState<boolean>(false);
-  const [demoRequest, setDemoRequest] = useState<boolean>(false);
-  const [estimateRequest, setEstimateRequest] = useState<boolean>(false);
-  const [contactUs, setContactUs] = useState<boolean>(false);
+const DIRECTIONS_URL = 'https://maps.google.com?daddr=382+New+York+Avenue+Huntington+NY+11743';
+const MAP_EMBED_URL = 'https://maps.google.com/maps?q=382%20New%20York%20Ave%20Huntington%2C%20NY%2011743&t=&z=15&ie=UTF8&iwloc=&output=embed';
 
-  const closeFourms = () => {
-    setDemoRequest(false);
-    setEstimateRequest(false);
-    setContactUs(false);
-  };
+const ContactPage: FC<ContactPageData> = ({ SplashImg }) => (
+  <>
+    <Seo
+      title="Sound Insight - Contact Us | Audio & Video Demos | Free Estimates"
+      description="Let our Experienced Team Help with your Next AV Design, Install or Service for your Home, Business, or Entertainment Space. FREE ESTIMATES! #1 AV on Long Island."
+      path="/contact"
+      structuredData={[
+        buildLocalBusinessSchema('/contact'),
+        buildContactPageSchema(),
+        buildBreadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'Contact', path: '/contact' }
+        ])
+      ]}
+    />
+    <Hero
+      compact
+      title="Tell us about your project"
+      eyebrow="Contact"
+      subtitle="A demo, a free in-home estimate, or just a question — one form, one business day to hear back."
+      imageSrc={SplashImg}
+      imageAlt=""
+    />
 
-  return (
-    <div className={classes.contactPage}>
-      <Seo
-        title="Sound Insight - Contact Us | Audio & Video Demos | Free Estimates"
-        description="Let our Experienced Team Help with your Next AV Design, Install or Service for your Home, Business, or Entertainment Space. FREE ESTIMATES! #1 AV on Long Island."
-        path="/contact"
-        keywords="AV Demos, Free Estimates, Audio Visual Installations Long Island, Home Technology, Audio Hire, Video Hire, Automation, AV Installation Experts, Projectors, Multi Room Audio"
-        structuredData={[
-          buildLocalBusinessSchema('/contact'),
-          buildContactPageSchema(),
-          buildBreadcrumbSchema([
-            { name: 'Home', path: '/' },
-            { name: 'Contact', path: '/contact' }
-          ])
-        ]}
-      />
-      <SplashImageComponent altText="Sound Insight lobby with TVs and speakers" imageLink={SplashImg} title={SplashTitle} subTitle={SplashSubTitle} />
-      <section className={classes.contactPageContents}>
-        <h2>{ContactTitle}</h2>
-        <div className={classes.breakLine}>
-          <hr className={classes.pageBreak} />
-        </div>
-        <div className={classes.buttonContainer}>
-          {hover1 ? <Button colorScheme="facebook" style={{ backgroundColor: '#6bc06a' }} className={classes.contactBtn} onClick={() => setDemoRequest(true)} onMouseEnter={() => setHover1(true)} onMouseLeave={() => setHover1(false)}>REQUEST A DEMO</Button>
-            : <Button colorScheme="facebook" style={{ backgroundColor: '#00478E' }} className={classes.contactBtn} onClick={() => setDemoRequest(true)} onMouseEnter={() => setHover1(true)}>REQUEST A DEMO</Button>}
-          {hover2 ? <Button colorScheme="facebook" style={{ backgroundColor: '#6bc06a' }} className={classes.contactBtn} onClick={() => setEstimateRequest(true)} onMouseEnter={() => setHover2(true)} onMouseLeave={() => setHover2(false)}>REQUEST A FREE ESTIMATE</Button>
-            : <Button colorScheme="facebook" style={{ backgroundColor: '#00478E' }} className={classes.contactBtn} onClick={() => setEstimateRequest(true)} onMouseEnter={() => setHover2(true)}>REQUEST A FREE ESTIMATE</Button>}
-          {hover3 ? <Button colorScheme="facebook" style={{ backgroundColor: '#6bc06a' }} className={classes.contactBtn} onClick={() => setContactUs(true)} onMouseEnter={() => setHover3(true)} onMouseLeave={() => setHover3(false)}>CONTACT US</Button>
-            : <Button colorScheme="facebook" style={{ backgroundColor: '#00478E' }} className={classes.contactBtn} onClick={() => setContactUs(true)} onMouseEnter={() => setHover3(true)}>CONTACT US</Button>}
-        </div>
-        <div className={classes.breakLine}>
-          <hr className={classes.pageBreak} />
-        </div>
-        <div className={classes.storeInfo}>
-          <section className={classes.storeAddress}>
-            <section className={classes.address}>
-              <p>
-                <strong>ADDRESS:</strong>
-              </p>
-              <p>{BUSINESS_STREET_ADDRESS}</p>
-              <p>{`${BUSINESS_CITY}, ${BUSINESS_REGION} ${BUSINESS_POSTAL_CODE}`}</p>
-            </section>
-            <section className={classes.hours}>
-              <p>
-                <strong>Showroom Hours:</strong>
-              </p>
-              <p>
-                <strong>MON - SAT:</strong>
-                {' '}
-                10:00 AM - 6:00 PM
-              </p>
-              <p>
-                <strong>SUN:</strong>
-                {' '}
-                By Appointment Only
-              </p>
-            </section>
-          </section>
-          <p className={classes.phoneNumber}>
-            <a target="_blank" href="tel:+16312714434" rel="noopener noreferrer">
-              {BUSINESS_PHONE_DISPLAY}
-            </a>
-          </p>
-          <p className={classes.email}>
-            <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a>
-          </p>
-        </div>
-        {demoRequest === true && <DemoRequestForm closeForm={closeFourms} />}
-        {estimateRequest === true && <SurveyRequestForm closeForm={closeFourms} />}
-        {contactUs === true && <ContactForm closeForm={closeFourms} />}
+    <div className={`container section ${classes.layout}`}>
+      <section aria-labelledby="contact-form-heading" className={classes.formCol}>
+        <h2 id="contact-form-heading" className={classes.colTitle}>Send us a note</h2>
+        <InquiryForm headingId="contact-form-heading" />
       </section>
+
+      <aside className={classes.infoCol}>
+        <h2 className={classes.colTitle}>Or come hear it in person</h2>
+        <div className={classes.mapWrap}>
+          <iframe
+            title="Map to the Sound Insight showroom"
+            src={MAP_EMBED_URL}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+        <address className={classes.address}>
+          {BUSINESS_STREET_ADDRESS}
+          <br />
+          {`${BUSINESS_CITY}, ${BUSINESS_REGION} ${BUSINESS_POSTAL_CODE}`}
+        </address>
+        <dl className={classes.hours}>
+          <div>
+            <dt>Mon – Sat</dt>
+            <dd>10:00 AM – 6:00 PM</dd>
+          </div>
+          <div>
+            <dt>Sunday</dt>
+            <dd>By appointment</dd>
+          </div>
+        </dl>
+        <div className={classes.infoCtas}>
+          <a href={`tel:${BUSINESS_PHONE}`} className="btn btnSecondary">
+            {`Call ${BUSINESS_PHONE_DISPLAY}`}
+          </a>
+          <a
+            href={DIRECTIONS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btnSecondary"
+          >
+            Get directions
+          </a>
+        </div>
+        <p className={classes.altContact}>
+          Prefer email?
+          {' '}
+          <a href={`mailto:${BUSINESS_EMAIL}`}>{BUSINESS_EMAIL}</a>
+        </p>
+        <p className={classes.altContact}>
+          Interested in working here?
+          {' '}
+          <Link href="/about#careers">See open roles</Link>
+        </p>
+      </aside>
     </div>
-  );
-};
+  </>
+);
 
 export const getStaticProps: GetStaticProps = async () => {
   const featuredPage = await getPageById('P_CONTACT');
 
   return {
-    props: featuredPage
+    props: featuredPage,
+    revalidate: REVALIDATE_SECONDS
   };
 };
 

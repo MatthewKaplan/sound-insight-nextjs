@@ -1,103 +1,71 @@
-.contactPage {
-    font-style: normal;
-    font-family: montserrat, sans-serif;
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
 }
 
-.contactPage .contactPageContents {
-    text-align: center;
-    margin: 20px 0 60px 0;
+@media (min-width: 1024px) {
+  .layout {
+    grid-template-columns: 1.2fr 1fr;
+    gap: var(--space-7);
+  }
 }
 
-.contactPage .header {
-    height: 150px;
-    background-color: #201a16;
+.colTitle {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-5);
 }
 
-.contactPage h2 {
-    font-size: 33px;
-    font-weight: 600;
-    margin-top: 50px;
-    text-align: center;
-    line-height: 1.2em;
-    margin-bottom: 60px;
-    letter-spacing: .4px;
-    text-transform: none;
+.mapWrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  aspect-ratio: 4 / 3;
 }
 
-.contactPage p {
-    font-size: 18px;
-    letter-spacing: .4px;
+.mapWrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
 }
 
-.contactPage .breakLine {
-    width: 80%;
-    margin: 0 auto;
+.address {
+  margin-top: var(--space-5);
+  font-style: normal;
+  line-height: 1.7;
 }
 
-.contactPage .pageBreak {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+.hours {
+  margin: var(--space-4) 0 0;
+  font-size: var(--text-sm);
 }
 
-.contactPage .buttonContainer {
-    width: 80%;
-    display: flex;
-    margin: 0 auto;
-    justify-content: space-around;
+.hours div {
+  display: flex;
+  justify-content: space-between;
+  max-width: 16rem;
+  padding-block: var(--space-1);
 }
 
-.contactPage .contactBtn {
-    color: #eee;
-    border: none;
-    height: 50px;
-    width: 240px;
-    margin: 70px 0;
-    cursor: pointer;
-    font-size: 16px;
-    letter-spacing: .0px;
+.hours dt {
+  color: var(--ink-soft);
 }
 
-.contactPage .contactBtn:hover {
-    opacity: .8;
+.hours dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
 }
 
-.contactPage a {
-    color: rgba(33, 41, 176, 0.82);
+.infoCtas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
 }
 
-.contactPage .storeInfo {
-    margin: 40px 0;
-}
-
-.contactPage .storeAddress {
-    display: flex;
-    justify-content: space-around;
-}
-
-@media screen and (max-width: 985px) {
-    .contactPage .buttonContainer {
-        flex-direction: column;
-    }
-    .contactPage .contactBtn {
-        width: 100%;
-        height: 75px;
-        margin: 20px 0 20px 0;
-    }
-    .contactPage .storeAddress {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-    .contactPage .storeAddress .address {
-        border-right: 1px solid black;
-    }
-    .contactPage .phoneNumber {
-        margin-top: 40px;
-    }
-    .contactPage a {
-        font-size: 28px;
-    }
-    .contactPage h2 {
-        font-size: 28px;
-    }
+.altContact {
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
 }

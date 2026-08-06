@@ -46,3 +46,18 @@ For a local production smoke test, run `npm run start` after building and verify
 ## Content/data
 
 Build-time page data is read from the Firebase endpoint configured in `next.config.js` via `env.firebasedb_link`.
+
+## Configuration (2026 redesign)
+
+Two optional environment variables activate integrations:
+
+| Variable | Purpose |
+| --- | --- |
+| `NEXT_PUBLIC_GA_ID` | GA4 measurement ID (`G-XXXXXXXXXX`). Analytics is disabled until set — the old `UA-*` property stopped collecting in 2023. |
+| `NEXT_PUBLIC_FORMSPREE_ID` | Formspree form hash (the `xyzabcde` in `formspree.io/f/xyzabcde`). Create a form in the Formspree dashboard and set this; until then the inquiry form falls back to the account's legacy email endpoint, which may no longer deliver. **Verify with a test submission.** |
+
+Content still lives in the Firebase Realtime Database (`PAGE_DATA`); pages
+revalidate hourly (ISR), so content edits appear without a redeploy.
+
+`/brands` and `/careers` now permanently redirect to `/products#brands` and
+`/about#careers`.

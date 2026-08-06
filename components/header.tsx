@@ -1,208 +1,196 @@
-import clsx from 'clsx';
+import { FC, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { FC, useState } from 'react';
-import MapPopUpComponent from './mapPopUp';
-import HoursPopUpComponent from './hoursPopUp';
+import clsx from 'clsx';
 import classes from './styles/header.module.css';
+import { BUSINESS_PHONE, BUSINESS_PHONE_DISPLAY } from '../helper/structured-data';
+
+const LOGO_SRC = 'https://res.cloudinary.com/sound-insight/image/upload/v1640911039/WIgvnFB_swl61h.jpg';
+const DIRECTIONS_URL = 'https://maps.google.com?daddr=382+New+York+Avenue+Huntington+NY+11743';
+
+const SERVICE_LINKS = [
+  { href: '/services/audio', label: 'Home Audio' },
+  { href: '/services/video', label: 'Home Cinema & Video' },
+  { href: '/services/automation', label: 'Home Automation' },
+  { href: '/services/security', label: 'Security' },
+  { href: '/services/phone-systems', label: 'Business Phone Systems' }
+];
+
+const NAV_LINKS = [
+  { href: '/products', label: 'Products' },
+  { href: '/gallery', label: 'Gallery' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' }
+];
 
 const HeaderComponent: FC = () => {
-  const { pathname: currentPath } = useRouter();
-  const [mapPopUp, setMapPopUp] = useState<boolean>(false);
-  const [hoursPopUp, setHoursPopUp] = useState<boolean>(false);
-  const [sidebarActive, setSidebarActive] = useState<boolean>(false);
+  const router = useRouter();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLLIElement>(null);
+
+  // Close everything on navigation.
+  useEffect(() => {
+    const close = () => {
+      setMenuOpen(false);
+      setServicesOpen(false);
+    };
+    router.events.on('routeChangeComplete', close);
+    return () => router.events.off('routeChangeComplete', close);
+  }, [router.events]);
+
+  // Escape closes; clicks outside close the services dropdown.
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setMenuOpen(false);
+        setServicesOpen(false);
+      }
+    };
+    const onClick = (e: MouseEvent) => {
+      if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
+        setServicesOpen(false);
+      }
+    };
+    document.addEventListener('keydown', onKeyDown);
+    document.addEventListener('click', onClick);
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.removeEventListener('click', onClick);
+    };
+  }, []);
+
+  const isCurrent = (href: string): 'page' | undefined => (router.pathname === href ? 'page' : undefined);
+  const onServices = router.pathname.startsWith('/services');
 
   return (
-    <>
-      <header className={classes.navigationPanel}>
-        <div className={classes.container}>
-          <nav className={classes.mainNav}>
-            <Link href="/">
-              <a className={classes.imgAnchor}>
-                <Image
-                  priority
-                  height="85"
-                  width="200"
-                  className={classes.logo}
-                  alt="Full size Sound-Insight company logo"
-                  src="https://res.cloudinary.com/sound-insight/image/upload/v1640911039/WIgvnFB_swl61h.jpg"
-                />
-              </a>
-            </Link>
-            <ul className={classes.mainNavOptions}>
-              <Link href="/">
-                <a className={currentPath === '/' ? clsx(classes.link, classes.linkActive) : classes.link}>
-                  HOME
-                </a>
+    <header className={classes.header}>
+      <div className={clsx('container', classes.inner)}>
+        <Link href="/" className={classes.logoLink} aria-label="Sound Insight home">
+          <Image
+            priority
+            src={LOGO_SRC}
+            alt="Sound Insight"
+            width={150}
+            height={64}
+            className={classes.logo}
+          />
+        </Link>
+
+        <nav className={classes.nav} aria-label="Main">
+          <ul className={classes.navList}>
+            <li>
+              <Link href="/" className={classes.link} aria-current={isCurrent('/')}>
+                Home
               </Link>
-              <Link href="/services">
-                <a className={currentPath === '/services' ? clsx(classes.link, classes.linkActive) : classes.link}>
-                  SERVICES
-                </a>
-              </Link>
-              <Link href="/products">
-                <a className={currentPath === '/products' ? clsx(classes.link, classes.linkActive) : classes.link}>
-                  PRODUCTS
-                </a>
-              </Link>
-              <Link href="/gallery">
-                <a className={currentPath === '/gallery' ? clsx(classes.link, classes.linkActive) : classes.link}>
-                  GALLERY
-                </a>
-              </Link>
-              <Link href="/about">
-                <a className={currentPath === '/about' ? clsx(classes.link, classes.linkActive) : classes.link}>
-                  ABOUT
-                </a>
-              </Link>
-              <Link href="/contact">
-                <a className={currentPath === '/contact' ? clsx(classes.link, classes.contactLinkActive, classes.contactLink) : clsx(classes.link, classes.contactLink)}>
-                  CONTACT
-                </a>
-              </Link>
-            </ul>
-          </nav>
+            </li>
+            <li className={classes.hasMenu} ref={servicesRef}>
+              <button
+                type="button"
+                className={clsx(classes.link, classes.menuButton, onServices && classes.linkSection)}
+                aria-expanded={servicesOpen}
+                aria-controls="services-menu"
+                onClick={() => setServicesOpen((open) => !open)}
+              >
+                Services
+                <span aria-hidden="true" className={classes.caret} />
+              </button>
+              <ul id="services-menu" className={classes.menu} hidden={!servicesOpen}>
+                <li>
+                  <Link href="/services" className={classes.menuLink} aria-current={isCurrent('/services')}>
+                    All services
+                  </Link>
+                </li>
+                {SERVICE_LINKS.map(({ href, label }) => (
+                  <li key={href}>
+                    <Link href={href} className={classes.menuLink} aria-current={isCurrent(href)}>
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </li>
+            {NAV_LINKS.map(({ href, label }) => (
+              <li key={href}>
+                <Link href={href} className={classes.link} aria-current={isCurrent(href)}>
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className={classes.actions}>
+          <a href={`tel:${BUSINESS_PHONE}`} className={classes.phone}>
+            {BUSINESS_PHONE_DISPLAY}
+          </a>
+          <Link href="/contact" className="btn btnPrimary">
+            Book a visit
+          </Link>
         </div>
-      </header>
-      <div className={classes.sidebarNavigation}>
-        <div
-          className={sidebarActive ? clsx(classes.sidebarActive, classes.sidebar) : classes.sidebar}
+
+        <button
+          type="button"
+          className={classes.hamburger}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
+          onClick={() => setMenuOpen((open) => !open)}
         >
-          <section className={classes.navHeader}>
-            <div
-              role="menu"
-              tabIndex={0}
-              onClick={() => setSidebarActive(!sidebarActive)}
-              onKeyPress={() => setSidebarActive(!sidebarActive)}
-              className={sidebarActive ? clsx(classes.iconActive, classes.icon) : classes.icon}
-            >
-              <div className={classes.hamburger} />
-            </div>
-            <Link href="/">
-              <a className={clsx(classes.link, classes.logoLink)}>
-                <Image
-                  priority
-                  width={50}
-                  height={50}
-                  className={classes.headerLogo}
-                  alt="A smaller Sound-Insight company logo for mobile device"
-                  src="https://res.cloudinary.com/sound-insight/image/upload/v1640911057/6E05ibb_y99vcn.png"
-                />
-              </a>
-            </Link>
-          </section>
-          <section className={classes.sideNav}>
-            <ul className={classes.sidebarMenu}>
-              <Link href="/">
-                <a
-                  tabIndex={0}
-                  role="menuitem"
-                  className={classes.link}
-                  onClick={() => setSidebarActive(!sidebarActive)}
-                  onKeyPress={() => setSidebarActive(!sidebarActive)}
-                >
-                  HOME
-                </a>
+          <span className={classes.hamburgerBox} aria-hidden="true">
+            <span className={clsx(classes.hamburgerBar, menuOpen && classes.hamburgerBarOpen)} />
+          </span>
+          {menuOpen ? 'Close menu' : 'Menu'}
+        </button>
+      </div>
+
+      <nav
+        id="mobile-menu"
+        className={classes.mobilePanel}
+        aria-label="Main menu"
+        hidden={!menuOpen}
+      >
+        <ul className={classes.mobileList}>
+          <li><Link href="/" className={classes.mobileLink} aria-current={isCurrent('/')}>Home</Link></li>
+          <li><Link href="/services" className={classes.mobileLink} aria-current={isCurrent('/services')}>Services</Link></li>
+          {SERVICE_LINKS.map(({ href, label }) => (
+            <li key={href}>
+              <Link href={href} className={clsx(classes.mobileLink, classes.mobileSubLink)} aria-current={isCurrent(href)}>
+                {label}
               </Link>
-              <Link href="/services">
-                <a
-                  tabIndex={0}
-                  role="menuitem"
-                  className={classes.link}
-                  onClick={() => setSidebarActive(!sidebarActive)}
-                  onKeyPress={() => setSidebarActive(!sidebarActive)}
-                >
-                  SERVICES
-                </a>
+            </li>
+          ))}
+          {NAV_LINKS.map(({ href, label }) => (
+            <li key={href}>
+              <Link href={href} className={classes.mobileLink} aria-current={isCurrent(href)}>
+                {label}
               </Link>
-              <Link href="/products">
-                <a
-                  tabIndex={0}
-                  role="menuitem"
-                  className={classes.link}
-                  onClick={() => setSidebarActive(!sidebarActive)}
-                  onKeyPress={() => setSidebarActive(!sidebarActive)}
-                >
-                  PRODUCTS
-                </a>
-              </Link>
-              <Link href="/gallery">
-                <a
-                  tabIndex={0}
-                  role="menuitem"
-                  className={classes.link}
-                  onClick={() => setSidebarActive(!sidebarActive)}
-                  onKeyPress={() => setSidebarActive(!sidebarActive)}
-                >
-                  GALLERY
-                </a>
-              </Link>
-              <Link href="/about">
-                <a
-                  tabIndex={0}
-                  role="menuitem"
-                  className={classes.link}
-                  onClick={() => setSidebarActive(!sidebarActive)}
-                  onKeyPress={() => setSidebarActive(!sidebarActive)}
-                >
-                  ABOUT
-                </a>
-              </Link>
-              <Link href="/contact">
-                <a
-                  tabIndex={0}
-                  role="menuitem"
-                  onClick={() => setSidebarActive(!sidebarActive)}
-                  onKeyPress={() => setSidebarActive(!sidebarActive)}
-                  className={clsx(classes.link, classes.contactLink)}
-                >
-                  CONTACT
-                </a>
-              </Link>
-            </ul>
-          </section>
+            </li>
+          ))}
+        </ul>
+        <div className={classes.mobilePanelFooter}>
+          <Link href="/contact" className="btn btnPrimary">Book a showroom visit</Link>
+          <a href={`tel:${BUSINESS_PHONE}`} className="btn btnSecondary">
+            Call {BUSINESS_PHONE_DISPLAY}
+          </a>
         </div>
+      </nav>
+
+      <div className={classes.actionBar}>
+        <a href={`tel:${BUSINESS_PHONE}`} className={classes.actionBarItem}>Call</a>
+        <a
+          href={DIRECTIONS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={classes.actionBarItem}
+        >
+          Directions
+        </a>
+        <Link href="/contact" className={clsx(classes.actionBarItem, classes.actionBarPrimary)}>
+          Book a visit
+        </Link>
       </div>
-      <HoursPopUpComponent hoursPopUp={hoursPopUp} setHoursPopUp={setHoursPopUp} />
-      <MapPopUpComponent setMapPopUp={setMapPopUp} mapPopUp={mapPopUp} />
-      <div className={classes.contactMenu}>
-        <section className={classes.contactMenuOptions}>
-          <div className={classes.email}>
-            <a href="mailto:sales@sound-insight.com" className={classes.menuOption}>
-              <Image src="https://res.cloudinary.com/sound-insight/image/upload/v1640911039/SUphJ4h_lh9hqk.png" alt="Email Icon to reach Sound-Insight via email" width={25} height={40} />
-              <span>EMAIL</span>
-            </a>
-          </div>
-          <div className={classes.phone}>
-            <a target="_blank" href="tel:6312714434" rel="noopener noreferrer" className={classes.menuOption}>
-              <Image src="https://res.cloudinary.com/sound-insight/image/upload/v1640911057/eAxtt3I_dec3oc.png" alt="Telephone Icon to reach Sound-Insight via phone" width={25} height={40} />
-              <span>CALL</span>
-            </a>
-          </div>
-          <div
-            tabIndex={0}
-            role="menuitem"
-            onClick={() => setMapPopUp(true)}
-            onKeyPress={() => setMapPopUp(true)}
-            className={clsx(classes.map, classes.menuOption)}
-          >
-            <Image src="https://res.cloudinary.com/sound-insight/image/upload/v1640911057/oj6o3TY_wzamok.png" alt="Map Icon to see where Sound-Insight is located" width={25} height={40} />
-            <span>MAP</span>
-          </div>
-          <div
-            tabIndex={0}
-            role="menuitem"
-            onClick={() => setHoursPopUp(true)}
-            onKeyPress={() => setHoursPopUp(true)}
-            className={clsx(classes.hours, classes.menuOption)}
-          >
-            <Image src="https://res.cloudinary.com/sound-insight/image/upload/v1640911039/rx2GiBJ_gxo9q2.png" alt="Clock Icon to view store hours" width={20} height={40} />
-            <span>HOURS</span>
-          </div>
-        </section>
-      </div>
-    </>
+    </header>
   );
 };
 

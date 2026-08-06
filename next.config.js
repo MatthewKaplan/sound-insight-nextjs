@@ -1,6 +1,3 @@
-/* eslint-disable require-await */
-/* eslint-disable @typescript-eslint/require-await */
-
 const securityHeaders = [
   {
     key: 'X-DNS-Prefetch-Control',
@@ -19,10 +16,6 @@ const securityHeaders = [
     value: 'SAMEORIGIN'
   },
   {
-    key: 'X-XSS-Protection',
-    value: '1; mode=block'
-  },
-  {
     key: 'Referrer-Policy',
     value: 'same-origin'
   },
@@ -34,11 +27,13 @@ const securityHeaders = [
 
 module.exports = {
   images: {
-    domains: ['i.imgur.com', 'res.cloudinary.com']
+    remotePatterns: [
+      { protocol: 'https', hostname: 'res.cloudinary.com' },
+      { protocol: 'https', hostname: 'i.imgur.com' }
+    ]
   },
   env: {
-    firebasedb_link: 'https://sound-insight-default-rtdb.firebaseio.com/PAGE_DATA.json',
-    google_analytics: 'UA-148182336-1'
+    firebasedb_link: 'https://sound-insight-default-rtdb.firebaseio.com/PAGE_DATA.json'
   },
   async headers() {
     return [{
@@ -47,10 +42,22 @@ module.exports = {
     }];
   },
   async redirects() {
-    return [{
-      source: '/services/phoneSystems',
-      destination: '/services/phone-systems',
-      permanent: true
-    }];
+    return [
+      {
+        source: '/services/phoneSystems',
+        destination: '/services/phone-systems',
+        permanent: true
+      },
+      {
+        source: '/brands',
+        destination: '/products#brands',
+        permanent: true
+      },
+      {
+        source: '/careers',
+        destination: '/about#careers',
+        permanent: true
+      }
+    ];
   }
 };

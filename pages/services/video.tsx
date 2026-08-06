@@ -1,42 +1,23 @@
-/* eslint-disable max-len */
 import { GetStaticProps } from 'next';
-import Image from 'next/image';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import Seo from '../../components/seo';
-import classes from './styles/video.module.css';
-import { getPageById } from '../../helper/api-util';
+import ServicePageLayout from '../../components/servicePageLayout';
+import { zipLogos } from '../../components/logoGrid';
+import { getPageById, REVALIDATE_SECONDS } from '../../helper/api-util';
 import { buildBreadcrumbSchema, buildServiceSchema } from '../../helper/structured-data';
-import CarouselComponent from '../../components/carousel';
-import BackBtnComponent from '../../components/backButton';
 import { VideoPageData } from '../../types/videoPage.type';
 
 const VideoPage: FC<VideoPageData> = ({
-  VidImg1,
-  VidImg2,
-  VidImg3,
-  VidInfo1,
-  VidInfo2,
-  VidInfo3A,
-  VidInfo3B,
-  VidInfo4A,
-  VidInfo4B,
-  VidTitle1,
-  VidTitle2,
-  VidTitle3,
-  VidTitle4,
-  VideoIcons,
-  VideoLinks,
-  VideoNames,
-  VideoImages,
-  VidSlideTitle
+  VidImg1, VidImg2, VidImg3,
+  VidInfo1, VidInfo2, VidInfo3A, VidInfo3B, VidInfo4A, VidInfo4B,
+  VidTitle1, VidTitle2, VidTitle3, VidTitle4,
+  VideoIcons, VideoNames
 }) => (
-  <div className={classes.videoPage}>
+  <>
     <Seo
       title="Sound Insight - Video Systems | Home Theater | Televisions"
       description="Sound Insight Offers a Cinematic Experience to Those Seeking a New Home Cinema"
       path="/services/video"
-      keywords="Home Cinema Projectors, Home Cinema Amplifiers, Home Cinema Receivers, Home Theater, Projection Screens, Audio Visual Installations, Projector Lamps, Projector Mounts, Plasma & LCD Installation"
-      images={VideoImages}
       structuredData={[
         buildBreadcrumbSchema([
           { name: 'Home', path: '/' },
@@ -44,59 +25,52 @@ const VideoPage: FC<VideoPageData> = ({
           { name: 'Video', path: '/services/video' }
         ]),
         buildServiceSchema({
-          name: 'Home Video Systems',
-          description: 'Home theater, television, and projection system design and installation from Sound Insight.',
+          name: 'Home Cinema & Video Systems',
+          description: 'Custom home theater and video system design and installation, from televisions to dedicated cinema rooms.',
           path: '/services/video',
-          serviceType: 'Home video and theater installation'
+          serviceType: 'Home cinema design and installation'
         })
       ]}
     />
-    <div className={classes.header} />
-    <BackBtnComponent />
-    <section className={classes.videoInfo}>
-      <section className={classes.pageHeading}>
-        <h1>{VidTitle1}</h1>
-        <p>{VidInfo1}</p>
-      </section>
-      <section className={classes.homeCinema}>
-        <Image src={VidImg1} alt="Custom Home theater" width={1400} height={750} layout="responsive" objectFit="cover" />
-        <h2 className={classes.sectionTitle}>{VidTitle2}</h2>
-        <p>{VidInfo2}</p>
-      </section>
-      <div className={classes.bottomServices}>
-        <section className={classes.televisionSystems}>
-          <Image src={VidImg2} alt="Sony OLED television" width={250} height={250} layout="responsive" />
-          <h2 className={classes.sectionTitle}>{VidTitle3}</h2>
-          <p>{VidInfo3A}</p>
-          <br />
-          <p>{VidInfo3B}</p>
-        </section>
-        <section className={classes.projectionSystems}>
-          <Image src={VidImg3} alt="Sony projector" width={700} height={700} layout="responsive" objectFit="cover" />
-          <h2 className={classes.sectionTitle}>{VidTitle4}</h2>
-          <p>{VidInfo4A}</p>
-          <br />
-          <p>{VidInfo4B}</p>
-        </section>
-      </div>
-    </section>
-    <p>{VidSlideTitle}</p>
-    <section className={classes.productSlides}>
-      <CarouselComponent
-        links={VideoLinks}
-        icons={VideoImages}
-        iconNames={VideoNames}
-        pictures={VideoIcons}
-      />
-    </section>
-  </div>
+    <ServicePageLayout
+      name="Home Cinema & Video"
+      title={VidTitle1}
+      intro={VidInfo1}
+      ctaLabel="Book a cinema demo"
+      bandTitle="See it on the big screen first."
+      sections={[
+        {
+          title: VidTitle2,
+          paragraphs: [VidInfo2],
+          imageSrc: VidImg1,
+          imageAlt: 'Dedicated home cinema with projector screen and seating'
+        },
+        {
+          title: VidTitle3,
+          paragraphs: [VidInfo3A, VidInfo3B],
+          imageSrc: VidImg2,
+          imageAlt: 'Living room television installation'
+        },
+        {
+          title: VidTitle4,
+          paragraphs: [VidInfo4A, VidInfo4B],
+          imageSrc: VidImg3,
+          imageAlt: 'Outdoor television installation'
+        }
+      ]}
+      brandGroups={[
+        { label: 'Televisions & displays', items: zipLogos(VideoIcons, VideoNames) }
+      ]}
+    />
+  </>
 );
 
 export const getStaticProps: GetStaticProps = async () => {
   const featuredPage = await getPageById('P_VIDEO');
 
   return {
-    props: featuredPage as VideoPageData
+    props: featuredPage as VideoPageData,
+    revalidate: REVALIDATE_SECONDS
   };
 };
 

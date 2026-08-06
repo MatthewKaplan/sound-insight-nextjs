@@ -1,114 +1,103 @@
-.footerComponent {
-    min-height: 500px;
-    background-color: #201a16;
-    font-family: "PT Sans", sans-serif;
+.footer {
+  background: var(--cinema);
+  color: var(--on-cinema);
 }
 
-.footerComponent .footerNavOptions {
-    display: flex;
-    font-size: 20px;
-    list-style: none;
-    padding-top: 50px;
-    justify-content: center;
+.footer a {
+  color: var(--on-cinema);
+  text-decoration: none;
 }
 
-.dividerDot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #FFF;
-    margin: 6px 20px 0 20px;
+.footer a:hover {
+  color: var(--amber);
+  text-decoration: underline;
 }
 
-.footerComponent .footerNavOptions a {
-    font-size: 20px;
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  padding-block: var(--space-7);
 }
 
-.footerComponent .footerInfo {
-    display: flex;
-    justify-content: center;
+.brandName {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
-.footerComponent .mapouter {
-    width: 550px;
-    height: 350px;
-    margin: 0 auto;
-    padding: 50px 0;
-    text-align: right;
-    position: relative;
+.tagline {
+  margin-top: var(--space-3);
+  max-width: 34ch;
+  color: var(--on-cinema-soft);
+  font-size: var(--text-sm);
 }
 
-.footerComponent .gmapCanvas {
-    width: 550px;
-    height: 350px;
-    overflow: hidden;
-    background: none !important;
+.address {
+  margin-top: var(--space-4);
+  font-style: normal;
+  font-size: var(--text-sm);
+  line-height: 1.9;
+  font-variant-numeric: tabular-nums;
 }
 
-.footerComponent .storeInfo {
-    width: 35%;
-    display: flex;
-    color: white;
-    padding-top: 25px;
-    margin-right: 100px;
-    flex-direction: column;
-    justify-content: space-around;
-    font-family: "PT Sans", sans-serif;
+.colTitle {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: var(--space-3);
 }
 
-.footerComponent .storeInformation {
-    display: flex;
-    justify-content: space-between;
+.linkCol ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.footerComponent a {
-    color: white;
-    font-size: 28px;
+.linkCol li + li {
+  margin-top: var(--space-2);
 }
 
-@media screen and (max-width: 700px) {
-    .footerComponent .footerNavOptions {
-        display: none;
-    }
+.linkCol a {
+  font-size: var(--text-sm);
+  color: var(--on-cinema-soft);
+  display: inline-block;
+  padding-block: var(--space-1);
 }
 
-@media screen and (max-width: 950px) {
-    .footerComponent {
-        min-height: 350px;
-        text-align: center;
-    }
-    .footerComponent .mapouter {
-        display: none;
-    }
-    .footerComponent a {
-        font-size: 28px;
-    }
-    .footerComponent .storeInformation {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-    .footerComponent .storeInformation .storeHours {
-        margin-bottom: 80px;
-    }
-    .footerComponent .storeInformation .storeAddress {
-        border-right: 1px solid white;
-    }
-    .footerComponent .storeInfo {
-        width: 100%;
-        padding-top: 0;
-        margin: 0 auto;
-    }
-    .footerComponent .storeInfo .storeContactInfo {
-        width: 100%;
-        padding-top: 0;
-    }
-    .footerComponent .storeInfo .email {
-        margin-bottom: 40px;
-    }
+.hours {
+  margin: 0;
+  font-size: var(--text-sm);
 }
 
-@media screen and (max-width: 320px) {
-    .footerComponent a {
-        font-size: 24px;
-    }
+.hours div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  max-width: 18rem;
+  padding-block: var(--space-1);
+}
+
+.hours dt {
+  color: var(--on-cinema-soft);
+}
+
+.hours dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.legal {
+  border-top: 1px solid var(--line-dark);
+  padding-block: var(--space-4);
+  font-size: var(--text-xs);
+  color: var(--on-cinema-soft);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  }
 }
