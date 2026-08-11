@@ -1,0 +1,115 @@
+.head {
+  padding-block: var(--space-6) var(--space-7);
+}
+
+.headLogo {
+  width: 11.25rem;
+  height: 4.5rem;
+  object-fit: contain;
+  object-position: left center;
+  margin-bottom: var(--space-4);
+}
+
+.eyebrow {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--walnut);
+  margin-bottom: var(--space-3);
+}
+
+.title {
+  font-size: var(--text-4xl);
+  max-width: 24ch;
+}
+
+.intro {
+  margin-top: var(--space-4);
+  max-width: 62ch;
+  font-size: var(--text-lg);
+  color: var(--ink-soft);
+}
+
+.headCtas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  padding-bottom: var(--space-8);
+}
+
+.sectionTitle {
+  font-size: var(--text-2xl);
+}
+
+.sectionCopy {
+  margin-top: var(--space-4);
+  color: var(--ink-soft);
+  max-width: 58ch;
+}
+
+/* "Hear it in the store" — the local block gets visual weight. */
+.localBlock {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--amber);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+
+.localTitle {
+  font-size: var(--text-2xl);
+}
+
+.localCopy {
+  margin-top: var(--space-4);
+  color: var(--ink-soft);
+  max-width: 58ch;
+}
+
+.localAddress {
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+}
+
+.serviceLinks {
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.serviceLinks a {
+  color: var(--amber-deep);
+  font-weight: 600;
+}
+
+.related {
+  border-top: 1px solid var(--line);
+  padding-block: var(--space-7);
+}
+
+.relatedTitle {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-5);
+}
+
+.inquiry {
+  padding-bottom: var(--section-pad);
+}
+
+.inquiryTitle {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-5);
+}

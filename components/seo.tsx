@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import { FC } from 'react';
-import type { JsonLd } from '../helper/structured-data';
+import {
+  DEFAULT_SOCIAL_IMAGE, getAbsoluteUrl, SITE_NAME, type JsonLd
+} from '../helper/structured-data';
 
 type SeoProps = {
   title: string;
@@ -15,15 +17,8 @@ type SeoProps = {
   structuredData?: JsonLd | JsonLd[];
 };
 
-const SITE_NAME = 'Sound Insight';
-const SITE_URL = 'https://sound-insight.com';
-const DEFAULT_IMAGE = 'https://res.cloudinary.com/sound-insight/image/upload/v1640911039/WIgvnFB_swl61h.jpg';
 const DEFAULT_IMAGE_ALT = 'Sound Insight Logo';
 const TWITTER_SITE = '@matthewkaplan92';
-
-const normalizePath = (path: string) => (path.startsWith('/') ? path : `/${path}`);
-
-const getAbsoluteUrl = (path: string) => new URL(normalizePath(path), SITE_URL).toString();
 
 const serializeJsonLd = (schema: JsonLd) => JSON.stringify(schema).replace(/</g, '\\u003c');
 
@@ -62,7 +57,7 @@ const Seo: FC<SeoProps> = ({
   const canonicalUrl = getAbsoluteUrl(path);
   // Cap social images at one — crawlers only use the first, and the products
   // page used to emit dozens.
-  const primaryImage = images && images.length > 0 ? images[0] : DEFAULT_IMAGE;
+  const primaryImage = images && images.length > 0 ? images[0] : DEFAULT_SOCIAL_IMAGE;
   const schemas = getStructuredDataItems(structuredData);
 
   return (

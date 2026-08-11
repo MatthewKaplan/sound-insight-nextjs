@@ -19,6 +19,10 @@ export const BUSINESS_REGION = 'NY';
 export const BUSINESS_POSTAL_CODE = '11743';
 export const BUSINESS_COUNTRY = 'US';
 export const BUSINESS_PRICE_RANGE = '$$';
+// Geocoded from the street address (OpenStreetMap node 8791909791).
+export const BUSINESS_LATITUDE = 40.8693424;
+export const BUSINESS_LONGITUDE = -73.4257658;
+export const BUSINESS_MAP_URL = 'https://maps.google.com/?q=382+New+York+Ave,+Huntington,+NY+11743';
 
 const normalizePath = (path: string) => (path.startsWith('/') ? path : `/${path}`);
 
@@ -59,7 +63,7 @@ export const buildOrganizationSchema = (): JsonLd => ({
 
 export const buildLocalBusinessSchema = (path = '/'): JsonLd => ({
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
+  '@type': ['LocalBusiness', 'ElectronicsStore'],
   '@id': `${SITE_URL}/#localbusiness`,
   name: SITE_NAME,
   url: SITE_URL,
@@ -70,6 +74,14 @@ export const buildLocalBusinessSchema = (path = '/'): JsonLd => ({
   email: BUSINESS_EMAIL,
   priceRange: BUSINESS_PRICE_RANGE,
   address: buildPostalAddress(),
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: BUSINESS_LATITUDE,
+    longitude: BUSINESS_LONGITUDE
+  },
+  hasMap: BUSINESS_MAP_URL,
+  // TODO(client input): add sameAs with the Google Business Profile and any
+  // social profile URLs once the client confirms them.
   areaServed: ['Huntington', 'Long Island', 'New York'],
   openingHoursSpecification: [
     {
@@ -77,16 +89,9 @@ export const buildLocalBusinessSchema = (path = '/'): JsonLd => ({
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
       opens: '10:00',
       closes: '18:00'
-    },
-    {
-      // Sunday is by appointment — modeled as open with a note, since
-      // schema.org has no "by appointment" primitive.
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: 'Sunday',
-      opens: '00:00',
-      closes: '00:00',
-      description: 'By appointment only'
     }
+    // Sunday is by appointment only — schema.org has no primitive for that,
+    // and a 00:00–00:00 span reads as "closed", so it lives in page copy/GBP.
   ],
   contactPoint: [buildContactPoint()],
   parentOrganization: {
@@ -118,6 +123,45 @@ export const buildBreadcrumbSchema = (items: BreadcrumbItem[]): JsonLd => ({
     name: item.name,
     item: getAbsoluteUrl(item.path)
   }))
+});
+
+export const buildBrandSchema = ({
+  name,
+  slug,
+  manufacturerUrl,
+  logo
+}: {
+  name: string;
+  slug: string;
+  manufacturerUrl: string;
+  logo?: string;
+}): JsonLd => ({
+  '@context': 'https://schema.org',
+  '@type': 'Brand',
+  '@id': `${getAbsoluteUrl(`/brands/${slug}`)}#brand`,
+  name,
+  url: getAbsoluteUrl(`/brands/${slug}`),
+  ...(logo ? { logo } : {}),
+  sameAs: [manufacturerUrl]
+});
+
+export const buildBrandWebPageSchema = ({
+  name,
+  slug,
+  description
+}: {
+  name: string;
+  slug: string;
+  description: string;
+}): JsonLd => ({
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': `${getAbsoluteUrl(`/brands/${slug}`)}#webpage`,
+  name: `${name} at ${SITE_NAME} — ${BUSINESS_CITY}, ${BUSINESS_REGION}`,
+  description,
+  url: getAbsoluteUrl(`/brands/${slug}`),
+  about: { '@id': `${getAbsoluteUrl(`/brands/${slug}`)}#brand` },
+  mainEntity: { '@id': `${SITE_URL}/#localbusiness` }
 });
 
 export const buildServiceSchema = ({

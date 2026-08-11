@@ -5,6 +5,7 @@ import ServicePageLayout from '../../components/servicePageLayout';
 import { zipLogos } from '../../components/logoGrid';
 import { getPageById, REVALIDATE_SECONDS } from '../../helper/api-util';
 import { buildBreadcrumbSchema, buildServiceSchema } from '../../helper/structured-data';
+import { withBrandHrefs } from '../../data/brands';
 import { AudioPageData } from '../../types/audioPage.type';
 
 const AudioPage: FC<AudioPageData> = ({
@@ -62,10 +63,10 @@ const AudioPage: FC<AudioPageData> = ({
         }
       ]}
       brandGroups={[
-        { label: 'Speakers', items: zipLogos(SpeakerIcons, SpeakerNames) },
-        { label: 'Amplifiers & processors', items: zipLogos(AudioIcons, AudioNames) },
-        { label: 'Music streamers', items: zipLogos(StreamerIcons, StreamerNames) },
-        { label: 'Turntables', items: zipLogos(TurntableIcons, TurntableNames) }
+        { label: 'Speakers', items: withBrandHrefs(zipLogos(SpeakerIcons, SpeakerNames)) },
+        { label: 'Amplifiers & processors', items: withBrandHrefs(zipLogos(AudioIcons, AudioNames)) },
+        { label: 'Music streamers', items: withBrandHrefs(zipLogos(StreamerIcons, StreamerNames)) },
+        { label: 'Turntables', items: withBrandHrefs(zipLogos(TurntableIcons, TurntableNames)) }
       ]}
     />
   </>

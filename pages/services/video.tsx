@@ -5,6 +5,7 @@ import ServicePageLayout from '../../components/servicePageLayout';
 import { zipLogos } from '../../components/logoGrid';
 import { getPageById, REVALIDATE_SECONDS } from '../../helper/api-util';
 import { buildBreadcrumbSchema, buildServiceSchema } from '../../helper/structured-data';
+import { withBrandHrefs } from '../../data/brands';
 import { VideoPageData } from '../../types/videoPage.type';
 
 const VideoPage: FC<VideoPageData> = ({
@@ -59,7 +60,7 @@ const VideoPage: FC<VideoPageData> = ({
         }
       ]}
       brandGroups={[
-        { label: 'Televisions & displays', items: zipLogos(VideoIcons, VideoNames) }
+        { label: 'Televisions & displays', items: withBrandHrefs(zipLogos(VideoIcons, VideoNames)) }
       ]}
     />
   </>

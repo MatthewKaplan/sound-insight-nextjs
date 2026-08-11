@@ -11,6 +11,7 @@ import classes from './styles/products.module.css';
 import uiClasses from '../components/styles/ui.module.css';
 import { ProductPageData } from '../types/productPageData';
 import { BrandPageData } from '../types/brandPage.type';
+import { withBrandHrefs } from '../data/brands';
 
 type CategoryData = {
   title: string;
@@ -114,6 +115,8 @@ export const getStaticProps: GetStaticProps = async () => {
   const products = productsRaw as ProductPageData;
   const brands = brandsRaw as BrandPageData;
 
+  // Items whose brand has a landing page get an href into /brands/[slug],
+  // making the brand wall the crawlable hub for those pages.
   const categories: CategoryData[] = [
     { title: products.ProductTitle1 ?? 'Televisions', items: zipLogos(products.videoImages, products.videoDetails) },
     { title: products.ProductTitle2 ?? 'Receivers & Amplifiers', items: zipLogos(products.audioIcons, products.audioNames) },
@@ -121,15 +124,17 @@ export const getStaticProps: GetStaticProps = async () => {
     { title: products.ProductTitle3 ?? 'Turntables', items: zipLogos(products.turntableIcons, products.turntableNames) },
     { title: products.ProductTitle4 ?? 'Internet Music Streamers', items: zipLogos(products.streamerIcons, products.streamerNames) },
     { title: products.ProductTitle6 ?? 'Furniture', items: zipLogos(products.furnitureLogos, products.furnitureNames) }
-  ].filter(({ items }) => items.length > 0);
+  ]
+    .map(({ title, items }) => ({ title, items: withBrandHrefs(items) }))
+    .filter(({ items }) => items.length > 0);
 
   const logos = (brands.manufacturerLogo ?? []) as string[];
   const alts = (brands.manufacturerAltText ?? []) as string[];
-  const brandWall: LogoItem[] = logos.map((src, i) => ({
+  const brandWall: LogoItem[] = withBrandHrefs(logos.map((src, i) => ({
     src,
     name: (alts[i] ?? '').replace(/\s*logo\s*$/i, ''),
     alt: alts[i] ?? ''
-  }));
+  })));
 
   return {
     props: {

@@ -1,36 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://sound-insight.com/</loc>
-  </url>
-  <url>
-    <loc>https://sound-insight.com/about</loc>
-  </url>
-  <url>
-    <loc>https://sound-insight.com/contact</loc>
-  </url>
-  <url>
-    <loc>https://sound-insight.com/gallery</loc>
-  </url>
-  <url>
-    <loc>https://sound-insight.com/products</loc>
-  </url>
-  <url>
-    <loc>https://sound-insight.com/services</loc>
-  </url>
-  <url>
-    <loc>https://sound-insight.com/services/audio</loc>
-  </url>
-  <url>
-    <loc>https://sound-insight.com/services/video</loc>
-  </url>
-  <url>
-    <loc>https://sound-insight.com/services/automation</loc>
-  </url>
-  <url>
-    <loc>https://sound-insight.com/services/phone-systems</loc>
-  </url>
-  <url>
-    <loc>https://sound-insight.com/services/security</loc>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://sound-insight.com</loc><lastmod>2026-08-11T20:07:15.247Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sound-insight.com/about</loc><lastmod>2026-08-11T20:07:15.247Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sound-insight.com/contact</loc><lastmod>2026-08-11T20:07:15.247Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sound-insight.com/gallery</loc><lastmod>2026-08-11T20:07:15.247Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sound-insight.com/products</loc><lastmod>2026-08-11T20:07:15.247Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sound-insight.com/services</loc><lastmod>2026-08-11T20:07:15.247Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sound-insight.com/services/audio</loc><lastmod>2026-08-11T20:07:15.247Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sound-insight.com/services/automation</loc><lastmod>2026-08-11T20:07:15.247Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sound-insight.com/services/phone-systems</loc><lastmod>2026-08-11T20:07:15.247Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sound-insight.com/services/security</loc><lastmod>2026-08-11T20:07:15.247Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sound-insight.com/services/video</loc><lastmod>2026-08-11T20:07:15.247Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sound-insight.com/brands/kef</loc><lastmod>2026-08-11T20:07:15.247Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sound-insight.com/brands/paradigm</loc><lastmod>2026-08-11T20:07:15.247Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sound-insight.com/brands/marantz</loc><lastmod>2026-08-11T20:07:15.247Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sound-insight.com/brands/sonos</loc><lastmod>2026-08-11T20:07:15.247Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://sound-insight.com/brands/control4</loc><lastmod>2026-08-11T20:07:15.247Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
