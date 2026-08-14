@@ -1,11 +1,12 @@
-import Head from 'next/head';
-import Script from 'next/script';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
-import { Instrument_Sans } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import type { AppProps } from 'next/app';
-import '../styles/globals.css';
+import { Instrument_Sans } from 'next/font/google';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import Script from 'next/script';
+import { useEffect } from 'react';
 import MainContainer from '../containers/main';
+import '../styles/globals.css';
 
 const instrumentSans = Instrument_Sans({
   subsets: ['latin'],
@@ -59,6 +60,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <MainContainer>
         <Component {...pageProps} />
       </MainContainer>
+      <Analytics />
     </div>
   );
 };
